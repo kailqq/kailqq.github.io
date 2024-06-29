@@ -13,7 +13,7 @@ copyright: Copyright &copy; 2023 ~ now |  Kailqq
 
 # 配置
 theme:
-  favicon: static/images/saia.png
+  favicon: static/images/logo.png
  #custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
   name: material # 主题名称，Material已经是最优秀的选择了，相信我。
   logo: static/images/logo.png # logo 图片
