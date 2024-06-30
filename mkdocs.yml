@@ -6,7 +6,7 @@ site_description: >- # 项目描述
     这里是我的网站，欢迎来到我的世界！
 # 代码仓库信息
 repo_name: Kailqq # 仓库名称
-repo_url: https://github.com/kailqq/Kailqq # 仓库地址
+repo_url: https://github.com/kailqq/kailqq.github.io # 仓库地址
 
 # 版权信息
 copyright: Copyright &copy; 2023 ~ now |  Kailqq 
@@ -120,23 +120,7 @@ plugins:
             # EMBEDDED-SYS: 嵌入式系统
             # DSP: 数字信号处理
             # PERCEPTION: 感知
-            # ACTUATION: 执行
-            # IOT: 物联网
-            # CLOUD: 云
-            # CLOUD-TECH: 云技术
-            # HANDS-ON: 上手实践
-            # Have A Server: 拥有一台服务器
-            # Server Configuration: 服务器配置
-            # Get A Domain Name: 获得一个域名
-            # AI: 人工智能
-            # RESEARCH: 研究
-            # PROJECT: 项目
-# Hooks - 讲真，这个东西我还没搞懂
-# hooks:
-#   - material/overrides/hooks/shortcodes.py
-#   - material/overrides/hooks/translations.py
 
-# 额外配置项
 extra:
   generator: false # 是否显示生成器
   status: # 不是很懂有什么用
@@ -146,15 +130,15 @@ extra:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
     feedback: # feedback form
-      title: Was this page helpful?
+      title: Do you like this page?
       ratings:
         - icon: material/thumb-up-outline
-          name: This page was helpful
+          name: Man! What can I say
           data: 1
           note: >-
             Thanks for your feedback!
         - icon: material/thumb-down-outline
-          name: This page could be improved
+          name: Mamba out!
           data: 0
           note: >- 
             Thanks for your feedback! Help us improve this page by
@@ -169,6 +153,7 @@ extra:
   social: # 社交媒体
     - icon: fontawesome/brands/github
       link: https://github.com/kailqq
+      name: My GitHub(进来 can can world)
   tags: # 自定义标签
     Default: default-tag
     Hardware: hardware-tag
@@ -231,6 +216,14 @@ markdown_extensions: # markdown extensions
       custom_checkbox: true
   - pymdownx.tilde
 
+  
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
 # 导航树 - 请按照我的做法来做，否则可能无法正常工作。引号可以省略。开头的点和斜杠也可以省略 ("./HOME/about.md" 或 Home/about.md) 。注意，导航树这里的文件名是 filename.md 这样的，但在文件夹中，它实际上被命名为 filename.en.md 和 filename.zh.md。我猜测默认是英文，所以, index.en.md 和 index.md 是一样的。i18n插件会自动识别文件名，然后根据文件名的后缀来切换语言。所以，如果你想添加一个新页面，你需要添加两个文件，一个是 filename.en.md，另一个是 filename.zh.md。其中，filename.en.md 也可以被命名为 filename.md，但是 filename.zh.md 不能被命名为 filename.md，否则会导致无法识别。
 nav: 
   - HOME: 
