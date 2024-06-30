@@ -18,6 +18,7 @@ theme:
   name: material # 主题名称，Material已经是最优秀的选择了，相信我。
   logo: static/images/logo.png # logo 图片
   language: en # 默认语言
+  custom_dir: overrides
   features: # 功能  
     - announce.dismiss # 可以叉掉公告的功能
     - content.action.edit # 编辑按钮，似乎没啥用
@@ -47,27 +48,19 @@ theme:
     - toc.follow # 目录跟踪-页面右侧的小目录
     # - toc.integrate # 目录跟踪集成到左侧大目录中
   palette:
-    - media: "(prefers-color-scheme)" # 主题颜色
-      scheme: slate
-      primary: black
-      accent: indigo
-      toggle:
-        icon: material/link
-        name: Switch to light mode
     - media: "(prefers-color-scheme: light)" # 浅色
-      scheme: default
-      primary: indigo
-      accent: indigo
+      scheme: theme
+      primary: 1bdbe9b0
       toggle:
-        icon: material/toggle-switch
-        name: Switch to dark mode
+        icon: material/weather-night
+        name: 夜深了，my friend
     - media: "(prefers-color-scheme: dark)" # 深色
       scheme: slate
       primary: black
       accent: indigo
       toggle:
-        icon: material/toggle-switch-off
-        name: Switch to system preference
+        icon: material/weather-sunny
+        name: Hey,天亮了
   font: # 字体，大概率不需要换
     text: Roboto
     code: Roboto Mono
@@ -143,13 +136,6 @@ extra:
           note: >- 
             Thanks for your feedback! Help us improve this page by
             using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
-  # alternate: # 由上面那个i18n插件提供的多语言功能，这个似乎就不需要了。 这个是官方文档的例子，但是官方没有提供很详细的例子，所以我也不知道怎么用。
-  #   - name: English
-  #     link: /en/ 
-  #     lang: en
-  #   - name: Chinese
-  #     link: /zh/
-  #     lang: zh
   social: # 社交媒体
     - icon: fontawesome/brands/github
       link: https://github.com/kailqq
@@ -165,7 +151,6 @@ extra:
   #     as to measure the effectiveness of our documentation and whether users
   #     find what they're searching for. With your consent, you're helping us to
   #     make our documentation better.
-
 # 扩展
 markdown_extensions: # markdown extensions
   - abbr
@@ -231,7 +216,8 @@ nav:
       - ABOUT: "./HOME/about.md"
       - SPONSORSHIP: "./HOME/sponsorship.md"
   - CS: 
-      - "./CS/CS.md"
+      - test: "./CS/CS.md/test.md"
+      - ts: "./CS/CS.md/CS.md"
   # - CODING: 
   #     - "./CODING/coding.md"
   # - EMBEDDED-SYS: 
