@@ -8,6 +8,13 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/"/>
     </url>
     <url>
+        <loc>https://localhost:8000/friends/</loc>
+        <lastmod>2024-07-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/friends/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/friends/"/>
+    </url>
+    <url>
         <loc>https://localhost:8000/NOTE/CTF/CTF/</loc>
         <lastmod>2024-07-01</lastmod>
         <changefreq>daily</changefreq>
@@ -55,6 +62,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/"/>
+    </url>
+    <url>
+        <loc>https://localhost:8000/zh/friends/</loc>
+        <lastmod>2024-07-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/friends/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/friends/"/>
     </url>
     <url>
         <loc>https://localhost:8000/zh/NOTE/CTF/CTF/</loc>
