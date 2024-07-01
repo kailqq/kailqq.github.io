@@ -8,6 +8,20 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/"/>
     </url>
     <url>
+        <loc>https://localhost:8000/CS/CS.md/CS/</loc>
+        <lastmod>2024-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/CS/CS.md/CS/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/CS/CS.md/CS/"/>
+    </url>
+    <url>
+        <loc>https://localhost:8000/CS/CS.md/test/</loc>
+        <lastmod>2024-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/CS/CS.md/test/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/CS/CS.md/test/"/>
+    </url>
+    <url>
         <loc>https://localhost:8000/HOME/about/</loc>
         <lastmod>2024-06-30</lastmod>
         <changefreq>daily</changefreq>
@@ -34,6 +48,20 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/"/>
+    </url>
+    <url>
+        <loc>https://localhost:8000/zh/CS/CS.md/CS/</loc>
+        <lastmod>2024-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/CS/CS.md/CS/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/CS/CS.md/CS/"/>
+    </url>
+    <url>
+        <loc>https://localhost:8000/zh/CS/CS.md/test/</loc>
+        <lastmod>2024-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/CS/CS.md/test/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/CS/CS.md/test/"/>
     </url>
     <url>
         <loc>https://localhost:8000/zh/HOME/about/</loc>

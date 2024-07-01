@@ -3,7 +3,7 @@ site_name: 71229号港湾 # 项目名称
 site_url: https://localhost:8000/ # 我在nginx中使用的是8000端口，如果你使用的是80端口，可以直接写成https://localhost/。
 site_author: Kailqq # 作者
 site_description: >- # 项目描述
-    这里是我的网站，欢迎来到我的世界！
+    人生苦短，纵情燃烧
 # 代码仓库信息
 repo_name: Kailqq # 仓库名称
 repo_url: https://github.com/kailqq/kailqq.github.io # 仓库地址
@@ -17,7 +17,7 @@ theme:
  #custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
   name: material # 主题名称，Material已经是最优秀的选择了，相信我。
   logo: static/images/logo.png # logo 图片
-  language: en # 默认语言
+  language: zh # 默认语言
   custom_dir: overrides
   features: # 功能  
     - announce.dismiss # 可以叉掉公告的功能
@@ -61,9 +61,13 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Hey,天亮了
+
+
   font: # 字体，大概率不需要换
     text: Roboto
     code: Roboto Mono
+
+    
   icon: # 一些用到的icon
     logo: logo
     previous: fontawesome/solid/angle-left
@@ -75,6 +79,8 @@ theme:
 
 # Plugins
 plugins:
+  - statistics: 
+       words_per_minute: 350 
   - tags # 标签功能插件
   - blog # 博客功能插件
   - rss: # rss订阅插件 - 不太懂是干嘛的目前
@@ -106,9 +112,11 @@ plugins:
           build: true
           nav_translations: # 导航栏翻译，不可以有缩进
             HOME: 首页
-            ABOUT: 关于
-            SPONSORSHIP: 赞助
-            CS: 计算机
+            NOTE: 笔记
+            LINEAR-ALGEBRA: 线性代数
+            MATH-ANALYSIS: 数学分析
+            CTF: 安全攻防实践
+            Movies: 影视
             # CODING: 编程
             # EMBEDDED-SYS: 嵌入式系统
             # DSP: 数字信号处理
@@ -134,24 +142,29 @@ extra:
           name: Mamba out!
           data: 0
           note: >- 
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+            Thanks for your feedback!
+
+
+
+
   social: # 社交媒体
     - icon: fontawesome/brands/github
       link: https://github.com/kailqq
-      name: My GitHub(进来 can can world)
+      name: My GitHub
+    - icon: fontawesome/brands/qq
+      link: tencent://message/?uin=2725913404&Site=Kailqq&Menu=yes
+      name: QQ
+    - icon: fontawesome/brands/steam
+      link: https://steamcommunity.com/profiles/76561199513750344
+      name: Steam  
+
   tags: # 自定义标签
     Default: default-tag
     Hardware: hardware-tag
     Software: software-tag
-  # consent: # 征求同意 Cookie
-  #   title: Cookie consent
-  #   description: >- 
-  #     We use cookies to recognize your repeated visits and preferences, as well
-  #     as to measure the effectiveness of our documentation and whether users
-  #     find what they're searching for. With your consent, you're helping us to
-  #     make our documentation better.
-# 扩展
+
+
+
 markdown_extensions: # markdown extensions
   - abbr
   - admonition
@@ -209,15 +222,22 @@ extra_javascript:
 
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
+
 # 导航树 - 请按照我的做法来做，否则可能无法正常工作。引号可以省略。开头的点和斜杠也可以省略 ("./HOME/about.md" 或 Home/about.md) 。注意，导航树这里的文件名是 filename.md 这样的，但在文件夹中，它实际上被命名为 filename.en.md 和 filename.zh.md。我猜测默认是英文，所以, index.en.md 和 index.md 是一样的。i18n插件会自动识别文件名，然后根据文件名的后缀来切换语言。所以，如果你想添加一个新页面，你需要添加两个文件，一个是 filename.en.md，另一个是 filename.zh.md。其中，filename.en.md 也可以被命名为 filename.md，但是 filename.zh.md 不能被命名为 filename.md，否则会导致无法识别。
 nav: 
   - HOME: 
       - "index.md"
-      - ABOUT: "./HOME/about.md"
-      - SPONSORSHIP: "./HOME/sponsorship.md"
-  - CS: 
-      - test: "./CS/CS.md/test.md"
-      - ts: "./CS/CS.md/CS.md"
+  - NOTE:
+      -  LINEAR-ALGEBRA:
+          - "NOTE/LA/linear-algebra.md"
+      -  MATH-ANALYSIS:
+          - "NOTE/MA/math1.md"
+          - "NOTE/MA/math2.md"
+      -  CTF:
+          - "NOTE/CTF/CTF.md"
+  - Movies:
+      - "movies/movies.md"
+       
   # - CODING: 
   #     - "./CODING/coding.md"
   # - EMBEDDED-SYS: 

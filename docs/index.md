@@ -1,24 +1,25 @@
 ---
 comments: true
+statistics: true
 ---
 
-# Welcome to MkDocs
+# 欢迎来到71229号港湾 :fontawesome-solid-sailboat:
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## 写在前面的话
 
-## Commands
+搭建这个网站的想法萌发于学期中忙的焦头烂额的某一个晚上
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+几乎在期末周结束后就马上开始行动,这个网站大概率会用来整理记录一些笔记(希望多更新一点线性代数),写一点影评(爱看电影，拦不住的),可能还有乱七八糟的一些东西。
 
-## Project layout
+可悲的是，似乎我在一年前高考结束后就丧失了书写自己的文字的能力，希望多打点字可以让我稍微找回一点写作的乐趣吧
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-### 这里是我的网站！
-  $$ \sin (90)$$
-  
+> 长期摸鱼，尽量更新
+
+目前共 {{ pages }} 个页面，约 {{ words }} 字，{{ codes }} 行代码。
+
+
+!!! 感恩蓝天白云
+    在搭建的过程中在高同学本人及其仓库给予了我许多宝宝巴士级的指导
+    伟大,无需多言
+    :fontawesome-brands-github: [**@shrike505**](https://github.com/shrike-505)
+     
