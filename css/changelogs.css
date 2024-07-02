@@ -1,5 +1,5 @@
 .changelog-type-newart {
-    background-color: #1bdbe9b0;
+    background-color: #0dddecb0;
 }
 .changelog-type-newart::before {
     content: "新增文章";
