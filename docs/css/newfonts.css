@@ -1,11 +1,5 @@
 :root {
-    --md-text-font: "JetBrains Mono", "Noto Serif SC"; 
+    --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
     --md-code-font: "JetBrains Mono";
   }  
 
-div.admonition.特别鸣谢 > p a:link, div.admonition.特别鸣谢 > p a:visited, article.md-content__inner.md-typeset>h4, h1,
-.md-ellipsis,
-.md-source__repository,
-.timeline  {
-    font-family: "Gloria Hallelujah", "LXGW WenKai Screen";
-}
