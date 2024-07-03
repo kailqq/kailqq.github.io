@@ -1,5 +1,9 @@
 - "2024":
+  - "2024-07-03":
+    - pageupdate:
+        text: 📝CTF-lec2
+        href: ./NOTE/CTF/CTF
   - "2024-07-02":
     - pageupdate:
-        text: 📝新增CTF笔记
+        text: 📝CTF-lec1
         href: ./NOTE/CTF/CTF
