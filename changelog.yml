@@ -1,9 +1,13 @@
 - "2024":
+  - "2024-07-04":
+    - newpage:
+        text: 📝CTF-lec3
+        href: ./NOTE/CTF/Misc
   - "2024-07-03":
-    - pageupdate:
+    - newpage:
         text: 📝CTF-lec2
-        href: ./NOTE/CTF/CTF
+        href: ./NOTE/CTF/web
   - "2024-07-02":
-    - pageupdate:
+    - newpage:
         text: 📝CTF-lec1
         href: ./NOTE/CTF/CTF
