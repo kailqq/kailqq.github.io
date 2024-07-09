@@ -1,17 +1,17 @@
 - "2024":
-  - "2024-07-09":
-    - pageupdate:
-        text: 📝CTF-Misc专题1
-        href: ./NOTE/CTF/Misc
-  - "2024-07-04":
+  - "2024.07.09":
+    - pageupdate: 
+       text: 更新了Misc专题1
+       href: /NOTE/CTF/Misc
+  - "2024.07.04":
     - newpage:
-        text: 📝CTF-lec3
-        href: ./NOTE/CTF/Misc
-  - "2024-07-03":
+        text: 更新Misc基础
+        href: /NOTE/CTF/Misc
+  - "2024.07.03":
     - newpage:
-        text: 📝CTF-lec2
-        href: ./NOTE/CTF/web
-  - "2024-07-02":
+        text: 更新Web基础
+        href: /NOTE/CTF/Web
+  - "2024.07.02":
     - newpage:
-        text: 📝CTF-lec1
-        href: ./NOTE/CTF/CTF
+        text: CTF短学期导论
+        href: /NOTE/CTF/CTF
