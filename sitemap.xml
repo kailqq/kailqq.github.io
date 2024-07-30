@@ -22,6 +22,13 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/CTF/"/>
     </url>
     <url>
+        <loc>https://localhost:8000/NOTE/CTF/Crypto/</loc>
+        <lastmod>2024-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/Crypto/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/Crypto/"/>
+    </url>
+    <url>
         <loc>https://localhost:8000/NOTE/CTF/Misc/</loc>
         <lastmod>2024-07-30</lastmod>
         <changefreq>daily</changefreq>
@@ -104,6 +111,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/CTF/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/CTF/"/>
+    </url>
+    <url>
+        <loc>https://localhost:8000/zh/NOTE/CTF/Crypto/</loc>
+        <lastmod>2024-07-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/Crypto/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/Crypto/"/>
     </url>
     <url>
         <loc>https://localhost:8000/zh/NOTE/CTF/Misc/</loc>
