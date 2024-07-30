@@ -1,4 +1,16 @@
 - "2024":
+  - "2024.07.30":
+    - newpage: 
+       text: 补充了Crypto笔记
+       href: /NOTE/CTF/Crypto
+  - "2024.07.24":
+    - newpage: 
+       text: 新增结课感想
+       href: /NOTE/CTF/结课心得
+  - "2024.07.11":
+    - pageupdate: 
+       text: 更新了Misc专题2
+       href: /NOTE/CTF/Misc
   - "2024.07.09":
     - pageupdate: 
        text: 更新了Misc专题1

@@ -1,6 +1,7 @@
 ---
 comments: true
 statistics: true
+changelog: True
 ---
 
 # 欢迎来到71229号港湾 :fontawesome-solid-sailboat:
@@ -19,7 +20,10 @@ statistics: true
 
 
 !!! 感恩蓝天白云
-    在搭建的过程中在高同学本人及其仓库给予了我许多宝宝巴士级的指导
+    在搭建的过程中高同学本人及其仓库给予了我许多宝宝巴士级的指导
     伟大,无需多言
     :fontawesome-brands-github: [**@shrike505**](https://github.com/shrike-505)
-     
+
+## 更新日志
+{{2024}}
+   

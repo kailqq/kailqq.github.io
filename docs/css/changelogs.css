@@ -1,6 +1,6 @@
-.changelog-type-newart {
-    background-color: #1bdbe9b0;
+.changelog-type-pageupdate {
+    background-color: #dde8e8b0;
 }
 .changelog-type-newart::before {
-    content: "新增文章";
+    content: "页面更新";
 }

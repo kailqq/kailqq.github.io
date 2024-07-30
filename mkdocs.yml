@@ -135,6 +135,7 @@ plugins:
             # EMBEDDED-SYS: 嵌入式系统
             # DSP: 数字信号处理
             # PERCEPTION: 感知
+  - changelog          
 
 extra:
   generator: false # 是否显示生成器
@@ -241,6 +242,7 @@ extra_css:
   - css/newfonts.css
   - css/newadmonition.css
   - css/newcolor.css 
+  - css/changelog.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
 
@@ -258,6 +260,10 @@ nav:
           - "NOTE/MA/math2.md"
       -  CTF:
           - "NOTE/CTF/CTF.md"
+          - "NOTE/CTF/web.md"
+          - "NOTE/CTF/Misc.md"
+          - "NOTE/CTF/Crypto.md"
+          - "NOTE/CTF/结课心得.md"
   - Movies:
       - "movies/movies.md"
   - Friends:    
