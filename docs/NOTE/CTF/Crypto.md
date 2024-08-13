@@ -3,9 +3,9 @@
     statistics: true
 ---
 
-# Lec6-Crypto
+# Crypto
 
-> 授课：
+> 授课：城堡
 
 ## 密码学基础
 
@@ -164,7 +164,7 @@ $$ x = \sum_{i=1}^{k} a_iM_iN_i $$
 + 加密：$y_i = \text{encode}(x_i) = (x_i + key_i) \mod 26$
 + 解密：$x_i = \text{decode}(y_i) = (y_i - key_i) \mod 26$
 
-![维吉尼亚密码表](./assets/mm2.png)
+![维吉尼亚密码表](./img/mm2.png)
 
 例：明文CRANE，密钥TONY
 

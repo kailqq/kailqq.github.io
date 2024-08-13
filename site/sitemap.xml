@@ -1,171 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://localhost:8000/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/"/>
+         <loc>https://localhost:8000/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/friends/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/friends/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/friends/"/>
+         <loc>https://localhost:8000/friends/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/NOTE/CTF/CTF/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/CTF/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/CTF/"/>
+         <loc>https://localhost:8000/NOTE/CS/Verilog/verilog/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/NOTE/CTF/Misc/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/Misc/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/Misc/"/>
+         <loc>https://localhost:8000/NOTE/CTF/CTF/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/NOTE/CTF/reverse/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/reverse/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/reverse/"/>
+         <loc>https://localhost:8000/NOTE/CTF/Crypto/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/NOTE/CTF/web/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/web/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/web/"/>
+         <loc>https://localhost:8000/NOTE/CTF/Misc/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/NOTE/CTF/%E7%BB%93%E8%AF%BE%E5%BF%83%E5%BE%97/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/%E7%BB%93%E8%AF%BE%E5%BF%83%E5%BE%97/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/%E7%BB%93%E8%AF%BE%E5%BF%83%E5%BE%97/"/>
+         <loc>https://localhost:8000/NOTE/CTF/reverse/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/NOTE/LA/linear-algebra/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/LA/linear-algebra/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/LA/linear-algebra/"/>
+         <loc>https://localhost:8000/NOTE/CTF/web/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/NOTE/MA/math1/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/MA/math1/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/MA/math1/"/>
+         <loc>https://localhost:8000/NOTE/CTF/%E7%BB%93%E8%AF%BE%E5%BF%83%E5%BE%97/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/NOTE/MA/math2/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/MA/math2/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/MA/math2/"/>
+         <loc>https://localhost:8000/NOTE/LA/linear-algebra/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/blog/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/blog/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/blog/"/>
+         <loc>https://localhost:8000/NOTE/LA/%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/movies/movies/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/movies/movies/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/movies/movies/"/>
+         <loc>https://localhost:8000/NOTE/MA/math1/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/zh/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/"/>
+         <loc>https://localhost:8000/NOTE/MA/math2/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/zh/friends/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/friends/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/friends/"/>
+         <loc>https://localhost:8000/blog/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://localhost:8000/zh/NOTE/CTF/CTF/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/CTF/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/CTF/"/>
-    </url>
-    <url>
-        <loc>https://localhost:8000/zh/NOTE/CTF/Misc/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/Misc/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/Misc/"/>
-    </url>
-    <url>
-        <loc>https://localhost:8000/zh/NOTE/CTF/reverse/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/reverse/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/reverse/"/>
-    </url>
-    <url>
-        <loc>https://localhost:8000/zh/NOTE/CTF/web/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/web/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/web/"/>
-    </url>
-    <url>
-        <loc>https://localhost:8000/zh/NOTE/CTF/%E7%BB%93%E8%AF%BE%E5%BF%83%E5%BE%97/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/CTF/%E7%BB%93%E8%AF%BE%E5%BF%83%E5%BE%97/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/CTF/%E7%BB%93%E8%AF%BE%E5%BF%83%E5%BE%97/"/>
-    </url>
-    <url>
-        <loc>https://localhost:8000/zh/NOTE/LA/linear-algebra/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/LA/linear-algebra/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/LA/linear-algebra/"/>
-    </url>
-    <url>
-        <loc>https://localhost:8000/zh/NOTE/MA/math1/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/MA/math1/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/MA/math1/"/>
-    </url>
-    <url>
-        <loc>https://localhost:8000/zh/NOTE/MA/math2/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/NOTE/MA/math2/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/NOTE/MA/math2/"/>
-    </url>
-    <url>
-        <loc>https://localhost:8000/zh/blog/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/blog/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/blog/"/>
-    </url>
-    <url>
-        <loc>https://localhost:8000/zh/movies/movies/</loc>
-        <lastmod>2024-07-30</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://localhost:8000/zh/movies/movies/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://localhost:8000/movies/movies/"/>
+         <loc>https://localhost:8000/movies/movies/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -1,4 +1,12 @@
 - "2024":
+  - "2024.08.13":
+    - newpage: 
+       text: 更新了一点点Verilog笔记
+       href: /NOTE/CS/Verilog/verilog
+  - "2024.08.01":
+    - newpage: 
+       text: 开始更新线性代数！
+       href: /NOTE/LA/linear-algebra 
   - "2024.07.30":
     - newpage: 
        text: 补充了Crypto笔记
