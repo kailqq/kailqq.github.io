@@ -1,6 +1,10 @@
 - "2024":
   - "2024.08.13":
     - newpage: 
+       text: 更新了一点点RUST笔记
+       href: /NOTE/CS/RUST/RUST
+  - "2024.08.13":
+    - newpage: 
        text: 更新了一点点Verilog笔记
        href: /NOTE/CS/Verilog/verilog
   - "2024.08.01":
