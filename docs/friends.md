@@ -19,4 +19,9 @@ nonstatistics: true
   content: 好男人，帅男人！伟大，无需多言
   image: static/images/Xecades.jpg
   url: https://xecades.xyz
+
+- title: WEDM
+  content: Friend!
+  image: static/images/CSN.jpg
+  url: https://zjuhcsn.github.io
 ::/cards::  

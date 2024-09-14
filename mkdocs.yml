@@ -87,12 +87,12 @@ theme:
 
 # Plugins
 plugins:
+  - statistics:
+      words_per_minute: 290   
   - tags # 标签功能插件
   - blog # 博客功能插件
   - search: # 搜索插件
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])' # 分隔符
-  - minify: # 压缩插件
-      minify_html: true
   - changelog          
 
 extra:
@@ -204,17 +204,34 @@ nav:
   - HOME: 
       - "index.md"
   - NOTE:
-      -  LINEAR-ALGEBRA:
-          - "NOTE/LA/linear-algebra.md"
-          - "NOTE/LA/前置知识.md"
-      -  CTF:
-          - "NOTE/CTF/CTF.md"
-          - "NOTE/CTF/web.md"
-          - "NOTE/CTF/Misc.md"
-          - "NOTE/CTF/Crypto.md"
-          - "NOTE/CTF/reverse.md"
-          - "NOTE/CTF/结课心得.md"
+      -  课程笔记:
+          - 计算机组成与设计:
+             - 绪论: "NOTE/CO/wk1.md"
+          -  LINEAR-ALGEBRA:
+              - 前言: "NOTE/LA/linear-algebra.md"
+              - 基础: "NOTE/LA/前置知识.md"
+              - 暂时停更: "NOTE/LA/note.md"
+          -  CTF:
+              - 课程信息: "NOTE/CTF/CTF.md"
+              - web: "NOTE/CTF/web.md"
+              - Misc: "NOTE/CTF/Misc.md"
+              - Crypto: "NOTE/CTF/Crypto.md"
+              - reverse: "NOTE/CTF/reverse.md"
+              - 心得: "NOTE/CTF/结课心得.md"
+          - 概率论:
+              - 第一章: NOTE/Probability/first.md
+          - 普通物理学二: 
+              - 电磁学: NOTE/Physics/eletronic.md
+          - 高级数据结构与算法分析: 
+              - AVL，Splay树与摊还分析: NOTE/ADS/wk1.md
       - CS:
-          - verilog学习笔记: NOTE/CS/Verilog/verilog.md   
+          - verilog学习笔记: NOTE/CS/Verilog/verilog.md 
+          - RUST学习笔记:  NOTE/CS/RUST/RUST.md 
+          - 汇编学习笔记: 
+               - 硬件组成: NOTE/CS/ASM/wk1.md
+               - 程序格式: NOTE/CS/ASM/wk1_2.md
+               - 数据表示: NOTE/CS/ASM/wk2.md
+               - 寻址方式: NOTE/CS/ASM/wk3.md
+      
   - Friends:    
        - friends.md
