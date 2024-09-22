@@ -1,6 +1,5 @@
 ---
 comments: true
-changelog: True
 statistics: True
 ---
 
@@ -19,12 +18,3 @@ statistics: True
 > 长期摸鱼，尽量更新
 
 > 目前共 {{ pages }} 个页面，约 {{ words }} 字，{{ codes }} 行代码。
-  
-
-!!! 感恩蓝天白云
-    在搭建的过程中高同学本人及其仓库给予了我许多宝宝巴士级的指导
-    伟大,无需多言
-    :fontawesome-brands-github: [**@shrike505**](https://github.com/shrike-505)
-
-## 更新日志
-{{2024}}

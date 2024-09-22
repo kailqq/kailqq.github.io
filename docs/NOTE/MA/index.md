@@ -5,9 +5,9 @@
 <div class="file-icon"><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">数学分析（甲）Ⅰ（H）笔记</div>
-<div class="file-meta">49.7MB </div>
+<div class="file-meta"></div>
 </div>
-<a class="down-button" target="_blank" href="./math1.pdf"  markdown="1">:fontawesome-solid-download: 下载</a>
+<a class="down-button" target="_blank" href="./math1.pdf"  markdown="1">:fontawesome-solid-download: 查看</a>
 </div>
 
 
@@ -15,7 +15,7 @@
 <div class="file-icon"><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">数学分析（甲）Ⅱ（H）笔记</div>
-<div class="file-meta">MB </div>
+<div class="file-meta"> </div>
 </div>
-<a class="down-button" target="_blank" href="./math1.pdf" markdown="1">:fontawesome-solid-download: 下载</a>
+<a class="down-button" target="_blank" href="./math1.pdf" markdown="1">:fontawesome-solid-download: 查看</a>
 </div>

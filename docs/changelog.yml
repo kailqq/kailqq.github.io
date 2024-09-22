@@ -1,4 +1,12 @@
 - "2024":
+  - "2024.09.22":
+    - newpage: 
+       text: 风格修改，笔记大更新
+       href: /changelog
+  - "2024.08.15":
+    - newpage: 
+       text: 更新了一点点RUST笔记
+       href: /NOTE/CS/RUST/RUST
   - "2024.08.13":
     - newpage: 
        text: 更新了一点点RUST笔记

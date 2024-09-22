@@ -3,9 +3,9 @@ comments: true
 ---
 
 # Advance Data Structures and Algorithm Analysis 
-> 浙江大学高级数据结构与算法分析个人笔记
 
-> :ledger:参考资料：yhwu-is的ADS讲义
+
+
 
 
 ## AVL tree(平衡二叉树)
