@@ -12,13 +12,13 @@
         <meta name="author" content="Kailqq">
       
       
-        <link rel="canonical" href="https://localhost:8000/NOTE/ADS/wk1/">
+        <link rel="canonical" href="https://kailqq.cc/NOTE/ADS/wk1/">
       
       
         <link rel="prev" href="../../Physics/eletronic/">
       
       
-        <link rel="next" href="../../CS/Verilog/verilog/">
+        <link rel="next" href="../wk2/">
       
       
       <link rel="icon" href="../../../static/images/logo.png">
@@ -124,13 +124,23 @@
     
       <link rel="stylesheet" href="../../../css/cards.css">
     
+      <link rel="stylesheet" href="../../../css/card.css">
+    
+      <link rel="stylesheet" href="../../../css/latex.css">
+    
       <link rel="stylesheet" href="../../../css/newfonts.css">
     
-      <link rel="stylesheet" href="../../../css/newadmonition.css">
+      <link rel="stylesheet" href="../../../css/newadmonitions.css">
     
       <link rel="stylesheet" href="../../../css/newcolor.css">
     
       <link rel="stylesheet" href="../../../css/changelogs.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../../css/fold.css">
+    
+      <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
     
@@ -578,6 +588,8 @@
       
         
       
+        
+      
     
     
       
@@ -622,6 +634,8 @@
   
     
     
+      
+        
       
         
       
@@ -672,6 +686,27 @@
   
   <span class="md-ellipsis">
     绪论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CO/wk2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机中的算数
   </span>
   
 
@@ -1011,6 +1046,8 @@
       
         
       
+        
+      
     
     
       
@@ -1058,6 +1095,27 @@
   
   <span class="md-ellipsis">
     第一章
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probability/others/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    其它
   </span>
   
 
@@ -1160,6 +1218,8 @@
   
     
     
+      
+        
       
         
       
@@ -1323,6 +1383,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amortized Analysis(摊还分析)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1330,6 +1399,88 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wk2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    红黑树与B+树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../MA/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    数学分析
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            数学分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
             
           </ul>
@@ -1777,6 +1928,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amortized Analysis(摊还分析)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1810,10 +1970,11 @@
 
 <h1 id="advance-data-structures-and-algorithm-analysis">Advance Data Structures and Algorithm Analysis<a class="headerlink" href="#advance-data-structures-and-algorithm-analysis" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1626 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 67 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 3051 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 66 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 11 分钟</p>
 </div>
 <blockquote>
 <p>浙江大学高级数据结构与算法分析个人笔记</p>
+<p><img alt="📒" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d2.svg" title=":ledger:" />参考资料：yhwu-is的ADS讲义</p>
 </blockquote>
 <h2 id="avl-tree">AVL tree(平衡二叉树)<a class="headerlink" href="#avl-tree" title="Permanent link">&para;</a></h2>
 <p>AVL 数的想法是强制要求每次插入，删除之后都保证树的绝对平衡</p>
@@ -2007,12 +2168,115 @@
 </span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="w">    </span><span class="n">Output</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="n">node</span>
 </span></code></pre></div>
 </details>
+<h2 id="amortized-analysis">Amortized Analysis(摊还分析)<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h2>
+<details class="quote">
+<summary>吴一航学长的ADS讲义</summary>
+<p>摊还分析的想法来源于我们希望估计一种数据结构经过一系列操作的平均花费时间。然而，平均时间
+非常难计算，因为每一步都有非常多的选择，连续 m 个操作，可能的操作路径是指数级别的。并且有
+时候平均涉及概率分布等，但我们并不知道确切的分布，因此比较难以计算。
+一种最简单的估计方法就是用最差情况分析作为平均情况的上界，例如 Splay 树，每个操作最差都是
+<span class="arithmatex">\(O(n)\)</span>（n 为树中结点个数）的，因此平均不会比最差情况差，所以也是 <span class="arithmatex">\(O(n)\)</span> 的。然而这样的估计显然
+是放得太宽了，我们对这个复杂度是非常不满意的，因此我们需要进行摊还分析。事实上，在最差情况
+的分析中，我们忽略了一件事情，就是有的序列是不可能出现的，例如直接在空的树上用 <span class="arithmatex">\(O(n)\)</span> 时间删
+除，摊还分析则是希望排除掉最差情况分析中把所有不管可能不可能的情况，最差的路径挑出来的这
+种无脑行为，转而分析所有可能的从空结构开始的操作路径中，最差的平均时间，那么这一时间一定比
+最差情况分析好，因为排除掉了一些不可能出现的所谓最差序列，但又会大于等于平均时间，因为取的
+是所有可能序列中最差的那一种。因此当我们算出摊还分析的时间复杂度，那么它也一定是平均时间
+的上界，同时这个上界会比最差情况分析好.</p>
+</details>
+<p>总的来说，我们希望分析 Average 的情况是比较困难的，分析 worst 的情况是比较粗糙的，所以我们使用摊还分析，通过"劫富济贫"(截长补短),将最坏的情况削弱，同时又是平均情况的上界，只要这种情况是满足条件的，我们就可以用它来证明。</p>
+<div class="admonition definition">
+<p class="admonition-title">准备工作</p>
+<div class="arithmatex">\[\hat{c}_i=c_i+\Delta_i\]</div>
+<p>其中 <span class="arithmatex">\(\hat{c}_i\)</span> 是第i次操作的摊还代价，<span class="arithmatex">\(c_i\)</span> 是第i次操作的实际代价，<span class="arithmatex">\(\Delta_i\)</span> 是第i次操作的是截的长（负值），或者补的短（正值）</p>
+<p>我们还需要满足：</p>
+<div class="arithmatex">\[\sum_{i=1}^{n}\Delta_i \geqslant 0\]</div>
+<p>所以：</p>
+<div class="arithmatex">\[\sum_{i=1}^{n}\hat{c}_i \geqslant \sum_{i=1}^{n}c_i\]</div>
+<p>但是在面对Splay tree的操作，我们并不能每一次都很好的定义一种 <span class="arithmatex">\(\Delta_i\)</span>,所以我们需要用到势能函数，来构造首尾可以相消的项</p>
+<div class="arithmatex">\[\Delta_i=\Phi(D_n)-\Phi(D_{n-1})\]</div>
+<p>这样，所有的成本</p>
+<div class="arithmatex">\[\sum_{i=1}^{n}\hat{c}_i = \sum_{i=1}^{n}c_i+\Phi(D_n)-\Phi(D_{0})\]</div>
+</div>
+<div class="admonition proof">
+<p class="admonition-title">证明Splay tree每个操作的复杂度</p>
+<p>我们定义势能函数 <span class="arithmatex">\(\Phi(T)\)</span> 为</p>
+<div class="arithmatex">\[\Phi(T)=\sum_{x\in T}Rank(x)\]</div>
+<p>其中 <span class="arithmatex">\(Rank(x)=\log S(x)\)</span></p>
+<p>即以<span class="arithmatex">\(x\)</span>为根的子树的结点数的对数，包括<span class="arithmatex">\(x\)</span>本身</p>
+<p>对于Zig操作,有一次旋转，real cost = 1
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240920140650.png" width=55%/></div></p>
+<p>在放缩的过程中，我们保留<span class="arithmatex">\(X\)</span>
+$$
+\hat{c}_i = 1 + R_2(X) - R_1(X) \
++ R_2(P) - R_1(P) \
+\leqslant 1 + R_2(X) - R_1(X)
+$$
+这是很自然的，因为<span class="arithmatex">\(R_2(P) - R_1(P) \leqslant 0\)</span></p>
+<p>对于Zig-zag操作，有两次旋转，real cost = 2</p>
+<p><div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240920141923.png" width=55%/></div></p>
+<div class="arithmatex">\[
+\hat{c}_i = 2 + R_2(X) - R_1(X) \\
++ R_2(P) - R_1(P) \\
++ R_2(G) - R_1(G) \\
+\leqslant 2 (R_2(X) - R_1(X))
+\]</div>
+<p>在这里，<span class="arithmatex">\(R_2(X)=R_1(G),R_1(P)&gt;R_1(X)\)</span>
+所以，只需要考虑<span class="arithmatex">\(R_2(P) + R_2(G)+2\)</span>为什么小于等于<span class="arithmatex">\(2R_2(X)\)</span>,对于旋转后的树，我们有</p>
+<div class="arithmatex">\[
+\begin{align*}
+S(P) + S(G) + 1 &amp;= S(X) \\ 
+\log S(P) + \log S(G) + 2 &amp;= \log 4S(P)S(G) \leqslant \log(S(P)+S(G))^2 \\
+&amp;= 2\log (S(X)-1) \leqslant 2R_2(X)
+\end{align*}
+\]</div>
+<p>对于Zig-zig操作，有两次旋转，real cost = 2</p>
+<p><div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240920143234.png" width=55%/></div></p>
+<div class="arithmatex">\[
+\hat{c}_i = 2 + R_2(X) - R_1(X) \\
++ R_2(P) - R_1(P) \\
++ R_2(G) - R_1(G) \\
+\leqslant 3 (R_2(X) - R_1(X))
+\]</div>
+<p>这种情况就稍难一点，首先我们仍然把<span class="arithmatex">\(R_2(X)=R_1(G)\)</span>,然后加上再减去<span class="arithmatex">\(R_1(X)\)</span>,此时式子变成</p>
+<div class="arithmatex">\[
+\hat{c}_i = 2 + R_1(X) - R_1(X) \\
++ R_2(P) - R_1(P) \\
++ R_2(G) - R_1(X) \\
+\leqslant 3 (R_2(X) - R_1(X))
+\]</div>
+<p>再有<span class="arithmatex">\(R_1(P) &gt; R_1(X),R_2(P)&lt;R_2(X)\)</span>
+那么就剩下<span class="arithmatex">\(R_1(X) + R_2(G) + 2 \leqslant 2R_2(X)\)</span> 
+类似的，我们有</p>
+<div class="arithmatex">\[
+\begin{align*}
+S_1(X) + S_2(G) + 1 &amp;= S_2(X) \\
+\log S_1(X) + \log S_2(G) + 2 &amp;= \log 4S_1(X)S_2(G) \leqslant \log(S_1(X)+S_2(G))^2 \\
+&amp;= 2\log (S_2(X)-1) \leqslant 2R_2(X)
+\end{align*}
+\]</div>
+<p>其实，这也是有迹可循的，主要想法就是用不等式的时候，左边两棵树没有互相包含的关系</p>
+<p>总的来说，每次操作的 amortized cost  最多不超过 <span class="arithmatex">\(3 (R_2(X) - R_1(X))+1=O(\log N)\)</span></p>
+<p>M次操作的总代价为 <span class="arithmatex">\(O(M\log N)\)</span></p>
+<p>还没完，我们仍然需要证明，当初始势能不为0时，我们的摊还代价是正确的，其实即使不为0，我们可以确定其初始势能是有界的一个数</p>
+<div class="arithmatex">\[
+ \sum_{i=1}^{n}\hat{c}_i = \sum_{i=1}^{n}c_i+\Phi(D_n)-\Phi(D_{0})
+\]</div>
+<p>则平均摊还代价为</p>
+<div class="arithmatex">\[
+  \frac{\sum_{i=1}^{n}\hat{c}_i}{n} = \frac{\sum_{i=1}^{n}c_i}{n}+\frac{\Phi(D_n)}{n}-\frac{\Phi(D_{0})}{n}
+\]</div>
+<p>当n趋近于无穷大时，尾项自然就去掉了，所以我们的摊还代价仍然大于等于实际代价，是合理的</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -2061,6 +2325,55 @@
   </form>
 
 
+<!-- Insert Giscus generated snippet here -->
+<!-- 插入 Giscus 生成的代码块 -->
+<script src="https://giscus.app/client.js"
+data-repo="kailqq/kailqq.github.io"
+data-repo-id="R_kgDOMPtz7Q"
+data-category="Announcements"
+data-category-id="DIC_kwDOMPtz7c4Cge_P"
+data-mapping="pathname"
+data-strict="0"
+data-reactions-enabled="1"
+data-emit-metadata="0"
+data-input-position="bottom"
+data-theme="preferred_color_scheme"
+data-lang="zh-CN"
+crossorigin="anonymous"
+async>
+</script>
+
+<!-- 下面保持不动即可 -->
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+                /* Instruct Giscus to change theme */
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
+
 
                 
               </article>
@@ -2102,13 +2415,13 @@
         
         
           
-          <a href="../../CS/Verilog/verilog/" class="md-footer__link md-footer__link--next" aria-label="下一页: verilog学习笔记">
+          <a href="../wk2/" class="md-footer__link md-footer__link--next" aria-label="下一页: 红黑树与B+树">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                verilog学习笔记
+                红黑树与B+树
               </div>
             </div>
             <div class="md-footer__button md-icon">
