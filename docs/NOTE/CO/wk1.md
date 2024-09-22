@@ -108,6 +108,4 @@ CISC（Complex Instruction Set Computing）是另一种指令集设计理念
 - 支持更多的寻址模式和数据类型。
 - 可以减少程序的大小，因为许多操作可以通过单条指令完成。
 
-<div align=center> <img src=".\image.png" width = 55%/> </div>  
-
 

@@ -1,128 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://localhost:8000/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/friends/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/friends/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/ADS/wk1/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/ADS/wk1/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CO/wk1/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/ADS/wk2/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CS/ASM/wk1/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CO/wk1/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CS/ASM/wk1_2/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CO/wk2/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CS/ASM/wk2/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CS/ASM/wk1/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CS/ASM/wk3/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CS/ASM/wk1_2/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CS/RUST/RUST/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CS/ASM/wk2/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CS/Verilog/verilog/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CS/ASM/wk3/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CTF/CTF/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CS/RUST/RUST/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CTF/Crypto/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CS/Verilog/verilog/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CTF/Misc/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CTF/CTF/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CTF/reverse/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CTF/Crypto/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CTF/web/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CTF/Misc/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/CTF/%E7%BB%93%E8%AF%BE%E5%BF%83%E5%BE%97/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CTF/reverse/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/LA/linear-algebra/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CTF/web/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/LA/note/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/CTF/%E7%BB%93%E8%AF%BE%E5%BF%83%E5%BE%97/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/LA/%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/LA/linear-algebra/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/MA/math1/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/LA/note/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/MA/math2/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/LA/%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/Physics/eletronic/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/MA/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/NOTE/Probability/first/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/Physics/eletronic/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/blog/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/Probability/first/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://localhost:8000/movies/movies/</loc>
-         <lastmod>2024-09-14</lastmod>
+         <loc>https://kailqq.cc/NOTE/Probability/others/</loc>
+         <lastmod>2024-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://kailqq.cc/blog/</loc>
+         <lastmod>2024-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://kailqq.cc/movies/movies/</loc>
+         <lastmod>2024-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

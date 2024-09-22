@@ -76,7 +76,7 @@ $$
 $$
 
 !!!Example
-    有 \(n\) 个球，\(N\) 个格子 (\(n \leq N\))，球与格子都是可以区分的。每个球落在各格子的概率相同 (设格子足够大，可以容纳任意多个球)。将这 \(n\) 个球随机地放入 \(N\) 个格子，求：
+    有 \(n\) 个球，\(N\) 个格子 (\(n \leqslant N\))，球与格子都是可以区分的。每个球落在各格子的概率相同 (设格子足够大，可以容纳任意多个球)。将这 \(n\) 个球随机地放入 \(N\) 个格子，求：
 
     1. **指定的 \(n\) 格各有一球的概率；**
     2. **有 \(n\) 格各有一球的概率。**
@@ -132,13 +132,13 @@ $A_g=\{\text{任取样本点，位于区域 }g\in\Omega\text{ 的概率}\}$
     样本空间：
 
     \[
-    \Omega = \{(\varphi, x) \mid 0 \leq \varphi \leq \pi, \, 0 \leq x \leq \frac{a}{2}\}
+    \Omega = \{(\varphi, x) \mid 0 \leqslant \varphi \leqslant \pi, \, 0 \leqslant x \leqslant \frac{a}{2}\}
     \]
 
     为一矩形。针与平行线相交的区域是：
 
     \[
-    g = \{(\varphi, x) \mid x \leq \frac{l}{2} \sin \varphi\} \quad (\text{见图}).
+    g = \{(\varphi, x) \mid x \leqslant \frac{l}{2} \sin \varphi\} \quad (\text{见图}).
     \]
 
     ![alt text](image.png)
@@ -163,7 +163,7 @@ $A_g=\{\text{任取样本点，位于区域 }g\in\Omega\text{ 的概率}\}$
 
     因为概率 \(P\) 可以用多次重复试验的频率来近似，所以可以得到它的近似值。方法是重复投针 \(N\) 次(或一次投针若干枚，总计 \(N\) 枚)，统计与平行线相交的枚数 \(n\)，则 \(P \approx n/N\)。
 
-    又因为 \(l \leq a\) 且可精确测量，故从 \(2l/a\pi \approx n/N\) 可解得 \(\pi \approx 2lN/an\)。历史上有人不止一次做过这个试验，做得最好的一个投掷了 3408 次，算得 \(\pi \approx 3.1415929\)，其精确度已经达到小数点后第六位。
+    又因为 \(l \leqslant a\) 且可精确测量，故从 \(2l/a\pi \approx n/N\) 可解得 \(\pi \approx 2lN/an\)。历史上有人不止一次做过这个试验，做得最好的一个投掷了 3408 次，算得 \(\pi \approx 3.1415929\)，其精确度已经达到小数点后第六位。
 
     设计一个随机试验，通过大量重复试验得到某种结果，以确定我们感兴趣的某个量，由此而发展的蒙特卡洛(Monte-Carlo)方法为这种计算提供了一种途径。随着电子计算机的发展，基于随机试验法的内容，得使这种方法变得非常有效。
 
@@ -195,15 +195,20 @@ $A_g=\{\text{任取样本点，位于区域 }g\in\Omega\text{ 的概率}\}$
 2. 若 \(A \in \mathcal{F}\)，则 \(A^c \in \mathcal{F}\)；
 3. 若 \(A_1, A_2, \ldots, A_n, \ldots \in \mathcal{F}\)，则 \(\bigcup_{n=1}^\infty A_n \in \mathcal{F}\)。
 
+!!!key-point 
+    总结为事件域中的运算是封闭的
+
+
+
 满足这三个条件的 \(\mathcal{F}\) 称为 \(\Omega\) 上的 \(\sigma\)-代数或 \(\sigma\)-域。 \(\mathcal{F}\) 中的元素（\(\Omega\) 的子集）称为事件。
 
 由这三个条件，可以推得事件域有下列性质：
 
-4. \(\emptyset \in \mathcal{F}\) （因 \(\emptyset = \Omega^c\)）；
+1. \(\emptyset \in \mathcal{F}\) （因 \(\emptyset = \Omega^c\)）；
 
-5. 若 \(A_1, \ldots, A_n, \ldots \in \mathcal{F}\)，则 \(\bigcap_{n=1}^\infty A_n \in \mathcal{F}\) （因 \(\bigcap_{n=1}^\infty A_n = \left( \bigcup_{n=1}^\infty A_n^c \right)^c\)）；
+2. 若 \(A_1, \ldots, A_n, \ldots \in \mathcal{F}\)，则 \(\bigcap_{n=1}^\infty A_n \in \mathcal{F}\) （因 \(\bigcap_{n=1}^\infty A_n = \left( \bigcup_{n=1}^\infty A_n^c \right)^c\)）；
 
-6. 若 \(A_1, \ldots, A_n \in \mathcal{F}\)，则 \(\bigcup_{k=1}^n A_k \in \mathcal{F}\)，\(\bigcap_{k=1}^n A_k \in \mathcal{F}\)。
+3. 若 \(A_1, \ldots, A_n \in \mathcal{F}\)，则 \(\bigcup_{k=1}^n A_k \in \mathcal{F}\)，\(\bigcap_{k=1}^n A_k \in \mathcal{F}\)。
 
 
 事件域也可以根据问题选择。因为对同一个样本空间 $\Omega$，可以有很多 $\sigma$ -代数。例如最简单的是  
@@ -215,7 +220,7 @@ $A_g=\{\text{任取样本点，位于区域 }g\in\Omega\text{ 的概率}\}$
 复杂的如 
 
 \[
-\mathcal{F}_2 = \{ \Omega \text{的一切子集} \}
+\mathcal{F}_2 = \{ \Omega \text{的一切子集} \}+
 \]  
 
 也是$\sigma$-代数，所以要适当选择。特别地，若Ω为有限或可列个样本点组成，则常取Ω的一切子集所成的集类作为  
@@ -265,20 +270,81 @@ P \left( \sum_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i).
 - (多还少补定理，容斥原理)
 
 \[
-P(A_1 \cup A_2 \cup \ldots \cup A_n) = \sum_{i=1}^{n} P(A_i) - \sum_{1 \leq i < j \leq n} P(A_i A_j) + \ldots + (-1)^{n-1} P(A_1 A_2 \ldots A_n).
+P(A_1 \cup A_2 \cup \ldots \cup A_n) = \sum_{i=1}^{n} P(A_i) - \sum_{1 \leqslant i < j \leqslant n} P(A_i A_j) + \ldots + (-1)^{n-1} P(A_1 A_2 \ldots A_n).
 \]
+
+!!!proof "证明-数学归纳法"
+
+      
+$$
+P(A_1 \cup A_2 \cup \ldots \cup A_n) = \sum_{i=1}^{n} P(A_i) - \sum_{1 \leqslant i < j \leqslant n} P(A_i A_j) + \ldots + (-1)^{n-1} P(A_1 A_2 \ldots A_n)
+$$
+
+- 验证基例 \(n = 1\)
+当 \(n = 1\) 时，定理变为：
+
+$$
+P(A_1) = P(A_1)
+$$
+
+显然这是正确的，所以基例成立。
+
+- 归纳假设
+假设对于 \(n = k\) 时，定理成立，即：
+
+$$
+P(A_1 \cup A_2 \cup \ldots \cup A_k) = \sum_{i=1}^{k} P(A_i) - \sum_{1 \leqslant i < j \leqslant k} P(A_i A_j) + \ldots + (-1)^{k-1} P(A_1 A_2 \ldots A_k)
+$$
+
+- 证明 \(n = k+1\) 时的情形
+现在我们需要证明，当有 \(k+1\) 个事件 \(A_1, A_2, \ldots, A_{k+1}\) 时，定理同样成立。
+
+首先考虑 \(P(A_1 \cup A_2 \cup \ldots \cup A_{k+1})\)：
+
+$$
+P(A_1 \cup A_2 \cup \ldots \cup A_{k+1}) = P((A_1 \cup A_2 \cup \ldots \cup A_k) \cup A_{k+1})
+$$
+
+利用概率的加法原理，有：
+
+$$
+P((A_1 \cup A_2 \cup \ldots \cup A_k) \cup A_{k+1}) = P(A_1 \cup A_2 \cup \ldots \cup A_k) + P(A_{k+1}) - P((A_1 \cup A_2 \cup \ldots \cup A_k) A_{k+1})
+$$
+
+根据归纳假设，\(P(A_1 \cup A_2 \cup \ldots \cup A_k)\) 可以展开为：
+
+$$
+P(A_1 \cup A_2 \cup \ldots \cup A_k) = \sum_{i=1}^{k} P(A_i) - \sum_{1 \leqslant i < j \leqslant k} P(A_i A_j) + \ldots + (-1)^{k-1} P(A_1 A_2 \ldots A_k)
+$$
+
+因此，原式变为：
+
+$$
+P(A_1 \cup A_2 \cup \ldots \cup A_{k+1}) = 
+\\ \left(\sum_{i=1}^{k} P(A_i) - \sum_{1 \leqslant i < j \leqslant k} P(A_i A_j) + \ldots + (-1)^{k-1} P(A_1 A_2 \ldots A_k)\right)
++ P(A_{k+1}) - P((A_1 \cup A_2 \cup \ldots \cup A_k) A_{k+1})
+$$
+
+注意，\(P((A_1 \cup A_2 \cup \ldots \cup A_k) A_{k+1})\) 可以展开为：
+
+$$
+P((A_1 \cup A_2 \cup \ldots \cup A_k) A_{k+1}) = \sum_{i=1}^{k} P(A_i A_{k+1}) - \sum_{1 \leqslant i < j \leqslant k} P(A_i A_j A_{k+1}) + \ldots + (-1)^{k-1} P(A_1 A_2 \ldots A_k A_{k+1})
+$$
+
+将其代入之前的公式中，得到：
+
+$$
+P(A_1 \cup A_2 \cup \ldots \cup A_{k+1}) = \sum_{i=1}^{k+1} P(A_i) - \sum_{1 \leqslant i < j \leqslant k+1} P(A_i A_j) + \ldots + (-1)^{k} P(A_1 A_2 \ldots A_{k+1})
+$$
+
+这正是我们需要证明的 \(n = k+1\) 的情形。
 
 - (次可加性)
 
 \[
-P(A_1 \cup A_2 \cup \ldots \cup A_n) \leq \sum_{i=1}^{n} P(A_i). 
+P(A_1 \cup A_2 \cup \ldots \cup A_n) \leqslant \sum_{i=1}^{n} P(A_i). 
 \]
 
-### 概率测度的连续性
-
-Here's the text from the image converted to Markdown:
-
----
 
 ### 1.3.3 概率测度的连续性
 
@@ -319,7 +385,7 @@ $$
     P(AB)=P(A|B)P(B)
 $$
 
-??? general "推广到 $n$ 个事件"
+???general "推广到 $n$ 个事件"
     推广到 $n$ 个事件，有链式法则：
 
     $$
@@ -353,8 +419,8 @@ $$
         P(B)=\sum_{i=1}^nP(A_i)P(B|A_i)
     $$
 
-??? general "Proof"
 
+???Proof
     $$
     \begin{aligned}
         P(B)&=P(B\Omega)\\
@@ -373,7 +439,8 @@ $$
     {\sum_{k=1}^\infty P(A_k)P(B|A_k)}
     $$
 
-**hint for proof**: $P(A_i|B)=\dfrac{P(A_iB)}{P(B)}$，分子用链式法则展开，分母用全概率公式展开。
+!!!proof
+    $P(A_i|B)=\dfrac{P(A_iB)}{P(B)}$，分子用链式法则展开，分母用全概率公式展开。
 
 !!! tip "深入了解条件概率的意义"
     $P(A_i)$：不知 $B$ 是否发生，称为**先验 (priori) 概率**
@@ -439,7 +506,7 @@ $$
     或者可以直接这么定义：$A_1,A_2,\cdots,A_n$ 相互独立，如果
 
     $$
-    \forall r\leqslant n(r\in \mathbb N_+),\;
+    \forall r\leqslantslant n(r\in \mathbb N_+),\;
     P\left(\prod_{i=1}^rA_{n_i}\right)=\prod_{i=1}^r P(A_{n_i}),\;
-    1\leqslant n_1<n_2<\cdots<n_r\leqslant n
+    1\leqslantslant n_1<n_2<\cdots<n_r\leqslantslant n
     $$
