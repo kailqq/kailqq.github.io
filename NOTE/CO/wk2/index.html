@@ -2057,7 +2057,7 @@
 
 <h1 id="arithmetic-for-computer">Arithmetic for Computer<a class="headerlink" href="#arithmetic-for-computer" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2449 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2465 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
 </div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>计算机中的指令可以分为三类：</p>
@@ -2247,6 +2247,10 @@
 <p>每个操作结束后都要移位，和 2.1.1 中类似</p>
 </li>
 </ul>
+<div class="admonition key-point">
+<p class="admonition-title">Key-point</p>
+<p>需要注意的是 Booth算法中，每一次是两位两位看，对于<span class="arithmatex">\(n\)</span>位的，需要进行<span class="arithmatex">\(n\)</span>次操作,但是两位两位看只能看到<span class="arithmatex">\(n-1\)</span>位，因此开始之前是需要在最后一位加上一个 0 再开始做乘法的</p>
+</div>
 <p>注意移位时不要改变符号位。</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -2254,42 +2258,50 @@
 <p>被乘数 Multiplicand 是 0010,  乘数 Multiplier 是 1101.<br />
 最开始将积 0000 放在高四位, 1101 作为乘数放在低四位。
 最开始 10, 即执行减操作, <span class="arithmatex">\(0000-0010=1110\)</span>. 答案依然放在高四位，随后右移，以此类推。<br />
-注意右移的时候是**算术右移**, <span class="arithmatex">\(bit_{-1}\)</span> 也可能会改变。</p>
+注意右移的时候是 <strong>算术右移</strong> ，即符号位不变。</p>
 </div>
 <h4 id="faster-multiplication">Faster Multiplication<a class="headerlink" href="#faster-multiplication" title="Permanent link">&para;</a></h4>
 <p>32 位数乘 32 位数，相当于 32 个 32 位数相加。（并行加速）</p>
 <div align=center> <img src="http://cdn.hobbitqia.cc/202303102249772.png" width = 60%/> </div>
 
 <h3 id="division">Division<a class="headerlink" href="#division" title="Permanent link">&para;</a></h3>
-<p>Dividend (被除数) <span class="arithmatex">\(\div\)</span> Divisor (除数)   </p>
+<div class="arithmatex">\[
+Dividend  = quotient \times Divisor + Reminder
+\]</div>
+<p>Iterative subtraction:</p>
 <ul>
-<li>
-<p>将除数放到高位。从高位开始减，减完将除数右移。商也随之不断左移。如果减完之后是负数，需要还回去。
-    <div align=center> <img src="http://cdn.hobbitqia.cc/202303102252551.png" width = 60%/> </div>  </p>
-<details class="example">
-<summary>7÷2</summary>
-<p><div align=center> <img src="http://cdn.hobbitqia.cc/202303102256325.png" width = 60%/> </div>  </p>
-</details>
-</li>
-<li>
-<p>除数不动，被除数不停地往左移。减到最后一次，如果是小于 0 的，说明不用减了，剩下的就是余数，需要右移移回来。（即将左半部分右移一位）    </p>
-<p>因为每次都是将除数和被除数最高位减，减了之后高位就没用了，可以移出去。<br />
-<div align=center> <img src="http://cdn.hobbitqia.cc/202303102259194.png" width = 60%/> </div></p>
-<p>实际上这里结果是 129 位，防止 carry 丢失</p>
-<details class="example">
-<summary>Example</summary>
-<p><div align=center> <img src="http://cdn.hobbitqia.cc/202303102303764.png" width = 60%/> </div></p>
-<p>这里最开始余数就是整个被除数。 <br />
-类似乘法，这里的除数只和被除数的高位相减。如果减出来是负数，需要加回去。每次减完之后先左移，然后最右边的一位放商。 <br />
-4.1 时其实我们已经结束了除法操作，此时的高位就是我们的余数，但是这最后一次的结果还没有放回到 Reminder 中，因此我们需要再往左移一位为商留出空间，放入后，再把高位余数往右移动以抵消影响。（个人认为可以直接对低位左移一位即可）</p>
-</details>
-</li>
+<li>Greater than 0: then we get a 1</li>
+<li>Smaller than 0: then we get a 0</li>
 </ul>
-<p>带符号的除法：要求余数和被除数符号相同。<br />
-除零会产生溢出，由软件检测。</p>
+<details class="version 1">
+<summary>Version</summary>
+<ul>
+<li>At At first the divisor is in the left half of the divisor register,the dividend is in the right half of the remainder register.</li>
+<li>Shift the divisor right each step
+<div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241404170.png" width = 60%/> </div><br />
+即对每一步，都在余数中减去除数，如果结果大于等于0，那么商左移上1，否则将结果加回去，商左移上0。
+ <div align=center> <img src="  https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241412849.png" width = 60%/> </div></li>
+</ul>
+<p><strong>需要注意的是,由于一开始remainder寄存器右边是被除数，divisor寄存器左半边是除数，前很多次的结果都是负的</strong></p>
+</details>
+<div class="admonition eg">
+<p class="admonition-title">7 / 2</p>
+<p><span class="arithmatex">\(00000111 / 0010\)</span>
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241417339.png" width = 60%/> </div>   </p>
+</div>
+<details class="version final">
+<summary>Version</summary>
+<p>优化过程与乘法类似，因为每次都是remainder的最高位在减，减完就没用了，可以移出去，不再右移divisor，而是左移remainder，并且将quotient也存在Remainder寄存器每次左移产生的空位中
+<div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241424728.png" width = 60%/> </div>
+如下
+<div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241426038.png" width = 60%/> </div></p>
+</details>
+<div class="admonition eg">
+<p class="admonition-title">Eg</p>
+<p><div align=center> <img src=" https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241436680.png" width = 60%/> </div>
+4.1 时其实我们已经结束了除法操作，此时的高位就是我们的余数，但是这最后一次的结果还没有放回到 Reminder 中，因此我们需要再往左移一位为商留出空间，放入后，再把高位余数往右移动以抵消影响。</p>
+</div>
 <h2 id="floating-point-number">Floating point number<a class="headerlink" href="#floating-point-number" title="Permanent link">&para;</a></h2>
-<!-- 可见 [ICS Notes](https://note.hobbitqia.cc/ICS/ICS-2/#floating-point)   -->
-
 <table>
 <thead>
 <tr>
