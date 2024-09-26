@@ -2057,7 +2057,7 @@
 
 <h1 id="arithmetic-for-computer">Arithmetic for Computer<a class="headerlink" href="#arithmetic-for-computer" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2465 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2754 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>计算机中的指令可以分为三类：</p>
@@ -2296,12 +2296,24 @@ Dividend  = quotient \times Divisor + Reminder
 如下
 <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241426038.png" width = 60%/> </div></p>
 </details>
+<div class="admonition key-point">
+<p class="admonition-title">Key-point</p>
+</div>
+<p>remainder 寄存器其实要多一位的，因为最后一步要右移，不能直接把它丢掉</p>
 <div class="admonition eg">
 <p class="admonition-title">Eg</p>
 <p><div align=center> <img src=" https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241436680.png" width = 60%/> </div>
 4.1 时其实我们已经结束了除法操作，此时的高位就是我们的余数，但是这最后一次的结果还没有放回到 Reminder 中，因此我们需要再往左移一位为商留出空间，放入后，再把高位余数往右移动以抵消影响。</p>
 </div>
+<p>对于有符号数的除法，用绝对值来做，然后在结果上加上符号位</p>
+<p>sign of quotient = sign of dividend <span class="arithmatex">\(\oplus\)</span> sign of divisor</p>
+<p>sign of remainder = sign of dividend</p>
 <h2 id="floating-point-number">Floating point number<a class="headerlink" href="#floating-point-number" title="Permanent link">&para;</a></h2>
+<details class="info">
+<summary>进制转换</summary>
+<p>二进制小数转十进制，如果是科学计数法，可以先仿照十进制的科学计数法用指数进行小数点的移动，然后再转换，这样可以减少计算小数的次数。</p>
+<p>十进制转换二进制，可以先转换整数部分，再转换小数部分，小数部分可以依次与<span class="arithmatex">\(2^(-n)\)</span>比较，如果大于等于，那么结果的第 n 位为 1，否则为 0，上了 1 之后，要减去 <span class="arithmatex">\(2^(-n)\)</span>，再继续比较，直到达到精度的要求。</p>
+</details>
 <table>
 <thead>
 <tr>
@@ -2313,13 +2325,13 @@ Dividend  = quotient \times Divisor + Reminder
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Float</td>
+<td style="text-align: left;">Float(位数)</td>
 <td>1</td>
 <td>8</td>
 <td style="text-align: right;">23</td>
 </tr>
 <tr>
-<td style="text-align: left;">Double</td>
+<td style="text-align: left;">Double(位数)</td>
 <td>1</td>
 <td>11</td>
 <td style="text-align: right;">52</td>
@@ -2332,29 +2344,22 @@ Dividend  = quotient \times Divisor + Reminder
 <li>M: 尾数. Normally, <span class="arithmatex">\(M=1.frac=1+frac\)</span>.</li>
 <li>E: 阶码. Normally, <span class="arithmatex">\(E=exp-Bias\)</span> where <span class="arithmatex">\(Bias=127\)</span> for floating point numbers. <span class="arithmatex">\(Bias = 1023\)</span> for double. </li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition key-point">
+<p class="admonition-title">Key-point</p>
 <ul>
 <li>为什么要把 exponent 放在前面？（因为数的大小主要由 exponent 决定。）</li>
-<li>为什么需要 Bias？（移码） </li>
-<li>以上是规格化数，尾数前应该有前导 1. 非规格化数的格式见<a href="https://note.hobbitqia.cc/CO/co3/#denormal-numbers">这里</a>。</li>
+<li>为什么需要 Bias？（移码）可以不保存负数，用的是IEEE标准，即对于8位的移码，Bias=2<sup>7-1=127，对于11位的移码，Bias=2</sup>10-1=1023。 </li>
+<li>以上是规格化数，尾数前应该有前导 1，就类似于十进制的科学计数法，前导必须大于0小于10.对于2进制，前导必须大于0小于2，也就是1.</li>
 </ul>
 </div>
 <h3 id="denormal-numbers">Denormal Numbers<a class="headerlink" href="#denormal-numbers" title="Permanent link">&para;</a></h3>
 <ul>
 <li><span class="arithmatex">\(Exponent=000\ldots 0\)</span> <br />
-非规格化数，让数在较小时能逐渐下溢出。  <br />
+非规格化数，让数在较小时能逐渐下溢出，在Exponent的部分以全零作为保留字，但是并不代表指数是0，而是说此时的小数不是1.xxxx而是0.xxxx。  <br />
 <span class="arithmatex">\(x=(-1)^s\times((0+Fraction)\times 2^{1-Bias})\)</span><br />
-<strong>注意此时指数是 <span class="arithmatex">\(1-Bias=-126/-1022\)</span></strong>.   <ul>
-<li>Denormal with <span class="arithmatex">\(Fraction = 000...0\)</span> we define <span class="arithmatex">\(x=0\)</span></li>
+<strong>注意此时指数是 <span class="arithmatex">\(1-Bias=-126/-1022\)</span></strong>.   </li>
 </ul>
-</li>
-<li><span class="arithmatex">\(Exponent=111\ldots 1, Fraction=000\ldots 0\)</span> <br />
-表示 <span class="arithmatex">\(\pm \inf\)</span>  </li>
-<li><span class="arithmatex">\(Exponent=111\ldots 1, Fraction\neq 000\ldots 0\)</span> 
-表示 <em>NaN</em> (Not-a-Number)  </li>
-</ul>
-<div align=center> <img src="http://cdn.hobbitqia.cc/202303081154192.png" width = 60%/> </div>
+<div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409261348992.png" width = 80%/> </div>
 
 <h3 id="precision">Precision<a class="headerlink" href="#precision" title="Permanent link">&para;</a></h3>
 <ul>
