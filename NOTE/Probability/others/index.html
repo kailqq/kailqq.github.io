@@ -126,8 +126,6 @@
     
       <link rel="stylesheet" href="../../../css/card.css">
     
-      <link rel="stylesheet" href="../../../css/latex.css">
-    
       <link rel="stylesheet" href="../../../css/newfonts.css">
     
       <link rel="stylesheet" href="../../../css/newadmonitions.css">
@@ -1701,7 +1699,7 @@
 
 <h1 id="_1">概率相关的知识<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 393 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 428 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 1 分钟</p>
 </div>
 <blockquote>
 <p>记录一些学习过程中发现的有趣的概率问题</p>
@@ -1709,7 +1707,14 @@
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>相互独立，交事件可以拆开变成概率相乘；
-互不相交，并事件可以拆开变成概率相加。</p>
+且若AB独立，则A与B的补事件也独立</p>
+<div class="arithmatex">\[
+    P(A \cap B) = P(A) \cdot P(B)
+\]</div>
+<p>互不相交(互斥)，并事件可以拆开变成概率相加。</p>
+<div class="arithmatex">\[
+    P(A \cup B) = P(A) + P(B)
+\]</div>
 </div>
 <div class="admonition question">
 <p class="admonition-title">n 个球放入m个不同的盒子</p>
