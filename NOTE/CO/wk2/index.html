@@ -1670,7 +1670,7 @@
 
 <h1 id="arithmetic-for-computer">Arithmetic for Computer<a class="headerlink" href="#arithmetic-for-computer" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2872 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 10 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 3268 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 11 分钟</p>
 </div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>计算机中的指令可以分为三类：</p>
@@ -1919,8 +1919,8 @@ Dividend  = quotient \times Divisor + Reminder
 4.1 时其实我们已经结束了除法操作，此时的高位就是我们的余数，但是这最后一次的结果还没有放回到 Reminder 中，因此我们需要再往左移一位为商留出空间，放入后，再把高位余数往右移动以抵消影响。</p>
 </div>
 <p>!!!question "为什么除法的移位这么奇怪“
-      对于Version1，要进行 <span class="arithmatex">\(n+1\)</span> 次的移位，是为了在最后一步将商补全，同时也抵消最后一步的影响来满足余数的正确性；
-      对于Version2，要进行第一次的整体左移是为了得到正确的余数，而在最后一步中，由于商还要进来，余数会多出一位，因此要左半部分右移一位。</p>
+    对于Version1，要进行 <span class="arithmatex">\(n+1\)</span> 次的移位，是为了在最后一步将商补全，同时也抵消最后一步的影响来满足余数的正确性；
+    对于Version2，要进行第一次的整体左移是为了得到正确的余数，而在最后一步中，由于商还要进来，余数会多出一位，因此要左半部分右移一位。</p>
 <p>对于有符号数的除法，用绝对值来做，然后在结果上加上符号位</p>
 <p>sign of quotient = sign of dividend <span class="arithmatex">\(\oplus\)</span> sign of divisor</p>
 <p>sign of remainder = sign of dividend</p>
@@ -2046,25 +2046,27 @@ Dividend  = quotient \times Divisor + Reminder
 </ul>
 <h2 id="accurate-arithmetic">Accurate Arithmetic<a class="headerlink" href="#accurate-arithmetic" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>Extra bits of precision (guard, round, sticky)</p>
-<ul>
-<li>
-<p>guard, round<br />
+<li>Extra bits of precision (guard, round, sticky)<ul>
+<li>guard, round<br />
 为了保证四舍五入的精度。<br />
-结果没有，只在运算的过程中保留。</p>
+结果没有，只在运算的过程中保留</li>
+<li>sticky<br />
+末尾如果不为全 0, 则 sticky 位为 1, 否则为 0.</li>
+</ul>
+</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><div align=center> <img src="http://cdn.hobbitqia.cc/202303150858176.png" width = 50%/> </div></p>
+<p>Guard, round, sticky 位的作用
+保留位和舍入位的作用可以提高精度，例如十进制中如果加上舍入位，那么在51和99之间的会向上舍入，而在50和00之间的会向下舍入，这样可以减少误差。
+例如2.34+0.0256=2.3656,舍入为2.37，而2.34+0.02=2.36，舍入为2.36，存在1ulp的误差；
+在有些情况下，结果左移之后将保护位变成了最低位，只剩下舍入位一位来进行舍入，这样会导致误差增大，而加上sticky位，可以保证在舍入位后面的位数不为0时，舍入位不会被舍去，从而提高精度。例如如果是2.34+0.0050001，如果没有sticky位，那么结果是2.3450，舍入到最近的偶数2.34，而有了sticky位，知道结果是比2.3450大，舍入到最近的偶数2.35。</p>
+<p>在二进制中，就是1进0舍，例如小数点后第三位为最低位的1.100_10+0.000_00_11111=1.100_10，此时Guard位为1，Round位为0，Sticky位为1,如果没有sticky位，那么结果就是舍入到最近的偶数1.100，而有了sticky位，知道结果是比1.100_10大，舍入到1.101。</p>
 </div>
-</li>
-<li>
-<p>sticky<br />
-末尾如果不为全 0, 则 sticky 位为 1, 否则为 0.</p>
-</li>
-</ul>
-</li>
-</ul>
+<div class="admonition key-point">
+<p class="admonition-title">Key-point</p>
+<p>总的来说，G位如果大于进制的一半，则看它的下一位R位，如果R位大于0了，那么进位，如果为0，那么看S位，如果S位大于0，那么进位。如果RS位都是0了，那么选择最近的偶数来进位。(LSB是奇数，进位；LSB是偶数，舍去屁股后面的)</p>
+</div>
 <p>损失不会超过 0.5 个 ulp. </p>
 
 
