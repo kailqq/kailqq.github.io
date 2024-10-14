@@ -1,9 +1,9 @@
-# 普通物理学二(H)
+# 电学部分
 > 授课:方明虎
 
 ## Electric Charge and Coulomb's Law(电荷和库仑定律)
 
-**A ring of charge**
+### A ring of charge
 
 对于一个均匀带电的圆环，距离其中心 $z$ 的带电量为 $q_0$ 所受的沿 $Z$ 方向的力 $F_z$ 
 
@@ -43,7 +43,7 @@ F_z = \int dF_z = \int dF \cos \theta = \int \frac{q_0 \lambda Rd\phi}{4 \pi \ep
       z \to +\infty, F_z \to \frac{1}{4 \pi \epsilon_0} \dfrac{q_0q}{z^2}
     \]
 
-**A disk of charge**
+### A disk of charge
 
 如果是一个圆盘，$F_z$ 可以用圆环来逼近
 
@@ -77,6 +77,15 @@ $$ z \to +\infty, F_z \to \frac{1}{4 \pi \epsilon_0} \dfrac{q_0q}{z^2} $$
 \[
   \left( 1 - \frac{z}{\sqrt{z^2 + R^2}} \right) \to \left( 1- (1+\frac{R^{2}}{z^{2}})^{-\frac{1}{2}} \right) = \frac{R^{2}}{2z^{2}}
 \]
+
+!!!key-point
+    如果是一个无穷大的圆盘，那么$R \to \infty$,此时
+    $F_z = \dfrac{1}{4 \pi \epsilon_0} \dfrac{2q_0q}{R^2}$
+    其电场为
+    
+    \[
+    E_z = \frac{\sigma}{2 \varepsilon_0}
+    \]
 
 **A infinite stick of charge**
 
@@ -230,3 +239,412 @@ $$
 
 第一个式子的负号是因为力矩与角度的变化方向相反
 
+
+## Gauss's Law(高斯定理)
+
+### 电场的高斯定理
+
+!!!Definition
+    The net electric flux through any closed surface is proportional to the charge enclosed by that surface.
+
+    \[
+       \Phi = \oiint \boldsymbol{E} \cdot d\boldsymbol{A} = \frac{q_{enc}}{\varepsilon_0}
+    \]
+
+    **E不一定只由q产生，但是q只用计算被包裹住的电荷**
+
+在数学分析二中，我们也知道Gauss公式，即：
+
+!!!Note
+    设 $\Omega$ 是分段光滑的封闭曲面构成的二维单连通区域，函数 $P(x,y,z),Q(x,y,z),R(x,y,z)$ 在 $\Omega $ 上具有连续偏导数,
+    则
+
+    \[
+      \iiint_{\Omega} \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \right) dV = \iint_{\partial \Omega} Pdydz + Qdzdx + Rdxdy
+    \]  
+
+将两者结合起来，我们就可以得到高斯定理的微分形式
+
+\[
+   \Phi=\oiint \boldsymbol{E} \cdot d\boldsymbol{A} = \iiint \nabla \cdot \boldsymbol{E} dV
+\]
+
+而
+
+\[
+     \frac{q_{enc}}{\varepsilon_0}= \iiint \frac{\rho}{\varepsilon_0} dV 
+\]
+
+所以
+
+\[
+   \nabla \cdot \boldsymbol{E} = \frac{\rho}{\varepsilon_0}
+\]
+
+
+!!!key-point
+      **运用高斯定理可以通过电荷求电场，也可以通过电场求电荷**，关键在于高斯面的选取，一般而言，选取球面，圆柱面，或者长方体表面更加方便计算，高斯定理只是再计算一些具有特殊对称性物体时，非常的方便，对于一般的物体，还是要用库仑定律来计算
+
+
+!!!Note
+    我们知道导体内部的电场是0，由高斯定理，导体的内部没有电荷，所以其电荷分布在表面。
+
+### 静电场的环路定律
+
+!!!Definition "The circuit Law of the electrostatic field"
+    
+    \[
+    \oint \boldsymbol{E} \cdot d\boldsymbol{l} = 0
+    \]
+
+    then
+    
+    \[
+    \nabla \times \boldsymbol{E} = 0
+    \]
+
+这个是由Stokes定理推出的，即：
+
+!!!Note
+    设 $\Omega$ 是光滑的曲面，其边界 $\partial \Omega$ 是分段光滑的闭曲线函数 $P(x,y,z),Q(x,y,z),R(x,y,z)$ 在 $\Omega，\partial \Omega $ 上具有连续偏导数,
+    则
+
+    \begin{align*}
+      \oint_{\partial \Omega} Pdx + Qdy + Rdz &= \iint_{\Omega} \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) dydz + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right) dzdx + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dxdy\\
+      &= \left\lvert  \begin{matrix} \cos \alpha & \cos \beta & \cos \gamma \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & R \end{matrix} \right\rvert dS\\
+      &=  \left\lvert \begin{matrix} dydz & dzdx & dxdy \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & R \end{matrix} \right \lvert\\
+      &= \iint_{\Omega} \nabla \times \boldsymbol{F} \cdot d\boldsymbol{S}
+    \end{align*}
+
+
+
+
+## Electric Potential(电势)
+
+### 电势能与电势
+
+电势是电场中某一点的物理量，定义为单位正电荷在该点所具有的电势能。具体来说，电势 \( V \) 可以表示为：
+
+\[ V = \frac{U}{q} \]
+
+其中 \( U \) 是电势能，\( q \) 是电荷量。电势是一个标量，通常相对于无限远处的电势为零来计算。
+
+!!! key-point
+    
+    计算某点a的电势的可以使用从该点到无穷远的电场的积分：
+
+    \[
+    V = \int_{a}^{\infty} \boldsymbol{E} \cdot d\boldsymbol{l}
+    \]
+
+    因为$W_{a}^{\infty}=-U_{a}^{\infty}=U_a-U_{\infty}$,而 $U_{\infty}=0$,$W=\int q \boldsymbol{E} \cdot d\boldsymbol{l}$,$V = \frac{U}{q}$
+
+
+根据这个式子可以得到 **点电荷产生的电势**
+
+\[
+V = \frac{q}{4 \pi \varepsilon_0 r}
+\]
+
+根据点电荷产生的电势，可以得到电偶极矩产生的电势
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301225077.png" width=55%/></div>
+
+\begin{align*}
+  V &= \dfrac{q}{4 \pi \varepsilon_0} \left( \frac{1}{r_1} - \frac{1}{r_2} \right)\\
+    &=  \dfrac{q}{4 \pi \varepsilon_0} \left( \frac{r_1-r_2}{r_1r_2}\right)
+\end{align*}
+
+当 $r >> a$, $r_1 \approx r_2 \approx r$，所以$r_1-r_2 \approx 2a\cos \theta,r_1r_2 \approx r^2,p=2aq$
+
+\begin{align*}
+  V &=  \dfrac{q}{4 \pi \varepsilon_0} \left( \dfrac{2a \cos \theta}{r^2}\right)\\
+    &=  \dfrac{p \cos \theta}{4 \pi \varepsilon_0 r^2}\\
+    &=  \dfrac{p \cdot \hat{r}}{4 \pi \varepsilon_0 r^2}
+\end{align*}
+
+$\theta = \frac{\pi}{2},V=0;\theta=0,V_{max}>0;\theta=\pi,V_{min}<0$
+
+也可以推导电四偶极矩的电势
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301236247.png" width=55%/></div>
+
+\begin{align*}
+V(r) &= \sum_i V_i(r_i) \\
+     &= \frac{1}{4 \pi \epsilon_0} \left( \frac{q}{r - d} + \frac{-2q}{r} + \frac{q}{r + d} \right) \\
+     &= \frac{1}{4 \pi \epsilon_0} \frac{2 q d^2}{r(r^2 - d^2)} \\
+     &= \frac{1}{4 \pi \epsilon_0} \frac{2 q d^2}{r^3 \left( 1 - \frac{d^2}{r^2} \right)}
+\end{align*}
+
+$$For \enspace d << r, \frac{d^2}{r^2} << 1 \\ V(r) = \frac{2 q d^2}{4 \pi \epsilon_0 r^3} = \frac{Q}{4 \pi \epsilon_0 r^3}$$
+
+其中 $Q = 2qd^2$ 是电四偶极矩
+
+!!!key-point
+    对于点电荷， $V \propto \frac{1}{r}$, 对于电偶极矩，$V \propto \frac{1}{r^2}$, 对于电四偶极矩，$V \propto \frac{1}{r^3}$
+
+???eg "通过测量电势判断电荷的分布"
+      $$
+      V\left(r\right)= \frac{1}{4 \pi \epsilon_0} \left( \frac{A_1}{r} + \frac{A_2}{r^2} + \frac{A_3}{r^3} + \dots \right) \\
+          = \frac{1}{4 \pi \epsilon_0} \sum_i \frac{A_i}{r^i}
+      $$
+
+      <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301247738.png" width=55%/></div>
+
+### 球壳的电势
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301338523.png" width=45%/></div>
+
+利用Guass定理，我们可以得到球壳的电场分布：
+
+在球壳内部，电场为0，在球壳外部，电场为点电荷产生的电场
+
+则对于距离球心距离为 $r$ 的点，其电势有以下两种情况
+
+- $r < R$，则 $V = \int_{r}^{R} E \cdot dr + \int_{R}^{+\infty} E \cdot dr = 0 + \frac{q}{4 \pi \epsilon_0 R}$  
+- $r > R$，则 $V = \int_{r}^{+\infty}= \frac{q}{4 \pi \epsilon_0 r}$ 
+
+对于该球壳的电势能，可以将其分隔为很多个小电荷，然后对每个小电荷的电势能求和，由于$ij$对称性，要乘以$\frac{1}{2}$
+
+\begin{align*}
+U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
+  &= \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
+  &= \frac{1}{2} \sum_{i=1}^{n} q_i V_i \\
+  &= \frac{1}{2} \int V dq = \frac{1}{2} \cdot \frac{q}{4 \pi \varepsilon_0 R} \cdot q \\
+  &= \frac{q^2}{8 \pi \varepsilon_0 R}
+\end{align*}
+
+!!!Note "解释"
+    固定 $i$ ,先对 $j$ 求和，相当于整个球壳在 $i$ 产生的电势 $V_i$ ，再对 $i$ 求和，此时由于球壳内和球壳上的电势都是 $\dfrac{q}{4 \pi \epsilon_0 R}$ ,所以最后只需要对于球壳上的电荷求和即可，通过结果我们可以发现 **电势能蕴藏在电场中**
+
+???eg "估算电子的半径"
+    电子的电势能与其原子能相等，这样处于平衡状态
+    
+    \begin{align*}
+    W &= mc^2 = \frac{e^2}{8 \pi \varepsilon_0 R} \\
+    R &= \frac{e^2}{8 \pi \varepsilon_0 mc^2} \approx 1.4 \times 10^{-15} \ m
+    \end{align*}
+
+
+### 圆环和圆盘的电势
+
+[圆环](http://www.kailqq.cc/NOTE/Physics/eletronic/#a-ring-of-charge)     
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301354099.png" width=45%/></div>
+
+[圆盘](http://www.kailqq.cc/NOTE/Physics/eletronic/#a-disk-of-charge)
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301400786.png" width=45%/></div>
+
+
+### 通过电势求电场
+由于我们有
+
+\[
+  V_{a}^{b} = -\int_{a}^{b} \boldsymbol{E} \cdot d\boldsymbol{l}
+\]
+
+故
+
+\[
+    dV = -\boldsymbol{E} \cdot d\boldsymbol{l}
+\]
+
+\[
+  \boldsymbol{E} = - \frac{dV}{dl}= - \nabla V
+\]
+
+即求某一方向的电场，只需要求该方向的电势的偏导数即可
+
+
+!!!Note "射影法求电场"
+    通过电场线的类似性构造新的电荷来求电场；例如感应在无穷长的导体板上的电场，可以类似于在对称的位置上放上一个点电荷
+    <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121000435.png" width=50%></div>
+
+    
+## Capacitance(电容)
+
+!!!Definition
+    电容器的电容定义为
+    
+    \[
+    C = \frac{q}{V}
+    \]
+
+    其中 $q$ 是电容器上的电荷，$V$ 是电容器上的电势差
+
+### 平行板电容器
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121523209.png" width=50%/></div>
+
+\[
+  V=\int_{a}^{b} \boldsymbol{E} \cdot d\boldsymbol{l} = E \cdot d = \frac{\sigma}{\varepsilon_0}d
+\]
+
+
+\[
+  C = \frac{q}{V} = \dfrac{\sigma A}{\frac{\sigma}{\varepsilon_0}d}= \frac{\varepsilon_0 A}{d}
+\]
+
+故平行板电容器的电容与板的面积成正比，与板的距离成反比，即与电容器的几何参数有关
+
+
+### 圆柱电容器
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121529315.png" width=50%/></div>
+
+首先用高斯定律计算电场
+
+\[
+  E \cdot 2 \pi r l = \frac{\lambda l}{\varepsilon_0} \Rightarrow E = \frac{\lambda}{2 \pi \varepsilon_0 r}
+\]
+
+\[
+  V = \int_{a}^{b} E \cdot dr = \int_{a}^{b} \frac{\lambda}{2 \pi \varepsilon_0 r} dr = \frac{\lambda}{2 \pi \varepsilon_0} \ln \frac{b}{a}
+\]
+
+\[
+  C = \frac{q=\lambda l}{V} = \frac{2 \pi \varepsilon_0 l}{\ln \frac{b}{a}}
+\]
+
+那么对于单位长度的电容，有
+
+\[
+  C' = \frac{C}{l} = \frac{2 \pi \varepsilon_0}{\ln \frac{b}{a}}
+\]
+
+### 球形电容器
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121537193.png" width=50%/></div>
+
+
+\[
+  E \cdot 4 \pi r^2 = \frac{q}{\varepsilon_0} \Rightarrow E = \frac{q}{4 \pi \varepsilon_0 r^2}
+\]
+
+\[
+  V = \int_{a}^{b} E \cdot dr = \int_{a}^{b} \frac{q}{4 \pi \varepsilon_0 r^2} dr = \frac{q}{4 \pi \varepsilon_0} \left( \frac{1}{a} - \frac{1}{b} \right)
+\]
+
+\[
+  C = \frac{q}{V} = 4 \pi \varepsilon_0 \frac{ab}{b-a}
+\]
+
+!!!property
+    特别的，当 $b \to \infty$ 时，$C = 4 \pi \varepsilon_0 a$,这说明电容并不一定需要两个，一个导体也可以作为电容
+
+
+
+### 电容器的并联和串联
+
+#### 并联(电压一致)
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121551607.png" width=50%/></div>
+
+\[
+  V=\frac{Q_1}{C_1}=\frac{Q_2}{C_2} \Rightarrow Q = Q_1 + Q_2 = C_1 V + C_2 V = (C_1 + C_2) V
+\]
+
+\[
+  C = \frac{Q}{V} = C_1 + C_2
+\]
+
+#### 串联(电荷一致)
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121553861.png" width=50%/></div>
+
+
+\[
+  Q = Q_1 = Q_2 = C_1 V_1 = C_2 V_2
+\]
+
+\[
+  V = V_1 + V_2 = \frac{Q}{C_1} + \frac{Q}{C_2} = Q \left( \frac{1}{C_1} + \frac{1}{C_2} \right)
+\]
+
+\[
+  C = \frac{Q}{V} = \frac{1}{\frac{1}{C_1} + \frac{1}{C_2}}
+\]
+
+\[
+  \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}
+\]
+
+!!!key-point
+    串联电容器的电容是并联电容器的倒数的和，而并联电容器的电容是串联电容器的和，这恰好跟电阻的串联和并联相反
+
+### 电容器的能量
+
+考虑一个平行板电容器，其电容为 $C$，电压为 $V$，则其具有的能量相当于从负极板不断将电荷移动到正极板，这样的过程中克服电场力所做的功
+
+\[
+  U= \int_{0}^{Q} V dq = \int_{0}^{Q} \frac{q}{C} dq = \frac{Q^2}{2C} = \frac{1}{2} CV^2
+\]
+
+它的能量储存在它的电场中；由于$V=Ed$;
+
+\[
+  U = \frac{1}{2} \varepsilon_0 E^2 A d
+\]
+
+这样就得到单位体积的电场能量密度
+
+!!!key-point
+    \[
+      \mu=\frac{U}{V} = \frac{1}{2} \varepsilon_0 E^2 
+    \]
+
+
+!!!Warning
+    虽然公式是由平行板电容器推导出来的，但是这个公式以及能量密度公式对于任何电容器都是成立的
+
+
+### 电介质，电场中的绝缘体
+
+影响电容还有另外一个十分重要的因素，介电常数$\kappa_e$,当电容器中插入电介质时，电容器的电容会增加，具体为
+
+\[
+  C=C_0 \kappa_e
+\]
+
+
+#### 宏观解释
+
+- 在平行板电容器中插入一根导体，其表面会产生感应电荷，相当于两个电容器串联
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410122234944.png" width=50%/></div>
+
+
+\begin{align*}
+  C_1 &= \varepsilon_0 \frac{A}{d_1} \\
+  C_2 &= \varepsilon_0 \frac{A}{d_2} \\
+  C&=\frac{C_1C_2}{C_1+C_2}=\varepsilon_0 \frac{A}{d_1+d_2}
+\end{align*}
+
+电容变大了，但是不能插入的导体不能太厚，否则间隙太小，很容易就达到空气的击穿电压，所以即使导体能很很好的增加电容，我们也不使用，而是使用其他的电介质
+
+- 在平行板电容器中插入一根电介质，使其充满间隙；其表面会产生束缚电荷，在介质之间会产生感应电场，抵消掉原电场的一部分（但是不为0）；两极板间的电场减小，电压减小，电荷量不变，电容增大；此时我们称该介质被极化(polarization)了
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410122246704.png" width=50%/></div>
+
+!!!info 
+    其实，在英文的教材中，不管是感应电荷还是束缚电荷，都使用 **induced charge** 来表示，在中文中，我们为了区分导体产生的与非导体产生的，所以使用了不同的词汇
+
+#### 极化微观解释
+
+!!!Definiton 
+    - Non-polar dielectrics:无极分子电介质，指的是分子中的正负电荷中心重合，如氧气，氮气， 二氧化碳等
+    - Polar dielectrics:有极分子电介质，指的是分子中的正负电荷中心不重合，如水
+  
+对于 Non-polar dielectrics，当电场作用于其上时，它会将重合的正负电荷中心分开，形成电偶极矩，这样就会产生一个与电场方向相反的电场，从而减小了电场强度(内部的电场矢量求和之后，相当于在表面分别产生正负电荷)
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410122257865.png" width=50%/></div>
+
+!!!Note
+    其本质是电子云位移的结果
+
+对于 Polar dielectrics，当电场作用于其上时，它会给原本杂乱无章的电偶极矩一个力矩，[这个力矩会使得电偶极矩偏向电场方向](http://www.kailqq.cc/NOTE/Physics/eletronic/#电偶极矩在电场中)，这样的极化叫做**取向极化**
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410122302366.png" width=50%/></div>
+
+!!!Note
+    当取向极化发生时，电子云的位移也会发生，但是彼此差了两个量级，一般忽略了电子云的位移；但是当外部电场变化频率很大时，电偶极矩转来转去是跟不上的，但是电子云的左右移动是可以的，这时候电子云的位移是主要影响的因素
+    

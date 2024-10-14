@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 事件及其概率
 !!! info " "浙江大学概率论(H)" 2024 秋冬学期个人笔记"
 
@@ -366,12 +370,49 @@ A_1 \subset A_2 \subset \cdots \subset A_n \subset \cdots
 P(A) = \lim_{n \to \infty} P(A_n) .
 \]
 
+### 事件的上极限和下极限
 
+事件是样本点的集合，事件的上级限和下极限是事件的集合的极限。
+
+对于一个集合序列，我们定义其上极限和下极限如下：
+
+!!!Definition
+    设 $\{ A_n \}_{n=1}^{\infty}$ 是一列事件序列，定义
+
+    \[
+    \limsup_{n \to \infty} A_n = \bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} A_k
+    \]
+
+    为事件 \(A_n\) 的上极限，而
+
+    \[
+    \liminf_{n \to \infty} A_n = \bigcup_{n=1}^{\infty} \bigcap_{k=n}^{\infty} A_k
+    \]
+
+    为事件 \(A_n\) 的下极限。
+    
+对于上极限，是事件的先并后交，相当于是所有并集的交集，**其中包含了无穷多个集合** 对于下极限，是事件的先交后并，相当于是所有交集的并集，**只有有限个集合包含下极限**。
+
+
+!!!Example
+    \begin{align*}
+       A_1 &=\{1,2,3\} \\
+       A_2 &=\{2,3,4\} \\
+       A_3 &=\{3,4\} \\
+       A_4 &=\{2，4\} \\
+       A_k &=\{4\} \enspace k \geqslant 4 \\
+    \end{align*}
+
+    则有
+
+    上极限：$\limsup_{n \to \infty} A_n = \{2,3,4\}$
+
+    下极限：$\liminf_{n \to \infty} A_n = \{4\}$
 
 ## 条件概率和链式法则
 
 !!! info "条件概率 $P(A|B)$"
-    事件 $B$ 发生条件下事件 $A$ 发生的概率，称为事件 $A$ 关于事件 $B$ 的**条件概率 (conditional probability)**
+    事件 $B$ 发生条件下事件 $A$ 发生的概率，称为事件 $A$ 关于事件 $B$ 的 **条件概率 (conditional probability)** 
 
 有基本公式:
 
@@ -379,7 +420,7 @@ $$
     P(A|B)=\frac{P(AB)}{P(B)}
 $$
 
-也可以表示为**链式法则(乘法公式)**的形式：
+也可以表示为 **链式法则(乘法公式)** 的形式：
 
 $$
     P(AB)=P(A|B)P(B)
@@ -405,15 +446,15 @@ $$
     在概率空间 ($\Omega, \mathcal{F}, P$) 中，若事件 $\{A_1, A_2, \cdots, A_n\}$($n<\infty$ 或 $n=\infty$) 满足：
 
     1. $A_i$ 两两互不相容(不可能同时发生)，且 $P(A_i)>0$
-    2. $\sum_{i=1}^\infty A_i=\Omega$
+    2. $$\sum_{i=1}^\infty A_i=\Omega$$
 
-    则称 $\{A_1, A_2, \cdots, A_n\}$ 构成 $\Omega$ 的一个**分割(完备事件组)**
+    则称 $\{A_1, A_2, \cdots, A_n\}$ 构成 $\Omega$ 的一个 **分割(完备事件组)**
 
 !!! abstract "全概率 (total probability) 公式"
 
-    在概率空间 ($\Omega, \mathcal{F}, P$) 中，若 $\{A_1, A_2, \cdots, A_n\}$($n<\infty$ 或 $n=\infty$) 构成 $\Omega$ 的一个**分割(完备事件组)**，
+    在概率空间 ($\Omega, \mathcal{F}, P$) 中，若 $\{A_1, A_2, \cdots, A_n\}$($n<\infty$ 或 $n=\infty$) 构成 $\Omega$ 的一个 **分割(完备事件组)** ，
     
-    则有**全概率公式**成立：$\forall B\in \mathcal{F}$，有
+    则有 **全概率公式** 成立：$\forall B\in \mathcal{F}$，有
 
     $$
         P(B)=\sum_{i=1}^nP(A_i)P(B|A_i)
@@ -435,7 +476,7 @@ $$
 
 !!! abstract "贝叶斯 (Bayes) 公式"
     $$
-    P(A_i|B)=\frac{P(A_i)P(B|A_i)}
+    P(A_i|B)=\dfrac{P(A_i)P(B|A_i)}
     {\sum_{k=1}^\infty P(A_k)P(B|A_k)}
     $$
 
@@ -443,9 +484,9 @@ $$
     $P(A_i|B)=\dfrac{P(A_iB)}{P(B)}$，分子用链式法则展开，分母用全概率公式展开。
 
 !!! tip "深入了解条件概率的意义"
-    $P(A_i)$：不知 $B$ 是否发生，称为**先验 (priori) 概率**
+    $P(A_i)$：不知 $B$ 是否发生，称为 **先验 (priori) 概率**
 
-    $P(A_i|B)$：以 $B$ 发生为已知条件，称为**后验 (posteriori) 概率**
+    $P(A_i|B)$：以 $B$ 发生为已知条件，称为 **后验 (posteriori) 概率**
 
 ## 事件独立性
 
@@ -470,7 +511,7 @@ $$
     P(B|A)=\frac{P(AB)}{P(A)}=P(B)
 $$
 
-如果 $A$ 与 $B$ 不相互独立，也称为**统计相依 (statistical dependence)**
+如果 $A$ 与 $B$ 不相互独立，也称为 **统计相依 (statistical dependence)**
 
 ### 多个事件的独立性
 
@@ -488,6 +529,12 @@ $$
         \end{array}\right.
     $$
 
+    但是有可能
+
+    $$
+    P(ABC) \neq P(A)\cdot P(B)\cdot P(C)
+    $$
+
 - 整体相互独立：即满足
 
     $$
@@ -495,6 +542,7 @@ $$
     $$
 
 同时满足两两独立和整体的相互独立，才能说 $A, B, C$ 相互独立。
+且A与BC的并，交，差等也是独立的。
 
 ??? general "推广到 $n$ 个事件"
     推广到 $n$ 个事件，$A_1,A_2,\cdots,A_n$ 相互独立需要满足：$\forall r<n$，$A_1,A_2,\cdots,A_n$ 中任意 $r$ 个事件都相互独立，且
@@ -505,8 +553,71 @@ $$
 
     或者可以直接这么定义：$A_1,A_2,\cdots,A_n$ 相互独立，如果
 
-    $$
-    \forall r\leqslantslant n(r\in \mathbb N_+),\;
-    P\left(\prod_{i=1}^rA_{n_i}\right)=\prod_{i=1}^r P(A_{n_i}),\;
-    1\leqslantslant n_1<n_2<\cdots<n_r\leqslantslant n
-    $$
+    $$\forall r \leqslant n (r\in \mathbf{N_+}),\;
+    P \left( \prod_{i=1}^r A_{n_i} \right) = \prod_{i=1}^r P(A_{n_i}),\;
+    1 \leqslant n_1 < n_2 < \cdots <n_r \leqslant n$$
+
+## 伯努利试验
+
+伯努利概型（Bernoulli trial）是概率论中的一个基本概念，它描述了只有两个可能结果的随机试验，通常称为“成功”和“失败”。每次试验都是独立的，并且每次成功的概率都是相同的，记作 \( p \)，而失败的概率则为 \( 1-p \)。
+
+伯努利概型的特点包括：
+
+1. **只有两个结果**：每次试验的结果只能是成功或失败。
+2. **独立性**：每次试验的结果不会影响其他试验。
+3. **固定的成功概率**：每次试验中成功的概率 \( p \) 是不变的。
+
+伯努利概型常用于建模各种现实情况，比如抛硬币、调查投票等。在多个伯努利试验的基础上，有二项分布
+
+二项分布(Binomial distribution)是n重伯努利试验成功次数的离散概率分布，记作$B(n,p)$。
+
+\[
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+\]
+
+其中，\( \binom{n}{k} \) 是组合数，表示从 \( n \) 次试验中选择 \( k \) 次成功的方式总数。二项分布适用于描述在 \( n \) 次独立的伯努利试验中，成功发生的次数。
+
+!!!Example
+    一枚硬币抛 10 次，求恰好 3 次正面朝上的概率。
+
+    这是一个二项分布问题，其中 \( n = 10 \)，\( k = 3 \)，\( p = 0.5 \)。代入公式，有：
+
+    \[
+    P(B_3) = \binom{10}{3} \times 0.5^3 \times 0.5^{10-3} = 0.1172.
+    \]
+
+    所以恰好 3 次正面朝上的概率是 0.1172。
+
+## 乘积概率空间
+
+!!! definition "乘积概率空间"
+    设有两个概率空间 $(\Omega_1, \mathcal{F}_1, P_1)$ 和 $(\Omega_2, \mathcal{F}_2, P_2)$,对应试验为 $E_1$ 和 $E_2$,独立地做两个试验，记录其结果为 $(\omega_1, \omega_2)$,则称 $(\Omega_1 \times \Omega_2, \mathcal{F}_1 \times \mathcal{F}_2, P_1 \times P_2)$ 为 $(\Omega_1, \mathcal{F}_1, P_1)$ 和 $(\Omega_2, \mathcal{F}_2, P_2)$ 的 **乘积概率空间**。
+
+     其中事件事件 $A$
+
+    \[
+        A=\{(\omega_1, \omega_2) \mid \omega_1 \in A_1, \omega_2 \in A_2\}
+    \]
+
+    其概率
+
+    \[
+        P(A)=P(A_1)P(A_2)
+    \]
+
+!!!Note
+    两个试验的乘积概率空间可以在二维平面上表示
+
+
+???info "Simpson 悖论"
+    \[
+        ad>bc;eh>fg;\\
+        (a+e)(d+h)<(b+f)(c+g)
+    \]
+
+    约束条件为
+
+    \[
+        a+b+c+d+e+f+g+h=1\\
+        a,b,c,d,e,f,g,h>0
+    \]

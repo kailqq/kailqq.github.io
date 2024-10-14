@@ -1,6 +1,6 @@
 # 项目信息
 site_name: 71229号港湾 # 项目名称
-site_url: https://www.kailqq.cc/ 
+site_url: https://www.kailqq.cc
 site_author: Kailqq # 作者
 site_description: >- # 项目描述
     人生苦短，纵情燃烧
@@ -25,7 +25,7 @@ theme:
     - content.action.view # 查看按钮，似乎没啥用
     - content.code.annotate # 代码注释，具体不清楚
     - content.code.copy # 复制代码按钮
-    # - content.code.select # 选择代码按钮
+    - content.code.select # 选择代码按钮
     # - content.tabs.link # 链接标签
     - content.tooltips # 不太清楚呢这个
     # - header.autohide # 自动隐藏header
@@ -33,20 +33,21 @@ theme:
     - navigation.footer # 底部导航栏
     - navigation.indexes # 索引按钮可以直接触发文件，而不是只能点击其下属选项浏览，这个功能可以给对应的section提供很好的预览和导航功能
     # - navigation.instant # 瞬间加载 最好注释掉，多语言切换这个会导致跳回首页
-    - navigation.instant.prefetch # 预加载
-    - navigation.instant.progress # 进度条
+    #- navigation.instant.prefetch # 预加载
+    #- navigation.instant.progress # 进度条
     - navigation.path # 导航路径， 目前好像没啥用
-    # - navigation.prune # 只构建可见的页面
+    - navigation.prune # 只构建可见的页面
     - navigation.sections # 导航栏的section
     - navigation.tabs # 顶级索引被作为tab
     - navigation.tabs.sticky # tab始终可见
     - navigation.top # 开启顶部导航栏
     - navigation.tracking # 导航栏跟踪
     - search.highlight # 搜索高亮
+    - navigation.path
     - search.share # 搜索分享
     - search.suggest # 搜索建议
     - toc.follow # 目录跟踪-页面右侧的小目录
-    # - toc.integrate # 目录跟踪集成到左侧大目录中
+    #- toc.integrate # 目录跟踪集成到左侧大目录中
   palette:
     - media: "(prefers-color-scheme: light)" # 浅色
       scheme: theme
@@ -87,10 +88,10 @@ theme:
 
 # Plugins
 plugins:
+  - blog # 博客插件
   - statistics:
       words_per_minute: 290   
   - tags # 标签功能插件
-  - blog # 博客功能插件
   - search # 搜索插件
   - changelog    
 
@@ -142,6 +143,7 @@ markdown_extensions: # markdown extensions
   - md_in_html
   - toc:
       permalink: true
+      toc_depth: 4
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -193,13 +195,12 @@ extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - css/cards.css
   - css/card.css
-  - css/latex.css
   - css/newfonts.css
   - css/newadmonitions.css
   - css/newcolor.css 
   - css/changelogs.css
   - css/custom.css
-  - css/fold.css
+  # - css/fold.css
   - css/flink.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
@@ -208,32 +209,43 @@ nav:
   - HOME: index.md
   - change_log: changelog.md
   - NOTE:
+      - NOTE/index.md
       -  课程笔记:
           - 计算机组成与设计:
+             - NOTE/CO/index.md
              - 绪论: "NOTE/CO/wk1.md"
+             - 指令集: "NOTE/CO/wk3.md"
              - 计算机中的算数: "NOTE/CO/wk2.md"
           -  LINEAR-ALGEBRA:
-              - 前言: "NOTE/LA/linear-algebra.md"
+              - "NOTE/LA/linear-algebra.md"
               - 基础: "NOTE/LA/前置知识.md"
               - 暂时停更: "NOTE/LA/note.md"
           -  CTF:
-              - 课程信息: "NOTE/CTF/CTF.md"
+              - "NOTE/CTF/CTF.md"
               - web: "NOTE/CTF/web.md"
               - Misc: "NOTE/CTF/Misc.md"
               - Crypto: "NOTE/CTF/Crypto.md"
               - reverse: "NOTE/CTF/reverse.md"
               - 心得: "NOTE/CTF/结课心得.md"
           - 概率论:
+              - "NOTE/Probability/index.md"
               - 第一章: NOTE/Probability/first.md
+              - 第二章: NOTE/Probability/second.md
               - 其它: NOTE/Probability/others.md
           - 普通物理学二: 
+              - NOTE/Physics/index.md
               - 电磁学: NOTE/Physics/eletronic.md
           - 高级数据结构与算法分析: 
+              - NOTE/ADS/index.md
               - AVL，Splay树与摊还分析: NOTE/ADS/wk1.md
               - 红黑树与B+树: NOTE/ADS/wk2.md
+              - 倒排索引: NOTE/ADS/wk3_1.md
+              - 左式堆与斜堆: NOTE/ADS/wk3_2.md
+              - 二项堆: NOTE/ADS/wk4.md
           - 数学分析:
               - NOTE/MA/index.md
       - CS:
+          - NOTE/CS/index.md 
           - verilog学习笔记: NOTE/CS/Verilog/verilog.md 
           - RUST学习笔记:  NOTE/CS/RUST/RUST.md 
           - 汇编学习笔记: 

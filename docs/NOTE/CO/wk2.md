@@ -137,6 +137,7 @@ $$ Multiplicand   \times Multiplier = Product$$
 有符号相乘不能直接乘，可以先用符号位决定结果符号，再对绝对值进行乘法。 
 
 **Booth's Algorithm**  
+
 <div align=center> <img src="http://cdn.hobbitqia.cc/202303081023374.png" width = 60%/> </div>   
 
 思想：如果有一串 1, 减掉乘数的第一个 1, 后面的 1 的序列进行移位，当上一步是最后一个 1 时加。  
@@ -150,7 +151,10 @@ $$ Multiplicand   \times Multiplier = Product$$
     * 00 - nop
 
     每个操作结束后都要移位，和 2.1.1 中类似
-    
+
+!!!Key-point 
+    需要注意的是 Booth算法中，每一次是两位两位看，对于$n$位的，需要进行$n$次操作,但是两位两位看只能看到$n-1$位，因此开始之前是需要在最后一位加上一个 0 再开始做乘法的
+
 注意移位时不要改变符号位。
 
 !!! Example 
@@ -159,7 +163,7 @@ $$ Multiplicand   \times Multiplier = Product$$
     被乘数 Multiplicand 是 0010,  乘数 Multiplier 是 1101.  
     最开始将积 0000 放在高四位, 1101 作为乘数放在低四位。
     最开始 10, 即执行减操作, $0000-0010=1110$. 答案依然放在高四位，随后右移，以此类推。  
-    注意右移的时候是**算术右移**, $bit_{-1}$ 也可能会改变。
+    注意右移的时候是 **算术右移** ，即符号位不变。
 
 #### Faster Multiplication
 
@@ -168,39 +172,65 @@ $$ Multiplicand   \times Multiplier = Product$$
 
 ### Division
 
-Dividend (被除数) $\div$ Divisor (除数)   
+$$
+Dividend  = quotient \times Divisor + Reminder
+$$
 
-* 将除数放到高位。从高位开始减，减完将除数右移。商也随之不断左移。如果减完之后是负数，需要还回去。
-    <div align=center> <img src="http://cdn.hobbitqia.cc/202303102252551.png" width = 60%/> </div>  
+Iterative subtraction:
 
-    ??? Example "7÷2"
-        <div align=center> <img src="http://cdn.hobbitqia.cc/202303102256325.png" width = 60%/> </div>  
+- Greater than 0: then we get a 1
+- Smaller than 0: then we get a 0
 
-* 除数不动，被除数不停地往左移。减到最后一次，如果是小于 0 的，说明不用减了，剩下的就是余数，需要右移移回来。（即将左半部分右移一位）    
 
-    因为每次都是将除数和被除数最高位减，减了之后高位就没用了，可以移出去。  
-    <div align=center> <img src="http://cdn.hobbitqia.cc/202303102259194.png" width = 60%/> </div>
+???Version 1
+    - At At first the divisor is in the left half of the divisor register,the dividend is in the right half of the remainder register.
+    - Shift the divisor right each step
+    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241404170.png" width = 60%/> </div>  
+    即对每一步，都在余数中减去除数，如果结果大于等于0，那么商左移上1，否则将结果加回去，商左移上0。
+     <div align=center> <img src="  https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241412849.png" width = 60%/> </div>
+
+    **需要注意的是,由于一开始remainder寄存器右边是被除数，divisor寄存器左半边是除数，前很多次的结果都是负的**
+
+!!!eg "7 / 2"
+    $00000111 / 0010$
+    <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241417339.png" width = 60%/> </div>   
+  
+
+???Version final
+    优化过程与乘法类似，因为每次都是remainder的最高位在减，减完就没用了，可以移出去，不再右移divisor，而是左移remainder，并且将quotient也存在Remainder寄存器每次左移产生的空位中
+    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241424728.png" width = 60%/> </div>
+    如下
+    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241426038.png" width = 60%/> </div>
+
+!!!key-point 
+   remainder 寄存器其实要多一位的，因为最后一步要右移，不能直接把它丢掉
+
+!!!eg
+    <div align=center> <img src=" https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241436680.png" width = 60%/> </div>
+    4.1 时其实我们已经结束了除法操作，此时的高位就是我们的余数，但是这最后一次的结果还没有放回到 Reminder 中，因此我们需要再往左移一位为商留出空间，放入后，再把高位余数往右移动以抵消影响。
     
-    实际上这里结果是 129 位，防止 carry 丢失
+!!!question "为什么除法的移位这么奇怪“
+    对于Version1，要进行 $n+1$ 次的移位，是为了在最后一步将商补全，同时也抵消最后一步的影响来满足余数的正确性；
+    对于Version2，要进行第一次的整体左移是为了得到正确的余数，而在最后一步中，由于商还要进来，余数会多出一位，因此要左半部分右移一位。
 
-    ??? Example
-        <div align=center> <img src="http://cdn.hobbitqia.cc/202303102303764.png" width = 60%/> </div>
-        
-        这里最开始余数就是整个被除数。   
-        类似乘法，这里的除数只和被除数的高位相减。如果减出来是负数，需要加回去。每次减完之后先左移，然后最右边的一位放商。   
-        4.1 时其实我们已经结束了除法操作，此时的高位就是我们的余数，但是这最后一次的结果还没有放回到 Reminder 中，因此我们需要再往左移一位为商留出空间，放入后，再把高位余数往右移动以抵消影响。（个人认为可以直接对低位左移一位即可）
-    
-带符号的除法：要求余数和被除数符号相同。  
-除零会产生溢出，由软件检测。
+对于有符号数的除法，用绝对值来做，然后在结果上加上符号位
+
+sign of quotient = sign of dividend $\oplus$ sign of divisor
+
+sign of remainder = sign of dividend
 
 ## Floating point number
 
-<!-- 可见 [ICS Notes](https://note.hobbitqia.cc/ICS/ICS-2/#floating-point)   -->
+
+??? info "进制转换"
+    二进制小数转十进制，如果是科学计数法，可以先仿照十进制的科学计数法用指数进行小数点的移动，然后再转换，这样可以减少计算小数的次数。
+
+    十进制转换二进制，可以先转换整数部分，再转换小数部分，小数部分可以依次与$2^{-n}$比较，如果大于等于，那么结果的第 n 位为 1，否则为 0，上了 1 之后，要减去 $2^{-n}$，再继续比较，直到达到精度的要求。
 
 |       | S |   exp   |     frac     |
 |:------|---|---------|-----------: |
-| Float | 1 |    8    |     23      |
-| Double | 1 |    11    |     52      |
+| Float(位数) | 1 |    8    |     23      |
+| Double(位数) | 1 |    11    |     52      |
 
 Normalized form: $N=(-1)^S\times M\times 2^E$  
 
@@ -208,23 +238,21 @@ Normalized form: $N=(-1)^S\times M\times 2^E$
 * M: 尾数. Normally, $M=1.frac=1+frac$.
 * E: 阶码. Normally, $E=exp-Bias$ where $Bias=127$ for floating point numbers. $Bias = 1023$ for double. 
 
-!!! Note
+!!! key-point
     * 为什么要把 exponent 放在前面？（因为数的大小主要由 exponent 决定。）
-    * 为什么需要 Bias？（移码） 
-    * 以上是规格化数，尾数前应该有前导 1. 非规格化数的格式见[这里](https://note.hobbitqia.cc/CO/co3/#denormal-numbers)。
+    * 为什么需要 Bias？（移码）可以不保存负数，用的是IEEE标准，即对于8位的移码，$Bias=2^{7}-1=127$，对于11位的移码，$Bias=2^{10}-1=1023$。 
+    * 以上是规格化数，尾数前应该有前导 1，就类似于十进制的科学计数法，前导必须大于0小于10.对于2进制，前导必须大于0小于2，也就是1.
+
 
 ### Denormal Numbers
 
 * $Exponent=000\ldots 0$   
-非规格化数，让数在较小时能逐渐下溢出。    
+非规格化数，让数在较小时能逐渐下溢出，在Exponent的部分以全零作为保留字，但是并不代表指数是0，而是说此时的小数不是1.xxxx而是0.xxxx。    
 $x=(-1)^s\times((0+Fraction)\times 2^{1-Bias})$  
 **注意此时指数是 $1-Bias=-126/-1022$**.   
-    * Denormal with $Fraction = 000...0$ we define $x=0$
-* $Exponent=111\ldots 1, Fraction=000\ldots 0$   
-表示 $\pm \inf$  
-* $Exponent=111\ldots 1, Fraction\neq 000\ldots 0$ 
-表示 *NaN* (Not-a-Number)  
-<div align=center> <img src="http://cdn.hobbitqia.cc/202303081154192.png" width = 60%/> </div>   
+
+
+<div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409261348992.png" width = 80%/> </div>   
 
 ### Precision
 
@@ -273,7 +301,8 @@ $(s1\cdot 2^{e1}) \cdot (s2\cdot 2^{s2}) = (s1\cdot s2)\cdot 2^{e1+e2}$
 * Rounding
 * Sign
 
-注意 Exponet 中是有 Bias 的，两个数的 exp 部分相加后还要再减去 Bias. 
+!!!Note "注意"
+    Exponet 中是有 Bias 的，两个数的 exp 部分相加后还要再减去 Bias. 
 
 ??? Example
     <div align=center> <img src="http://cdn.hobbitqia.cc/202303150843378.png" width = 60%/> </div>
@@ -289,12 +318,19 @@ $(s1\cdot 2^{e1}) \cdot (s2\cdot 2^{s2}) = (s1\cdot s2)\cdot 2^{e1+e2}$
 * Extra bits of precision (guard, round, sticky)
     * guard, round  
     为了保证四舍五入的精度。  
-    结果没有，只在运算的过程中保留。
-    
-        !!! Example
-            <div align=center> <img src="http://cdn.hobbitqia.cc/202303150858176.png" width = 50%/> </div>
-              
+    结果没有，只在运算的过程中保留
     * sticky  
     末尾如果不为全 0, 则 sticky 位为 1, 否则为 0.
+
+!!!Example
+    Guard, round, sticky 位的作用
+    保留位和舍入位的作用可以提高精度，例如十进制中如果加上舍入位，那么在51和99之间的会向上舍入，而在50和00之间的会向下舍入，这样可以减少误差。
+    例如2.34+0.0256=2.3656,舍入为2.37，而2.34+0.02=2.36，舍入为2.36，存在1ulp的误差；
+    在有些情况下，结果左移之后将保护位变成了最低位，只剩下舍入位一位来进行舍入，这样会导致误差增大，而加上sticky位，可以保证在舍入位后面的位数不为0时，舍入位不会被舍去，从而提高精度。例如如果是2.34+0.0050001，如果没有sticky位，那么结果是2.3450，舍入到最近的偶数2.34，而有了sticky位，知道结果是比2.3450大，舍入到最近的偶数2.35。
+
+    在二进制中，就是1进0舍，例如小数点后第三位为最低位的1.100_10+0.000_00_11111=1.100_10，此时Guard位为1，Round位为0，Sticky位为1,如果没有sticky位，那么结果就是舍入到最近的偶数1.100，而有了sticky位，知道结果是比1.100_10大，舍入到1.101。
+
+!!!key-point
+    总的来说，G位如果大于进制的一半，则看它的下一位R位，如果R位大于0了，那么进位，如果为0，那么看S位，如果S位大于0，那么进位。如果RS位都是0了，那么选择最近的偶数来进位。(LSB是奇数，进位；LSB是偶数，舍去屁股后面的)
 
 损失不会超过 0.5 个 ulp. 
