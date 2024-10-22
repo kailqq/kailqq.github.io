@@ -648,3 +648,224 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 !!!Note
     当取向极化发生时，电子云的位移也会发生，但是彼此差了两个量级，一般忽略了电子云的位移；但是当外部电场变化频率很大时，电偶极矩转来转去是跟不上的，但是电子云的左右移动是可以的，这时候电子云的位移是主要影响的因素
     
+### 极化强度矢量(Polarization)
+
+!!!Definition
+    极化强度矢量 $\boldsymbol{P}$ 定义为单位体积内的电偶极矩之和
+
+    \[
+    \boldsymbol{P} = \frac{\sum \boldsymbol{p}}{\Delta V}
+    \]
+
+    其中 $\boldsymbol{p}$ 是单位体积内的电偶极矩;
+
+    $P$ 可能是均匀的，也可能是不均匀的
+
+对于任意的电介质，在其表面取一个小斜圆筒，母线与电场方向一致，长度为一个电偶长度；底面与该表面的法向量垂直，这样斜斜圆筒内只可能有正电荷；
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410191117888.png" width=50%/></div>
+
+设 $n$ 为单位体积内的电偶极矩数目(分子数目)
+则
+
+\begin{align*}
+    \boldsymbol{P} &= \frac{\sum \boldsymbol{p}}{\Delta V} = nql\\
+    dN&=ndV=nldA \cos \theta \\
+    dq'&=qdN=nql dA\cos \theta \\
+       &=\boldsymbol{p} \cdot \boldsymbol{dA}
+\end{align*}
+
+所以
+
+\[
+  \oiint \boldsymbol{P} \cdot d\boldsymbol{A} = \sum_{out} q'=-\sum_{in} q'
+\]
+
+
+!!!key-point
+    极化强度矢量与闭合曲面的内积积分等于该曲面表面的束缚电荷，等于该曲面内部电荷的相反数(外面有多少正的，里面就有多少负的)
+
+
+同时
+
+\[
+   \sigma' = \dfrac{dq'}{dA} = \boldsymbol{P} \cdot \boldsymbol{n}
+\]
+
+面电荷密度等于极化强度矢量在法向上的分量；由夹角来控制正负
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410191128315.png" width=50%/></div>
+
+### 电介质的极化规
+
+!!!Definition
+    在各向异性的介质中，极化强度适量是电场的函数，在各项同性的材料中$\boldsymbol{P}=\varepsilon_0 \chi_e E$
+
+    其中 $\chi_e$ 是电介质的电极化率，与介电常数的关系为 $\kappa_e = 1 + \chi_e$
+
+
+### Guass定律的推广
+
+考虑一个正电荷 $q_0$ 放在电介质中，其周围会产生极化
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410191136392.png" width=50%/></div>
+
+由 高斯定理，我们可以得到
+
+\[
+    \varepsilon_0 \oiint \boldsymbol{E} \cdot d\boldsymbol{A} = q_0 + q'
+\]
+  
+\[  
+  \oiint \boldsymbol{P} \cdot d \boldsymbol{A} = -q'
+\]
+  
+
+\[ \varepsilon_0 \oiint \boldsymbol{E} \cdot d\boldsymbol{A} = q_0 - \oiint \boldsymbol{P} \cdot d\boldsymbol{A} \]
+
+\[  \oiint(\varepsilon_0 \boldsymbol{E} + \boldsymbol{P}) \cdot d\boldsymbol{A} = q_0 \]
+  
+\[ \oiint \boldsymbol{D} \cdot d\boldsymbol{A} = q_0 \]
+
+
+其中 $\boldsymbol{D} = \varepsilon_0 \boldsymbol{E} + \boldsymbol{P}$ 称为电位移矢量，也叫做电感应矢量
+
+这说明电位移矢量与闭合曲面内积面积分等于该曲面内的 **自由电荷** 之和
+
+!!!key-point
+    \[
+      \boldsymbol{D} = \varepsilon_0 \boldsymbol{E} + \boldsymbol{P} = (1+ \chi_e)\varepsilon_0 \boldsymbol{E} =\kappa_e \varepsilon_0 \boldsymbol{E}
+    \]
+
+
+!!!Example 
+    在上面的例子中
+
+    \begin{align*}
+      \oiint \vec{D} \cdot d\vec{A} &= \sum q_0 \\
+      4 \pi r^2 D &= q_0 \\
+      D &= \frac{q_0}{4 \pi r^2} \\
+      E &= \frac{D}{\kappa_e \varepsilon_0} = \frac{q_0}{4 \pi \varepsilon_0 \kappa_e r^2} = \frac{E_0}{\kappa_e}
+    \end{align*}
+
+
+!!!Note
+    $E$是真实电场，$E_0$真空中的电场
+
+
+## 恒定电流
+
+### 电流与电流密度
+
+!!!definition "电流"
+    电流定义为单位时间内通过某一横截面的电荷量
+
+    \[
+    I = \frac{dq}{dt}
+    \]
+
+    若单位体积内电荷数目为 $n$，截面表面积为 $s$ 电荷为 $e$，速度为 $v$，则电流为
+
+    \[
+    I = nesv
+    \]
+
+!!!definition "电流密度"
+    电流密度定义为单位时间内通过单位面积的电荷量
+
+    \[
+    \boldsymbol{J} = \frac{d\boldsymbol{I}}{d\boldsymbol{A}}
+    \]
+
+    其中 $\boldsymbol{J}$ 是电流密度，$\boldsymbol{I}$ 是电流，$\boldsymbol{A}$ 是横截面积
+
+    有：
+
+    \[
+       i=\oiint \boldsymbol{J} \cdot d\boldsymbol{A}
+    \]
+    
+    在微小变化中，有
+
+    \[
+      j = nev
+    \]
+
+### 电阻与电导
+
+电阻的定义式
+
+\[
+  R = \frac{dV}{dI}
+\]
+
+电阻是决定式
+
+\[
+  R = \rho \frac{l}{A} = \frac{l}{\sigma A}
+\]
+
+其中 $\rho$ 是电阻率，$\sigma$ 是电导率
+
+对于不规则物体，采用积分计算电阻
+
+???eg "计算电阻"
+     <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410202217928.png" width=60%/></div>
+
+     在地质勘探中，时常利用这种方法来勘探地底的资源，因为各种材料的电导率不同
+
+!!!Key-point "欧姆定律的微分形式"
+    
+    \[
+       di = \frac{dv}{R} \quad dv= E \cdot dl
+    \]
+
+    \[
+        \boldsymbol{J} \cdot d \boldsymbol{A} = di
+    \]
+
+    \[
+        R=\rho \frac{dl}{dA}
+    \]
+
+    可以推出
+
+    \[
+        \boldsymbol{J} = \sigma \boldsymbol{E}
+    \]
+
+
+### 电功率与焦耳定律
+
+!!!Definition "电功率"
+    电功率定义为单位时间内电流做的功
+
+    \[
+    P = \frac{dW}{dt} = \frac{dW}{dq} \frac{dq}{dt} = V \cdot I
+    \]
+
+    其中 $P$ 是电功率，$W$ 是电功，$V$ 是电压，$I$ 是电流
+
+!!!idea "焦耳定律"
+     对于 **纯电阻电路** ，电功率可以表示为$P = I^2 R = \dfrac{V^2}{R}$
+
+### 欧姆定律的微观解释
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410202244591.png" width=50%/></div>
+
+原本在导体中做热运动的电子，在施加了外部电场后，会产生漂移速度；
+
+\begin{align*}
+  \boldsymbol{a} &= \frac{e \boldsymbol{E}}{m} \\
+  \overline{v} &= \frac{1}{2} \boldsymbol{a} t = \frac{e \boldsymbol{E} t}{2m} \\
+  &= \frac{e \boldsymbol{E} l}{2m v_d} \\
+  \boldsymbol{J} &= ne \overline{v} = \dfrac{n e^2 \boldsymbol{E} l}{2m v_d} = \sigma \boldsymbol{E}\\
+  \sigma &= \dfrac{n e^2 l}{2m v_d} \propto \frac{1}{\sqrt{T}} 
+\end{align*}
+
+其中 $\lambda$ 是电子的平均自由程，$v_d$ 是电子的热运动速度，与$\sqrt{T}$成正比
+
+这种算法给出了我们经典物理学中关于电阻的解释，与$T$是开方函数的关系，但是这只在定性方面的正确的，确实随着温度的升高，电阻会增大；但是更加现实具体的推导需要量子力学的帮助，才能给出很好的解释
+
+<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410202243687.png" width=50%/></div>
+

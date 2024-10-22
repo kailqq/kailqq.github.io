@@ -2,6 +2,9 @@
 comments: true
 nonstatistics: true
 ---
+
+# My Friends
+
 ::cards::
 
 - title: Shrike-505

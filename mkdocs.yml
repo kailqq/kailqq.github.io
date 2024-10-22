@@ -93,7 +93,12 @@ plugins:
       words_per_minute: 290   
   - tags # 标签功能插件
   - search # 搜索插件
-  - changelog    
+  - changelog  
+  - git-revision-date-localized:
+      enable_creation_date: true
+      locale: zh
+      type: date
+      timezone: Asia/Shanghai
 
 extra:
   generator: false # 是否显示生成器
@@ -200,6 +205,7 @@ extra_css:
   - css/newcolor.css 
   - css/changelogs.css
   - css/custom.css
+  # - css/teaser.css
   # - css/fold.css
   - css/flink.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
@@ -255,3 +261,5 @@ nav:
                - 寻址方式: NOTE/CS/ASM/wk3.md
       
   - Friends: friends.md
+  # - Verifications: googleb8ce910372c2ff85.html
+  # - sitemap: sitemap.xml
