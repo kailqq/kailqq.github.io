@@ -1616,7 +1616,7 @@
 
 <h1 id="binomial-heap">二项堆(Binomial Heap)<a class="headerlink" href="#binomial-heap" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2080 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 110 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2081 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 110 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
 <h2 id="_1">二项堆的定义和性质<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -1656,23 +1656,21 @@
 </div>
 <h2 id="_2">二项堆的操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="findmin">Findmin<a class="headerlink" href="#findmin" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code>直接遍历所有树,注意到对于一个有$n$个结点的二项堆，最多有$\log n$棵树，因此时间复杂度为$O(\log n)$
-
-也可以通过专门记录最小的节点来实现$O(1)$的时间复杂度，当然在DeleteMin的时候需要重新找到最小的节点并更新
-</code></pre></div>
+<p>直接遍历所有树,注意到对于一个有<span class="arithmatex">\(n\)</span>个结点的二项堆，最多有<span class="arithmatex">\(\log n\)</span>棵树，因此时间复杂度为<span class="arithmatex">\(O(\log n)\)</span></p>
+<p>也可以通过专门记录最小的节点来实现<span class="arithmatex">\(O(1)\)</span>的时间复杂度，当然在DeleteMin的时候需要重新找到最小的节点并更新</p>
 <h3 id="insert-merge">Insert &amp; merge<a class="headerlink" href="#insert-merge" title="Permanent link">&para;</a></h3>
 <p>插入是特殊的合并操作，我们可以将一个新的节点看作是一个只有一个节点的二项堆，然后将其与原来的二项堆合并即可；</p>
 <p>合并操作的过程十分类似二进制数的加法，例如一个二项堆有<span class="arithmatex">\(B_3,B_2,B_0\)</span>,其二进制表示为<span class="arithmatex">\(1101\)</span>，另一个二项堆有<span class="arithmatex">\(B_3,B_1,B_0\)</span>，其二进制表示为<span class="arithmatex">\(1011\)</span>，我们可以将其看作是二进制数相加，然后将进位的部分合并得到新的二进制数<span class="arithmatex">\(11000\)</span>,则新的二项堆为<span class="arithmatex">\(B_4,B_3\)</span>，我们需要保证堆的存储顺序是按高度从小到大来排列，这样时间复杂度就是<span class="arithmatex">\(O(\log n)\)</span></p>
 <p>对于从空开始插入建堆的时间复杂度我们需要做特殊的分析。因为我们是要平均时间的最坏情况，事实上也就是摊还代价。</p>
-<p>!!！Note "聚合法"
-    聚合法需要每一步的操作复杂度，实际上我们随便模拟几步再结合之前讨论的合并和二进制加法之间的关系就可以发现，插入的整个操作与二进制数加1有完全的对应关系：若是遇到了某一位是<span class="arithmatex">\(1+1\)</span>，则用常数操作完成简单的合并即可，如果遇到<span class="arithmatex">\(0+1\)</span>，那么当前所有的二项树合起来就是最后的结果。基于这一观察我们知道，因为<span class="arithmatex">\(0+1\)</span>对应将0置1，<span class="arithmatex">\(1+1\)</span>对应1置0，这两种情况都对应于堆的常数时间操作，因此从空树连续插入<span class="arithmatex">\(n\)</span>的顶点的时间复杂度与<span class="arithmatex">\(0+1+1 \cdots (n of 1)\)</span>的过程中数据二进制表示中0和1比特翻转的次数总和。于是算法复杂度就很好计算了，因为我们知道<span class="arithmatex">\(n\)</span>对应于 
-    <span class="arithmatex">\(\lfloor \log n \rfloor+1\)</span>个二进制位，事实上最低位每次加1都会反转比特，次低位每两次运算反转比特，倒数第三位每4次运算反转比特......以此类推，<span class="arithmatex">\(n\)</span>次操作的整体时间复杂度与</p>
-<div class="language-text highlight"><pre><span></span><code>\[
-    n+ \frac{n}{2} + \frac{n}{4} + \cdots + \drfac{}{2^{m}} = O(n),m=\lfloor \log n \rfloor+1
-\]
-
-有了这个结论，我们就可以知道，从空树开始插入$n$个结点的时间复杂度是$O(n)$的,故单步插入的摊还代价是$O(1)$的
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">聚合法</p>
+<p>聚合法需要每一步的操作复杂度，实际上我们随便模拟几步再结合之前讨论的合并和二进制加法之间的关系就可以发现，插入的整个操作与二进制数加1有完全的对应关系：若是遇到了某一位是<span class="arithmatex">\(1+1\)</span>，则用常数操作完成简单的合并即可，如果遇到<span class="arithmatex">\(0+1\)</span>，那么当前所有的二项树合起来就是最后的结果。基于这一观察我们知道，因为<span class="arithmatex">\(0+1\)</span>对应将0置1，<span class="arithmatex">\(1+1\)</span>对应1置0，这两种情况都对应于堆的常数时间操作，因此从空树连续插入<span class="arithmatex">\(n\)</span>的顶点的时间复杂度与<span class="arithmatex">\(0+1+1 \cdots (n \ of \ 1)\)</span>的过程中数据二进制表示中0和1比特翻转的次数总和。于是算法复杂度就很好计算了，因为我们知道<span class="arithmatex">\(n\)</span>对应于 
+<span class="arithmatex">\(\lfloor \log n \rfloor+1\)</span>个二进制位，事实上最低位每次加1都会反转比特，次低位每两次运算反转比特，倒数第三位每4次运算反转比特......以此类推，<span class="arithmatex">\(n\)</span>次操作的整体时间复杂度与</p>
+<div class="arithmatex">\[
+  n+ \frac{n}{2} + \frac{n}{4} + \cdots + \dfrac{n}{2^{m}} = O(n),m=\lfloor \log n \rfloor+1
+\]</div>
+<p>有了这个结论，我们就可以知道，从空树开始插入<span class="arithmatex">\(n\)</span>个结点的时间复杂度是<span class="arithmatex">\(O(n)\)</span>的,故单步插入的摊还代价是<span class="arithmatex">\(O(1)\)</span>的</p>
+</div>
 <div class="admonition 势能法">
 <p class="admonition-title">势能法</p>
 <p>对于复杂的操作，对应着很多次的复位操作(1变0)和一次置位(0变1)操作，所以将势函数定义为 <span class="arithmatex">\(\Phi=\)</span>二项堆中二项树的个数，这样在一次操作之后势函数的会下降很多；</p>
