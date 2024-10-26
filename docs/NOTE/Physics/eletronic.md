@@ -5,6 +5,43 @@
 
 ### A ring of charge
 
+
+???Abstract "Table of contents"
+      - [Electric Charge and Coulomb's Law(电荷和库仑定律)](#electric-charge-and-coulombs-law电荷和库仑定律)
+        - [A ring of charge](#a-ring-of-charge)
+        - [A disk of charge](#a-disk-of-charge)
+        - [Dipole(电偶极矩)](#dipole电偶极矩)
+          - [电偶极矩产生的电场](#电偶极矩产生的电场)
+          - [电偶极矩在电场中](#电偶极矩在电场中)
+      - [Gauss's Law(高斯定理)](#gausss-law高斯定理)
+        - [电场的高斯定理](#电场的高斯定理)
+        - [静电场的环路定律](#静电场的环路定律)
+      - [Electric Potential(电势)](#electric-potential电势)
+        - [电势能与电势](#电势能与电势)
+        - [球壳的电势](#球壳的电势)
+        - [圆环和圆盘的电势](#圆环和圆盘的电势)
+        - [通过电势求电场](#通过电势求电场)
+      - [Capacitance(电容)](#capacitance电容)
+        - [平行板电容器](#平行板电容器)
+        - [圆柱电容器](#圆柱电容器)
+        - [球形电容器](#球形电容器)
+        - [电容器的并联和串联](#电容器的并联和串联)
+          - [并联(电压一致)](#并联电压一致)
+          - [串联(电荷一致)](#串联电荷一致)
+        - [电容器的能量](#电容器的能量)
+        - [电介质，电场中的绝缘体](#电介质电场中的绝缘体)
+          - [宏观解释](#宏观解释)
+          - [极化微观解释](#极化微观解释)
+        - [极化强度矢量(Polarization)](#极化强度矢量polarization)
+        - [电介质的极化规](#电介质的极化规)
+        - [Guass定律的推广](#guass定律的推广)
+      - [恒定电流](#恒定电流)
+        - [电流与电流密度](#电流与电流密度)
+        - [电阻与电导](#电阻与电导)
+        - [电功率与焦耳定律](#电功率与焦耳定律)
+        - [欧姆定律的微观解释](#欧姆定律的微观解释)
+
+
 对于一个均匀带电的圆环，距离其中心 $z$ 的带电量为 $q_0$ 所受的沿 $Z$ 方向的力 $F_z$ 
 
 <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/image.png" width=55%/></div>

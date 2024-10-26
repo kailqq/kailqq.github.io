@@ -10,3 +10,4 @@ comments: true
 ## 目录
 
 - [电学部分](./eletronic.md)
+- [磁学部分](./magnetism.md)

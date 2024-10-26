@@ -94,11 +94,13 @@ plugins:
   - tags # 标签功能插件
   - search # 搜索插件
   - changelog  
-  - git-revision-date-localized:
-      enable_creation_date: true
-      locale: zh
-      type: date
-      timezone: Asia/Shanghai
+  # - git-revision-date-localized:
+  #     enable_creation_date: true
+  #     locale: zh
+  #     type: date
+  #     timezone: Asia/Shanghai
+  
+  - print-site
 
 extra:
   generator: false # 是否显示生成器
@@ -240,7 +242,8 @@ nav:
               - 其它: NOTE/Probability/others.md
           - 普通物理学二: 
               - NOTE/Physics/index.md
-              - 电磁学: NOTE/Physics/eletronic.md
+              - 电学: NOTE/Physics/eletronic.md
+              - 磁学: NOTE/Physics/magnetism.md
           - 高级数据结构与算法分析: 
               - NOTE/ADS/index.md
               - AVL，Splay树与摊还分析: NOTE/ADS/wk1.md
