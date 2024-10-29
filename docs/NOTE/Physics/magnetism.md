@@ -10,7 +10,7 @@
 
 !!!definition "Ampere's Law"      
     \[
-    dF_{12} = \frac{\mu_0}{4 \pi} \frac{i_2 ds_2 \times (i_1ds_1 \times r_{12})}{r_{12}^2}
+    dF_{12} = \frac{\mu_0}{4 \pi} \frac{i_2 ds_2 \times (i_1ds_1 \times \hat{r_{12}})}{r_{12}^2}
     \]
 
     其中，$\mu_0$ 是真空磁导率，$i_1, i_2$ 是电流，$ds_1, ds_2$ 是电流元长度，$r_{12}$ 是电流元之间的距离。
@@ -23,11 +23,11 @@
     </div>
 
     \[
-        F_{12} = \frac{\mu_0}{4 \pi} \frac{i_2 ds_2 \times (i_1ds_1 \times r_{12})}{r_{12}^2}
+        F_{12} = \frac{\mu_0}{4 \pi} \frac{i_2 ds_2 \times (i_1ds_1 \times \hat{r_{12}})}{r_{12}^2}
     \]
 
     \[
-        F_{21} = \frac{\mu_0}{4 \pi} \frac{i_1 ds_1 \times (i_2ds_2 \times r_{21})}{r_{21}^2}
+        F_{21} = \frac{\mu_0}{4 \pi} \frac{i_1 ds_1 \times (i_2ds_2 \times \hat{r_{21}})}{r_{21}^2}
     \]
      
     \[
@@ -225,7 +225,7 @@ B_x = \frac{\mu_0 i}{2\pi aR} \int \cos^2 \theta dx = \frac{\mu_0 i}{2\pi a} \in
 !!!Note 
     当 $a \to 0,\alpha \to \tan\alpha =  \dfrac{a}{2R} $ 时，$B_x \to \dfrac{\mu_0 i}{2\pi R}$
 
-    当 $a \to \infty, \alpha \to \dfrac{\pi}{2}$ 时, $B_x \to \dfrac{\mu_0 i}{2 a}$
+    当 $a \to \infty, \alpha \to \dfrac{\pi}{2}$ 时, $B_x \to \dfrac{\mu_0 i}{2 a}=\dfrac{1}{2}\mu_0 n i_0$,n为单位长度电流数目i_0为单位电流
 
 
 ### 单层通电螺旋管产生的磁场
@@ -296,3 +296,68 @@ $ni$ 为每一层单位长度的电流，
     <div align="center">
         <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410242152695.png" width="70%"/>
     </div>
+
+
+## 磁场的Gauss定律和回路定律
+
+!!!section "磁场中的Guass定律"  
+    \[
+        \oiint \boldsymbol{B} \cdot d \boldsymbol{A} = 0
+    \]
+
+    !!!Proof 
+
+
+
+!!!section "磁场中的回路定律"
+    \[
+        \oint \boldsymbol{B} \cdot d\boldsymbol{l} =\mu_0 \sum_{in \ loop} i
+    \]
+
+    以右手定则判断正负,不需要对穿过去的电流进行投影，有多少穿过就之间算多少
+
+
+有了回路定律，求磁场就方便得多了
+
+
+
+#### 带电无穷长圆柱周围的磁场
+
+
+\[
+    B=\dfrac{\mu_0 i }{2 \pi R} \cdot \dfrac{r}{R}
+\]
+
+
+\[
+    B=\dfrac{\mu_0 i }{2 \pi r}
+\]
+
+
+#### 无穷大的板
+
+\[
+    B=\frac{1}{2} \mu_0 n i
+\]
+
+#### 通电无穷长螺线管
+
+
+
+\[
+    B=\frac{1}{2} \mu_0 n i
+\]
+
+
+#### 螺绕环
+
+\[
+    B=\frac{1}{2} \mu_0 n i
+\]
+
+
+## 力矩
+
+### 矩形线圈
+
+### 任意形状线圈

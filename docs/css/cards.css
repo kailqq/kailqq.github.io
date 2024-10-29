@@ -38,7 +38,7 @@
 }
 
 [data-md-color-scheme=slate] .nt-card {
-  box-shadow: 0 2px 2px 0 rgba(4, 40, 33, 0.14), 0 3px 1px -2px rgba(40, 86, 94, 0.47), 0 1px 5px 0 rgba(139, 252, 255, 0.64);
+  box-shadow: 0 2px 2px 0 rgba(0, 255, 204, 0.14), 0 3px 1px -2px rgba(40, 86, 94, 0.47), 0 1px 5px 0 rgba(139, 252, 255, 0.64);
 }
 [data-md-color-scheme=slate] .nt-card:hover {
   box-shadow: 0 2px 2px 0 rgba(0, 255, 206, 0.14), 0 3px 1px -2px rgba(33, 156, 177, 0.47), 0 1px 5px 0 rgba(96, 251, 255, 0.64);

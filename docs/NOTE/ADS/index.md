@@ -17,3 +17,4 @@ comments: true
 - [leftist heap,skew heap](./wk3_2.md) 
 - [Binomial quene](./wk4.md)
 - [Backtracking](./wk5.md)
+- [分治法](./wk6.md)
