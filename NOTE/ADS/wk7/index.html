@@ -1193,7 +1193,34 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      加权独立集合问题
+    </span>
+  </a>
+  
+</li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      背包问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵乘法的计算顺序
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      最优二叉搜索树
     </span>
   </a>
   
@@ -1514,7 +1541,34 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      加权独立集合问题
+    </span>
+  </a>
+  
+</li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      背包问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵乘法的计算顺序
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      最优二叉搜索树
     </span>
   </a>
   
@@ -1553,7 +1607,7 @@
 
 <h1 id="dynamic-programming">Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1485 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 13 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 5 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2994 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 58 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 11 分钟</p>
 </div>
 <div class="admonition quote">
 <p class="admonition-title">动态规划的由来</p>
@@ -1620,9 +1674,188 @@
 </ul>
 <p>前三个步骤是动态规划算法求解问题的基础。如果我们仅仅需要一个最优解的值，而非解本身，可以忽略最后一个步骤</p>
 </div>
-<p>更精炼地，事实上动态规划就是为一个具有所谓最优子结构性质（即原问题最优解可以由子问题最优解递推得到）的最优化问题寻找一个子问题到原问题的递推式，然后用记忆化方法求解，有时候需要构造这一组解</p>
-<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 </div>
+<p>更精炼地，事实上动态规划就是为一个具有所谓最优子结构性质（即原问题最优解可以由子问题最优解递推得到）的最优化问题寻找一个子问题到原问题的递推式，然后用记忆化方法求解，有时候需要构造这一组解</p>
+<h2 id="_1">加权独立集合问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">问题引入</p>
+<p>你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。给定一个代表每个房屋存放金额的非负整数数组，计算你不触动警报装置的情况下，一夜之内能够偷窃到的最高金额</p>
+</div>
+<p>问题可以被抽象为</p>
+<p>考虑一个无向图 G，其上所有点都在一条线上（这种图我们称其为路径图），每个点都有一个非负权重。我们称 G 的独立集合是指顶点互不相邻的子集（换句话说独立集合不会同时包含一条边上的两个点），然后要求解一个具有最大顶点权重和的独立集合。</p>
+<details class="eg">
+<summary>简单例子</summary>
+<p><div align="center">
+<img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041445983.png" width=60%>
+</div></p>
+<p>在这个图中有 8 个独立子集：</p>
+<ul>
+<li>空集</li>
+<li>四个单点集</li>
+<li>第 1 和第 3 个点</li>
+<li>第 1 和第 4 个点</li>
+<li>第 2 和第 4 个点</li>
+</ul>
+<p>其中最大的独立集合显然是第 2 和第 4 个点构成的集合，其权重和为 8，即小偷的最优选择是偷 2 和 4 两家，最大收益是 8。需要注意的是，题目的假设中每个顶点都有非负权重，所以最优解的顶点应当是越多越好。</p>
+</details>
+<p>为了构建出这一问题的最优子结构，我们考虑在<span class="arithmatex">\(n\)</span>个点，<span class="arithmatex">\(n-1\)</span>条边构成的图<span class="arithmatex">\(G(V,E)\)</span>中最后一个点<span class="arithmatex">\(v_n\)</span> 在不在解当中：</p>
+<ul>
+<li>如果不在，那么问题的解就是子问题<span class="arithmatex">\(G_{n-1}\)</span>的最优解</li>
+<li>如果在，那么问题的解就是子问题<span class="arithmatex">\(G_{n-2}\)</span>的最优解加上<span class="arithmatex">\(v_n\)</span></li>
+</ul>
+<p>故设前 <span class="arithmatex">\(i\)</span> 个点的最优加权独立集合的权重之和为 <span class="arithmatex">\(W_i\)</span>，我们可以写出递推关系：</p>
+<div class="arithmatex">\[
+    W_i = \max(W_{i-1}, W_{i-2} + w_i)
+\]</div>
+<p>最后我们可以自底向上构建解</p>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>   <span class="n">array</span> <span class="n">A</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>   <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">w_i</span><span class="p">))</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>   <span class="k">return</span> <span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</span></code></pre></div>
+<p>我们在<span class="arithmatex">\(O(n)\)</span>复杂度内完成了这一工作</p>
+<p>如果我们需要重构出构成最优解有哪一些点，那么可以自顶向下根据递推式来判断当前图的最后一个点是否在解中</p>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041506528.png" width=60%>
+</div>
+
+<h2 id="_2">背包问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>背包问题是一个最最经典的动态规划问题，我们这里首先介绍最基础的背包问题，即 <span class="arithmatex">\(0-1\)</span> 背包问题。这
+一问题的描述如下：我们有 <span class="arithmatex">\(n\)</span> 个物品，每个物品的重量为 <span class="arithmatex">\(s_i\)</span>，价值为 <span class="arithmatex">\(v_i\)</span>，我们有一个容量为 <span class="arithmatex">\(C\)</span> 的背包，我们希望找到一个最优的装载方案，使得背包中的物品总价值最大。这一问题的特点是每个物品你要么不放进包里，要么完整的 <span class="arithmatex">\(1\)</span> 个放进去，因此称为 <span class="arithmatex">\(0-1\)</span> 背包问题。</p>
+<p>这与加权独立集合问题略有不同</p>
+<ul>
+<li>如果第 <span class="arithmatex">\(n\)</span> 个物品不在最优解 <span class="arithmatex">\(S\)</span> 中，即最优方案排除了最后一件物品，因此它可以看成仅由前  <span class="arithmatex">\(n−1\)</span>个物品组成的子问题的一种可行解决方案</li>
+<li>如果第 <span class="arithmatex">\(n\)</span> 个物品在最优解 <span class="arithmatex">\(S\)</span> 中，这种情况只有在 <span class="arithmatex">\(s_n \leqslant C\)</span> 时才有意义。类似于加权独立集合问题，我们希望 <span class="arithmatex">\(S − \{n\}\)</span> 是前 <span class="arithmatex">\(n − 1\)</span> 个物品组成的子问题的最优解，但这显然是错误的！如果 <span class="arithmatex">\(S − \{n\}\)</span>就已经把 <span class="arithmatex">\(W\)</span>几乎占满，那最后 <span class="arithmatex">\(n\)</span> 根本就放不进来了。因此我们需要对子问题的设置略做调整：<span class="arithmatex">\(S − \{n\}\)</span> 应当是前 <span class="arithmatex">\(n\)</span> 个物品在背包容量为 <span class="arithmatex">\(C −s_n\)</span> 的情况下的最优解！因为我们知道 <span class="arithmatex">\(n\)</span> 在解中，那么除去 <span class="arithmatex">\(n\)</span> 之外的其它解的重量之和最多就是 <span class="arithmatex">\(C − s_n\)</span>，因此 <span class="arithmatex">\(S − \{n\}\)</span> 应当是前 <span class="arithmatex">\(n\)</span> 个物品在背包容量为  <span class="arithmatex">\(C − s_n\)</span>的情况下的可行解</li>
+</ul>
+<p>所以</p>
+<div class="arithmatex">\[
+ V_{i,c} = 
+\begin{cases} 
+V_{i-1,c}, &amp; \text{if } s_i &gt; c \\ 
+\max(V_{i-1,c}, V_{i-1,c-s_i} + v_i), &amp; \text{if } s_i \leq c 
+\end{cases} 
+\]</div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">knapsack</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">capacity</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">capacity</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">capacity</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            <span class="k">if</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span> <span class="c1">#如果当前物品的重量大于背包容量,不用再考虑</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">c</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">c</span><span class="o">-</span><span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">capacity</span><span class="p">]</span>
+</span></code></pre></div>
+<p>解的重构</p>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041540027.png" width=60%>
+</div>
+
+<h2 id="_3">矩阵乘法的计算顺序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>我们考虑矩阵链相乘 <span class="arithmatex">\( M_1M_2 \cdots M_n \)</span>，每个矩阵的大小为 <span class="arithmatex">\( r_{i-1} \times r_i \)</span>。记</p>
+<div class="arithmatex">\[ M_{ij} = M_iM_{i+1} \cdots M_j \]</div>
+<p>显然前面的三个问题给我们了不少的经验：我们应当考虑最后一个矩阵，然后依据这一矩阵可能的相乘方式划分最优解的可能性。很简单的，第一种情况对应我们的计算方式是 <span class="arithmatex">\( M_{1,n-1} \cdots M_n \)</span>，即先用算前 <span class="arithmatex">\( n-1 \)</span> 个矩阵相乘的最优方式计算前 <span class="arithmatex">\( n-1 \)</span> 个矩阵的乘积，最后与 <span class="arithmatex">\( M_n \)</span> 相乘；第二种情况的计算方式是 <span class="arithmatex">\( M_{1,n-2} \cdots M_{n-1}M_n \)</span>，即先用算前 <span class="arithmatex">\( n-2 \)</span> 个矩阵相乘的最优方式计算前 <span class="arithmatex">\( n-2 \)</span> 个矩阵的乘积，最后与 <span class="arithmatex">\( M_{n-1}M_n \)</span> 的结果相乘。这是根据我们前面的问题的经验得到的，和表述完全一致，但事实上真的只有这两种情况吗？显然不是的！注意，请回到我们分类的根源来看：我们此时分类的依据是 <span class="arithmatex">\( M_n \)</span> 的计算方式，那么对于如下乘积形式：</p>
+<div class="arithmatex">\[ M_{1,i}M_{i+1,n-1}M_n \]</div>
+<p>只要是不同的 <span class="arithmatex">\( i \)</span> ，我们就可以得到不同的计算方式</p>
+<p>因此，我们自顶向下寻找最优解时，应该考虑对于一个无序矩阵，我们的第一刀应该切在哪个地方</p>
+<div class="arithmatex">\[
+    m_{1n} = min\{m_{1i} + m_{i+1,n} + r_0r_ir_n\}
+\]</div>
+<p>前两项代表左右子问题的解，最后一项代表合并的代价，更具体的，我们有</p>
+<div class="arithmatex">\[ 
+m_{ij} = 
+\begin{cases} 
+0, &amp; i = j; \\ 
+\min\limits_{i \leq k &lt; j} \{ m_{ik} + m_{k+1,j} + r_{i-1}r_kr_j \}, &amp; i &lt; j. 
+\end{cases} 
+\]</div>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">OptMatrix</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">r</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">TwoDimArray</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span><span class="w">   </span><span class="kt">int</span><span class="w">  </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="kt">long</span><span class="w">  </span><span class="n">ThisM</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="n">M</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">][</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">//base case</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="cm">/* k = j - i */</span><span class="w"> </span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* For each position */</span><span class="w"> </span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w">    </span><span class="n">M</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">][</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Infinity</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="n">L</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="n">ThisM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">][</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">][</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">[</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">[</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ThisM</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">][</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="cm">/* Update min */</span><span class="w"> </span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="n">M</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">][</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ThisM</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="cm">/* end for-L */</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="cm">/* end for-Left */</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<details class="info">
+<summary>代码解释</summary>
+<ul>
+<li>参数: <code>r</code> 是矩阵链的维度数组，<code>N</code> 是矩阵链的长度，<code>M</code> 是动态规划的结果表。</li>
+<li>初始化base case：</li>
+<li><code>for( i = 1; i &lt;= N; i++ ) M[ i ][ i ] = 0;</code></li>
+<li>
+<p>这一步将矩阵 <code>M</code> 的对角线元素设为 0，因为单个矩阵的乘法代价为零。</p>
+</li>
+<li>
+<p>填充动态规划表：</p>
+</li>
+<li><code>for( k = 1; k &lt; N; k++ )</code>：<code>k</code> 表示当前考虑的矩阵链长度。</li>
+<li><code>for( i = 1; i &lt;= N - k; i++ )</code>：<code>i</code> 是链的起始位置。<ul>
+<li><code>j = i + k;</code>：<code>j</code> 是链的结束位置。</li>
+<li><code>M[ i ][ j ] = Infinity;</code>：初始化 <code>M[i][j]</code> 为无穷大，表示尚未计算出最小代价。</li>
+<li><code>for( L = i; L &lt; j; L++ )</code>：<code>L</code> 是可能的分割点。</li>
+<li><code>ThisM = M[ i ][ L ] + M[ L + 1 ][ j ] + r[ i - 1 ] * r[ L ] * r[ j ];</code><ul>
+<li>计算从 <code>i</code> 到 <code>L</code> 和从 <code>L+1</code> 到 <code>j</code> 的乘法代价，加上合并两个结果矩阵的代价。</li>
+</ul>
+</li>
+<li><code>if ( ThisM &lt; M[ i ][ j ] ) M[ i ][ j ] = ThisM;</code><ul>
+<li>如果计算出的代价小于当前存储的代价，则更新 <code>M[i][j]</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<p>时间复杂度：<span class="arithmatex">\(O(n^3)\)</span>，其中 <span class="arithmatex">\(n\)</span> 是矩阵链的长度。</p>
+<p>解的重构</p>
+<p>这一问题重构解的方法如果用和前面的问题一样简单直接的控制方法显然会比较耗时，因为我们每次要比较很多种可能的情况才能重构出解，所以我们需要做一些优化。优化的方法也非常自然，实际上关键就是用一个二维数组记住每个子问题</p>
+<div class="arithmatex">\[ 
+m_{ij} = \min\limits_{i \leq k &lt; j} \{ m_{ik} + m_{k+1,j} + r_{i-1}r_kr_j \} 
+\]</div>
+<p>对应的最优的分点，然后当我们算出问题 <span class="arithmatex">\( m_n \)</span> 的最优解及其对应的最优分点后，我们再按左右两半子问题的最优分点，以此类推，用中序遍历的思想将分点输出即可，只需线性时间。</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// Function to print the optimal parenthesization</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">printOptimalParens</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;(&quot;</span><span class="p">;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="n">printOptimalParens</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="n">printOptimalParens</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;)&quot;</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="_4">最优二叉搜索树<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>这一问题给定如下输入：给定一列单词 <span class="arithmatex">\( w_1, w_2, \ldots, w_n \)</span>（它们的顺序已经按字典序排列）和它们出现的固定的概率 <span class="arithmatex">\( p_1, p_2, \ldots, p_n \)</span>。问题是要以一种方法在一棵二叉查找树中安放这些单词使得总的期望查找时间最小。</p>
+<p>在一棵二叉查找树中，访问深度 <span class="arithmatex">\( d \)</span> 处的每一个元素所需要的比较次数是 <span class="arithmatex">\( d+1 \)</span>，因此如果 <span class="arithmatex">\( w_i \)</span> 被放在深度 <span class="arithmatex">\( d_i \)</span> 上，那么我们期望将 <span class="arithmatex">\( \sum_{i=1}^{N} p_i (1 + d_i) \)</span> 极小化。</p>
+</div>
+<p>使用贪心和AVL等算法不一定可行，使用分治法又需要首先知道最优根节点在哪里，所以我们使用动态规划的方法来解决这个问题。</p>
+<p>如果我们知道最优根节点<span class="arithmatex">\(w_k\)</span>,那么在整个问题的最优解中，由于事先已经按照字母序排好，左子树必然是<span class="arithmatex">\(w_1 \cdots w_{k-1}\)</span> 的最优解，右子树也必然是<span class="arithmatex">\(w_{k+1} \cdots w_n\)</span> 的最优解，因此我们可以得到递推关系</p>
+<div class="arithmatex">\[ 
+c_{ij} = \sum_{k=i}^{j} p_k + \min\limits_{i \leqslant k \leqslant j} \{ c_{i,k-1} + c_{k+1,j} \}, \quad i \leqslant j.
+\]</div>
+<p>其中<span class="arithmatex">\(p_k\)</span>代表权重，<span class="arithmatex">\(c_{ij}\)</span>代表从<span class="arithmatex">\(i\)</span>到<span class="arithmatex">\(j\)</span>的最优成本，<span class="arithmatex">\(c_{i,k-1}\)</span>代表左子树的最优成本，<span class="arithmatex">\(c_{k+1,j}\)</span>代表右子树的最优成本。</p>
+<p>前面第一项是因为由于根节点的存在，所有的节点都加深一层，是两个子问题结合的结果，后面的项是左右子树的最优解。</p>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041641526.png" width=60%>
+</div>
+
+<p>这个算法是<span class="arithmatex">\(O(n^3)\)</span>的，但是可以优化到<span class="arithmatex">\(O(n^2)\)</span></p>
 
 
 
