@@ -11,10 +11,12 @@ comments: true
 
 ## 目录
 
-- [AVL,SLpay trees](./wk1.md)
-- [red black trees](./wk2.md)
+- [AVL,SLpay树](./wk1.md)
+- [红黑树](./wk2.md)
 - [倒排索引](./wk3_1.md)
-- [leftist heap,skew heap](./wk3_2.md) 
-- [Binomial quene](./wk4.md)
-- [Backtracking](./wk5.md)
+- [左式堆与斜堆](./wk3_2.md) 
+- [二项堆](./wk4.md)
+- [回溯算法](./wk5.md)
 - [分治法](./wk6.md)
+- [动态规划](./wk7.md)
+- [贪心算法](./wk8.md)

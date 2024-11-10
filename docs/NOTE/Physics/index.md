@@ -9,5 +9,6 @@ comments: true
 
 ## 目录
 
-- [电学部分](./eletronic.md)
-- [磁学部分](./magnetism.md)
+- [静电学](./eletronic.md)
+- [恒定磁学](./magnetism.md)
+- [电动力学](./electrodynamincs.md)

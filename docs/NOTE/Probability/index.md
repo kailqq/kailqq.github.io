@@ -13,3 +13,4 @@ comments: true
 - [其它知识](./others.md)
 - [事件与概率](./first.md)
 - [分布列与分布函数](./second.md)
+- [数字特征](./Third.md)

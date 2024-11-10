@@ -17,6 +17,8 @@ comments: true
 
     还要求 $\xi(\omega)$ 的任意取值组合对应的样本点集合构成的事件在事件域 $\mathcal{F}$ 中，这样就可以称 $\xi(\omega)$ 为 **随机变量 (random variable)**
 
+    即将$\xi$看成一个函数，我们希望它的值域$A(\in R)$也满足事件的运算，所以要求它是博雷尔集,落在博雷尔域$\mathcal{B}$中
+
 
 ### 离散型随机变量
 
@@ -221,21 +223,6 @@ comments: true
     0.6827 \quad 0.9545 \quad 0.99.73
     \]
 
-
-### 随机变量的映射
-
-对于常见的函数$f$,$Y=f(X)$ 也是一个随机变量
-
-
-!!!section "计算Y的分布"
-    === "离散型随机变量"
-        此时$Y$也是离散型随机变量;根据 $X$ 的取值，可以得到 $Y$ 的取值，然后根据 $X$ 的分布列，可以得到 $Y$ 的分布列,
-        
-        $$P(Y=y_i)=P(X=x_i,j\dots,k),f(X=x_i,j\dots,k)=y_i$$
-
-    
-    === "连续型随机变量"
-        此时$Y$不一定是连续型随机变量，没有统一的计算公式，但是 **一般可以先求出$Y$的分布函数，然后求导得到密度函数**
 
 
 
@@ -573,7 +560,7 @@ $F_X(x) = F(x, \infty)$
 $F_Y(y) = F(\infty, y)$
 
 
-#### 条件分布
+### 条件分布
 
 假设 \((X, Y)\) 具有分布函数 \(F(x, y)\)，那么给定 \(X = x\)，\(Y\) 的条件分布函数为
 
@@ -596,7 +583,7 @@ P(X \leqslant x | Y = y) = \lim_{\varepsilon \to 0} P(X \leqslant x | y - \varep
 \]
 
 
-#### 多维随机向量
+### 多维随机向量
 
 - 多维随机向量
 
@@ -650,3 +637,500 @@ F_{\mathbf{X}}(\mathbf{x}) = \prod_{i=1}^{m} F_{X_i}(x_i), \quad \forall \mathbf
 1. \((X_{i_1}, X_{i_2}, \cdots, X_{i_k}), k \leq m\) 相互独立
 2. \(f_1(X_1), f_2(X_2), \cdots, f_m(X_m)\) 相互独立
 3. \(f(X_{i_1}, X_{i_2}, \cdots, X_{i_k}), g(X_{j_1}, X_{j_2}, \cdots, X_{j_l})\) 分别是 \(k\) 元和 \(l\) 元 Borel 可测函数，且 \(A \cap B = \emptyset\)。如果 \(A, B \subset \{1, 2, \cdots, m\}, |A| = k, |B| = l\)，并且 \(A \cap B = \emptyset\)，那么 \(f(X_i, i \in A)\) 和 \(g(X_i, i \in B)\) 相互独立。
+
+
+### 随机变量的映射
+
+对于常见的函数$f$,$Y=f(X)$,如果$X$是随机变量，我们为了要求$Y$是随机变量，需要满足$f$是Borel可测函数，即对于任意Borel集$B$，$f^{-1}(B)$也是Borel集,对于一维的情况，主要有以下两种方法来计算Y的分布
+
+!!!section "计算Y的分布"
+    === "离散型随机变量"
+        此时$Y$也是离散型随机变量;根据 $X$ 的取值，可以得到 $Y$ 的取值，然后根据 $X$ 的分布列，可以得到 $Y$ 的分布列,
+        
+        $$P(Y=y_i)=P(X=x_i,j\dots,k),f(X=x_i,j\dots,k)=y_i$$
+
+    
+    === "连续型随机变量"
+        此时$Y$不一定是连续型随机变量，没有统一的计算公式，但是 **一般可以先求出$Y$的分布函数，然后求导得到密度函数**
+
+
+
+### 随机向量的映射
+
+(连续型)随机向量的映射有时候不仅仅是对于一个结果函数的映射，也有对于一个向量的映射，我们依次考虑
+
+!!!Section "求像的分布"
+
+    === "映射到单元" 
+    假设 $(\xi_1,\xi_2,\ldots,\xi_i)$是连续型随机向量，具有联合密度函数$p(x_1,x_2,\ldots,x_i)$，变换如下：
+
+    \[
+       \eta = f(\xi_1,\xi_2,\ldots,\xi_i)
+    \]
+
+    那么$\eta$的分布函数可以由以下公式得到
+
+    \begin{align*}
+       F_{\eta}(y) = P(\eta \leq y) &= P(f(\xi_1,\xi_2,\ldots,\xi_i) \leq y)\\
+                   &= \int \cdots \int_{f(\xi_1,\xi_2,\ldots,\xi_i) \leq y} p(x_1,x_2,\ldots,x_i)dx_1dx_2\ldots dx_i
+    \end{align*}
+    
+    !!!Example "值得注意的例子"
+        ===  "$\eta=\xi_1+\xi_2$"
+            如果$\xi_1,\xi_2$是连续型随机变量，那么$\eta=\xi_1+\xi_2$的分布函数为
+
+            \[
+            F_{\eta}(y) = \int_{-\infty}^{\infty} dx_1\int_{-\infty}^{y-x_1} p(x_1,x_2)dx_2
+            \]
+
+            $x_2=z-x_1$，则
+
+            \[
+            F_{\eta}(y) = \int_{-\infty}^{\infty} dx_1\int_{-\infty}^{y} p(x_1,z-x_1)dz
+            \]
+
+            再交换次序(此时积分区域为矩形，所以我们才可以可以交换次序)
+
+            \[
+            F_{\eta}(y) = \int_{-\infty}^{y} dz\int_{-\infty}^{\infty} p(x_1,z-x_1)dx_1
+            \]
+
+            所以我们得到密度函数
+
+            \[
+            p_{\eta}(y) = \int_{-\infty}^{\infty} p(x_1,y-x_1)dx_1
+            \]
+
+            若$\xi_1,\xi_2$相互独立，那么
+
+            \[
+            p_{\eta}(y) = \int_{-\infty}^{\infty} p_{\xi_1}(x_1)p_{\xi_2}(y-x_1)dx_1
+            \]
+
+            积分区域画图看
+
+        === "$\eta=\xi_1\xi_2$"
+            \[
+            F_Z(z) = \int_{(x, y) : xy \leq z} p(x, y) \, dx \, dy
+            \]
+
+            \[
+            = \int_{-\infty}^0 \int_{z/x}^{\infty} p(x, y) \, dy \, dx + \int_0^{\infty} \int_{-\infty}^{z/x} p(x, y) \, dy \, dx
+            \]
+
+            \[
+            = -\int_{-\infty}^z \int_{-\infty}^0 \frac{1}{x} p\left(x, \frac{y}{x}\right) \, dx \, du + \int_0^{\infty} \int_0^z \frac{1}{x} p\left(x, \frac{y}{x}\right) \, dx \, du
+            \]
+
+
+            \[
+            p_Z(z) = -\int_{-\infty}^0 \frac{1}{x} p\left(x, \frac{z}{x}\right) \, dx + \int_0^{\infty} \frac{1}{x} p\left(x, \frac{z}{x}\right) \, dx
+            \]
+
+            \[
+            = \int_{-\infty}^{\infty} \frac{1}{|x|} p\left(x, \frac{z}{x}\right) \, dx
+            \]
+
+        
+        === "$\eta=\dfrac{\xi_1}{\xi_2}$"
+            \[
+            F_{\eta}(y) = P \left( \frac{\xi_1}{\xi_2} \leq y \right) = \iint_{x_1 / x_2 \leq y} p(x_1, x_2) \, dx_1 \, dx_2
+            \]
+
+            \[
+            = \int_{-\infty}^0 \int_{y x_2}^{\infty} p(x_1, x_2) \, dx_1 \, dx_2 + \int_0^{\infty} \int_{-\infty}^{y x_2} p(x_1, x_2) \, dx_1 \, dx_2
+            \]
+
+            令 \( x_1 = z x_2 \)，并交换积分次序，得
+
+            \[
+            F_{\eta}(y) = \int_{-\infty}^y \int_{-\infty}^{\infty} p(z x_2, x_2) x_2 \, dx_2 \, dz = \int_{-\infty}^y p_{\eta}(z) \, dz
+            \]
+
+            这说明若 \( (\xi_1, \xi_2) \) 是连续型随机向量，则 \( \eta = \frac{\xi_1}{\xi_2} \) 是连续型随机变量，其密度函数为
+
+            \[
+            p_{\eta}(z) = \int_{-\infty}^{\infty} p(z x, x) |x| \, dx.
+            \]
+
+        === "次序统计量的分布"
+            设 \( \xi_1, \xi_2, \dots, \xi_n \) 独立同分布，分布函数都为 \( F(x) \)。把 \( \xi_1, \xi_2, \dots, \xi_n \) 每取一组值 \( \xi_1(\omega), \xi_2(\omega), \dots, \xi_n(\omega) (\omega \in \Omega) \) 都按大小次序排列，所得随机变量 \( \xi_{(1)}, \xi_{(2)}, \dots, \xi_{(n)} \) 称为 **次序统计量**  (order statistics)，它们满足 \( \xi_{(1)} \leq \xi_{(2)} \leq \dots \leq \xi_{(n)} \)。按定义，\( \xi_{(1)} = \min(\xi_1, \xi_2, \dots, \xi_n) \)，\( \xi_{(n)} = \max(\xi_1, \xi_2, \dots, \xi_n) \)。
+
+            现在来求 \( \xi_{(1)}, \xi_{(n)} \) 及 \( (\xi_{(1)}, \xi_{(n)}) \) 的分布，这在数理统计中是有用的。
+
+            ???Property "极值随机变量"
+                $\xi_{(1)}$是最小值，$\xi_{(n)}$是最大值,$\xi_{(k)}$是第k小值
+
+            1. **\( \xi_{(n)} \) 的分布函数**
+
+                \[
+                  P(\xi_{(n)} \leq x) = P(\xi_1 \leq x, \xi_2 \leq x, \dots, \xi_n \leq x)
+                \]
+
+                \[
+                  = P(\xi_1 \leq x) P(\xi_2 \leq x) \cdots P(\xi_n \leq x)
+                \]
+
+                \[
+                  = [F(x)]^n.
+                \]
+
+            2. **\( \xi_{(1)} \) 的分布函数**
+
+                先考虑 \( \{\xi_{(1)} \leq x\} \) 的逆事件 \( \{\xi_{(1)} > x\} \)，
+
+                \[
+                  P(\xi_{(1)} > x) = P(\xi_1 > x, \xi_2 > x, \dots, \xi_n > x)
+                \]
+
+                \[
+                  = P(\xi_1 > x) P(\xi_2 > x) \cdots P(\xi_n > x)
+                \]
+
+                \[
+                  = [1 - F(x)]^n.
+                \]
+
+                故
+
+                \[
+                  P(\xi_{(1)} \leq x) = 1 - [1 - F(x)]^n.
+                \]
+
+
+            3. **\( (\xi_{(1)}, \xi_{(n)}) \) 的联合分布函数**
+
+                \[
+                  F(x, y) = P(\xi_{(1)} \leq x, \xi_{(n)} \leq y)
+                \]
+
+                \[
+                  = P(\xi_{(n)} \leq y) - P(\xi_{(1)} > x, \xi_{(n)} \leq y)
+                \]
+
+                \[
+                  = [F(y)]^n - P \left( \bigcap_{i=1}^n (x < \xi_i \leq y) \right).
+                \]
+
+                因此当 \( x < y \) 时，
+
+                \[
+                  F(x, y) = [F(y)]^n - [F(y) - F(x)]^n.
+                \]
+
+                  当 \( x \geq y \) 时，
+
+                \[
+                  F(x, y) = [F(y)]^n.
+                \]
+
+                  如果 \( \xi_1, \dots, \xi_n \) 是连续型随机变量，有密度 \( p(x) = F'(x) \)，则上面各随机变量（向量）也是连续型的，可将各分布函数求导以得到密度函数。
+            
+            4.第k小值的密度函数
+            
+            \[
+                p_{\xi_{(k)}}(x) = \frac{n!}{(k-1)!(n-k)!} [F(x)]^{k-1} [1-F(x)]^{n-k} f(x)
+            \]
+    
+            其中$f(x)$是密度函数
+
+            在前面有$k-1$个小于$x$的值,再挑一个在$x$领域的值，有$n-k$个大于$x$的值，让领域缩小，除以该领域就得到密度函数
+
+            \[
+                \lim_{\varepsilon \to 0} \frac{P(x \leqslant \xi_{(k)} \leqslant x + \varepsilon)}{\varepsilon} = p_{\xi_{(k)}}(x)
+            \]
+
+            如果是多个就多个小领域，然后除以小领域的长度
+     
+
+
+#### 多个值函数
+我们仅考虑连续型随机向量的变换。
+
+假设 \((X, Y)\) 为连续型随机向量，具有联合密度函数 \(p(X, Y)(x, y)\)。变换如下：
+
+\[
+\begin{cases}
+U = f_1(X, Y) \\
+V = f_2(X, Y)
+\end{cases}
+\]
+
+求 \((U, V)\) 的分布？
+
+- 基本方法
+
+\[
+\begin{align*}
+P(U \leqslant u, V \leqslant v) &= P(f_1(X, Y) \leqslant u, f_2(X, Y) \leqslant v) \\
+&= P((X, Y) \in \{(x, y) : f_1(x, y) \leqslant u, f_2(x, y) \leqslant v\}) \\
+&= \int_{(x,y): f_1(x,y) \leqslant u, f_2(x,y) \leqslant v} p(x, y) \, dx \, dy
+\end{align*}
+\]
+
+如果$f_1$和$f_2$可逆，那么
+
+\[
+\begin{cases}
+X = f_1^{-1}(U, V) \\
+Y = f_2^{-1}(U, V)
+\end{cases}
+\]
+
+取Jacobian行列式
+
+\[
+J = \left| \begin{array}{cc} \frac{\partial f_1^{-1}(u, v)}{\partial u} & \frac{\partial f_1^{-1}(u, v)}{\partial v} \\ \frac{\partial f_2^{-1}(u, v)}{\partial u} & \frac{\partial f_2^{-1}(u, v)}{\partial v} \end{array} \right|
+\]
+
+那么
+
+\[
+    P(U \leqslant u', V \leqslant v') = \int_{(u,v): u \leqslant u', v \leqslant v'} p(f_1^{-1}(u,v), f_2^{-1}(u,v)) |J| \, du \, dv
+\]
+
+即
+
+\[
+    p(u, v) = p(f_1^{-1}(u,v), f_2^{-1}(u,v)) |J|
+\]
+
+!!!Key-Point
+    $x,y$分别用$u,v$表示，再乘以雅克比行列式,可以推广到$n$维随机向量的情况：
+
+    设 \((\xi_1, \ldots, \xi_n)\) 的密度函数为 \(p(x_1, \ldots, x_n)\). 现在有 \(m\) 个函数: \(\eta_1 = f_1(\xi_1, \ldots, \xi_n), \ldots, \eta_m = f_m(\xi_1, \ldots, \xi_n)\), 则 \((\eta_1, \ldots, \eta_m)\) 也是随机变量. 除了各边际分布外，还要求其联合分布. 例如 (2.67) 式，其联合分布函数为
+
+    \[
+    G(y_1, \ldots, y_m) = P(\eta_1 \leq y_1, \ldots, \eta_m \leq y_m) = \int \cdots \int p(x_1, \ldots, x_n) dx_1 \cdots dx_n, \tag{2.72}
+    \]
+
+    这里 \(D\) 是 \(n\) 维区域: \(\{(x_1, \ldots, x_n): f_1(x_1, \ldots, x_n) \leq y_1, \ldots, f_m(x_1, \ldots, x_n) \leq y_m\}\).
+
+    如果 \(m = n, f_j, j = 1, \ldots, n\) 有唯一的反函数组: \(x_i = x_i(y_1, \ldots, y_n), i = 1, \ldots, n\), 且
+
+    \[
+    J = \frac{\partial(x_1, \ldots, x_n)}{\partial(y_1, \ldots, y_n)} \neq 0,
+    \]
+
+    则 \((\eta_1, \ldots, \eta_n)\) 是连续型随机变量. 当 \((y_1, \ldots, y_n) \in (f_1, \ldots, f_n)\) 的值域时，其密度为
+
+    \[
+    q(y_1, \ldots, y_n) = p(x_1(y_1, \ldots, y_n), \ldots, x_n(y_1, \ldots, y_n)) |J|, \tag{2.73}
+    \]
+
+    其他情况, \(q(y_1, \ldots, y_n) = 0\).
+
+
+
+
+!!!Example
+    !!!Property
+        实际上，对于联合正态分布，我们可以设
+
+        \[
+            \boldsymbol{X} =(x,y), \boldsymbol{\mu} =(\mu_1,\mu_2)
+        \]
+
+        \[
+        \Sigma = \begin{pmatrix} \sigma_1^2 & \rho\sigma_1\sigma_2 \\ \rho\sigma_1\sigma_2 & \sigma_2^2 \end{pmatrix}
+        \]
+
+        那么联合正态分布的密度函数为
+
+        \[
+        p(X, Y)(x, y) = \frac{1}{2\pi |\Sigma|^{\frac{1}{2}}} e^{-\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu})^{\mathrm{T}} \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu})}
+        \]
+
+    
+    设 
+
+    \[
+    \begin{pmatrix}
+    U \\
+    V
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    a & b \\
+    c & d
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+    X \\
+    Y
+    \end{pmatrix}
+    = A \cdot \begin{pmatrix}
+    X \\
+    Y
+    \end{pmatrix}
+    \]
+    
+
+    设
+
+    \[
+        \mathbf{x} = \begin{pmatrix}
+        x \\
+        y
+        \end{pmatrix}
+    \]
+
+    \[
+        \mathbf{u} = \begin{pmatrix}
+        u \\
+        v
+        \end{pmatrix}
+    \]
+
+    那么
+
+    \[
+        \mathbf{u} = A \mathbf{x}
+    \]
+
+    取逆变换
+
+    \[
+        \mathbf{x} = A^{-1} \mathbf{u}
+    \]
+
+    
+    \begin{align*}
+    p(U,V)(u,v) &= p(X,Y)(A^{-1} \mathbf{u}) |J|\\
+                &=  \frac{1}{2\pi |\Sigma|^{\frac{1}{2}}} e^{-\frac{1}{2} (A^{-1} \mathbf{u} - \boldsymbol{\mu})^{\mathrm{T}} \Sigma^{-1} (A^{-1} \mathbf{u} - \boldsymbol{\mu})} |A^{-1}|\\
+                &= \frac{1}{2\pi |A \Sigma A^{\mathrm{T}}|^{\frac{1}{2}}} e^{-\frac{1}{2} ( \mathbf{u} - A\boldsymbol{\mu})^{\mathrm{T}} (A \Sigma A^{\mathrm{T}})^{-1} (\mathbf{u} - A\boldsymbol{\mu})}\\
+    \end{align*}
+
+    故
+
+    \[
+        (U,V) \sim \mathcal{N}(A\boldsymbol{\mu}, A \Sigma A^{\mathrm{T}})
+    \]
+    
+    !!!key-point
+        即$(U,V)$的协方差矩阵为$A^{\mathrm{T}} \Sigma A$, 均值为$A\boldsymbol{\mu}$;
+        总结而言，对于$(X,Y)$的联合正态分布做线性变换，新的随机向量仍然是联合正态分布，且均值也做了相应的线性变换，协方差矩阵做了相应的**合同变换**，但是转置在后面。
+
+    
+    如果做极坐标变换
+
+    \[
+        \begin{cases}
+        x = \rho \cos \theta \\
+        y = \rho \sin \theta
+        \end{cases}
+    \]
+
+    **联合密度函数**：
+
+    \[
+       p(\rho, \theta) = \frac{1}{2\pi} e^{-\frac{1}{2}((\rho \cos \theta)^2 + (\rho \sin \theta)^2)\rho}
+    \]
+    
+       可以简化为：
+    
+    \[
+       p(\rho, \theta) = \frac{1}{2\pi} \rho e^{-\frac{\rho^2}{2}}
+    \]
+
+    **边际分布**：
+
+       - 对于 \(\rho\)：
+    
+        \[
+           \rho \sim p_\rho(\rho) = \rho e^{-\frac{\rho^2}{2}}, \quad \rho > 0
+        \]
+    
+       - 对于 \(\theta\)：
+    
+        \[
+            \theta \sim p_\theta(\theta) = \frac{1}{2\pi}, \quad 0 < \theta < 2\pi
+        \]
+
+    **独立性**：
+       \(\rho\) 和 \(\theta\) 是独立的随机变量。
+
+    称 \(\rho\) 为 Rayleigh 分布，\(\theta\) 为均匀分布。    
+
+!!!eg
+    $\xi, \eta $相互独立，都服从参数为 1 的指数分布，求 $\alpha = \xi + \eta$ 与 $\beta = \dfrac{\xi}{\eta}$ 的联合密度；并分别求出 $\alpha$与 $\beta$ 的密度。
+
+    $(\xi, \eta)$ 的联合密度为：当 $x > 0$ 且 $y > 0$ 时，
+
+    $$
+    p(x, y) = e^{-(x+y)}, \quad x > 0, y > 0.
+    $$
+
+    其他情况为 0。
+
+    函数组为：
+
+    $$
+    \begin{cases}
+    u = x + y \\
+    v = x / y
+    \end{cases}
+    $$
+
+    计算雅可比行列式：
+
+    $$
+    J^{-1} = \frac{\partial(u, v)}{\partial(x, y)} = \begin{vmatrix}
+    1 & 1 \\
+    \frac{1}{y} & -\frac{x}{y^2}
+    \end{vmatrix} = 1 \cdot \left(-\frac{x}{y^2}\right) - 1 \cdot \frac{1}{y} = -\frac{(1+v)^2}{u}.
+    $$
+
+    故
+
+    $$
+    |J| = \dfrac{u}{(1 + v)^2}.
+    $$
+
+    $(\alpha, \beta)$ 的联合密度为：
+
+    $$
+    q(u, v) = \begin{cases}
+    \dfrac{ue^{-u}}{(1 + v)^2}, & u > 0, v > 0, \\
+    0, & \text{其他}.
+    \end{cases}
+    $$
+
+    $\alpha = \xi + \eta$ 与 $\beta = \dfrac{\xi}{\eta}$ 各自的密度为 $q(u, v)$ 的边际密度。不难看出：
+
+    $$
+    p_{\alpha}(u) = \begin{cases}
+    \dfrac{ue^{-u}}{(1 + v)^2}, & u > 0, \\
+    0, & u \leqslant 0.
+    \end{cases}
+    $$
+
+    和
+
+    $$
+    p_{\beta}(v) = \begin{cases}
+    \dfrac{1}{1 + v^2}, & v > 0, \\
+    0, & v \leqslant 0.
+    \end{cases}
+    $$
+
+    并且 $\alpha,\beta$ 相互独立。
+
+    本例中，自然也可以用单元的方法计算 $\xi + \eta$ 各自的分布，但这里的方法显然更便捷,更方便。
+    
+    !!!key-point
+        这是一个富有有趣性的例子，它告诉我们：
+
+        - 要判断随机变量的几个函数是否独立，可用随机变量变换求得它们的联合分布，再用独立性的各种必要条件来判断；
+
+        - 要求随机变量的一个函数的分布，有时可作适当补充，先求它们的联合分布，而后要求的函数的分布则作为其边际分布。
+
+        所以对于我们前面讨论的单元函数，也可以将其补全为多元，再计算边际分布，例如对于$\alpha = \xi + \eta$，我们可以将其补全为$(\alpha,\beta) = (\xi + \eta, \eta)$，再计算$(\alpha,\beta)$的联合分布，最后求出$\alpha$的边际分布，这与我们前面的结果是一样的
+
+
+
+
+
+
+
+    

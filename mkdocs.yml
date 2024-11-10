@@ -239,11 +239,13 @@ nav:
               - "NOTE/Probability/index.md"
               - 第一章: NOTE/Probability/first.md
               - 第二章: NOTE/Probability/second.md
+              - 第三章: NOTE/Probability/Third.md
               - 其它: NOTE/Probability/others.md
           - 普通物理学二: 
               - NOTE/Physics/index.md
               - 电学: NOTE/Physics/eletronic.md
               - 磁学: NOTE/Physics/magnetism.md
+              - 电动力学: NOTE/Physics/electrodynamincs.md
           - 高级数据结构与算法分析: 
               - NOTE/ADS/index.md
               - AVL，Splay树与摊还分析: NOTE/ADS/wk1.md
@@ -251,6 +253,10 @@ nav:
               - 倒排索引: NOTE/ADS/wk3_1.md
               - 左式堆与斜堆: NOTE/ADS/wk3_2.md
               - 二项堆: NOTE/ADS/wk4.md
+              - 回溯法: NOTE/ADS/wk5.md
+              - 分治法: NOTE/ADS/wk6.md
+              - 动态规划: NOTE/ADS/wk7.md
+              - 贪心法: NOTE/ADS/wk8.md
           - 数学分析:
               - NOTE/MA/index.md
       - CS:
