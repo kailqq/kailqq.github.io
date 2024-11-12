@@ -4,5 +4,15 @@
 
 
 /* [data-md-color-scheme="theme"] {
-    --md-primary-fg-color:        #0d09e8;
+    --md-primary-fg-color:        #4a97babb;
+}
+ */
+
+/* [data-md-color-scheme="theme"] {
+    background-image: url(https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411121429909.png);
+  }
+   */
+
+/* [data-md-color-scheme="theme"] {
+    background-color: #f5f9f9;
 } */
