@@ -8,7 +8,12 @@
 }
  */
 
-/* [data-md-color-scheme="theme"] {
-    background-image: url(https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411121429909.png);
-  }
+/* [data-md-color-scheme="slate"] {
+    background-image: url(https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411132115606.png);
+    background-size: cover;
+}
    */
+
+[data-md-color-scheme="slate"] {
+    --md-hue: 278; 
+  }
