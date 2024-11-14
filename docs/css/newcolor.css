@@ -4,5 +4,16 @@
 
 
 /* [data-md-color-scheme="theme"] {
-    --md-primary-fg-color:        #0d09e8;
-} */
+    --md-primary-fg-color:        #4a97babb;
+}
+ */
+
+/* [data-md-color-scheme="slate"] {
+    background-image: url(https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411132115606.png);
+    background-size: cover;
+}
+   */
+
+[data-md-color-scheme="slate"] {
+    --md-hue: 278; 
+  }

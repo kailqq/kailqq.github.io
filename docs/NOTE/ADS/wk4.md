@@ -306,4 +306,13 @@ ElementType  DeleteMin( BinQueue H )
     - 返回找到的最小元素。
 
         
+## 堆性能的总结(单步摊还代价)
+
+| Operation     | Binary Heap  | Leftist Heap  | Skew Heap  | Binomial Heap  | Fibonacci Heap  |
+|---------------|---------------------------|----------------------------|--------------------------|-----------------------------|--------------------------|
+| Insert        | \(O(\log n)\)             | \(O(\log n)\)              | \(O(\log n)\)           | \(O(1)\)                    | \(O(1)\)                 |
+| Merge         | \(O(n)\)                  | \(O(\log n)\)              | \(O(\log n)\)           | \(O(\log n)\)               | \(O(1)\)                 |
+| DeleteMin     | \(O(\log n)\)             | \(O(\log n)\)              | \(O(\log n)\)           | \(O(\log n)\)               | \(O(\log n)\)            |
+| Delete        | \(O(\log n)\)             | \(O(\log n)\)              |          | \(O(\log n)\)               | \(O(\log n)\)            |
+| DecreaseKey   | \(O(\log n)\)             | \(O(\log n)\)              |          | \(O(\log n)\)               | \(O(1)\)                 |
 

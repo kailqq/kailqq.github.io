@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 磁学部分
 
 !!!Abstract "Table of contents"

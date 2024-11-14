@@ -1,5 +1,9 @@
+---
+comments: true
+---
+
 # 电学部分
-> 授课:方明虎
+
 
 ## Electric Charge and Coulomb's Law(电荷和库仑定律)
 

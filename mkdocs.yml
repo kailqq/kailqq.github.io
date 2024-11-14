@@ -14,7 +14,7 @@ copyright: Copyright &copy; 2023 ~ now |  Kailqq
 # 配置
 theme:
   favicon: static/images/logo.png
- #custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
+  custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
   name: material # 主题名称，Material已经是最优秀的选择了，相信我。
   logo: static/images/logo.png # logo 图片
   language: zh # 默认语言
@@ -51,14 +51,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)" # 浅色
       scheme: theme
-      primary: 1bdbe9b0
+      primary: blue-grey
+      accent: pink
       toggle:
         icon: material/weather-night
         name: 夜深了，my friend
     - media: "(prefers-color-scheme: dark)" # 深色
       scheme: slate
       primary: black
-      accent: indigo
+      accent: yellow
       toggle:
         icon: material/weather-sunny
         name: Hey,天亮了
@@ -190,6 +191,8 @@ markdown_extensions: # markdown extensions
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - pymdownx.critic:
+      mode: view
   - neoteroi.cards
   
 extra_javascript:
@@ -214,7 +217,8 @@ extra_css:
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
 # 导航树 - 请按照我的做法来做，否则可能无法正常工作。引号可以省略。开头的点和斜杠也可以省略 ("./HOME/about.md" 或 Home/about.md) 。注意，导航树这里的文件名是 filename.md 这样的，但在文件夹中，它实际上被命名为 filename.en.md 和 filename.zh.md。我猜测默认是英文，所以, index.en.md 和 index.md 是一样的。i18n插件会自动识别文件名，然后根据文件名的后缀来切换语言。所以，如果你想添加一个新页面，你需要添加两个文件，一个是 filename.en.md，另一个是 filename.zh.md。其中，filename.en.md 也可以被命名为 filename.md，但是 filename.zh.md 不能被命名为 filename.md，否则会导致无法识别。
 nav: 
-  - HOME: index.md
+  - Welcome: index.md
+  # - HOME: index.md
   - change_log: changelog.md
   - NOTE:
       - NOTE/index.md
