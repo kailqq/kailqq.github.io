@@ -100,7 +100,7 @@ plugins:
   #     locale: zh
   #     type: date
   #     timezone: Asia/Shanghai
-  
+  # - social
   - print-site
 
 extra:
