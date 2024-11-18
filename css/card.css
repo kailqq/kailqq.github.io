@@ -58,7 +58,7 @@
 }
 
 .file-block:hover {
-    background-color: #5338b4;
+    background-color: #d69c30;
 }
 [data-md-color-scheme="slate"] .file-block:hover {
     background-color: #a3317d;
