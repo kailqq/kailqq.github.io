@@ -641,9 +641,24 @@ u = iA = \frac{ev}{2\pi r} \left( \pi r^2 \right) = \frac{1}{2} evr = \frac{e r^
     \chi_m=\dfrac{C}{T-\theta}
 \]
 
-### 磁畴(todo)
+### 磁畴
 
-## RL-回路(todo)
+即使在没有外加磁场B的情况下，磁性材料中的磁偶极子（磁性小区域）也会倾向于在小范围内强烈地排列成特定的方向，形成所谓的“磁畴”。当施加外部磁场时，这些磁畴会重新排列，使得它们的方向一致，从而产生大的净磁化强度。
+
+<div align=center>
+    <img src="../img/磁畴.png" width="60%">
+</div>
+
+- 软铁磁体：指的是容易被磁化和退磁的磁性材料。它们在外部磁场作用下磁畴会有序排列，但磁场移除后磁畴会很快随机化。
+
+- 硬铁磁体：指的是不易被退磁的磁性材料，例如某些特殊合金。它们在外部磁场移除后仍能保持磁畴的有序排列，因此具有较强的磁性。
+
+- 永久磁体：通常指永久保持磁性的材料，例如稀土磁铁。它们的磁畴在没有外力作用下不会随机化，但可以通过施加外力（如磁场或震动）来改变磁畴的方向。
+
+- 居里点：是磁性材料的一个物理特性，指的是材料由铁磁性变为顺磁性的转变温度。对于铁来说，这个温度是770摄氏度。
+
+
+## RL-回路
 
 !!!Note "RC回路"
     
@@ -667,7 +682,7 @@ u = iA = \frac{ev}{2\pi r} \left( \pi r^2 \right) = \frac{1}{2} evr = \frac{e r^
     <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411130905148.png" width="30%">
 </div>
 
-开始开关打到a
+### 开关打到a
 
 \[
 iR + L \frac{di}{dt} = \varepsilon
@@ -700,6 +715,94 @@ $$
 {==时间常数$\frac{R}{L}$==}
 
 
+<div align=center>
+    <img src="../img/RL.png" width="50%">
+</div>
+
+对于电流
+
+\[
+    i = \dfrac{\varepsilon}{R}(1-e^{-\frac{-Rt}{L}})
+\]
+
+最大是$\dfrac{\varepsilon}{R}$，在$t=L/R$达到最大值的$63\%$
+
+对于电压
+
+\[
+    V_L = L\dfrac{di}{dt}=-\varepsilon e^{-\frac{-Rt}{L}}
+\]
+
+最大是$\varepsilon$，在$t=L/R$达到最大值的$37\%$
+
+### 开关打到b
+
+\[
+    iR + L \frac{di}{dt} = 0
+\]
+
+\[
+    \frac{di}{dt} = -\frac{R}{L}i
+\]
+
+\[
+    i = i_0 e^{-\frac{R}{L}t}
+\]
+
+$t=0$,$i_0=\dfrac{\varepsilon}{R}$
+
+\[
+    i = \dfrac{\varepsilon}{R}e^{-\frac{R}{L}t}
+\]  
+
+
+<div align=center>
+    <img src="../img/RLoff.png" width="50%">
+</div>
+
+对于电流，在$L/R$时间后，电流减少到原来的$37\%$
+
+对于电压,在$L/R$时间后，电压减少到原来的$37\%$
+
+### 线圈的能量
+
+!!!Note
+    回忆电容器的能量
+
+    \[
+        U = \frac{1}{2} CV^2  \enspace u_e=\dfrac{1}{2}\varepsilon E^2
+    \]
+
+
+<div align=center>
+    <img src="../img/solenoid.png" width="30%">
+</div>
+
+\[
+    dW = -\varepsilon dq = -\varepsilon i dt =  Lidi
+\]
+
+\[
+    W = \int_0^I Lidi = \frac{1}{2} LI^2
+\]
+
+
+!!!info
+    如果是互感线圈，那么 $W=MI_1I_2$
+
+
+!!!key-point
+    磁场的能量密度
+    \[
+        u_m = \dfrac{1}{2\mu_0}B^2
+    \]
+
+    总结
+
+    $\mu_B=\dfrac{1}{2}\boldsymbol{B} \cdot \boldsymbol{H}$
+
+    $\mu_E=\dfrac{1}{2}\boldsymbol{D} \cdot \boldsymbol{E}$
+
 
 ## 电磁振荡
 
@@ -724,6 +827,25 @@ $$
 
 
 !!!proof
+    \[
+      U = U_B + U_E = \frac{1}{2} Li^2 + \frac{1}{2} \frac{q^2}{C}
+    \]
+
+    \[
+      \frac{dU}{dt} = Li \frac{di}{dt} + \frac{q}{C} \frac{dq}{dt} = Li \frac{d^2 q}{dt^2} + \frac{q}{C} i = 0
+    \]
+
+    \[
+       \frac{d^2 q}{dt^2} + \frac{1}{LC} q = 0
+    \]
+
+    \[
+       \left( \frac{d^2 x}{dt^2} + \frac{k}{m} x = 0 \right)
+    \]
+
+    \[
+       \omega = \sqrt{\frac{k}{m}} = \frac{1}{\sqrt{LC}}
+    \]
 
 
 ### 阻尼和受迫振动
@@ -734,21 +856,106 @@ $$
     <img src="../img/RLC.png" width="30%">
 </div>
 
+对于开关打到a和b的情况，我们可以得到
+
+\[
+L \frac{di}{dt} + iR + \frac{q}{C} = 
+\begin{cases} 
+\varepsilon & \text{K} \to a \\ 
+0 & \text{K} \to b 
+\end{cases}
+\]
+
+即
+
+\[
+i = \frac{dq}{dt}, \quad
+L \frac{d^2 q}{dt^2} + R \frac{dq}{dt} + \frac{1}{C} q = 
+\begin{cases} 
+\varepsilon & \\ 
+0 & 
+\end{cases}
+\]
+
 **过阻尼**
+
+当
+
+\[
+R^2 > \frac{4L}{C}
+\]
+
+此时为过阻尼震荡
+
+<figure markdown="span">
+  ![Image title](../img/chargin.png){align = left}
+  <figcaption>charging</figcaption>
+</figure>
+
+
+<figure markdown="span">
+  ![Image title](../img/dischar.png){align = left}
+  <figcaption>discharging</figcaption>
+</figure>
+
 
 **临界阻尼**
 
-**阻尼**
+当
 
+\[
+R^2 = \frac{4L}{C}
+\]
 
+此时为临界阻尼震荡
+
+\[
+    q = (A+Bt)e^{-\frac{R}{2L}t}+C\varepsilon
+\]
+
+图像与过阻尼相似,但是震荡得更快
+
+**欠阻尼**
+
+当
+
+\[
+R^2 < \frac{4L}{C}
+\]
+
+此时为欠阻尼震荡
+
+做振幅不断减小的振动
+
+<figure markdown="span">
+  ![Image title](../img/lightdamping.png){align = left}
+  <figcaption>light damping</figcaption>
+</figure>
 
 **受迫振动和共振**
 
+如果外加电压为交流电，当变化频率与电路固有频率相同时，电路会发生共振
+
+<figure markdown="span">
+  ![Image title](../img/forceos.png){align = left}
+  <figcaption>共振</figcaption>
+</figure>
 
 
+!!!info 
+    普通的天线无法同时接受很多的信号，如果很多人一起打电话，那么电线就会瘫痪掉，但是如果使用的是超导体天线，电阻很小，其振幅的宽度很小很小，不用担心共振的问题
 
+最后，附上本人普通物理学(I)有关阻尼震荡的笔记，~~有空再敲上来吧~~
 
    
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../../../static/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">振动方程推导</div>
+<div class="file-meta"></div>
+</div>
+<a class="down-button" target="_blank" href="../img/phy.pdf"  markdown="1">:fontawesome-solid-download: 查看</a>
+</div>
 
 
 

@@ -261,6 +261,7 @@ nav:
               - 分治法: NOTE/ADS/wk6.md
               - 动态规划: NOTE/ADS/wk7.md
               - 贪心法: NOTE/ADS/wk8.md
+              - NP分析: NOTE/ADS/wk9.md
           - 数学分析:
               - NOTE/MA/index.md
       - CS:
