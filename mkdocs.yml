@@ -194,7 +194,7 @@ markdown_extensions: # markdown extensions
   - pymdownx.critic:
       mode: view
   - neoteroi.cards
-  
+
 extra_javascript:
   - javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js

@@ -20,3 +20,4 @@ comments: true
 - [分治法](./wk6.md)
 - [动态规划](./wk7.md)
 - [贪心算法](./wk8.md)
+- [NP完全性](./wk9.md)

@@ -682,7 +682,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 !!!Note
     其本质是电子云位移的结果
 
-对于 Polar dielectrics，当电场作用于其上时，它会给原本杂乱无章的电偶极矩一个力矩，[这个力矩会使得电偶极矩偏向电场方向](http://www.kailqq.cc/NOTE/Physics/eletronic/#电偶极矩在电场中)，这样的极化叫做**取向极化**
+对于 Polar dielectrics，当电场作用于其上时，它会给原本杂乱无章的电偶极矩一个力矩，[这个力矩会使得电偶极矩偏向电场方向](http://www.kailqq.cc/NOTE/Physics/eletronic/#电偶极矩在电场中)，这样的极化叫做 **取向极化**
 
 <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410122302366.png" width=50%/></div>
 
@@ -737,10 +737,10 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410191128315.png" width=50%/></div>
 
-### 电介质的极化规
+### 电介质的极化规律
 
 !!!Definition
-    在各向异性的介质中，极化强度适量是电场的函数，在各项同性的材料中$\boldsymbol{P}=\varepsilon_0 \chi_e E$
+    在各向异性的介质中，极化强度矢量是电场的函数，在各项同性的材料中$\boldsymbol{P}=\varepsilon_0 \chi_e E$
 
     其中 $\chi_e$ 是电介质的电极化率，与介电常数的关系为 $\kappa_e = 1 + \chi_e$
 

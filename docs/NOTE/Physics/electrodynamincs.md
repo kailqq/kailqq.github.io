@@ -641,9 +641,9 @@ u = iA = \frac{ev}{2\pi r} \left( \pi r^2 \right) = \frac{1}{2} evr = \frac{e r^
     \chi_m=\dfrac{C}{T-\theta}
 \]
 
-### 磁畴
+### 磁畴(todo)
 
-## RL-回路
+## RL-回路(todo)
 
 !!!Note "RC回路"
     
@@ -698,3 +698,57 @@ V_L = -L \frac{di}{dt} = -\varepsilon e^{-\frac{t}{\tau_L}}
 $$
 
 {==时间常数$\frac{R}{L}$==}
+
+
+
+## 电磁振荡
+
+<div align=center>
+    <img src="../img/LC.png" width="60%">
+</div>
+
+电容电场能和线圈磁场能量相互转化
+
+!!!info 
+    可以类比于弹簧振子，弹簧的势能和动能相互转化
+
+    <div align=center>
+        <img src="../img/spring.png" width="50%">
+    </div>
+
+    $q$->弹簧的位移$x$,$i$->弹簧的速度$v$,$\dfrac{1}{C}$->弹簧的劲度系数$k$,$L$->弹簧的质量$m$
+
+    \[
+        \omega=\dfrac{1}{\sqrt{LC}}
+    \]
+
+
+!!!proof
+
+
+### 阻尼和受迫振动
+
+#### RLC电路
+
+<div align=center>
+    <img src="../img/RLC.png" width="30%">
+</div>
+
+**过阻尼**
+
+**临界阻尼**
+
+**阻尼**
+
+
+
+**受迫振动和共振**
+
+
+
+
+
+   
+
+
+
