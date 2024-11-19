@@ -944,6 +944,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#instruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      instruction
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1143,6 +1152,8 @@
       
         
           
+        
+      
         
       
         
@@ -1705,6 +1716,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#instruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      instruction
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1738,7 +1758,7 @@
 
 <h1 id="arithmetic-for-computer">Arithmetic for Computer<a class="headerlink" href="#arithmetic-for-computer" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 3268 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 11 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 4102 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 5 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 14 分钟</p>
 </div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>计算机中的指令可以分为三类：</p>
@@ -1949,11 +1969,6 @@
 <div class="arithmatex">\[
 Dividend  = quotient \times Divisor + Reminder
 \]</div>
-<p>Iterative subtraction:</p>
-<ul>
-<li>Greater than 0: then we get a 1</li>
-<li>Smaller than 0: then we get a 0</li>
-</ul>
 <details class="version 1">
 <summary>Version</summary>
 <ul>
@@ -2136,6 +2151,340 @@ Dividend  = quotient \times Divisor + Reminder
 <p>总的来说，G位如果大于进制的一半，则看它的下一位R位，如果R位大于0了，那么进位，如果为0，那么看S位，如果S位大于0，那么进位。如果RS位都是0了，那么选择最近的偶数来进位。(LSB是奇数，进位；LSB是偶数，舍去屁股后面的)</p>
 </div>
 <p>损失不会超过 0.5 个 ulp. </p>
+<h2 id="instruction">instruction<a class="headerlink" href="#instruction" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">寄存器</th>
+<th style="text-align: center;">ABI 名称</th>
+<th style="text-align: left;">用途描述</th>
+<th style="text-align: center;">saver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">x0</td>
+<td style="text-align: center;">zero</td>
+<td style="text-align: left;">硬件 0</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">x1</td>
+<td style="text-align: center;">ra</td>
+<td style="text-align: left;">返回地址（return address）</td>
+<td style="text-align: center;">caller</td>
+</tr>
+<tr>
+<td style="text-align: center;">x2</td>
+<td style="text-align: center;">sp</td>
+<td style="text-align: left;">栈指针（stack pointer）</td>
+<td style="text-align: center;">callee</td>
+</tr>
+<tr>
+<td style="text-align: center;">x3</td>
+<td style="text-align: center;">gp</td>
+<td style="text-align: left;">全局指针（global pointer）</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">x4</td>
+<td style="text-align: center;">tp</td>
+<td style="text-align: left;">线程指针（thread pointer）</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">x5</td>
+<td style="text-align: center;">t0</td>
+<td style="text-align: left;">临时变量/备用链接寄存器（alternate link reg）</td>
+<td style="text-align: center;">caller</td>
+</tr>
+<tr>
+<td style="text-align: center;">x6-7</td>
+<td style="text-align: center;">t1-2</td>
+<td style="text-align: left;">临时变量</td>
+<td style="text-align: center;">caller</td>
+</tr>
+<tr>
+<td style="text-align: center;">x8</td>
+<td style="text-align: center;">s0/fp</td>
+<td style="text-align: left;">需要保存的寄存器/帧指针（frame pointer）</td>
+<td style="text-align: center;">callee</td>
+</tr>
+<tr>
+<td style="text-align: center;">x9</td>
+<td style="text-align: center;">s1</td>
+<td style="text-align: left;">需要保存的寄存器</td>
+<td style="text-align: center;">callee</td>
+</tr>
+<tr>
+<td style="text-align: center;">x10-11</td>
+<td style="text-align: center;">a0-1</td>
+<td style="text-align: left;">函数参数/返回值</td>
+<td style="text-align: center;">caller</td>
+</tr>
+<tr>
+<td style="text-align: center;">x12-17</td>
+<td style="text-align: center;">a2-7</td>
+<td style="text-align: left;">函数参数</td>
+<td style="text-align: center;">caller</td>
+</tr>
+<tr>
+<td style="text-align: center;">x18-27</td>
+<td style="text-align: center;">s2-11</td>
+<td style="text-align: left;">需要保存的寄存器</td>
+<td style="text-align: center;">callee</td>
+</tr>
+<tr>
+<td style="text-align: center;">x28-31</td>
+<td style="text-align: center;">t3-6</td>
+<td style="text-align: left;">临时变量</td>
+<td style="text-align: center;">caller</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>R-Type: add, sub, and, or, xor, slt, srl, sll, sra, sltu</li>
+<li>I-Type: addi, andi, ori, xori, srli, slti, slli, srai, sltiu, lb, lh, lw, lbu, lhu, jalr,(CSR指令与ecall, ebreak等按I型立即数处理，但是OPCODE是system)</li>
+<li>S-Type: sb, sh, sw</li>
+<li>B-Type: beq, bne, blt, bge, bltu, bgeu</li>
+<li>J-Type: jal</li>
+<li>U-Type: lui, auipc</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="instruction-r-type" name="__tabbed_1" type="radio" /><input id="instruction-i-type" name="__tabbed_1" type="radio" /><input id="instruction-b-type" name="__tabbed_1" type="radio" /><input id="instruction-u-type" name="__tabbed_1" type="radio" /><input id="instruction-j-type" name="__tabbed_1" type="radio" /><input id="instruction-s-type" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="instruction-r-type">R-type</label><label for="instruction-i-type">I-type</label><label for="instruction-b-type">B-type</label><label for="instruction-u-type">U-type</label><label for="instruction-j-type">J-type</label><label for="instruction-s-type">S-type</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><table class="riscv-table">
+        <tr>
+             <td class="riscv-table-numnodel">31</td>
+             <td class="riscv-table-numnode" colspan="5"></td>
+             <td class="riscv-table-numnoder">25</td>
+             <td class="riscv-table-numnodel">24</td>
+             <td class="riscv-table-numnode" colspan="3"></td>
+             <td class="riscv-table-numnoder">20</td>
+             <td class="riscv-table-numnodel">19</td>
+             <td class="riscv-table-numnode" colspan="3"></td>
+             <td class="riscv-table-numnoder">15</td>
+             <td class="riscv-table-numnodel">14</td>
+             <td class="riscv-table-numnode" colspan="1"></td>
+             <td class="riscv-table-numnoder">12</td>
+             <td class="riscv-table-numnodel">11</td>
+             <td class="riscv-table-numnode" colspan="3"></td>
+             <td class="riscv-table-numnoder">7</td>
+             <td class="riscv-table-numnodel">6</td>
+             <td class="riscv-table-numnode" colspan="5"></td>
+             <td class="riscv-table-numnoder">0</td>
+        </tr>
+        <tr>
+             <td colspan="7" class="riscv-table-node">funct7</td>
+             <td colspan="5" class="riscv-table-node">rs2</td>
+             <td colspan="5" class="riscv-table-node">rs1</td>
+             <td colspan="3" class="riscv-table-node">funct3</td>
+             <td colspan="5" class="riscv-table-node">rd</td>
+             <td colspan="7" class="riscv-table-node">opcode</td>
+        </tr>
+        </table></p>
+<p><code>rd = rs1 op rs2</code>,有时候<code>rs1</code>,<code>rs2</code>,又称为<code>rs</code>,<code>rt</code></p>
+</div>
+<div class="tabbed-block">
+<p><table class="riscv-table">
+    <tr>
+         <td class="riscv-table-numnodel">31</td>
+         <td class="riscv-table-numnode" colspan="10"></td>
+         <td class="riscv-table-numnoder">20</td>
+         <td class="riscv-table-numnodel">19</td>
+         <td class="riscv-table-numnode" colspan="3"></td>
+         <td class="riscv-table-numnoder">15</td>
+         <td class="riscv-table-numnodel">14</td>
+         <td class="riscv-table-numnode" colspan="1"></td>
+         <td class="riscv-table-numnoder">12</td>
+         <td class="riscv-table-numnodel">11</td>
+         <td class="riscv-table-numnode" colspan="3"></td>
+         <td class="riscv-table-numnoder">7</td>
+         <td class="riscv-table-numnodel">6</td>
+         <td class="riscv-table-numnode" colspan="5"></td>
+         <td class="riscv-table-numnoder">0</td>
+    </tr>
+    <tr>
+         <td colspan="12" class="riscv-table-node">imm[11:0]</td>
+         <td colspan="5" class="riscv-table-node">rs1</td>
+         <td colspan="3" class="riscv-table-node">funct3</td>
+         <td colspan="5" class="riscv-table-node">rd</td>
+         <td colspan="7" class="riscv-table-node">opcode</td>
+    </tr>
+    </table> </p>
+<p>立即数为 
+<div class="language-Verilog highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w"> </span><span class="n">imm</span><span class="o">=</span><span class="p">{{</span><span class="mh">20</span><span class="p">{</span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="p">]}},</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">20</span><span class="p">]}</span>
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p><table class="riscv-table">
+    <tr>
+         <td class="riscv-table-numnodel">31</td>
+         <td class="riscv-table-numnode" colspan="5"></td>
+         <td class="riscv-table-numnoder">25</td>
+         <td class="riscv-table-numnodel">24</td>
+         <td class="riscv-table-numnode" colspan="3"></td>
+         <td class="riscv-table-numnoder">20</td>
+         <td class="riscv-table-numnodel">19</td>
+         <td class="riscv-table-numnode" colspan="3"></td>
+         <td class="riscv-table-numnoder">15</td>
+         <td class="riscv-table-numnodel">14</td>
+         <td class="riscv-table-numnode" colspan="1"></td>
+         <td class="riscv-table-numnoder">12</td>
+         <td class="riscv-table-numnodel">11</td>
+         <td class="riscv-table-numnode" colspan="3"></td>
+         <td class="riscv-table-numnoder">7</td>
+         <td class="riscv-table-numnodel">6</td>
+         <td class="riscv-table-numnode" colspan="5"></td>
+         <td class="riscv-table-numnoder">0</td>
+    </tr>
+    <tr>
+         <td colspan="7" class="riscv-table-node">imm[12,10:5]</td>
+         <td colspan="5" class="riscv-table-node">rs2</td>
+         <td colspan="5" class="riscv-table-node">rs1</td>
+         <td colspan="3" class="riscv-table-node">funct3</td>
+         <td colspan="5" class="riscv-table-node">imm[4:1,11]</td>
+         <td colspan="7" class="riscv-table-node">opcode</td>
+    </tr>
+    </table></p>
+<p>立即数为
+<div class="language-Verilog highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">imm</span><span class="o">=</span><span class="p">{{</span><span class="mh">19</span><span class="p">{</span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="p">]}},</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">7</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">30</span><span class="o">:</span><span class="mh">25</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">11</span><span class="o">:</span><span class="mh">8</span><span class="p">],</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">}</span>
+</span></code></pre></div>
+最低位为0，不存；扩展到imm[12]位；将13位拼接完后，剩下高19位用<code>inst[31]</code>符号位填充,此时imm[11]可以不是符号位；imm[12]是符号位</p>
+</div>
+<div class="tabbed-block">
+<p><table class="riscv-table">
+<tr>
+     <td class="riscv-table-numnodel">31</td>
+     <td class="riscv-table-numnode" colspan="18"></td>
+     <td class="riscv-table-numnoder">12</td>
+     <td class="riscv-table-numnodel">11</td>
+     <td class="riscv-table-numnode" colspan="3"></td>
+     <td class="riscv-table-numnoder">7</td>
+     <td class="riscv-table-numnodel">6</td>
+     <td class="riscv-table-numnode" colspan="5"></td>
+     <td class="riscv-table-numnoder">0</td>
+</tr>
+<tr>
+     <td colspan="20" class="riscv-table-node">imm[31:12]</td>
+     <td colspan="5" class="riscv-table-node">rd</td>
+     <td colspan="7" class="riscv-table-node">opcode</td>
+</tr>
+</table></p>
+<p>没有源操作数，只有目的操作数，立即数为
+<div class="language-Verilog highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">imm</span><span class="o">=</span><span class="p">{</span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">12</span><span class="p">],</span><span class="w"> </span><span class="mh">12</span><span class="mb">&#39;b0</span><span class="p">}</span>
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p><table class="riscv-table">
+<tr>
+     <td class="riscv-table-numnodel">31</td>
+     <td class="riscv-table-numnode" colspan="18"></td>
+     <td class="riscv-table-numnoder">12</td>
+     <td class="riscv-table-numnodel">11</td>
+     <td class="riscv-table-numnode" colspan="3"></td>
+     <td class="riscv-table-numnoder">7</td>
+     <td class="riscv-table-numnodel">6</td>
+     <td class="riscv-table-numnode" colspan="5"></td>
+     <td class="riscv-table-numnoder">0</td>
+</tr>
+<tr>
+     <td colspan="20" class="riscv-table-node">imm[20,10:1,11,19:12]</td>
+     <td colspan="5" class="riscv-table-node">rd</td>
+     <td colspan="7" class="riscv-table-node">opcode</td>
+</tr>
+</table></p>
+<p>立即数为
+<div class="language-Verilog highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">imm</span><span class="o">=</span><span class="p">{{</span><span class="mh">11</span><span class="p">{</span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="p">]}},</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">19</span><span class="o">:</span><span class="mh">12</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">20</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">30</span><span class="o">:</span><span class="mh">21</span><span class="p">],</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">}</span>
+</span></code></pre></div>
+<code>imm</code>最低位0不存，此时<code>imm[20]</code>是符号位，<code>imm</code>相当于21位有符号数
+,跳转范围是<span class="arithmatex">\(\pm 2^{20}\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>store 类指令，将寄存器中的数据存储到内存中，存储的大小由<code>func3</code>决定,没有<code>rd</code>寄存器
+<table class="riscv-table">
+<tr>
+     <td class="riscv-table-numnodel">31</td>
+     <td class="riscv-table-numnode" colspan="5"></td>
+     <td class="riscv-table-numnoder">25</td>
+     <td class="riscv-table-numnodel">24</td>
+     <td class="riscv-table-numnode" colspan="3"></td>
+     <td class="riscv-table-numnoder">20</td>
+     <td class="riscv-table-numnodel">19</td>
+     <td class="riscv-table-numnode" colspan="3"></td>
+     <td class="riscv-table-numnoder">15</td>
+     <td class="riscv-table-numnodel">14</td>
+     <td class="riscv-table-numnode" colspan="1"></td>
+     <td class="riscv-table-numnoder">12</td>
+     <td class="riscv-table-numnodel">11</td>
+     <td class="riscv-table-numnode" colspan="3"></td>
+     <td class="riscv-table-numnoder">7</td>
+     <td class="riscv-table-numnodel">6</td>
+     <td class="riscv-table-numnode" colspan="5"></td>
+     <td class="riscv-table-numnoder">0</td>
+</tr>
+<tr>
+     <td colspan="7" class="riscv-table-node">imm[11:5]</td>
+     <td colspan="5" class="riscv-table-node">rs2</td>
+     <td colspan="5" class="riscv-table-node">rs1</td>
+     <td colspan="3" class="riscv-table-node">funct3</td>
+     <td colspan="5" class="riscv-table-node">imm[4:0]</td>
+     <td colspan="7" class="riscv-table-node">opcode</td>
+</tr>
+</table>
+立即数为
+<div class="language-Verilog highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">imm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mh">20</span><span class="p">{</span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="p">]}},</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">25</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">11</span><span class="o">:</span><span class="mh">7</span><span class="p">]}</span>
+</span></code></pre></div>
+将<code>rd</code>的5位和<code>func7</code>的7位一共12位组合成一个立即数</p>
+</div>
+</div>
+</div>
+<p>RISC-V 指令集有三种特权模式，分别是 Machine（M）、Supervisor（S）和 User（U），除此之外还有 Hypervisor（H）模式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">等级</th>
+<th style="text-align: center;">编码</th>
+<th style="text-align: center;">名称</th>
+<th style="text-align: center;">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">00</td>
+<td style="text-align: center;">User/Application</td>
+<td style="text-align: center;">U</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">01</td>
+<td style="text-align: center;">Supervisor</td>
+<td style="text-align: center;">S</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">Hypervisor</td>
+<td style="text-align: center;">H</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">Machine</td>
+<td style="text-align: center;">M</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>M 模式是对硬件操作的抽象，有最高级别的权限。</li>
+<li>S 模式介于M模式和U模式之间，在操作系统中对应于内核态（Kernel）。当用户需要内核资源时，向内核申请，并切换到内核态进行处理。</li>
+<li>U 模式用于执行用户程序，在操作系统中对应于用户态，有最低级别的权限。</li>
+</ul>
+<p>简单嵌入式系统应该至少有 M 模式，安全的嵌入式系统至少要有 M、U 两个模式，Unix-like 操作系统至少要有 M、S、U 三个模式。</p>
+<p>特权模式用来分离、保护不同的运行环境。试图在低特权模式下执行高特权模式的指令会导致异常。</p>
+<p>一个 hart（RISC-V hardware thread，指 RISC-V 处理器的一个执行单元）一般在 U 模式下运行应用程序，直到遇到 trap（比如系统调用、时间中断等），这时 hart 会切换到更高特权级的 trap handler，执行完后再切换回低权限模式继续执行。</p>
+<p>除此之外，RISC-V 还规定了 Debug mode（D-mode），用于调试，它比 M 模式有更高的权限，有一些只有 D 模式才可以访问的 CSR 寄存器，也会保留一些物理地址空间。</p>
 
 
 
