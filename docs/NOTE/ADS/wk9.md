@@ -10,7 +10,16 @@
     
     === "NP问题"
          NP(Non-deterministic Polynomial time)问题是指可以在多项式时间内验证一个解的问题集合。但是并不确定能不能在多项式时间内找到一个解。
-    
+
+        ???note "多项式时间验证"
+            we say $B$ is an efficient verifier for problem $X$ if 
+
+            - $B$ runs in polynomial time,taking two arguments: an instance $x$ and a certificate $y$.
+
+            - there exists a polynomial $p$ such that for every $x$ in $X$, there is a certificate $y$ of length at most $p(|x|)$ such that $B$
+            accepts $(x,y)$
+
+
     === "NP-hard问题"
          NP-hard问题是指所有的NP问题都能在多项式时间内约化为该问题。NP-hard问题不一定是NP问题,它是比NP问题更难的问题。
 
@@ -20,6 +29,7 @@
         \[
             P=NP \Rightarrow P=NP=NPC
         \]
+
 
     !!!property "四者关系"
         - P问题能在多项式时间内解决，自然也能在多项式时间内验证，所以P问题是NP问题的子集。$P \subseteq NP$
@@ -50,6 +60,10 @@
 !!!definition
     === "判定问题"
         给定语言$L$,输入某一个字符串$w$，判定问题是指判断$w$是否属于$L$。如果$w \in L$，则输出YES，否则输出NO。(decision problem)
+
+        $A$ solves problem $L$ ($A$ decides language $L$) if for every $w \in \Sigma^*$
+
+        $A$ accepts $w$ if and only if  $w \in L$
     
     === "搜索问题"
         给定语言$L$,搜索问题是指找到一个$w$，使得$w \in L$。
