@@ -678,7 +678,7 @@
 <p>可悲的是，似乎我在一年前高考结束后就丧失了书写自己的文字的能力，希望多打点字可以让我稍微找回一点写作的乐趣吧</p>
 <blockquote>
 <p>长期摸鱼，尽量更新</p>
-<p>目前共 50 个页面，约 90544 字，2399 行代码。</p>
+<p>目前共 50 个页面，约 90543 字，2399 行代码。</p>
 </blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -6324,7 +6324,7 @@ P(B_3) = \binom{10}{3} \times 0.5^3 \times 0.5^{10-3} = 0.1172.
 \]</div>
 </details></section><section class="print-page" id="note-probability-second"><h1 id="note-probability-second-_1">随机变量与随机向量<a class="headerlink" href="#note-probability-second-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2423 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2419 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
 </div>
 <h2 id="note-probability-second-_2">随机变量<a class="headerlink" href="#note-probability-second-_2" title="Permanent link">&para;</a></h2>
 <h3 id="note-probability-second-_3">随机变量的概念<a class="headerlink" href="#note-probability-second-_3" title="Permanent link">&para;</a></h3>
@@ -7113,7 +7113,7 @@ p(U,V)(u,v) &amp;= p(X,Y)(A^{-1} \mathbf{u}) |J|\\
 \]</div>
 <div class="admonition key-point">
 <p class="admonition-title">Key-point</p>
-<p>即<span class="arithmatex">\((U,V)\)</span>的协方差矩阵为<span class="arithmatex">\(A^{\mathrm{T}} \Sigma A\)</span>, 均值为<span class="arithmatex">\(A\boldsymbol{\mu}\)</span>;
+<p>即<span class="arithmatex">\((U,V)\)</span>的协方差矩阵为<span class="arithmatex">\(A \Sigma A^{\mathrm{T}}\)</span>, 均值为<span class="arithmatex">\(A\boldsymbol{\mu}\)</span>;
 总结而言，对于<span class="arithmatex">\((X,Y)\)</span>的联合正态分布做线性变换，新的随机向量仍然是联合正态分布，且均值也做了相应的线性变换，协方差矩阵做了相应的**合同变换**，但是转置在后面。</p>
 </div>
 <p>如果做极坐标变换</p>
@@ -7186,7 +7186,7 @@ q(u, v) = \begin{cases}
 <p><span class="arithmatex">\(\alpha = \xi + \eta\)</span> 与 <span class="arithmatex">\(\beta = \dfrac{\xi}{\eta}\)</span> 各自的密度为 <span class="arithmatex">\(q(u, v)\)</span> 的边际密度。不难看出：</p>
 <div class="arithmatex">\[
 p_{\alpha}(u) = \begin{cases}
-\dfrac{ue^{-u}}{(1 + v)^2}, &amp; u &gt; 0, \\
+ue^{-u}, &amp; u &gt; 0, \\
 0, &amp; u \leqslant 0.
 \end{cases}
 \]</div>
@@ -9612,7 +9612,7 @@ R^2 &lt; \frac{4L}{C}
 <p><a class="down-button" target="_blank" href="../NOTE/Physics/img/phy.pdf"  markdown="1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></span> 查看</a></p>
 </div></section><section class="print-page" id="note-physics-maxwell"><h1 id="note-physics-maxwell-maxwell-equation">Maxwell Equation<a class="headerlink" href="#note-physics-maxwell-maxwell-equation" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 986 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 989 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
 </div>
 <blockquote>
 <p>改变人类文明进程的伟大方程</p>
@@ -9761,7 +9761,8 @@ E = \frac{\sigma_e}{\epsilon_0} = \frac{q}{\epsilon_0 A} \quad \therefore \quad 
 <p>以及</p>
 <div class="arithmatex">\[
     \nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t}
-\]</div></section><h1 class='nav-section-title-end'>Ended: 普通物理学二</h1>
+\]</div>
+<h3 id="note-physics-maxwell-_2">谐振腔<a class="headerlink" href="#note-physics-maxwell-_2" title="Permanent link">&para;</a></h3></section><h1 class='nav-section-title-end'>Ended: 普通物理学二</h1>
                         <h3 class='nav-section-title' id='section-高级数据结构与算法分析'>
                             高级数据结构与算法分析 <a class='headerlink' href='#section-高级数据结构与算法分析' title='Permanent link'>↵</a>
                         </h3>
