@@ -176,7 +176,7 @@ E(a_1 X_1 + a_2 X_2 + \cdots + a_m X_m) = a_1 E X_1 + a_2 E X_2 + \cdots + a_m E
     1, & p \\
     0, & 1 - p
     \end{cases}
-    \quad i = 1, 2, \dots, n，\text{同分布，但是不独立}
+    \quad i = 1, 2, \dots, n，\operatorname{同分布，但是不独立}
     \]
 
     那么
@@ -429,3 +429,210 @@ P(|X - EX| > \varepsilon) = \int_{x: |x - EX| > \varepsilon} p(x) \, dx
     \[
     P(X > \varepsilon) \leqslant P(f(X) \geqslant f(\varepsilon)) \leqslant \frac{E f(X)}{f(\varepsilon)}
     \]
+
+
+## 协方差矩阵
+
+### 均值向量
+
+对于一个随机向量 \( X = (X_1, X_2, \dots, X_n) \)，如果$X_i$的数学期望存在；其均值向量 \( \mu \) 定义为：
+
+\[
+\mu = E(X) = (E(X_1), E(X_2), \dots, E(X_n))
+\]
+
+### 协方差
+
+假设$X$和$Y$是两个随机变量，且两者的数学期望和方差都存在，那么$X$和$Y$的协方差定义为：
+
+\[
+\operatorname{Cov}(X, Y) = E[(X - E(X))(Y - E(Y))]
+\]
+
+协方差也可以表示为：
+
+\[
+\operatorname{Cov}(X, Y) = E(XY) - E(X)E(Y)
+\]
+
+!!!Note "Cauchy-Schwarz不等式"
+
+    对于任意两个随机变量$X$和$Y$，有
+
+    \[
+        \operatorname{Cov}(X, Y)^2 \leq \operatorname{Var}(X) \operatorname{Var}(Y)
+    \]
+    
+    \[
+        E[(X - E(X))(Y - E(Y))] \leqslant \sqrt{E[(X - E(X))^2]E[(Y - E(Y))^2]}
+    \]
+
+    运用任意实数$t$,满足
+
+    \[
+        E[(|X|+t|Y|)^2] \geqslant 0
+    \]
+
+    展开利用二次函数的性质即可；
+
+
+协方差矩阵为
+
+\[
+\Sigma = \begin{bmatrix}
+\operatorname{Var}(X_1) & \operatorname{Cov}(X_1, X_2) & \cdots & \operatorname{Cov}(X_1, X_n) \\
+\operatorname{Cov}(X_2, X_1) & \operatorname{Var}(X_2) & \cdots & \operatorname{Cov}(X_2, X_n) \\
+\vdots & \vdots & \ddots & \vdots \\
+\operatorname{Cov}(X_n, X_1) & \operatorname{Cov}(X_n, X_2) & \cdots & \operatorname{Var}(X_n)
+\end{bmatrix}
+\]
+
+对于二元随机变量 \( X = (X_1, X_2) \)，协方差矩阵为
+
+\[
+\Sigma = \begin{bmatrix}
+\operatorname{Var}(X_1) & \operatorname{Cov}(X_1, X_2) \\
+\operatorname{Cov}(X_2, X_1) & \operatorname{Var}(X_2)
+\end{bmatrix}
+\]
+
+!!!key-point
+    协方差矩阵是一个非负定矩阵，即对于任意非零列向量 \( a \)，有 \( a^T \Sigma a \geq 0 \)。
+
+
+如果$X$, $Y$相互独立，此时 $E(XY)=E(X)E(Y)$ 那么$\operatorname{Cov}(X, Y) = 0$，反之，如果$\operatorname{Cov}(X, Y) = 0$，并不一定有$X$和$Y$相互独立，但是可以定义为{==不相关==}。
+
+
+!!!Example
+    二元联合正态分布的协方差为$\pho$
+
+### 相关系数
+
+!!!Definition
+    二元函数的相关系数（Correlation Coefficient）用来衡量两个随机变量 \( X \) 和 \( Y \) 之间的线性关系，其定义基于协方差和标准差，计算公式如下：
+
+    \[
+    \rho(X, Y) = \frac{\operatorname{Cov}(X, Y)}{\sigma_X \cdot \sigma_Y}
+    \]
+
+    其中：
+
+    - \(\operatorname{Cov}(X, Y)\) 是 \( X \) 和 \( Y \) 的协方差，定义为：
+      
+    \[
+      \operatorname{Cov}(X, Y) = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])] = \mathbb{E}[XY] - \mathbb{E}[X] \cdot \mathbb{E}[Y]
+    \]
+
+    - \(\sigma_X\) 和 \(\sigma_Y\) 分别是 \( X \) 和 \( Y \) 的标准差，定义为：
+      
+    \[
+      \sigma_X = \sqrt{\operatorname{Var}(X)}, \quad \sigma_Y = \sqrt{\operatorname{Var}(Y)}
+    \]
+      
+      其中方差为：
+     
+    \[
+      \operatorname{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2]
+    \]
+
+    1. **取值范围：**
+       
+    \[
+       -1 \leq \rho(X, Y) \leq 1
+    \]
+       
+       - 当 \(\rho(X, Y) = 1\) 时，\( X \) 和 \( Y \) 完全正线性相关。
+       - 当 \(\rho(X, Y) = -1\) 时，\( X \) 和 \( Y \) 完全负线性相关。
+       - 当 \(\rho(X, Y) = 0\) 时，\( X \) 和 \( Y \) 没有线性关系，但不一定独立。
+
+    2. **无量纲性：**
+       \(\rho(X, Y)\) 是一个无量纲量，反映的是两变量线性关系的强弱，与变量的量纲无关。
+
+    3. **对称性：**
+    
+    \[
+       \rho(X, Y) = \rho(Y, X)
+    \]
+
+    一般也用$\gamma$来表示相关系数
+
+## 条件期望
+
+对于两个随机变量X，Y，其条件期望定义为：
+
+=== "离散型"
+    给定$Y=y_i$,$X$的条件期望定义为
+
+    \[
+        E(X|Y=y_i)=\sum_{i=1}^\infty x_i P(X=x_i|Y=y_i)
+    \]
+
+    要求该级数绝对收敛
+
+    若给定$X$,$Y$的条件期望也是类似
+
+=== "连续型"
+    
+    \[
+        P(X=x|Y=y)=\dfrac{p(x,y)}{p_Y(y)}
+    \]
+
+    所以
+
+    \[
+        E(X=x|Y=y)=\int_{-\infty}^{+infty} x  P(X=x|Y=y) dx
+    \]
+    
+    要求该积分绝对可积
+
+    若给定$X$,$Y$的条件期望也是类似
+
+
+### 全期望公式
+
+$$
+P(X = x_i, Y = y_j) = p_{ij}, \quad i, j = 1, 2, \ldots
+$$
+
+每一个 $y_j$，对应一个条件期望 $E(X|Y = y_j)$，即
+
+$$
+y_j \rightarrow E(X|Y = y_j)
+$$
+
+定义
+
+$$
+g(y_j) = E(X|Y = y_j)
+$$
+
+即
+
+$$
+g(Y) = E(X|Y)
+$$
+
+它是 $Y$ 的函数，所以是随机变量。求 $Eg(Y)$；
+
+$$
+Eg(Y) = \sum_{j=1}^{\infty} g(y_j) P(Y = y_j)
+$$
+
+$$
+= \sum_{j=1}^{\infty} \sum_{i=1}^{\infty} x_i P(X = x_i | Y = y_j) P(Y = y_j)
+$$
+
+$$
+= \sum_{i=1}^{\infty} x_i \sum_{j=1}^{\infty} P(X = x_i | Y = y_j) P(Y = y_j)
+$$
+
+$$
+= \sum_{i=1}^{\infty} x_i P(X = x_i)
+$$
+
+$$
+= E X
+$$
+
+!!!key-point
+    $E(E(X|Y))=EX$,$E(E(Y|X))=EY$
