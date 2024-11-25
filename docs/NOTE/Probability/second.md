@@ -841,7 +841,9 @@ F_{\mathbf{X}}(\mathbf{x}) = \prod_{i=1}^{m} F_{X_i}(x_i), \quad \forall \mathbf
             \]
 
             如果是多个就多个小领域，然后除以小领域的长度
-     
+    
+    !!!warning
+        这种从负无穷积分到正无穷的写法只是形式上的，实际上我们要根据具体密度函数的取值来进一步判断积分区域
 
 
 #### 多个值函数
@@ -1008,7 +1010,7 @@ J = \left| \begin{array}{cc} \frac{\partial f_1^{-1}(u, v)}{\partial u} & \frac{
     \]
     
     !!!key-point
-        即$(U,V)$的协方差矩阵为$A^{\mathrm{T}} \Sigma A$, 均值为$A\boldsymbol{\mu}$;
+        即$(U,V)$的协方差矩阵为$A \Sigma A^{\mathrm{T}}$, 均值为$A\boldsymbol{\mu}$;
         总结而言，对于$(X,Y)$的联合正态分布做线性变换，新的随机向量仍然是联合正态分布，且均值也做了相应的线性变换，协方差矩阵做了相应的**合同变换**，但是转置在后面。
 
     
@@ -1100,7 +1102,7 @@ J = \left| \begin{array}{cc} \frac{\partial f_1^{-1}(u, v)}{\partial u} & \frac{
 
     $$
     p_{\alpha}(u) = \begin{cases}
-    \dfrac{ue^{-u}}{(1 + v)^2}, & u > 0, \\
+    ue^{-u}, & u > 0, \\
     0, & u \leqslant 0.
     \end{cases}
     $$

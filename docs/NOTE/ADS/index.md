@@ -21,3 +21,4 @@ comments: true
 - [动态规划](./wk7.md)
 - [贪心算法](./wk8.md)
 - [NP完全性](./wk9.md)
+- [近似算法](./wk10.md)
