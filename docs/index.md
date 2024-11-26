@@ -6,6 +6,10 @@ statistics: True
 
 # 欢迎来到71229号港湾 :fontawesome-solid-sailboat:
 
+<div align="center">
+  <img align="center" src="https://readme-typing-svg.demolab.com?font=Protest+Revolution&pause=1000&color=F77878FF&background=FFAFDF00&center=true&width=435&lines=My heart, the bird of the wilderness;has found its sky in your eyes."/>
+</div>
+
 
 ## 写在前面的话
 
