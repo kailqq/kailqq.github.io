@@ -251,6 +251,7 @@ nav:
               - 磁学: NOTE/Physics/magnetism.md
               - 电动力学: NOTE/Physics/electrodynamincs.md
               - Maxwell方程: NOTE/Physics/maxwell.md
+              - 光学: NOTE/Physics/light.md
           - 高级数据结构与算法分析: 
               - NOTE/ADS/index.md
               - AVL，Splay树与摊还分析: NOTE/ADS/wk1.md
