@@ -682,7 +682,7 @@
 <p>可悲的是，似乎我在一年前高考结束后就丧失了书写自己的文字的能力，希望多打点字可以让我稍微找回一点写作的乐趣吧</p>
 <blockquote>
 <p>长期摸鱼，尽量更新</p>
-<p>目前共 52 个页面，约 97062 字，2399 行代码。</p>
+<p>目前共 52 个页面，约 98127 字，2399 行代码。</p>
 </blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -7222,7 +7222,7 @@ p_{\beta}(v) = \begin{cases}
 </div>
 </div></section><section class="print-page" id="note-probability-third"><h1 id="note-probability-third-_1">数字特征<a class="headerlink" href="#note-probability-third-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 3219 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 11 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 4284 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 15 分钟</p>
 </div>
 <h2 id="note-probability-third-_2">数学期望<a class="headerlink" href="#note-probability-third-_2" title="Permanent link">&para;</a></h2>
 <div class="admonition definition">
@@ -7722,8 +7722,315 @@ Eg(Y) = \sum_{j=1}^{\infty} g(y_j) P(Y = y_j)
 \]</div>
 <div class="admonition key-point">
 <p class="admonition-title">Key-point</p>
-<p><span class="arithmatex">\(E(E(X|Y))=EX\)</span>,<span class="arithmatex">\(E(E(Y|X))=EY\)</span></p>
-</div></section><section class="print-page" id="note-probability-others"><h1 id="note-probability-others-_1">概率相关的知识<a class="headerlink" href="#note-probability-others-_1" title="Permanent link">&para;</a></h1>
+<p><span class="arithmatex">\(E(E(X|Y))=EX\)</span>,<span class="arithmatex">\(E(E(Y|X))=EY\)</span>
+这个结论对于离散，随机，连续变量都成立</p>
+</div>
+<h3 id="note-probability-third-_15">矩<a class="headerlink" href="#note-probability-third-_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>k 阶矩，k 阶中心矩</strong>:</li>
+</ul>
+<p>假设 <span class="arithmatex">\((\Omega, \mathcal{A}, P)\)</span> 概率空间，<span class="arithmatex">\(X: \Omega \to \mathbb{R}\)</span> 随机变量<br />
+  如果 <span class="arithmatex">\(E|X|^k &lt; \infty, k \geqslant 1\)</span>，那么称</p>
+<div class="arithmatex">\[
+  E X^k, \quad k \text{ 阶矩 } k \geq 1
+\]</div>
+<div class="arithmatex">\[
+  E(X - E X)^k, \quad k \text{ 阶中心矩 } k \geq 1
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="note-probability-third-_15-正态分布" name="note-probability-third-__tabbed_5" type="radio" /><input id="note-probability-third-_15-泊松分布" name="note-probability-third-__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="note-probability-third-_15-正态分布">正态分布</label><label for="note-probability-third-_15-泊松分布">泊松分布</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="arithmatex">\( X \sim N(0, \sigma^2) \)</span>，那么</p>
+<div class="arithmatex">\[
+E|X|^k &lt; \infty, \quad k \geq 1
+\]</div>
+<p>并且</p>
+<div class="arithmatex">\[
+EX^{2k} = (2k - 1)!! \sigma^{2k}, \quad EX^{2k + 1} = 0, \quad k \geq 1
+\]</div>
+<div class="arithmatex">\[
+EX^{2k} = \int_{-\infty}^{\infty} x^{2k} \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \, dx
+\]</div>
+<div class="arithmatex">\[
+= -\int_{-\infty}^{\infty} x^{2k - 1} \frac{1}{\sqrt{2\pi}} d e^{-\frac{x^2}{2}}
+\]</div>
+<div class="arithmatex">\[
+= -x^{2k-1} \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \bigg|_{-\infty}^{\infty} + (2k - 1) \int_{-\infty}^{\infty} x^{2k - 2} \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \, dx
+\]</div>
+<div class="arithmatex">\[
+= (2k - 1) E X^{2k - 2}
+\]</div>
+<div class="arithmatex">\[
+EX^{2k} = (2k - 1) E X^{2k - 2} = \cdots = (2k - 1)(2k - 3) \cdots 1 = (2k - 1)!!
+\]</div>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\( X \sim \mathcal{P}(\lambda) \)</span>，那么</p>
+<div class="arithmatex">\[
+E|X|^k &lt; \infty, \quad k \geq 1
+\]</div>
+<p>并且</p>
+<div class="arithmatex">\[
+E X (X - 1) \cdots (X - (k - 1)) = \lambda^k, \quad k \geq 1
+\]</div>
+<div class="arithmatex">\[
+\downarrow
+\]</div>
+<div class="arithmatex">\[
+E X^2 = E X (X - 1) + E X
+\]</div>
+<div class="arithmatex">\[
+E X^3 = E X (X - 1)(X - 2) + 3 E X (X - 1) + E X
+\]</div>
+<div class="arithmatex">\[
+E X^4 = E X (X - 1)(X - 2)(X - 3) + 6 E X (X - 1)(X - 2) + 7 E X (X - 1) + E X
+\]</div>
+<div class="arithmatex">\[
+E X^k = E X (X - 1) \cdots (X - (k - 1)) + \cdots
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition warining">
+<p class="admonition-title">Warining</p>
+<p>一般来说，随机变量任意K阶矩都相等，并不能保证随机变量的分布相同。但是正态分布和泊松分布可以由k阶矩来确定。</p>
+</div>
+<div class="admonition section">
+<p class="admonition-title">定理</p>
+<p>假设 <span class="arithmatex">\(X, Y\)</span> 是两个随机变量，并且对任意 <span class="arithmatex">\(k \geq 1\)</span>,</p>
+<div class="arithmatex">\[
+E X^k = E Y^k = m_k &lt; \infty
+\]</div>
+<p>如果下列三个条件之一成立：</p>
+<p>(i)</p>
+<div class="arithmatex">\[
+\sum_{k=1}^{\infty} \frac{m_{2k} t^{2k}}{(2k)!} &lt; \infty, \quad \text{对某些 } t &gt; 0
+\]</div>
+<p>(ii)</p>
+<div class="arithmatex">\[
+\sum_{k=1}^{\infty} m_{2k}^{-1/2k} = \infty
+\]</div>
+<p>(iii)</p>
+<div class="arithmatex">\[
+\limsup_{k \to \infty} |m_k|^{1/k} &lt; \infty
+\]</div>
+<p>那么</p>
+<div class="arithmatex">\[
+X \overset{d}{\equiv} Y
+\]</div>
+</div>
+<h2 id="note-probability-third-_16">特征函数<a class="headerlink" href="#note-probability-third-_16" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\((\Omega, A, P), X : \Omega \to \mathbb{R}, X \sim F_X(x)\)</span>. 定义</p>
+<div class="arithmatex">\[
+\varphi(t) = E e^{itX}, \quad t \in \mathbb{R}
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+E e^{itX} = E \cos tX + iE \sin tX
+\]</div>
+<p>一定存在有限。</p>
+<div class="arithmatex">\[\varphi(t) : \mathbb{R} \to \mathbb{C}\]</div>
+<p><mark class="critic">实变量复值函数</mark></p>
+<p>目的：利用复分析研究随机变量的分布性质。</p>
+<p>意义：对概率论的发展起着重要作用。</p>
+<div class="admonition property">
+<p class="admonition-title">常见分布的特征函数</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:7"><input checked="checked" id="note-probability-third-_16-退化分布" name="note-probability-third-__tabbed_6" type="radio" /><input id="note-probability-third-_16-两点分布" name="note-probability-third-__tabbed_6" type="radio" /><input id="note-probability-third-_16-n-bernoulli-分布" name="note-probability-third-__tabbed_6" type="radio" /><input id="note-probability-third-_16-poisson-分布" name="note-probability-third-__tabbed_6" type="radio" /><input id="note-probability-third-_16-均匀分布" name="note-probability-third-__tabbed_6" type="radio" /><input id="note-probability-third-_16-指数分布" name="note-probability-third-__tabbed_6" type="radio" /><input id="note-probability-third-_16-标准正态分布" name="note-probability-third-__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="note-probability-third-_16-退化分布">退化分布</label><label for="note-probability-third-_16-两点分布">两点分布</label><label for="note-probability-third-_16-n-bernoulli-分布">n-Bernoulli 分布</label><label for="note-probability-third-_16-poisson-分布">Poisson 分布</label><label for="note-probability-third-_16-均匀分布">均匀分布</label><label for="note-probability-third-_16-指数分布">指数分布</label><label for="note-probability-third-_16-标准正态分布">标准正态分布</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>若<span class="arithmatex">\(X\)</span>是一个常数<span class="arithmatex">\(c\)</span>，那么</p>
+<div class="arithmatex">\[
+\varphi(t) = e^{ict}
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>若<span class="arithmatex">\(X\)</span>是一个两点分布，<span class="arithmatex">\(P(X = 1) = p, \quad P(X = 0) = 1 - p\)</span>，那么</p>
+<div class="arithmatex">\[
+\varphi(t) = pe^{it} + 1 - p
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>若<span class="arithmatex">\(X \sim B(n, p)\)</span>，那么</p>
+<div class="arithmatex">\[
+\varphi(t) = (1 - p + pe^{it})^n
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>若<span class="arithmatex">\(X \sim P(\lambda)\)</span>，那么</p>
+<div class="arithmatex">\[
+\varphi(t) = e^{\lambda (e^{it} - 1)}
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>若<span class="arithmatex">\(X \sim U(a, b)\)</span>，那么</p>
+<div class="arithmatex">\[
+\varphi(t) = \frac{e^{itb} - e^{ita}}{it(b-a)}
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>若<span class="arithmatex">\(X \sim E(\lambda)\)</span>，那么</p>
+<div class="arithmatex">\[
+\varphi(t) = \frac{\lambda}{\lambda - it}
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>若<span class="arithmatex">\(X \sim N(0, 1)\)</span>，那么</p>
+<div class="arithmatex">\[
+\varphi(t) = e^{-\frac{t^2}{2}}
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="note-probability-third-_17">特征函数的分析性质<a class="headerlink" href="#note-probability-third-_17" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><span class="arithmatex">\( \varphi(0) = 1 \)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\( |\varphi(t)| \leqslant 1 = \varphi(0) \)</span> <mark class="critic">模长有界</mark></p>
+</li>
+<li>
+<p><span class="arithmatex">\( \varphi(-t) = \overline{\varphi(t)} \)</span> <mark class="critic">共轭对称</mark></p>
+</li>
+<li>
+<p><span class="arithmatex">\( \varphi(t) \)</span> 在 <span class="arithmatex">\( \mathbb{R} \)</span> 上一致连续。</p>
+</li>
+<li>
+<p>Bochner 非负定性</p>
+</li>
+</ol>
+<p>对于任何实数 <span class="arithmatex">\( t_1, t_2, \ldots, t_n \)</span>，任何复数 <span class="arithmatex">\( a_1, a_2, \ldots, a_n \)</span></p>
+<div class="arithmatex">\[
+\sum_{k,l=1}^{n} a_k \bar{a_l} \varphi(t_k - t_l) \geqslant 0
+\]</div>
+<ol>
+<li>可微性</li>
+</ol>
+<p>假设 <span class="arithmatex">\( E|X| &lt; \infty, \quad EX = \mu \)</span>，那么</p>
+<div class="arithmatex">\[
+\varphi(t) \text{ 可微}
+\]</div>
+<p>并且</p>
+<div class="arithmatex">\[
+\varphi'(0) = i\mu
+\]</div>
+<p>事实上，</p>
+<div class="arithmatex">\[
+\varphi(t) = \int_{-\infty}^{\infty} e^{itx} dF(x).
+\]</div>
+<p>因为</p>
+<div class="arithmatex">\[
+\int_{-\infty}^{\infty} |x| dF(x) &lt; \infty,
+\]</div>
+<p><span class="arithmatex">\(e^{itx}\)</span>求导之后被一个可积函数控制，</p>
+<p>所以</p>
+<div class="arithmatex">\[
+\varphi'(t) = \int_{-\infty}^{\infty} ix e^{itx} dF(x)
+\]</div>
+<div class="arithmatex">\[
+= i \int_{-\infty}^{\infty} x e^{itx} dF(x)
+\]</div>
+<p>类似地，如果 <span class="arithmatex">\( E|X|^k &lt; \infty \)</span>，那么</p>
+<div class="arithmatex">\[
+\varphi^{(k)}(t) = i^k \int_{-\infty}^{\infty} x^k e^{itx} dF(x)
+\]</div>
+<p>特别，如果 <span class="arithmatex">\( E|X| &lt; \infty \)</span>，那么 <span class="arithmatex">\( \varphi(t) \)</span> 在 0 处可以进行 <span class="arithmatex">\( k \)</span> 次展开：</p>
+<div class="arithmatex">\[
+\varphi(t) = \varphi(0) + \varphi'(0)t + \frac{\varphi''(0)}{2!} t^2 + \cdots + \frac{\varphi^{(k)}(0)}{k!} t^k + o(t^k)
+\]</div>
+<div class="arithmatex">\[
+= 1 + iEXt - \frac{EX^2}{2} t^2 + \cdots + \frac{i^k EX^k}{k!} t^k + o(t^k), \quad t \to 0
+\]</div>
+<h3 id="note-probability-third-_18">特征函数的运算性质<a class="headerlink" href="#note-probability-third-_18" title="Permanent link">&para;</a></h3>
+<ul>
+<li>令 <span class="arithmatex">\( X \)</span> 的特征函数为 <span class="arithmatex">\( \varphi_X(t) \)</span>，那么</li>
+</ul>
+<div class="arithmatex">\[
+E[e^{it(aX+c)}] = e^{itc} \varphi_X(at)
+\]</div>
+<p>如果 <span class="arithmatex">\( Y \sim N(\mu, \sigma^2) \)</span>，那么可写成</p>
+<div class="arithmatex">\[
+Y = \sigma X + \mu, \quad X \sim N(0, 1)
+\]</div>
+<p>因此，</p>
+<div class="arithmatex">\[
+\varphi_Y(t) = e^{i\mu t - \frac{\sigma^2 t^2}{2}}
+\]</div>
+<ul>
+<li>令 <span class="arithmatex">\( X \)</span> 和 <span class="arithmatex">\( Y \)</span> 为两个随机变量，那么</li>
+</ul>
+<div class="arithmatex">\[
+    Z = X + Y
+\]</div>
+<div class="arithmatex">\[
+\varphi_Z(t) = \varphi_X(t) \varphi_Y(t)
+\]</div>
+<p>在<mark class="critic">X,Y相互独立</mark>的情况下，这个公式成立。</p>
+<p>推广：</p>
+<p>如果 <span class="arithmatex">\( X_1, X_2, \ldots, X_n \)</span> 相互独立，那么</p>
+<div class="arithmatex">\[
+\varphi_{X_1 + X_2 + \cdots + X_n}(t) = \varphi_{X_1}(t) \varphi_{X_2}(t) \cdots \varphi_{X_n}(t)
+\]</div>
+<div class="admonition eg">
+<p class="admonition-title">Eg</p>
+<p><span class="arithmatex">\(S_n \sim B(n,p)\)</span>，那么<span class="arithmatex">\(S_n =\sum_{i=1}^n X_i\)</span>，其中<span class="arithmatex">\(X_i\)</span>是独立同分布的两点分布随机变量，那么</p>
+<div class="arithmatex">\[
+\varphi_{S_n}(t) = \varphi_{X_1}(t) \varphi_{X_2}(t) \cdots \varphi_{X_n}(t) = (1-p+pe^{it})^n
+\]</div>
+</div>
+<h3 id="note-probability-third-_19">唯一性问题<a class="headerlink" href="#note-probability-third-_19" title="Permanent link">&para;</a></h3>
+<p>分布函数和特征函数相互唯一确定吗?</p>
+<p>假设 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 的分布函数相同，那么它们的特征函数相同是显然的；</p>
+<p>但是，特征函数相同，<span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 的分布函数是否相同呢？</p>
+<p>即</p>
+<div class="arithmatex">\[
+\varphi_X(t) = \varphi_Y(t), \quad \forall t \in \mathbb{R}
+\]</div>
+<p>是否能推出</p>
+<div class="arithmatex">\[
+F_X(x) = F_Y(x), \quad \forall x \in \mathbb{R}
+\]</div>
+<div class="admonition section">
+<p class="admonition-title">唯一性定理</p>
+<div class="arithmatex">\[
+\varphi_X(t) \equiv \varphi_Y(t)
+\]</div>
+<p>那么</p>
+<div class="arithmatex">\[
+X \overset{d}{=} Y, \quad F_X(x) \equiv F_Y(x)
+\]</div>
+<p>实际上，</p>
+<div class="arithmatex">\[
+F_X(x_2) - F_X(x_1) = \lim_{T \to \infty} \frac{1}{2\pi} \int_{-T}^{T} \frac{e^{-itx_2} - e^{-itx_1}}{it} \cdot \varphi_X(t) dt
+\]</div>
+<p>取<span class="arithmatex">\(x_1\)</span>为负无穷,并求导，得到以下推论：</p>
+<p>如果 <span class="arithmatex">\( X \)</span> 的特征函数 <span class="arithmatex">\( \varphi(t) \)</span> 绝对可积，即</p>
+<div class="arithmatex">\[
+\int_{-\infty}^{\infty} |\varphi(t)| dt
+\]</div>
+<p>那么 <span class="arithmatex">\( X \)</span> 具有密度函数 <span class="arithmatex">\( p(x) \)</span>，并且</p>
+<div class="arithmatex">\[
+p(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-itx} \varphi(t) dt
+\]</div>
+</div>
+<p>如果是离散型，那么
+假设 <span class="arithmatex">\(\varphi(t)\)</span> 是一个特征函数，如果</p>
+<div class="arithmatex">\[
+\varphi(t) = \sum_{k=-\infty}^{\infty} a_k e^{ikt}
+\]</div>
+<p>并且</p>
+<div class="arithmatex">\[
+a_k \geqslant 0, \quad \sum_{k=-\infty}^{\infty} a_k = 1
+\]</div>
+<p>那么</p>
+<div class="arithmatex">\[
+P(X = k) = a_k, \quad k = \ldots, -2, -1, 0, 1, 2, \ldots,
+\]</div>
+<p>注意，某些 <span class="arithmatex">\(a_k\)</span> 可能为 0。</p></section><section class="print-page" id="note-probability-others"><h1 id="note-probability-others-_1">概率相关的知识<a class="headerlink" href="#note-probability-others-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 428 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 1 分钟</p>
 </div>
