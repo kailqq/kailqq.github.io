@@ -636,3 +636,403 @@ $$
 
 !!!key-point
     $E(E(X|Y))=EX$,$E(E(Y|X))=EY$
+    这个结论对于离散，随机，连续变量都成立
+
+
+
+### 矩
+
+- **k 阶矩，k 阶中心矩**:
+  
+  假设 \((\Omega, \mathcal{A}, P)\) 概率空间，\(X: \Omega \to \mathbb{R}\) 随机变量  
+  如果 \(E|X|^k < \infty, k \geqslant 1\)，那么称
+
+\[
+  E X^k, \quad k \text{ 阶矩 } k \geq 1
+\]
+
+\[
+  E(X - E X)^k, \quad k \text{ 阶中心矩 } k \geq 1
+\]
+
+
+!!!Example
+    === "正态分布"
+        \( X \sim N(0, \sigma^2) \)，那么
+
+        \[
+        E|X|^k < \infty, \quad k \geq 1
+        \]
+
+        并且
+
+        \[
+        EX^{2k} = (2k - 1)!! \sigma^{2k}, \quad EX^{2k + 1} = 0, \quad k \geq 1
+        \]
+
+        \[
+        EX^{2k} = \int_{-\infty}^{\infty} x^{2k} \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \, dx
+        \]
+
+        \[
+        = -\int_{-\infty}^{\infty} x^{2k - 1} \frac{1}{\sqrt{2\pi}} d e^{-\frac{x^2}{2}}
+        \]
+
+        \[
+        = -x^{2k-1} \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \bigg|_{-\infty}^{\infty} + (2k - 1) \int_{-\infty}^{\infty} x^{2k - 2} \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \, dx
+        \]
+
+        \[
+        = (2k - 1) E X^{2k - 2}
+        \]
+
+        \[
+        EX^{2k} = (2k - 1) E X^{2k - 2} = \cdots = (2k - 1)(2k - 3) \cdots 1 = (2k - 1)!!
+        \]
+    
+    === "泊松分布"
+        \( X \sim \mathcal{P}(\lambda) \)，那么
+
+        \[
+        E|X|^k < \infty, \quad k \geq 1
+        \]
+
+        并且
+
+        \[
+        E X (X - 1) \cdots (X - (k - 1)) = \lambda^k, \quad k \geq 1
+        \]
+
+        \[
+        \downarrow
+        \]
+
+        \[
+        E X^2 = E X (X - 1) + E X
+        \]
+
+        \[
+        E X^3 = E X (X - 1)(X - 2) + 3 E X (X - 1) + E X
+        \]
+
+        \[
+        E X^4 = E X (X - 1)(X - 2)(X - 3) + 6 E X (X - 1)(X - 2) + 7 E X (X - 1) + E X
+        \]
+
+        \[
+        E X^k = E X (X - 1) \cdots (X - (k - 1)) + \cdots
+        \]
+
+!!!Warining
+    一般来说，随机变量任意K阶矩都相等，并不能保证随机变量的分布相同。但是正态分布和泊松分布可以由k阶矩来确定。
+
+!!!section "定理"
+    假设 \(X, Y\) 是两个随机变量，并且对任意 \(k \geq 1\),
+
+    \[
+    E X^k = E Y^k = m_k < \infty
+    \]
+
+    如果下列三个条件之一成立：
+
+    (i)
+
+    \[
+    \sum_{k=1}^{\infty} \frac{m_{2k} t^{2k}}{(2k)!} < \infty, \quad \text{对某些 } t > 0
+    \]
+
+    (ii)
+
+    \[
+    \sum_{k=1}^{\infty} m_{2k}^{-1/2k} = \infty
+    \]
+
+    (iii)
+
+    \[
+    \limsup_{k \to \infty} |m_k|^{1/k} < \infty
+    \]
+
+    那么
+
+    \[
+    X \overset{d}{\equiv} Y
+    \]
+
+
+## 特征函数
+
+
+\((\Omega, A, P), X : \Omega \to \mathbb{R}, X \sim F_X(x)\). 定义
+
+\[
+\varphi(t) = E e^{itX}, \quad t \in \mathbb{R}
+\]
+
+其中
+
+\[
+E e^{itX} = E \cos tX + iE \sin tX
+\]
+
+一定存在有限。
+
+\[\varphi(t) : \mathbb{R} \to \mathbb{C}\]
+
+{==实变量复值函数==}
+
+目的：利用复分析研究随机变量的分布性质。
+
+意义：对概率论的发展起着重要作用。
+
+
+!!!Property "常见分布的特征函数"
+
+    === "退化分布"
+        若$X$是一个常数$c$，那么
+        
+        \[
+        \varphi(t) = e^{ict}
+        \]
+    
+    === "两点分布"
+        若$X$是一个两点分布，$P(X = 1) = p, \quad P(X = 0) = 1 - p$，那么
+        
+        \[
+        \varphi(t) = pe^{it} + 1 - p
+        \]
+    
+    === "n-Bernoulli 分布"
+        若$X \sim B(n, p)$，那么
+        
+        \[
+        \varphi(t) = (1 - p + pe^{it})^n
+        \]
+
+    === "Poisson 分布"
+        若$X \sim P(\lambda)$，那么
+        
+        \[
+        \varphi(t) = e^{\lambda (e^{it} - 1)}
+        \] 
+    
+    === "均匀分布"
+        若$X \sim U(a, b)$，那么
+        
+        \[
+        \varphi(t) = \frac{e^{itb} - e^{ita}}{it(b-a)}
+        \]
+    
+
+    === "指数分布"
+        若$X \sim E(\lambda)$，那么
+        
+        \[
+        \varphi(t) = \frac{\lambda}{\lambda - it}
+        \]
+    
+    === "标准正态分布"
+        若$X \sim N(0, 1)$，那么
+        
+        \[
+        \varphi(t) = e^{-\frac{t^2}{2}}
+        \]
+
+### 特征函数的分析性质
+
+1. \( \varphi(0) = 1 \)
+
+2. \( |\varphi(t)| \leqslant 1 = \varphi(0) \) {==模长有界==}
+
+3. \( \varphi(-t) = \overline{\varphi(t)} \) {==共轭对称==}
+
+4. \( \varphi(t) \) 在 \( \mathbb{R} \) 上一致连续。
+
+5. Bochner 非负定性
+
+对于任何实数 \( t_1, t_2, \ldots, t_n \)，任何复数 \( a_1, a_2, \ldots, a_n \)
+
+\[
+\sum_{k,l=1}^{n} a_k \bar{a_l} \varphi(t_k - t_l) \geqslant 0
+\]
+
+6. 可微性
+
+
+假设 \( E|X| < \infty, \quad EX = \mu \)，那么
+
+\[
+\varphi(t) \text{ 可微}
+\]
+
+并且
+
+\[
+\varphi'(0) = i\mu
+\]
+
+事实上，
+
+\[
+\varphi(t) = \int_{-\infty}^{\infty} e^{itx} dF(x).
+\]
+
+因为
+
+\[
+\int_{-\infty}^{\infty} |x| dF(x) < \infty,
+\]
+
+$e^{itx}$求导之后被一个可积函数控制，
+
+所以
+
+\[
+\varphi'(t) = \int_{-\infty}^{\infty} ix e^{itx} dF(x)
+\]
+
+\[
+= i \int_{-\infty}^{\infty} x e^{itx} dF(x)
+\]
+
+类似地，如果 \( E|X|^k < \infty \)，那么
+
+\[
+\varphi^{(k)}(t) = i^k \int_{-\infty}^{\infty} x^k e^{itx} dF(x)
+\]
+
+特别，如果 \( E|X| < \infty \)，那么 \( \varphi(t) \) 在 0 处可以进行 \( k \) 次展开：
+
+\[
+\varphi(t) = \varphi(0) + \varphi'(0)t + \frac{\varphi''(0)}{2!} t^2 + \cdots + \frac{\varphi^{(k)}(0)}{k!} t^k + o(t^k)
+\]
+
+\[
+= 1 + iEXt - \frac{EX^2}{2} t^2 + \cdots + \frac{i^k EX^k}{k!} t^k + o(t^k), \quad t \to 0
+\]
+
+
+### 特征函数的运算性质
+
+- 令 \( X \) 的特征函数为 \( \varphi_X(t) \)，那么
+
+\[
+E[e^{it(aX+c)}] = e^{itc} \varphi_X(at)
+\]
+
+如果 \( Y \sim N(\mu, \sigma^2) \)，那么可写成
+
+\[
+Y = \sigma X + \mu, \quad X \sim N(0, 1)
+\]
+
+因此，
+
+\[
+\varphi_Y(t) = e^{i\mu t - \frac{\sigma^2 t^2}{2}}
+\]
+
+- 令 \( X \) 和 \( Y \) 为两个随机变量，那么
+
+\[
+    Z = X + Y
+\]
+
+
+\[
+\varphi_Z(t) = \varphi_X(t) \varphi_Y(t)
+\]
+
+在{==X,Y相互独立==}的情况下，这个公式成立。
+
+
+推广：
+ 
+如果 \( X_1, X_2, \ldots, X_n \) 相互独立，那么
+
+\[
+\varphi_{X_1 + X_2 + \cdots + X_n}(t) = \varphi_{X_1}(t) \varphi_{X_2}(t) \cdots \varphi_{X_n}(t)
+\]
+
+!!!eg
+    $S_n \sim B(n,p)$，那么$S_n =\sum_{i=1}^n X_i$，其中$X_i$是独立同分布的两点分布随机变量，那么
+
+    \[
+    \varphi_{S_n}(t) = \varphi_{X_1}(t) \varphi_{X_2}(t) \cdots \varphi_{X_n}(t) = (1-p+pe^{it})^n
+    \]
+
+### 唯一性问题
+
+分布函数和特征函数相互唯一确定吗?
+
+假设 $X$ 和 $Y$ 的分布函数相同，那么它们的特征函数相同是显然的；
+
+但是，特征函数相同，$X$ 和 $Y$ 的分布函数是否相同呢？
+
+即
+
+\[
+\varphi_X(t) = \varphi_Y(t), \quad \forall t \in \mathbb{R}
+\]
+
+是否能推出
+
+\[
+F_X(x) = F_Y(x), \quad \forall x \in \mathbb{R}
+\]
+
+!!!section "唯一性定理"
+    \[
+    \varphi_X(t) \equiv \varphi_Y(t)
+    \]
+
+    那么
+    
+    \[
+    X \overset{d}{=} Y, \quad F_X(x) \equiv F_Y(x)
+    \]
+
+    实际上，
+
+    \[
+    F_X(x_2) - F_X(x_1) = \lim_{T \to \infty} \frac{1}{2\pi} \int_{-T}^{T} \frac{e^{-itx_2} - e^{-itx_1}}{it} \cdot \varphi_X(t) dt
+    \]
+
+
+
+    取$x_1$为负无穷,并求导，得到以下推论：
+
+    如果 \( X \) 的特征函数 \( \varphi(t) \) 绝对可积，即
+
+    \[
+    \int_{-\infty}^{\infty} |\varphi(t)| dt
+    \]
+
+    那么 \( X \) 具有密度函数 \( p(x) \)，并且
+
+    \[
+    p(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-itx} \varphi(t) dt
+    \]
+
+
+
+如果是离散型，那么
+假设 $\varphi(t)$ 是一个特征函数，如果
+
+$$
+\varphi(t) = \sum_{k=-\infty}^{\infty} a_k e^{ikt}
+$$
+
+并且
+
+$$
+a_k \geqslant 0, \quad \sum_{k=-\infty}^{\infty} a_k = 1
+$$
+
+那么
+
+$$
+P(X = k) = a_k, \quad k = \ldots, -2, -1, 0, 1, 2, \ldots,
+$$
+
+注意，某些 $a_k$ 可能为 0。

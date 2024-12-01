@@ -232,6 +232,7 @@ nav:
               - "NOTE/LA/linear-algebra.md"
               - 基础: "NOTE/LA/前置知识.md"
               - 暂时停更: "NOTE/LA/note.md"
+              - 讲义: "NOTE/LA/特征值.md"
           -  CTF:
               - "NOTE/CTF/CTF.md"
               - web: "NOTE/CTF/web.md"
