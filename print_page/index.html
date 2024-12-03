@@ -682,7 +682,7 @@
 <p>可悲的是，似乎我在一年前高考结束后就丧失了书写自己的文字的能力，希望多打点字可以让我稍微找回一点写作的乐趣吧</p>
 <blockquote>
 <p>长期摸鱼，尽量更新</p>
-<p>目前共 53 个页面，约 104973 字，2399 行代码。</p>
+<p>目前共 54 个页面，约 108443 字，2438 行代码。</p>
 </blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -11420,7 +11420,7 @@ f' = \frac{n'}{n' - n} r = \frac{1}{2} r
                         </h3>
                         <section class="print-page" id="note-ads"><h1 id="note-ads-_1">高级数据结构与算法分析<a class="headerlink" href="#note-ads-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 141 个字 </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 145 个字 </p>
 </div>
 <blockquote>
 <p>授课：<a href="https://person.zju.edu.cn/0096209">张国川</a></p>
@@ -11440,6 +11440,7 @@ f' = \frac{n'}{n' - n} r = \frac{1}{2} r
 <li><a href="#note-ads-wk8">贪心算法</a></li>
 <li><a href="#note-ads-wk9">NP完全性</a></li>
 <li><a href="#note-ads-wk10">近似算法</a></li>
+<li><a href="#note-ads-wk11">局部搜索</a></li>
 </ul></section><section class="print-page" id="note-ads-wk1"><h1 id="note-ads-wk1-advance-data-structures-and-algorithm-analysis">Advance Data Structures and Algorithm Analysis<a class="headerlink" href="#note-ads-wk1-advance-data-structures-and-algorithm-analysis" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 3022 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 66 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 11 分钟</p>
@@ -13618,7 +13619,516 @@ accepts <span class="arithmatex">\((x,y)\)</span></p>
     P=NP \Rightarrow P=NP=NPC
 \]</div>
 <p>如果我们不能在多项式时间内解决一个<span class="arithmatex">\(NPC\)</span>问题，那么因为<span class="arithmatex">\(NPC\)</span>问题是<span class="arithmatex">\(NP\)</span>问题的子集，所以<span class="arithmatex">\(P\)</span>是不等于<span class="arithmatex">\(NP\)</span>的。</p>
-<p>但是很遗憾的是，目前还没有人能够证明<span class="arithmatex">\(P\)</span>是否等于<span class="arithmatex">\(NP\)</span>，也就是说我们还不知道<span class="arithmatex">\(NPC\)</span>问题是否可以在多项式时间内解决。</p></section><h1 class='nav-section-title-end'>Ended: 高级数据结构与算法分析</h1>
+<p>但是很遗憾的是，目前还没有人能够证明<span class="arithmatex">\(P\)</span>是否等于<span class="arithmatex">\(NP\)</span>，也就是说我们还不知道<span class="arithmatex">\(NPC\)</span>问题是否可以在多项式时间内解决。</p></section><section class="print-page" id="note-ads-wk10"><h1 id="note-ads-wk10-_1">近似算法<a class="headerlink" href="#note-ads-wk10-_1" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1943 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
+</div>
+<p>对于一个最优化问题的算法，主要有以下三个期望</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>1.算法需要能找到确切的最优解
+2.算法需要能高效(在多项式时间内)运行
+3.算法是通用的,需要可以解决一类问题中的所有实例，而不仅仅是单个实例有效</p>
+</div>
+<p>然而，对于某些问腿，我们有可能无法实现以上三个期望，例如NPC问题，所以我们可以退而求其次，做一些妥协；</p>
+<ul>
+<li>如果算法舍弃第二个期望，则是用例如回溯等方法在指数时间内解决问题，这对于输入不大的情况是可以接受的；</li>
+<li>如果舍弃第三个期望，我们相当于为问题找到一些容易解决的特例；</li>
+<li>如果舍弃第一个期望，但我们能保证高效找到的解是和真正的最优解 “相差不大” 的，那么我们称这类算法为近似算法。</li>
+</ul>
+<h2 id="note-ads-wk10-_2">基本概念<a class="headerlink" href="#note-ads-wk10-_2" title="Permanent link">&para;</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>假设有某类问题 <span class="arithmatex">\(\mathcal{I}\)</span>（例如背包问题），其中的一个具体实例记为 <span class="arithmatex">\(I\)</span>（当给定问题的参数定义的时候即为一个实例），且有一个复杂度为多项式的近似算法 <span class="arithmatex">\(A\)</span>。定义：</p>
+<ul>
+<li><span class="arithmatex">\(A(I)\)</span> 为算法 <span class="arithmatex">\(A\)</span> 在实例 <span class="arithmatex">\(I\)</span> 上得到的解；</li>
+<li><span class="arithmatex">\(\mathbf{OPT}(I)\)</span> 为实例 <span class="arithmatex">\(I\)</span> 的最优解。</li>
+</ul>
+<p>考虑 <span class="arithmatex">\(I\)</span> 是最小化问题，若存在 <span class="arithmatex">\(r &gt; 1\)</span>，对任意的 <span class="arithmatex">\(I\)</span> 都有：</p>
+<div class="arithmatex">\[
+A(I) \leqslant r \cdot \mathbf{OPT}(I),
+\]</div>
+<p>那么称 <span class="arithmatex">\(A\)</span> 为该问题的 <span class="arithmatex">\(r\)</span>-近似算法（即对于任何可能的问题实例，<span class="arithmatex">\(A\)</span> 给出的解都不会比最优解的 <span class="arithmatex">\(r\)</span> 倍大）。我们特别关心其中可以取到的最小 <span class="arithmatex">\(r\)</span>，称：</p>
+<div class="arithmatex">\[
+\rho = \inf\{r : A(I) \leqslant r \cdot \mathbf{OPT}(I), \forall I\}
+\]</div>
+<p>为 <strong>近似比</strong>（approximation ratio），即算法 <span class="arithmatex">\(A\)</span> 最紧的近似界。它可以等价定义为：</p>
+<div class="arithmatex">\[
+\rho = \sup_{\mathcal{I}} \frac{A(I)}{\mathbf{OPT}(I)}
+\]</div>
+<p>即这个比值在多实例中的比值是最紧的界。反之，如果是最大化问题，那么上述公式改为：</p>
+<div class="arithmatex">\[
+\rho = \sup_{\mathcal{I}} \frac{\mathbf{OPT}(I)}{A(I)}
+\]</div>
+<p>将两者合并起来，可以统一写作：</p>
+<div class="arithmatex">\[
+\rho = \sup_{\mathcal{I}} \left\{ \frac{\mathbf{OPT}(I)}{A(I)}, \frac{A(I)}{\mathbf{OPT}(I)} \right\}.
+\]</div>
+</div>
+<p>由于<span class="arithmatex">\(OPT\)</span>算法一般是难以确定的，所以确定近似比一般有以下两个步骤</p>
+<ol>
+<li>
+<p>首先寻找到一个 <span class="arithmatex">\( r &gt; 1 \)</span>，对于任何实例 <span class="arithmatex">\( I \)</span>，都有 <span class="arithmatex">\( A(I) \leqslant r \cdot \text{OPT}(I) \)</span>（可以首先找到 <span class="arithmatex">\( \text{OPT}(I) \)</span> 的一个下界 <span class="arithmatex">\( \text{LB}(I) \leqslant \text{OPT}(I) \)</span>，然后让 <span class="arithmatex">\( A(I) \leqslant r \cdot \text{LB}(I) \)</span> 即可）；</p>
+</li>
+<li>
+<p>接下来证明 <span class="arithmatex">\( r \)</span> 是不可改进的，即对于任意的 <span class="arithmatex">\( \epsilon &gt; 0 \)</span>，都存在在一个实例 <span class="arithmatex">\( I_\epsilon \)</span>，使得 <span class="arithmatex">\( A(I_\epsilon) \geqslant (r-\epsilon) \cdot \text{OPT}(I_\epsilon) \)</span>。</p>
+</li>
+</ol>
+<h3 id="note-ads-wk10-ptas">PTAS<a class="headerlink" href="#note-ads-wk10-ptas" title="Permanent link">&para;</a></h3>
+<p>PTAS（多项式时间近似方案，Polynomial time approximation scheme）：存在算法 A，使得对每一个固定的 <span class="arithmatex">\(\varepsilon &gt; 0\)</span>，对任意的实例 <span class="arithmatex">\(I\)</span> 都有</p>
+<div class="arithmatex">\[
+    A(I) \leqslant (1+\varepsilon) \cdot \text{OPT}(I)
+\]</div>
+<p>且算法 <span class="arithmatex">\( A \)</span> 的运行时间可以被问题规模 <span class="arithmatex">\( |I| \)</span> 的多项式上界所限制。则称 <span class="arithmatex">\( A \)</span> 是该问题的一个 PTAS。</p>
+<p>理论上，算法 <span class="arithmatex">\( A \)</span> 在多项式时间内可以近似：不超过不同的 <span class="arithmatex">\( \varepsilon \)</span>，<span class="arithmatex">\( A \)</span> 的运行时间也可能不可能。例如，如果算法可以给出一个复杂度为 <span class="arithmatex">\( O(|I|^{1/\epsilon}) \)</span> 的解，这样算法的表现就会很糟糕，因为指数很大。一般可以将 PTAS 的复杂度记为 <span class="arithmatex">\( Q(|I|^{(1/\epsilon)}) \)</span>。</p>
+<h3 id="note-ads-wk10-eptasfptas">EPTAS和FPTAS<a class="headerlink" href="#note-ads-wk10-eptasfptas" title="Permanent link">&para;</a></h3>
+<p><mark class="critic">EPTAS (Efficient PTAS)</mark>: 在 PTAS 的基础上，要求算法 <span class="arithmatex">\( A \)</span> 的复杂度是 <span class="arithmatex">\( O(|I|^c) \)</span>，其中 <span class="arithmatex">\( c &gt; 0 \)</span> 是与<span class="arithmatex">\(\varepsilon\)</span>无关的常数。可以将 EPTS 的复杂度记为 <span class="arithmatex">\( |I^{O(1)}| f(1/\varepsilon）\)</span>。</p>
+<p><mark class="critic">FPTAS (Fully PTAS)</mark>: 在 PTAS 的基础上，要求算法 <span class="arithmatex">\( A \)</span> 的运行时间关于 <span class="arithmatex">\( |I| \)</span> 和 <span class="arithmatex">\(\varepsilon\)</span> 都是多项式项， 即可以将 FPTAS 的复杂度记为 
+<span class="arithmatex">\(|I|^{O(1)} (1/\varepsilon)^{O(1)}\)</span></p>
+<h2 id="note-ads-wk10-_3">装箱问题(一维)<a class="headerlink" href="#note-ads-wk10-_3" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">问题描述</p>
+<p>有 <span class="arithmatex">\(n\)</span> 个物品，每个物品的大小为 <span class="arithmatex">\(s_i\)</span>，有若干个箱子，每个箱子的大小为 <span class="arithmatex">\(C\)</span>，要求将所有物品放入箱子中，使得每个箱子的大小不超过 <span class="arithmatex">\(C\)</span>，并且使得所需的箱子数目尽可能少。</p>
+<p><mark class="critic">给定若干个物品，判断它们是否可由两个箱子装下是 NP 完全的</mark></p>
+<p>接下来我们默认<span class="arithmatex">\(C=1\)</span>，即箱子的大小为1，方便讨论。</p>
+</div>
+<p>关于一维装箱问题，除非 <span class="arithmatex">\(P=NP\)</span>，否则不存在多项式时间的算法满足</p>
+<div class="arithmatex">\[
+    A(I) \leqslant \alpha \cdot \text{OPT}(I)
+\]</div>
+<p>其中 <span class="arithmatex">\(\alpha &lt; \frac{3}{2}\)</span>。</p>
+<div class="admonition proof">
+<p class="admonition-title">Proof</p>
+<p>使用反证法，如果存在近似比小于 <span class="arithmatex">\(\frac{3}{2}\)</span> 的算法，那么可以用这个算法<span class="arithmatex">\(A\)</span>来解决NPC的判断物品是否可以由两个箱子装下的问题。</p>
+<ul>
+<li>
+<p>如果物品可以由两个箱子装下，那么<span class="arithmatex">\(OPT=2\)</span>，则<span class="arithmatex">\(A(I) &lt; \frac{3}{2} \cdot 2 = 3\)</span>，即<span class="arithmatex">\(A(I) &lt; 3\)</span>；此时<span class="arithmatex">\(A(I)=2\)</span>，那么<span class="arithmatex">\(A\)</span>可以判断；</p>
+</li>
+<li>
+<p>如果物品不可以由两个箱子装下，那么<span class="arithmatex">\(OPT \geqslant 3\)</span>，则<span class="arithmatex">\(A(I)\)</span>至少为<span class="arithmatex">\(3\)</span>，即<span class="arithmatex">\(A(I) \geqslant 3\)</span>；但是由于近似比小于<span class="arithmatex">\(\frac{3}{2}\)</span>，所以由<span class="arithmatex">\(A(I)\)</span>可以判断此时OPT不可能是<span class="arithmatex">\(2\)</span>。此时这个近似算法<span class="arithmatex">\(A\)</span>就可以判断物品是否可以由两个箱子装下。</p>
+</li>
+</ul>
+<p>综上，我们用多项式算法<span class="arithmatex">\(A\)</span>来解决NPC问题，所以只可能有P=NP。</p>
+</div>
+<p>在装箱问题中，我们一般不关心全部的实例，而关心 <span class="arithmatex">\(OPT(I)\)</span> 较大的那些实例。因此定义 “渐近近似比（asymptotic approximation ratio）” 如下：</p>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>对于一维装箱问题，定义渐近近似比为,对于任意常数 <span class="arithmatex">\(\alpha \geqslant 1\)</span>,对于任意实例 <span class="arithmatex">\(I\)</span>，存在常数 <span class="arithmatex">\(k\)</span>，使得</p>
+<div class="arithmatex">\[
+    A(I) \leqslant \alpha \cdot OPT(I) + k
+\]</div>
+<p>则称所有满足上式的 <span class="arithmatex">\(\alpha\)</span> 的下确界为<span class="arithmatex">\(A\)</span>渐近近似比。</p>
+<p><span class="arithmatex">\(k\)</span>可以是一个藏书，也可以是<span class="arithmatex">\(OPT(I)\)</span>的一个高阶无穷小。</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+</div>
+<p>装箱问题中，若所有的物品信息在开始装箱前已知，则它是离线（offline）问
+   题；若初始时物品信息并不全部给出，例如物品在传送带上逐个到达，需要我们即时安排，而我们对未到达物品信息一无所知，同时做出的决定无法更改，此时称为在线（online）问题。“近似比” 通常用来描述离线问题近似算法的性能。而对于在线问题，一般用 “竞争比（competitive ratio）” 的概念。</p>
+<h3 id="note-ads-wk10-next-fit">Next Fit<a class="headerlink" href="#note-ads-wk10-next-fit" title="Permanent link">&para;</a></h3>
+<p>Next Fit 算法是一种简单的装箱算法，其思想是：对于每个物品，尝试将其放入当前箱子，如果放不下，则尝试放入下一个箱子。如果放不下，则<mark class="critic">关闭当前箱子</mark>，并开出一个新箱子，将其放入；</p>
+<p>Next Fit 算法有一个性质：相邻两个箱子的大小之和肯定大于1，否则就不需要开新箱子；</p>
+<p>根据这个，我们可以证明：</p>
+<div class="arithmatex">\[
+    NF(I) \leqslant 2 \cdot OPT(I) - 1
+\]</div>
+<p>即</p>
+<div class="arithmatex">\[
+    OPT(I) \geqslant \frac{NF(I) + 1}{2}
+\]</div>
+<p>换句话说，如果我们的算法的箱子数目用了<span class="arithmatex">\(2M\)</span>个，那么最优解至少要用<span class="arithmatex">\(M+1\)</span>个箱子。</p>
+<div class="admonition proof">
+<p class="admonition-title">Proof</p>
+<p>令 <span class="arithmatex">\( S(B_i) \)</span> 为箱子 <span class="arithmatex">\( B_i \)</span> 中物品的大小之和，那么有：</p>
+<div class="arithmatex">\[\begin{cases}
+    S(B_1) + S(B_2) &gt; 1 \\
+    S(B_3) + S(B_4) &gt; 1 \\
+    \ldots \\
+    S(B_{2M-1}) + S(B_{2M}) &gt; 1
+\end{cases}\]</div>
+<p>将所有不等式相加，得到：</p>
+<div class="arithmatex">\[
+\sum_{i=1}^{2M} S(B_i) &gt; M
+\]</div>
+<p>所以总的大小严格大于 <span class="arithmatex">\(M\)</span>，即最优解箱子数目至少为 <span class="arithmatex">\(M+1\)</span>。</p>
+</div>
+<p>事实上<span class="arithmatex">\(NF\)</span>装箱的近似比就是<span class="arithmatex">\(2\)</span>,不会再有比这个小的了；</p>
+<div class="admonition eg">
+<p class="admonition-title">下确界的例子</p>
+<p>考虑<span class="arithmatex">\(M\)</span>组物品，每组物品的大小为<span class="arithmatex">\(\dfrac{1}{2},\varepsilon\)</span>,最后再加一个<span class="arithmatex">\(\dfrac{1}{2}\)</span>,且满足<span class="arithmatex">\(M\varepsilon &lt; 1\)</span>,此时<span class="arithmatex">\(NF\)</span>算法需要<span class="arithmatex">\(M+1\)</span>个箱子，而最优解需要<span class="arithmatex">\(M/2+1\)</span>个箱子，所以<span class="arithmatex">\(NF\)</span>算法的下确界为<span class="arithmatex">\(2\)</span>。</p>
+</div>
+<h3 id="note-ads-wk10-any-fit">Any Fit<a class="headerlink" href="#note-ads-wk10-any-fit" title="Permanent link">&para;</a></h3>
+<p>这是一类的Fit方案，满足: <em>当物品到达时，除非所有目前打开的箱子都无法装下该物品，才允许打开一个新箱子</em></p>
+<p>主要包括：</p>
+<ul>
+<li>(FF)First Fit: 按箱子打开的顺序从早到晚检查,将物品放入第一个能放下的箱子中；</li>
+<li>(BF)Best Fit: 将物品放入剩余空间最小的箱子中,最大化利用箱子空间；</li>
+<li>(WF)Worst Fit: 将物品放入剩余空间最大的箱子中;</li>
+</ul>
+<p><strong>前面的所有 Fit 算法都是在线算法</strong>。此外，Any Fit 的三种算法都满足相邻两个箱子物品尺寸之和大于1，因此它们都不会比 NF 差。而前面 NF 的下界实例也适用于 WF，因此 WF 和 NF 一样差。</p>
+<div class="admonition idea">
+<p class="admonition-title">FF VS BF</p>
+<p>从定义上来看，BF最大化利用了空间，似乎表现会比FF好，但是实际上并不能很好判断两者的优劣：</p>
+<ul>
+<li>0.5、0.7、0.1、0.4、0.3，FF=2；BF=3；</li>
+<li>0.5、0.7、0.3、0.5，FF=3；BF=2；</li>
+</ul>
+<p>从上面的例子可以看出，BF并不一定比FF好，FF也不一定比BF好；</p>
+</div>
+<p>FF和BF的近似比都是1.7；</p>
+<h2 id="note-ads-wk10-0-1">0-1背包问题<a class="headerlink" href="#note-ads-wk10-0-1" title="Permanent link">&para;</a></h2>
+<h3 id="note-ads-wk10-2-">基础的2-近似算法<a class="headerlink" href="#note-ads-wk10-2-" title="Permanent link">&para;</a></h3>
+<p>在贪心算法中，如果是解决分数背包问题，那么可以使用贪心算法，是让背包的每一单位重量的价值最大化；但是如果是整数的0-1背包问题，那么有以下反例：</p>
+<p>有两个物品，第一个物品的价值为 1，重量为 1，第二个物品的价值为 2，重量为 3，背包的容量为 3。我们的贪心策略是让每单位重量的价值最大化，因此贪心算法的选择结果是选择第一个物品，但实际上最优解显然是选择第二个物品，这样背包的价值为 2，而贪心算法的解为 1。因此贪心算法并不是最优的。</p>
+<p>为了得到近似比，我们需要进一步改进我们的贪心算法：我们有两个贪心策略，其一是根据这里的单位重量的价值（profit density），其二是直接贪心选择最大价值的物品，我们运行两个算法选择最优解，我们可以证明，这样结合后的近似比为 2</p>
+<p>设</p>
+<ul>
+<li><span class="arithmatex">\(P_{frac}\)</span> 为分数背包问题的最优解；</li>
+<li><span class="arithmatex">\(P_{OPT}\)</span> 为0-1背包问题的最优解；</li>
+<li><span class="arithmatex">\(P_{greedy}\)</span> 为贪心算法的解；</li>
+<li><span class="arithmatex">\(p_{max}\)</span> 为装得下的物品中价值最大的物品的价值；</li>
+</ul>
+<p>那么有</p>
+<div class="arithmatex">\[
+    P_{frac} \geqslant P_{OPT} \geqslant P_{greedy} \geqslant p_{max}
+\]</div>
+<p>所以</p>
+<div class="arithmatex">\[
+    \dfrac{P_{OPT}}{P_{greedy}} \leqslant \dfrac{P_{frac}}{P_{greedy}} \leqslant \dfrac{P_{greedy}+p_{max}}{P_{greedy}} \leqslant 2
+\]</div>
+<p>其中的<span class="arithmatex">\(P_{frac} \leqslant P_{greedy}+p_{max}\)</span>是因为按照贪心策略，我们选择了最大的物品，在即将满的时候，<span class="arithmatex">\(P_{frac}\)</span>在<span class="arithmatex">\(P_{greedy}\)</span>的基础上将<span class="arithmatex">\(p_{max}\)</span>的截取了一部分装进去了；</p>
+<div class="admonition summary">
+<p class="admonition-title">Summary</p>
+<p>如果已知最优解中价值最大的前k个，那么可以设计出近似比为<span class="arithmatex">\(\dfrac{k+1}{k}\)</span>的算法</p>
+</div>
+<h3 id="note-ads-wk10-0-1fptas">0-1背包的FPTAS算法<a class="headerlink" href="#note-ads-wk10-0-1fptas" title="Permanent link">&para;</a></h3>
+<p>现在我们讨论一个更美好的算法，即一个可以无限近似的算法。利用动态规划一讲的算法我们知道 0-1背包问题是有伪多项式算法的，即其复杂度是 <span class="arithmatex">\(O(nC)\)</span> 的，其中 <span class="arithmatex">\(n\)</span> 是物品的数量，<span class="arithmatex">\(C\)</span> 是背包的容量。但我们可以换个角度进行动态规划，我们的数组第二个维度不再是背包的容量，而是价值，即我们原先的数组是 <code>A[i][c]</code>表达的是前 <code>i</code> 个物品放入容量为 <code>c</code> 的背包的最大价值，现在我们的数组是 <code>A[i][v]</code> 表达的是前 <code>i</code> 个物品放入价值为 <code>v</code> 的背包的最小重量。转移方程为：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Let <span class="arithmatex">\( W_{i,p} \)</span> be the minimum weight of a collection from <span class="arithmatex">\(\{1, \ldots, i\}\)</span> with total profit being exactly <span class="arithmatex">\( p \)</span>.</p>
+<ol>
+<li><strong>Take <span class="arithmatex">\( i \)</span></strong>: </li>
+</ol>
+<div class="arithmatex">\[
+   W_{i,p} = w_i + W_{i-1,p - p_i}
+\]</div>
+<ol>
+<li><strong>Skip <span class="arithmatex">\( i \)</span></strong>: </li>
+</ol>
+<div class="arithmatex">\[
+   W_{i,p} = W_{i-1,p}
+\]</div>
+<div class="arithmatex">\[
+W_{i,p} = 
+\begin{cases} 
+\infty &amp; \text{if } i = 0 \\ 
+W_{i-1,p} &amp; \text{if } p_i &gt; p \\ 
+\min \{ W_{i-1,p}, w_i + W_{i-1,p - p_i} \} &amp; \text{otherwise} 
+\end{cases}
+\]</div>
+</div>
+<p>显然，这一动态规划的复杂度是 <span class="arithmatex">\(O(nV)\)</span> 的，其中 <span class="arithmatex">\(V\)</span> 是所有物品的价值之和。我们做个简单的变换，设 <span class="arithmatex">\(vmax\)</span> 是所有物品的价值的最大值，那么显然有 <span class="arithmatex">\(V \leqslant nvmax\)</span>因此我们的复杂度是 <span class="arithmatex">\(O(n^2 vmax)\)</span> 的。</p>
+<p>如果发现 <span class="arithmatex">\(vmax\)</span> 的大小是 <span class="arithmatex">\(n\)</span> 的多项式级别的，那么我们将得到一个多项式时间的算法。然而并非所有实例都能满足这一条件，因此我们需要对输入的价值做一些技术性的处理，即对输入的所有价值做同比例的缩小，使得 <span class="arithmatex">\(vmax\)</span> 能缩小到 <span class="arithmatex">\(n\)</span> 的多项式
+级别</p>
+<div class="admonition key-point">
+<p class="admonition-title">Key-point</p>
+<p>给定想要的比例<span class="arithmatex">\(\varepsilon\)</span>,取<span class="arithmatex">\(b=\dfrac{\varepsilon v_{max}}{n}\)</span>
+将输入的全体价值同时缩放一个比例<span class="arithmatex">\(b\)</span>,使得最大价值为<span class="arithmatex">\(n\)</span>的多项式级别，做向上(或者向下)取整，然后使用动态规划做法，得到最优解<span class="arithmatex">\(v\)</span>;最后再将结果放大回来，我们相信放大回来的价值和原价值是接近的，即<span class="arithmatex">\(bv\)</span>是一个近似解。</p>
+</div>
+<p>可以证明上述算法是 0-1 背包的一个FPTAS算法</p>
+<p>首先时间复杂度是显然的，我们缩小价值后的的动态规划算法是 </p>
+<div class="arithmatex">\[
+    b=\dfrac{\varepsilon v_{max}}{n}
+\]</div>
+<div class="arithmatex">\[
+    O(n^2 \cdot \dfrac{v_{max}}{b})=O(n^2 \cdot \dfrac{n}{\varepsilon})=O(\dfrac{n^3}{\varepsilon})
+\]</div>
+<p>满足多项式时间的要求；</p>
+<p>我们用多项式算法解决了<span class="arithmatex">\(v_i'\)</span>价值下的问题：</p>
+<p>我们还需要关注经过缩放再放大之后，原本价值的变化是怎么样的即 <span class="arithmatex">\(v_i' = \lceil v_i / b \rceil b\)</span> 和 <span class="arithmatex">\(v_i\)</span> 是接近的。事实上因为在向上取整时最多只会加上 1，因此我们有：</p>
+<div class="arithmatex">\[
+v_i \leqslant v_i' \leqslant v_i + b.
+\]</div>
+<p>设对于 <span class="arithmatex">\(v_1, \ldots, v_n\)</span> 而言的最优物品集合为 <span class="arithmatex">\(S^*\)</span>，而对于 <span class="arithmatex">\(v_1', \ldots, v_n'\)</span> 而言的最优物品集合为 <span class="arithmatex">\(S\)</span>，那么我们有：</p>
+<div class="arithmatex">\[
+\sum_{i \in S} v_i' \geqslant \sum_{i \in S^*} v_i'.
+\]</div>
+<p>这是因为 <span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(v_1', \ldots, v_n'\)</span> 的最优解，而 <span class="arithmatex">\(S^*\)</span> 是一个可行解。然后结合上述含入的不等式我们有如下等式链：</p>
+<div class="arithmatex">\[
+\sum_{i \in S^*} v_i \leqslant \sum_{i \in S^*} v_i' \leqslant \sum_{i \in S} (v_i + b) \leqslant \sum_{i \in S} v_i + nb = \sum_{i \in S} v_i + \varepsilon v_{\max} 
+\]</div>
+<p>比较首尾，只要能估计出 <span class="arithmatex">\(v_{\max}\)</span> 和 <span class="arithmatex">\(\sum_{i \in S} v_i\)</span> 的关系，我们就能得到近似化的上界。显然$v_{max} \leqslant \sum_{i \in S^*} v_i $</p>
+<div class="arithmatex">\[
+(1 -  \varepsilon) \sum_{i \in S^*} v_i = (1 -  \varepsilon) OPT \leqslant  \sum_{i \in S} v_i。
+\]</div>
+<p>因此我们的近似化满足 FPTAS 的要求。</p></section><section class="print-page" id="note-ads-wk11"><h1 id="note-ads-wk11-_1">局部搜索<a class="headerlink" href="#note-ads-wk11-_1" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 3466 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 39 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 12 分钟</p>
+</div>
+<blockquote>
+<p>昔孟母，择邻处</p>
+</blockquote>
+<div class="admonition quote">
+<p class="admonition-title">引入</p>
+<p>如果我们位于一座山上，所拥有的信息只有我们周围的地形，现在我们要下山，理所应当的，我们会选择当前所能看到的最低的位置前进，当然，这样的选择并不一定能够保证我们最终能够到达山脚下，有可能只是到达一个山谷；但是有时候这种方法是有效的。</p>
+</div>
+<p>局部搜索（Local Search）是一种常用的优化方法，主要用于求解大规模的优化问题，尤其是那些解空间较大且不容易通过全局搜索找到最优解的问题。局部搜索算法从一个初始解出发，在当前解的邻域中不断进行探索，以寻找更好的解，直到满足某些停止条件。</p>
+<p>具体来说，局部搜索的基本流程包括以下几个步骤：</p>
+<ol>
+<li><strong>初始化</strong>：选择一个初始解。</li>
+<li><strong>邻域搜索</strong>：通过某种方式生成当前解的邻域解，即在当前解的基础上进行微小的改变，得到一组相似的解。</li>
+<li><strong>选择最优邻域解</strong>：从邻域解中选择一个“更优”的解，作为新的当前解。</li>
+<li><strong>迭代</strong>：重复邻域搜索和选择最优邻域解的步骤，直到满足停止条件（如达到最大迭代次数、解的改进达到一定程度等）。</li>
+</ol>
+<p>局部搜索通常用于求解 <strong>组合优化问题</strong> （如旅行商问题、图着色问题等），尤其在搜索空间庞大的情况下，它通过聚焦在较小的局部区域内进行搜索，能够在较短的时间内找到一个较好的解，尽管该解不一定是全局最优。</p>
+<p>局部搜索的一些常见变种包括：</p>
+<ul>
+<li><strong>爬山算法（Hill Climbing）</strong>：一种简单的局部搜索方法，通过选择邻域中最好的解逐步优化，直到没有更好的解为止。</li>
+<li><strong>模拟退火（Simulated Annealing）</strong>：在爬山算法的基础上引入了随机性，允许接受较差的解，从而避免陷入局部最优解。</li>
+<li><strong>禁忌搜索（Tabu Search）</strong>：通过维护一个禁忌表来记录已经访问过的解，防止算法反复访问已探索过的区域，从而提高搜索效率。</li>
+</ul>
+<p>局部搜索的优点是计算效率高、实现简单，但其缺点是容易陷入局部最优解(到达了山谷而不是山底)。</p>
+<h2 id="note-ads-wk11-_2">局部搜索的框架<a class="headerlink" href="#note-ads-wk11-_2" title="Permanent link">&para;</a></h2>
+<p><strong>局部性(Locality)</strong></p>
+<ul>
+<li>
+<p>需要在neighborhood中进行搜索，即在可行集中的邻域进行搜索</p>
+</li>
+<li>
+<p>需要保证局部最优是 <strong>自身邻域</strong> 的全局最优</p>
+</li>
+</ul>
+<p><strong>搜索</strong></p>
+<ul>
+<li>
+<p>从一个可行解开始，每一次迭代都会在当前解的邻域中选择一个更好的解</p>
+</li>
+<li>
+<p>达到局部最优当且仅当邻域内没有更好的解</p>
+</li>
+</ul>
+<h2 id="note-ads-wk11-_3">伪代码<a class="headerlink" href="#note-ads-wk11-_3" title="Permanent link">&para;</a></h2>
+<p>S <span class="arithmatex">\(\sim\)</span> S' : S' is a neighboring solution of S, whree S' can be obtained by a <mark class="critic">slight modification</mark> of S.</p>
+<p>即对S进行一次小的改变，得到S'。</p>
+<p>N(S): neighborhood of S – the set { S': S <span class="arithmatex">\(\sim\)</span> S' }.</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#note-ads-wk11-__codelineno-0-1"></a><span class="n">SolutionType</span><span class="w"> </span><span class="nf">Gradient_descent</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#note-ads-wk11-__codelineno-0-2"></a><span class="p">{</span><span class="w">   </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">feasible</span><span class="w"> </span><span class="n">solution</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="err"></span><span class="w"> </span><span class="n">FS</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#note-ads-wk11-__codelineno-0-3"></a><span class="w">    </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#note-ads-wk11-__codelineno-0-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#note-ads-wk11-__codelineno-0-5"></a><span class="w">        </span><span class="n">S</span><span class="err">’</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Search</span><span class="p">(</span><span class="w"> </span><span class="n">N</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* find the best S’ in N(S) */</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#note-ads-wk11-__codelineno-0-6"></a><span class="w">        </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="err">’</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#note-ads-wk11-__codelineno-0-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MinCost</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#note-ads-wk11-__codelineno-0-8"></a><span class="w">            </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CurrentCost</span><span class="p">;</span><span class="w">    </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#note-ads-wk11-__codelineno-0-9"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#note-ads-wk11-__codelineno-0-10"></a><span class="w">        </span><span class="k">else</span><span class="w">  </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#note-ads-wk11-__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#note-ads-wk11-__codelineno-0-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#note-ads-wk11-__codelineno-0-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="note-ads-wk11-_4">点集覆盖问题<a class="headerlink" href="#note-ads-wk11-_4" title="Permanent link">&para;</a></h2>
+<p><mark class="critic">Vertex Cover Problem</mark></p>
+<p>给定一个无向图<span class="arithmatex">\(G=(V,E)\)</span>，以及一个正整数<span class="arithmatex">\(K\)</span>，是否存在V的一个子集<span class="arithmatex">\(C\)</span>，使得<span class="arithmatex">\(C\)</span>中点的个数不超过<span class="arithmatex">\(K\)</span>，且对于每一条边<span class="arithmatex">\((u,v)\)</span> <span class="arithmatex">\(\in\)</span> <span class="arithmatex">\(E\)</span>，至少有一个端点在<span class="arithmatex">\(C\)</span>中。</p>
+<p><mark class="critic">Vertex cover problem (optimization)</mark></p>
+<p>在点集覆盖问题的基础上，找到最小的点集覆盖。</p>
+<p>在这一问题中</p>
+<ul>
+<li>Feasible solution(<span class="arithmatex">\(\mathcal{FS}\)</span>): 所有点集覆盖的集合</li>
+<li>Cost(S) = |S|</li>
+<li>S <span class="arithmatex">\(\sim\)</span> S' </li>
+</ul>
+<p>在点集覆盖中，每一个点集覆盖S至多有|V|个邻居，即N(S)的大小是有限的。</p>
+<ul>
+<li>search: Start from S = V; delete a node and check if S' is a vertex cover with a smaller cost.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><div align="center"><img src="../NOTE/ADS/image-13.png" width="50%"></div></p>
+<p>Case0,是正确的，依次删去所有点，最后得到的是空集，是一个点集覆盖。</p>
+<p>Case1,是错误的，因为删除了一个点后，我们将最优解删去了；</p>
+</div>
+<h3 id="note-ads-wk11-_5">改进<a class="headerlink" href="#note-ads-wk11-_5" title="Permanent link">&para;</a></h3>
+<p>如果我们可以容忍暂时的代价升高，有可能会遇到代价降低更好的情况</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#note-ads-wk11-__codelineno-1-1"></a><span class="n">SolutionType</span><span class="w"> </span><span class="nf">Metropolis</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#note-ads-wk11-__codelineno-1-2"></a><span class="p">{</span><span class="w">   </span><span class="n">Define</span><span class="w"> </span><span class="n">constants</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#note-ads-wk11-__codelineno-1-3"></a><span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">feasible</span><span class="w"> </span><span class="n">solution</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">FS</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#note-ads-wk11-__codelineno-1-4"></a><span class="w">    </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#note-ads-wk11-__codelineno-1-5"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#note-ads-wk11-__codelineno-1-6"></a><span class="w">        </span><span class="n">S</span><span class="err">’</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Randomly</span><span class="w"> </span><span class="n">chosen</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">N</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//Adding is allowed</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#note-ads-wk11-__codelineno-1-7"></a><span class="w">        </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="err">’</span><span class="p">);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#note-ads-wk11-__codelineno-1-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MinCost</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#note-ads-wk11-__codelineno-1-9"></a><span class="w">            </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CurrentCost</span><span class="p">;</span><span class="w">    </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#note-ads-wk11-__codelineno-1-10"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#note-ads-wk11-__codelineno-1-11"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#note-ads-wk11-__codelineno-1-12"></a><span class="w">            </span><span class="n">With</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">probability</span><span class="p">,</span><span class="w"> </span><span class="n">let</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#note-ads-wk11-__codelineno-1-13"></a><span class="w">            </span><span class="k">else</span><span class="w">  </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#note-ads-wk11-__codelineno-1-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#note-ads-wk11-__codelineno-1-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#note-ads-wk11-__codelineno-1-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#note-ads-wk11-__codelineno-1-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="note-ads-wk11-_6">模拟退火<a class="headerlink" href="#note-ads-wk11-_6" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>这种改进的方法由Metropolis，Rosenbluth，Rosenbluth，Teller和Teller于1953年提出，被称为Metropolis算法。他们希望利用统计力学中的原理模拟物理系统的行为。在统计物理中有一个假设，当一个系统的能量为E时，它出现的概率为<span class="arithmatex">\(e^{−E/kT}\)</span>，其中<span class="arithmatex">\(T&gt;0\)</span>是温度，<span class="arithmatex">\(k\)</span>是玻尔兹曼常数。这个假设被称为Boltzmann分布。显然的，当<span class="arithmatex">\(T\)</span>固定时，能量越低的状态出现的概率越大，因此一个物理系统也有更大的概率处于能量低的状态。然后我们考虑温度T的影响，当<span class="arithmatex">\(T\)</span>很大时，根据指数函数的特点，不同能量对应的概率其实差别可能不是很大；但<span class="arithmatex">\(T\)</span>较低的时候，不同的能量对应的概率差别就会很大。</p>
+</div>
+<p>基于玻尔兹曼分布，我们可以将Metropolis算法描述如下：</p>
+<ul>
+<li>
+<p>初始化：随机选择一个可行解 <span class="arithmatex">\(S\)</span>，设 <span class="arithmatex">\(S\)</span> 的能量为 <span class="arithmatex">\(E(S)\)</span>，并确定一个温度 <span class="arithmatex">\(T\)</span>；</p>
+</li>
+<li>
+<p>不断进行如下步骤：</p>
+</li>
+</ul>
+<p>(1) 随机选择 <span class="arithmatex">\(S\)</span> 的一个邻居 <span class="arithmatex">\(S'\)</span>（可以按均匀分布随机选择）；</p>
+<p>(2) 如果 <span class="arithmatex">\(E(S') \leqslant E(S)\)</span>，则接受 <span class="arithmatex">\(S'\)</span> 作为新的解；</p>
+<p>(3) 如果 <span class="arithmatex">\(E(S') &gt; E(S)\)</span>，则以概率 <span class="arithmatex">\(e^{-(E(S')-E(S))/kT}\)</span> 接受 <span class="arithmatex">\(S′\)</span> 作为新的解；如果接受了则更新解，继续下一轮迭代，否则保持原解 <span class="arithmatex">\(S\)</span>，继续迭代。</p>
+<p>直观地说，Metropolis算法就是在当前解S的邻居中随机选择一个解S′，如果S′的能量更低则接受，否则以一定概率接受一个更差的解——这就使得我们有可能跳出一个局部最优解。当然有一个注意的问题是，我们上面没有写算法的停止点，实际上进行到一个满意的结果中断算法即可。Metropolis等人证明了他们的算法具有如下性质</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>设 <span class="arithmatex">\(Z = \sum_{S } e^{−E(S)/kT}\)</span>，则对于任意状态 <span class="arithmatex">\(S\)</span>，记<span class="arithmatex">\(f_S(t)\)</span>为在<span class="arithmatex">\(t\)</span>轮迭代中选到了状态<span class="arithmatex">\(S\)</span>的比例，则当<span class="arithmatex">\(t \to \infty\)</span>时，<span class="arithmatex">\(f_S(t) \text{(以概率1收敛)} \to e^{−E(S)/kT}/Z\)</span>。</p>
+</div>
+<h2 id="note-ads-wk11-hopfield">Hopfield 神经网络<a class="headerlink" href="#note-ads-wk11-hopfield" title="Permanent link">&para;</a></h2>
+<p>Hopfield神经网络是一种全连接的反馈神经网络，于1982年由J.Hopfeld教授提出;Hopfield神经网络有一个能量函数，如果能将能量函数与一个优化问题绑定，那么Hopfield神经网络就可以用来解决这个优化问题，例如旅行商问题</p>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<ol>
+<li>
+<p>Hopfield 神经网络可以抽象为一个无向图 <span class="arithmatex">\( G = (V, E) \)</span>，其中 <span class="arithmatex">\( V \)</span> 是神经元的集合，<span class="arithmatex">\( E \)</span> 是神经元之间的连接关系，并且每条边 <span class="arithmatex">\( e \)</span> 都有一个权重 <span class="arithmatex">\( w_e \)</span>，这可能是正数或负数：</p>
+</li>
+<li>
+<p>Hopfield 神经网络的一个状态 (configuration) 是指网络中每个神经元 (即图的顶点) 的状态的一个取值，倾向值能为 1 或 -1。我们记顶点u的状态为 <span class="arithmatex">\( s_u \)</span>。</p>
+</li>
+<li>
+<p>如果对于边 <span class="arithmatex">\( e = (u, v) \)</span>，我们定义 <span class="arithmatex">\( c_e = w_e s_u s_v \)</span>，我们希望<span class="arithmatex">\(c_e &lt; 0\)</span></p>
+</li>
+<li>
+<p>我们将上述条件的边称为“好”的 (good)，而称为“坏”的 (bad)。</p>
+</li>
+<li>
+<p>如果我们一点是“满意的” (satisfied)，当且仅当它所连接的所有点中，好边的权重绝对值大于等于坏边的，即</p>
+</li>
+</ol>
+<div class="arithmatex">\[
+\sum_{(u,v) \in E} w_{e(u,v)} s_v s_u &lt; 0,
+\]</div>
+<p>反之，如果不满足这一条件，我们称其为“不满意的” (unsatisfied)。</p>
+<p>6.最后，我们称一个构型是“稳定的（stable）”，当且仅当所有的点都是满意的</p>
+<p><div align="center"><img src="../NOTE/ADS/image-14.png" width="50%"></div></p>
+</div>
+<h3 id="note-ads-wk11-_7">局部搜索算法<a class="headerlink" href="#note-ads-wk11-_7" title="Permanent link">&para;</a></h3>
+<p>如果要设计一个局部搜索算法，我想我们有一个非常简单直接的方式。在这一问题中，我们自然地就会定义一个构型的邻居就是将其中一个点的状态取反得到的新构型，然后我们就可以设计一个局部搜索算法了：我们从一个随机初始构型开始，然后检查每个点是否满意，如果有不满意的点，我们就翻转这个点的状态（那么这个点自然就变得满意了），然后继续检查，直到所有的点都满意为止。 <strong>如果这个算法会停止</strong> ，那么停止的时候我们得到的就是一个稳定构型：因为所有点都满意了;</p>
+<p>我们称为状态翻转算法（State flipping algorithm）：</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#note-ads-wk11-__codelineno-2-1"></a><span class="n">ConfigType</span><span class="w"> </span><span class="nf">State_flipping</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#note-ads-wk11-__codelineno-2-2"></a><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#note-ads-wk11-__codelineno-2-3"></a><span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">arbitrary</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#note-ads-wk11-__codelineno-2-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="n">IsStable</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#note-ads-wk11-__codelineno-2-5"></a><span class="w">        </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetUnsatisfied</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#note-ads-wk11-__codelineno-2-6"></a><span class="w">        </span><span class="n">su</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">su</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#note-ads-wk11-__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#note-ads-wk11-__codelineno-2-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#note-ads-wk11-__codelineno-2-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition idea">
+<p class="admonition-title">这个算法一定会停止吗</p>
+<p><mark class="critic">
+<em>State_flipping算法至多反转<span class="arithmatex">\(\sum_{e \in E}|w_e|\)</span>后会停止</em>
+</mark></p>
+<p>首先，定义势能函数为一个构型<span class="arithmatex">\(S\)</span>所有好边的权重的绝对值之和</p>
+<div class="arithmatex">\[
+\Phi(S) = \sum_{e \in E} |w_e| \cdot \mathbb{I}(c_e &lt; 0)
+\]</div>
+<p>显然，对于任意的构型<span class="arithmatex">\(S\)</span>，<span class="arithmatex">\(\Phi(S) \geqslant 0\)</span>，并且最大值就是所有边的权重绝对值之和。即</p>
+<div class="arithmatex">\[
+\Phi(S) \leqslant \sum_{e \in E} |w_e|
+\]</div>
+<p>假设当前状态为<span class="arithmatex">\(S\)</span>,有一个不满意的点<span class="arithmatex">\(u\)</span>，那么我们将<span class="arithmatex">\(u\)</span>的状态取反变为<span class="arithmatex">\(\overline{u}\)</span>，设此时状态为<span class="arithmatex">\(S'\)</span>，那么</p>
+<div class="arithmatex">\[
+    \Phi(S') - \Phi(S) =  \sum_{e=(u,v),e \in bad} |w_e| - \sum_{e=(u,v),e \in good} |w_e| \geqslant 0
+\]</div>
+<p>这是因为翻转后原先与 <span class="arithmatex">\(u\)</span> 相连的好边都变成了坏边，坏边都变成了好边，其余边没有变化。又因为 <span class="arithmatex">\(u\)</span> 是不满意的，因此与 <span class="arithmatex">\(u\)</span> 相连的坏边比好边权重绝对值之和大，所以上式大于 0</p>
+<p>势能函数只能取整数值，所以 <span class="arithmatex">\(\Phi(S') \geqslant \Phi(S)+1\)</span></p>
+<p>这就意味着我们每次翻转一个不满意的点，势能函数就会增加至少 1。因为势能函数的取值范围是有限的（0 到所有边权重绝对值之和），所以我们的局部搜索算法一定会停止;</p>
+<p>有推论:</p>
+<p>设 <span class="arithmatex">\(S\)</span> 是一个构型，如果 <span class="arithmatex">\(\Phi(S)\)</span> 是局部最大值，则 <span class="arithmatex">\(S\)</span> 是一个稳定构型</p>
+<p>证明：如果 <span class="arithmatex">\(S\)</span> 不是一个稳定构型，那么至少有一个点是不满意的，我们可以翻转这个点，势能函数会增加至少 1，这就意味着 <span class="arithmatex">\(\Phi(S)\)</span> 不是局部最大值，矛盾。</p>
+</div>
+<h2 id="note-ads-wk11-max-cut">最大割问题 (Max Cut)<a class="headerlink" href="#note-ads-wk11-max-cut" title="Permanent link">&para;</a></h2>
+<p>最大割问题也是一个经典的 NP 困难问题，在这一问题中，我们希望将一个边权全为正的无向图 <span class="arithmatex">\(G =
+(V, E)\)</span> 的顶点集合 <span class="arithmatex">\(V\)</span> 分成两个集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>（这时的解记为 <span class="arithmatex">\((A, B)\)</span>），使得割边的权重和最大，其中割边的含义就是一条边的两个端点分别在 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 中，即我们要最大化</p>
+<div class="arithmatex">\[
+   w(A,B) = \sum_{(u, v) \in E} w_{uv} \cdot \mathbb{I}(u \in A, v \in B)
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">与Hopfield的关联</p>
+<p>我们希望给出一个局部搜索解法----这是非常自然的，因为它和 Hopfield 神经网络问题之间有一个很直接的关联。我们有一个很简单的观察，对于任意的解 <span class="arithmatex">\((A, B)\)</span>，然后将 <span class="arithmatex">\(A\)</span> 中的点赋状态<span class="arithmatex">\(-1\)</span>，<span class="arithmatex">\(B\)</span> 中的点赋状态 <span class="arithmatex">\(1\)</span>，因为所有边的权重都是正数，所以最大化割边权重和对应于<span class="arithmatex">\(Hopfield\)</span> 神经网络问题其实就是最大化好边的总权重和 <span class="arithmatex">\(\Phi(S)\)</span>，这就和 Hopfield 神经网络问题一样了,使用State flipping算法即可</p>
+</div>
+<h3 id="note-ads-wk11-_8">局部算法与最优解的关系<a class="headerlink" href="#note-ads-wk11-_8" title="Permanent link">&para;</a></h3>
+<p>在最大割问题中，我们可以证明局部搜索算法的最优解和全局最优解之间的关系：局部搜索算法给出的局部最优解最差也不会低于最优解的一半</p>
+<p>即</p>
+<p><strong>设 <span class="arithmatex">\((A, B)\)</span> 是如上局部搜索算法得出的一个局部最优解，<span class="arithmatex">\((A^∗, B^∗)\)</span> 是最优解，则</strong></p>
+<div class="arithmatex">\[
+    w(A, B) \geqslant \frac{1}{2} w(A^∗, B^∗)
+\]</div>
+<div class="admonition proof">
+<p class="admonition-title">Proof</p>
+<p>设 <span class="arithmatex">\(u \in A\)</span>,因为<span class="arithmatex">\((A,B)\)</span>是局部最优解，所以，如果将<span class="arithmatex">\(u\)</span>从<span class="arithmatex">\(A\)</span>中移到<span class="arithmatex">\(B\)</span>中，割边权重和会减少；即</p>
+<div class="arithmatex">\[
+    \sum_{v \in A} w_{uv} \leqslant \sum_{v in B} w_{uv}
+\]</div>
+<p>对所有的<span class="arithmatex">\(u \in A\)</span>都成立，所以求和得到</p>
+<div class="arithmatex">\[
+    \sum_{u \in A}\sum_{v \in A} w_{uv} \leqslant \sum_{u \in A}\sum_{v \in B} w_{uv}
+\]</div>
+<p>等式左边为<span class="arithmatex">\(A\)</span>中所有的边权重和的两倍，右边为<span class="arithmatex">\(A\)</span>和<span class="arithmatex">\(B\)</span>之间的边权重和(所有的割边的权重和)，所以</p>
+<div class="arithmatex">\[
+    2w(A,A) \leqslant w(A,B)
+\]</div>
+<p>同理，我们可以得到</p>
+<div class="arithmatex">\[
+    2w(B,B) \leqslant w(A,B)
+\]</div>
+<p>我们又知道，总的边权重和为</p>
+<div class="arithmatex">\[
+    W = w(A,A) + w(B,B) + w(A,B)
+\]</div>
+<p>所以</p>
+<div class="arithmatex">\[
+    w(A^*,B^*) \leqslant w(A,B) + w(A,A) + w(B,B) \leqslant 2w(A,B)
+\]</div>
+</div>
+<h3 id="note-ads-wk11-_9">优化<a class="headerlink" href="#note-ads-wk11-_9" title="Permanent link">&para;</a></h3>
+<p>事实上在控制迭代次数引起的复杂度时非常常用（这里就是求 <span class="arithmatex">\(\Phi(S)\)</span> 的局部最优值需要的迭代次数可能太多）。我们要求算法在找不到一个能对解有 “比较大的提升” 的时候就停止，即使当时的解不是局部最优解：</p>
+<p>当我们处于解 <span class="arithmatex">\(w(A, B)\)</span> 时，我们要求下一个解的权重至少要增大<span class="arithmatex">\(\dfrac{2\varepsilon}{n}w(A, B)\)</span>，其中 <span class="arithmatex">\(n\)</span> 是图 <span class="arithmatex">\(G\)</span> 的顶点数。对于这一算法，我们有如下结论：</p>
+<p><strong>设 <span class="arithmatex">\((A, B)\)</span> 是如上局部搜索算法得出的一个解，<span class="arithmatex">\((A^∗, B^∗)\)</span> 是最优解，则</strong></p>
+<div class="arithmatex">\[
+    w(A, B) \geqslant \frac{1}{2+\varepsilon} w(A^∗, B^∗)
+\]</div>
+<p>并且这一算法会在 <span class="arithmatex">\(O(\dfrac{n}{\varepsilon} \log W)\)</span> 次状态翻转后停止，其中 <span class="arithmatex">\(W\)</span> 是所有边的权重之和</p>
+<div class="admonition proof">
+<p class="admonition-title">Proof</p>
+<p>对于任意的解 <span class="arithmatex">\((A, B)\)</span>，设<span class="arithmatex">\(u \in A\)</span></p>
+<div class="arithmatex">\[
+    \sum_{v \in A} w_{uv} \leqslant \sum_{v \in B} w_{uv} + \frac{2\varepsilon}{n} w(A,B)
+\]</div>
+<p>对所有的<span class="arithmatex">\(u \in A\)</span>都成立，所以求和得到</p>
+<div class="arithmatex">\[
+    2w(A,A) \leqslant w(A,B) + \frac{2\varepsilon}{n} w(A,B) \cdot n_A
+\]</div>
+<p>其中 <span class="arithmatex">\(n_A\)</span> 是 <span class="arithmatex">\(A\)</span> 中的点数，同理</p>
+<div class="arithmatex">\[
+    2w(B,B) \leqslant w(A,B) + \frac{2\varepsilon}{n} w(A,B) \cdot n_B
+\]</div>
+<p>所以</p>
+<div class="arithmatex">\[
+    w(A^*,B^*) \leqslant w(A,B) + w(A,A) + w(B,B) \leqslant 2w(A,B) + \varepsilon w(A,B) 
+\]</div>
+<p>因为我们每次反转会使得割边权重和增加<span class="arithmatex">\(1+\dfrac{\varepsilon}{n}\)</span>倍，所以我们需要<span class="arithmatex">\(O(\dfrac{n}{\varepsilon} \log W)\)</span>次状态翻转后会达到停止条件</p>
+</div>
+<details class="summary">
+<summary>选择更好的邻居</summary>
+<p><img alt="alt text" src="../NOTE/ADS/image-15.png" /></p>
+</details></section><h1 class='nav-section-title-end'>Ended: 高级数据结构与算法分析</h1>
                         <h3 class='nav-section-title' id='section-数学分析'>
                             数学分析 <a class='headerlink' href='#section-数学分析' title='Permanent link'>↵</a>
                         </h3>
