@@ -838,6 +838,12 @@ E e^{itX} = E \cos tX + iE \sin tX
         \varphi(t) = e^{-\frac{t^2}{2}}
         \]
 
+        普通的正态分布
+
+        \[
+            e^{it\mu-\frac{\sigma^2t^2}{2}}
+        \]
+
 ### 特征函数的分析性质
 
 1. \( \varphi(0) = 1 \)
@@ -1036,3 +1042,56 @@ P(X = k) = a_k, \quad k = \ldots, -2, -1, 0, 1, 2, \ldots,
 $$
 
 注意，某些 $a_k$ 可能为 0。
+
+
+
+!!!Example
+    假设 \((X, Y)\) 是二元联合正态随机变量
+
+    \[
+    (X, Y) \sim N(\mu_1, \sigma_1^2; \mu_2, \sigma_2^2; \rho)
+    \]
+
+    求：\(\phi(t_1, t_2) = ?\)
+
+    为简单起见，假设 \(\mu_1 = 0, \sigma_1^2 = 1; \mu_2 = 0, \sigma_2^2 = 1\)，即
+
+    \[
+    (X, Y) \sim N(0, 1; 0, 1; \rho)
+    \]
+
+    令
+
+    \[
+    \Sigma = \begin{pmatrix} 1 & \rho \\ \rho & 1 \end{pmatrix}
+    \]
+
+    作线性变换：
+
+    \[
+    \begin{pmatrix} U \\ V \end{pmatrix} = \Sigma^{-1/2} \begin{pmatrix} X \\ Y \end{pmatrix}
+    \]
+
+    \[
+    = \begin{pmatrix} 1 & \rho \\ \rho & 1 \end{pmatrix}^{-1/2} \begin{pmatrix} X \\ Y \end{pmatrix}
+    \]
+
+    这样，\((U, V) \sim N(0, 1; 0, 1; 0)\)，即 \(U, V\) 相互独立。所以，
+
+    \[
+    \phi_{U,V}(t_1, t_2) = e^{-\frac{1}{2}(t_1^2 + t_2^2)}
+    \]
+
+    \[
+    = e^{-\frac{1}{2}(t_1, t_2) \cdot (t_1, t_2)'}
+    \]
+
+    \[
+    \begin{align*}
+    \phi_{X,Y}(t_1, t_2) &= E e^{i(t_1, t_2)(X, Y)'} \\
+    &= E e^{i(t_1, t_2) \Sigma^{1/2} (U, V)'} \\
+    &= e^{-\frac{1}{2} (t_1, t_2) \Sigma (t_1, t_2)'}
+    \end{align*}
+    \]
+    
+      

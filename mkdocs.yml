@@ -245,6 +245,7 @@ nav:
               - 第一章: NOTE/Probability/first.md
               - 第二章: NOTE/Probability/second.md
               - 第三章: NOTE/Probability/Third.md
+              - 第四章: NOTE/Probability/Fourth.md
               - 其它: NOTE/Probability/others.md
           - 普通物理学二: 
               - NOTE/Physics/index.md
@@ -265,6 +266,8 @@ nav:
               - 动态规划: NOTE/ADS/wk7.md
               - 贪心法: NOTE/ADS/wk8.md
               - NP分析: NOTE/ADS/wk9.md
+              - 近似算法: NOTE/ADS/wk10.md
+              - 局部搜索: NOTE/ADS/wk11.md
           - 数学分析:
               - NOTE/MA/index.md
       - CS:

@@ -165,3 +165,233 @@ n = \frac{c}{v}
     \]
 
     带入即可
+
+
+### 费马原理
+
+光程定义为
+
+\[
+    L = n_1 s_1 + n_2 s_2
+\]
+
+其中$n_1$和$n_2$分别为两个介质的折射率，$s_1$和$s_2$分别为两个介质中光线的实际路径长度
+
+积分形式为
+
+\[
+    L = \int n ds
+\]
+
+费马原理是指光线在传播过程中，若可以成像，则光程的变分为零(对某一个变量求偏导为零)
+
+即
+
+\[
+    \delta \int n ds = 0
+\]
+
+
+!!!Example "费马原理证明反射和折射"
+    <div align=center>
+    <img src="../img/light/light6.png" width="50%">
+    </div>
+
+    \[
+    L = \sqrt{a^2 + x^2} + \sqrt{b^2 + (d - x)^2}
+    \]
+
+    \[
+    \frac{dL}{dx} = \frac{1}{2} \cdot \frac{2x}{\sqrt{a^2 + x^2}} - \frac{1}{2} \cdot \frac{2(d - x)}{\sqrt{b^2 + (d - x)^2}} = 0
+    \]
+
+    \[
+    \frac{x}{\sqrt{a^2 + x^2}} = \frac{(d - x)}{\sqrt{b^2 + (d - x)^2}}
+    \]
+
+    \[
+    \sin \theta_1 = \sin \theta_1' \quad \theta_1 = \theta_1'
+    \]
+
+
+    <div align=center>
+    <img src="../img/light/light7.png" width="50%">
+    </div>
+
+    $$
+    L = n_1 \sqrt{a^2 + x^2} + n_2 \sqrt{b^2 + (d - x)^2}
+    $$
+
+    $$
+    \frac{dL}{dx} = \frac{1}{2} n_1 \frac{2x}{\sqrt{a^2 + x^2}} - \frac{1}{2} n_2 \frac{2(d - x)}{\sqrt{b^2 + (d - x)^2}} = 0
+    $$
+
+    $$
+    n_1 \frac{x}{\sqrt{a^2 + x^2}} = n_2 \frac{(d - x)}{\sqrt{b^2 + (d - x)^2}}, \quad n_1 \sin \theta_1 = n_2 \sin \theta_2
+    $$
+
+## 成像(Image Formation)
+
+<div align=center>
+<img src="../img/light/light8.png" width="50%">
+</div>
+
+成像的基本原则是等光程
+
+左边称为物方，右边称为像方
+
+### 球面镜成像
+
+C为球心;r为球半径;
+
+<div align=center>
+<img src="../img/light/light9.png" width="50%">
+</div>
+
+首先，使用正弦定理
+
+\[
+\begin{cases}
+\dfrac{p}{\sin \phi} = \dfrac{o + r}{\sin \theta} = \dfrac{r}{\sin u} \\
+\dfrac{p'}{\sin \phi} = \dfrac{i - r}{\sin \theta'} = \dfrac{r}{\sin u'}
+\end{cases}
+\]
+
+
+\[
+\begin{align*}
+n \sin \theta &= n' \sin \theta' \\
+\theta - u &= \theta' + u' = \phi
+\end{align*}
+\]
+
+\[
+\begin{cases}
+\dfrac{p}{o + r} = \dfrac{\sin \phi}{\sin \theta} \\
+\dfrac{p'}{i - r} = \dfrac{\sin \phi}{\sin \theta'}
+\end{cases}
+\]
+
+\[
+\therefore \frac{p}{n(o + r)} = \frac{p'}{n'(i - r)}
+\]
+
+使用余弦定理
+
+\[
+\begin{cases}
+p^2 = (o + r)^2 + r^2 - 2r(o + r) \cos \phi = o^2 + 4r(o + r) \sin^2 \frac{\phi}{2} \\
+p'^2 = (i - r)^2 + r^2 + 2r(i - r) \cos \phi = i^2 - 4r(i - r) \sin^2 \frac{\phi}{2}
+\end{cases}
+\]
+
+\[
+\cos \phi = 1 - 2 \sin^2 \frac{\phi}{2}
+\]
+
+\[
+\Rightarrow \frac{o^2}{n^2(o + r)^2} - \frac{i^2}{n'^2(i - r)^2} = -4r \sin^2 \frac{\phi}{2} \left[ \frac{1}{n^2(o + r)} + \frac{1}{n'^2(i - r)} \right]
+\]
+
+
+不同的$\phi$对应不同的成像位置,球面不能成像；
+
+唯一可能的位置为两边为0；
+
+
+\[
+\begin{cases}
+\dfrac{o^2}{n^2(o + r)^2} - \dfrac{i^2}{n'^2(i - r)^2} = 0 \\
+\dfrac{1}{n^2(o + r)} + \dfrac{1}{n'^2(i - r)} = 0
+\end{cases}
+\]
+
+
+或者使用旁轴近似,即$\phi$很小,右边为0；
+
+\[
+\frac{o^2}{n^2(o + r)^2} = \frac{i^2}{n'^2(i - r)^2}
+\]
+
+\[
+\frac{n(o + r)}{o} = \frac{n'(i - r)}{i}
+\]
+
+{==
+
+\[
+\frac{n'}{i} + \frac{n}{o} = \frac{n' - n}{r}
+\]
+
+==}
+
+
+又有
+
+\[
+\begin{cases}
+i \to \infty, \quad o = f = \dfrac{n}{n' - n} r \\
+o \to \infty, \quad i = f' = \dfrac{n'}{n' - n} r
+\end{cases}
+\]
+
+
+\[
+\dfrac{f}{f'} = \dfrac{n}{n'}, \quad \dfrac{f}{o} + \dfrac{f'}{i} = 1
+\]
+
+!!!Note "符号的约定"
+    - $o$,实为+，虚为-(Q，在左为+，右为-)
+    - $i$,实为+，虚为-(Q'，在左为-，右为+)
+    - $r$,凸为+，凹为-(C,在左为-，右为+)
+    
+    <div align=center>
+    <img src="../img/light/light10.png" width="50%">
+    </div>
+
+    <div align=center>
+    <img src="../img/light/light11.png" width="50%">
+    </div>
+
+
+### 球面镜反射
+
+<div align=center>
+<img src="../img/light/light12.png" width="50%">
+</div>
+
+
+\[
+n \sin \theta = n' \sin \theta' \quad \text{if } \theta > 0, \text{ then } \theta' < 0
+\]
+
+
+\[
+n = -n'
+\]
+
+
+\[
+f = \frac{n}{n' - n} r = -\frac{r}{2}
+\]
+
+\[
+f' = \frac{n'}{n' - n} r = \frac{1}{2} r
+\]
+
+
+带入折射公式
+
+\[
+\Rightarrow \frac{1}{o} + \frac{1}{i} = -\frac{2}{r}
+\]
+
+如果是平面镜，那么$r \to \infty$，成虚像；
+
+### 放大倍数(TODO)
+<div align=center>
+<img src="../img/light/light13.png" width="50%">
+</div>
+
+### 薄透镜成像(TODO)
+

@@ -14,3 +14,4 @@ comments: true
 - [事件与概率](./first.md)
 - [分布列与分布函数](./second.md)
 - [数字特征](./Third.md)
+- [极限定理](./Fourth.md)
