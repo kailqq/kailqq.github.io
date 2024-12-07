@@ -18,7 +18,7 @@
         <link rel="prev" href="../second/">
       
       
-        <link rel="next" href="../others/">
+        <link rel="next" href="../Fourth/">
       
       
       <link rel="icon" href="../../../static/images/logo.png">
@@ -819,6 +819,8 @@
       
         
       
+        
+      
     
     
       
@@ -1163,6 +1165,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fourth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第四章
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1853,7 +1876,7 @@
 
 <h1 id="_1">数字特征<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 4284 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 15 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 4497 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 16 分钟</p>
 </div>
 <h2 id="_2">数学期望<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="admonition definition">
@@ -2512,6 +2535,10 @@ E e^{itX} = E \cos tX + iE \sin tX
 <div class="arithmatex">\[
 \varphi(t) = e^{-\frac{t^2}{2}}
 \]</div>
+<p>普通的正态分布</p>
+<div class="arithmatex">\[
+    e^{it\mu-\frac{\sigma^2t^2}{2}}
+\]</div>
 </div>
 </div>
 </div>
@@ -2662,6 +2689,43 @@ a_k \geqslant 0, \quad \sum_{k=-\infty}^{\infty} a_k = 1
 P(X = k) = a_k, \quad k = \ldots, -2, -1, 0, 1, 2, \ldots,
 \]</div>
 <p>注意，某些 <span class="arithmatex">\(a_k\)</span> 可能为 0。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>假设 <span class="arithmatex">\((X, Y)\)</span> 是二元联合正态随机变量</p>
+<div class="arithmatex">\[
+(X, Y) \sim N(\mu_1, \sigma_1^2; \mu_2, \sigma_2^2; \rho)
+\]</div>
+<p>求：<span class="arithmatex">\(\phi(t_1, t_2) = ?\)</span></p>
+<p>为简单起见，假设 <span class="arithmatex">\(\mu_1 = 0, \sigma_1^2 = 1; \mu_2 = 0, \sigma_2^2 = 1\)</span>，即</p>
+<div class="arithmatex">\[
+(X, Y) \sim N(0, 1; 0, 1; \rho)
+\]</div>
+<p>令</p>
+<div class="arithmatex">\[
+\Sigma = \begin{pmatrix} 1 &amp; \rho \\ \rho &amp; 1 \end{pmatrix}
+\]</div>
+<p>作线性变换：</p>
+<div class="arithmatex">\[
+\begin{pmatrix} U \\ V \end{pmatrix} = \Sigma^{-1/2} \begin{pmatrix} X \\ Y \end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{pmatrix} 1 &amp; \rho \\ \rho &amp; 1 \end{pmatrix}^{-1/2} \begin{pmatrix} X \\ Y \end{pmatrix}
+\]</div>
+<p>这样，<span class="arithmatex">\((U, V) \sim N(0, 1; 0, 1; 0)\)</span>，即 <span class="arithmatex">\(U, V\)</span> 相互独立。所以，</p>
+<div class="arithmatex">\[
+\phi_{U,V}(t_1, t_2) = e^{-\frac{1}{2}(t_1^2 + t_2^2)}
+\]</div>
+<div class="arithmatex">\[
+= e^{-\frac{1}{2}(t_1, t_2) \cdot (t_1, t_2)'}
+\]</div>
+<div class="arithmatex">\[
+\begin{align*}
+\phi_{X,Y}(t_1, t_2) &amp;= E e^{i(t_1, t_2)(X, Y)'} \\
+&amp;= E e^{i(t_1, t_2) \Sigma^{1/2} (U, V)'} \\
+&amp;= e^{-\frac{1}{2} (t_1, t_2) \Sigma (t_1, t_2)'}
+\end{align*}
+\]</div>
+</div>
 
 
 
@@ -2809,13 +2873,13 @@ async>
         
         
           
-          <a href="../others/" class="md-footer__link md-footer__link--next" aria-label="下一页: 其它">
+          <a href="../Fourth/" class="md-footer__link md-footer__link--next" aria-label="下一页: 第四章">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                其它
+                第四章
               </div>
             </div>
             <div class="md-footer__button md-icon">
