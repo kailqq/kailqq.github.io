@@ -154,6 +154,8 @@
     
       <link rel="stylesheet" href="../../../css/flink.css">
     
+      <link rel="stylesheet" href="../../../css/float_card.css">
+    
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
@@ -1677,7 +1679,7 @@
 
 <h1 id="-">讲义-特征值专题<a class="headerlink" href="#-" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 7927 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 27 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 8132 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 28 分钟</p>
 </div>
 <blockquote>
 <p>参考书目：《线性代数:未竟之美》</p>
@@ -2298,6 +2300,20 @@ $$ \sum_{i=1}^{s-r} k_{i+r} \alpha_i = 0. $$</p>
 <p>首先求出特征多项式为<span class="arithmatex">\(f(\lambda)=|\lambda E-J_0|=(\lambda-\lambda_0)^r\)</span>，因此<span class="arithmatex">\(J_0\)</span>只有一个特征值<span class="arithmatex">\(\lambda_0\)</span>，且代数重数为<span class="arithmatex">\(r\)</span>.</p>
 <p>接下来求几何重数，即<span class="arithmatex">\(J_0X=\lambda_0X\)</span>的解空间维数，即<span class="arithmatex">\((\lambda_0 E-J_0)X=O\)</span>的解空间维数，事实上由于<span class="arithmatex">\(r(\lambda_0 E-J_0)=r-1\)</span>，因此解空间维数为<span class="arithmatex">\(r-(r-1)=1\)</span>，即几何重数为<span class="arithmatex">\(1&lt;r\)</span>，因此不可对角化</p>
 </details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">AB=BA</p>
+<p>设 <span class="arithmatex">\( A, B \in M_n(\mathbf{F}) \)</span>, <span class="arithmatex">\( AB = BA \)</span>, 证明：</p>
+<ol>
+<li>若 <span class="arithmatex">\( X \)</span> 是矩阵 <span class="arithmatex">\( A \)</span> 属于特征值 <span class="arithmatex">\( \lambda_0 \)</span> 的特征向量，则 <span class="arithmatex">\( BX \in V_{\lambda_0} \)</span>.</li>
+<li><span class="arithmatex">\( A \)</span> 和 <span class="arithmatex">\( B \)</span> 至少有一个共同的特征向量.</li>
+<li><span class="arithmatex">\( A \)</span> 有 <span class="arithmatex">\( n \)</span> 个不同的特征值则</li>
+<li><span class="arithmatex">\( AB = BA \)</span> 当且仅当 <span class="arithmatex">\( A \)</span> 的特征向量也是 <span class="arithmatex">\( B \)</span> 的特征向量.</li>
+<li>存在次数小于等于 <span class="arithmatex">\( n-1 \)</span> 的多项式 <span class="arithmatex">\( f(x) \)</span> 使得 <span class="arithmatex">\( B = f(A) \)</span>.</li>
+<li>若 <span class="arithmatex">\( A, B \)</span> 均可对角化，则对角化的过渡矩阵可以相同（同时对角化）.</li>
+<li><span class="arithmatex">\( A, B \)</span> 可以同时上三角化，即存在可逆矩阵 <span class="arithmatex">\( P \)</span> 使得 <span class="arithmatex">\( P^{-1}AP \)</span> 和 <span class="arithmatex">\( P^{-1}BP \)</span> 都是上三角矩阵.</li>
+</ol>
+<p>设 <span class="arithmatex">\( n \)</span> 阶方阵 <span class="arithmatex">\( A \)</span> 和 <span class="arithmatex">\( B \)</span> 都可对角化，并且它们有相同的特征子空间（但不一定有相同的特征值），证明 <span class="arithmatex">\( AB = BA \)</span>.</p>
 </div>
 <h2 id="_11">习题<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <ul>

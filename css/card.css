@@ -97,3 +97,89 @@
     border-color: var(--md-accent-fg-color);
     color: var(--md-accent-bg-color) !important;
 }
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  .ADS_card {
+    /* background: var(--md-default-fg-color); */
+    border: 3px solid var(--md-default-fg-color);
+    border-radius: 6px;
+    width: 200px;
+    height: 100px;
+    padding: 3px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: var(--text-color, rgb(88, 199, 250));
+    cursor: pointer;
+    font-family: var(--md-text-font);
+    overflow: hidden;
+    --initial-text: "Initial Text";
+    --hover-text: "Hovered Text Line 1\AHovered Text Line 2";
+    --text-color: var(--md-default-fg-color);
+    --hover-font-size: 1em; /* Default hover text size */
+    white-space: pre-wrap;
+    transition: border 0.3s ease;
+  }
+  
+  .ADS_card::before,
+  .ADS_card::after {
+    content: "";
+    position: absolute;
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: none;
+  }
+  
+  .ADS_card::before {
+    content: var(--initial-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+    opacity: 1;
+    color: var(--text-color);
+    z-index: 1;
+  }
+  
+  .ADS_card::after {
+    content: var(--hover-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+    opacity: 0;
+    color: var(--text-color);
+    z-index: 1;
+    white-space: pre-wrap;
+    font-size: var(--hover-font-size); /* Hover text size */
+  }
+  
+  .ADS_card:hover::before {
+    opacity: 0;
+  }
+  
+  .ADS_card:hover::after {
+    opacity: 1;
+  }
+  .ADS_card:hover {
+    border: 1px solid rgb(241, 126, 145); /* 悬停时边框变小且变为粉色 */
+    transform: scale(1.05); 
+  }
+
+  /* <!-- 
+<a href="https://zjuers.com">
+<div class="ADS_card" style="--initial-text:'你好';--hover-text:'再见';">
+</div>
+</a> --> */
