@@ -199,7 +199,7 @@ extra_javascript:
   - javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-
+  - javascripts/card.js
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
@@ -269,6 +269,7 @@ nav:
               - NP分析: NOTE/ADS/wk9.md
               - 近似算法: NOTE/ADS/wk10.md
               - 局部搜索: NOTE/ADS/wk11.md
+              - 随机算法: NOTE/ADS/wk12.md
           - 数学分析:
               - NOTE/MA/index.md
       - CS:

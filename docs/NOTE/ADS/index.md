@@ -75,6 +75,17 @@ comments: true
     </a>
 </div>
 
+<br>
+
+<div class="ADS_card_container" style="display: flex; justify-content: space-between;">
+    <a href="./wk12">
+        <div class="ADS_card" style="--hover-font-size:0.7em;--initial-text:'随机算法';--hover-text:'江南可采莲，莲叶何田田，鱼戏莲叶间。鱼戏莲叶东，鱼戏莲叶西，鱼戏莲叶南，鱼戏莲叶北。';">
+        </div>
+    </a>
+</div>
+
+
+
 
 ???Note "ADS_card 说明"
     目录卡片使用了自定义样式，源码在[`docs/css/card.css/ADS_card`](https://github.com/kailqq/kailqq.github.io)中，使用时需要引入该样式文件。

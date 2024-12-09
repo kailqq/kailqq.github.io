@@ -388,10 +388,484 @@ f' = \frac{n'}{n' - n} r = \frac{1}{2} r
 
 如果是平面镜，那么$r \to \infty$，成虚像；
 
-### 放大倍数(TODO)
+### 放大倍数
 <div align=center>
 <img src="../img/light/light13.png" width="50%">
 </div>
 
-### 薄透镜成像(TODO)
+首先，由旁轴近似
 
+\[
+    n \sin \theta = n' \sin \theta' \Rightarrow  n \theta = n' \theta'
+\]
+
+$y'<0$
+
+\[
+y \approx o \cdot \theta, \, -y' = i \cdot \theta'
+\]
+
+\[
+\therefore m = \frac{y'}{y} = -\frac{i\theta'}{o\theta} = -\frac{n \cdot i}{n' \cdot o}
+\]
+
+如果$n=n'$，则$m=-\dfrac{i}{o}$ 负号表示倒像
+
+
+
+### 薄透镜成像
+
+<div align=center>
+<img src="../img/light/light24.png" width="50%">
+</div>
+
+首先，对于$n$和$n_L$,$n_L$和$n'$，分别使用球面镜成像公式
+
+\[
+\begin{cases} 
+\frac{f_1'}{i_1} + \frac{f_1}{o_1} = 1 \tag{1} \\ 
+\frac{f_2'}{i_2} + \frac{f_2}{o_2} = 1 \tag{2}
+\end{cases}
+\]
+
+其中
+
+\[
+\begin{aligned}
+f_1 &= \frac{n}{n_L - n} r_1, \quad f_1' = \frac{n_L}{n_L - n} r_1 \\
+f_2 &= \frac{n_L}{n' - n_L} r_2, \quad f_2' = \frac{n'}{n' - n_L} r_2
+\end{aligned}
+\]
+
+$o_2$是Q经过第一个球面镜的虚像像距,所以
+
+\[
+-o_2 = i_1 - d, \quad o_2 = d - i_1
+\]
+
+对于(1)式两边同时乘以$f_2$，对于(2)式两边同时乘以$f_1'$
+
+\[
+\begin{cases} 
+\frac{f_1' f_2}{i_1} + \frac{f_1 f_2}{o_1} = f_2 \\ 
+\frac{f_1' f_2'}{i_2} + \frac{f_1' f_2}{-i_1} = f_1'
+\end{cases}
+\]
+
+相加
+
+\[
+\frac{f_1' f_2'}{i_2} + \frac{f_1 f_2}{o_1} = f_1' + f_2
+\]
+
+\[
+\frac{f_1' f_2'}{i} + \frac{f_1 f_2}{o} = f_1' + f_2
+\]
+
+除过去,得到
+
+
+\[
+\frac{f'}{i} + \frac{f}{o} = 1
+\]
+
+其中，令
+
+\[
+    f' = \frac{f_1' f_2'}{f_1' + f_2}
+\]
+
+\[
+    f = \frac{f_1 f_2}{f_1 + f_2}
+\]
+
+####  磨镜者公式(Lens Maker's Equation)
+
+\[
+f' = \frac{f_1' f_2'}{f_1' + f_2} = \frac{\frac{n_L}{n_L - n} \cdot \frac{n'}{n' - n_L} r_1 r_2}{\frac{n_L}{n_L - n} r_1 + \frac{n'}{n' - n_L} r_2} = \frac{n'}{\frac{n_L - n}{r_1} + \frac{n' - n_L}{r_2}}
+\]
+
+\[
+f = \frac{f_1 f_2}{f_1 + f_2} = \frac{\frac{n}{n_L - n} \cdot \frac{n_L}{n' - n_L} r_1 r_2}{\frac{n}{n_L - n} r_1 + \frac{n_L}{n' - n_L} r_2} = \frac{n}{\frac{n_L - n}{r_1} + \frac{n' - n_L}{r_2}}
+\]
+
+
+
+所以
+
+\[
+    \dfrac{f'}{f} = \dfrac{n'}{n}
+\]
+
+如果$n=n'=1$，则$f' = f$
+
+\[
+f = f' = \frac{1}{(n_L - 1) \left( \frac{1}{r_1} - \frac{1}{r_2} \right)}
+\]
+
+
+如果$f'和f$都为正，则透镜为凸透镜，反之$f，f'$为负，则透镜为凹透镜
+
+#### 符号约定
+
+<div align=center>
+<img src="../img/light/light25.png" width="70%">
+</div>
+
+- 如果 $Q$ 在 $F$ 点的左侧，$x > 0$
+- 如果 $Q$ 在 $F$ 点的右侧，$x < 0$
+- 如果 $Q'$ 在 $F'$ 点的左侧，$x' < 0$
+- 如果 $Q'$ 在 $F'$ 点的右侧，$x' > 0$
+
+\[
+o = f + x
+\]
+
+\[
+i = f' + x'
+\]
+
+\[
+\frac{1}{f + x} + \frac{1}{f' + x'} = \frac{1}{f}
+\]
+
+可以化简为
+
+\[
+xx' = ff'
+\]
+
+#### 横向放大倍数与屈光度
+
+<div align=center>
+<img src="../img/light/light13.png" width="70%">
+</div>
+
+
+对于单个镜面，放大倍数为
+
+\[
+m_1 = -\dfrac{ni_1}{n_L o_1}, \quad m_2 = -\dfrac{n i_2}{n' o_2}
+\]
+
+其中$o_2$是Q经过第一个球面镜的虚像像距,是负的；
+
+\[
+m = m_1 m_2 = \dfrac{n i_1}{n_L o_1} \cdot \dfrac{n_L i_2}{n' o_2} = \dfrac{n i_1}{n_L o_1} \cdot \dfrac{n_L i}{n' (-i_1)} = -\dfrac{n i}{n' o} = -\dfrac{fi}{f' o}
+\]
+
+定义屈光度
+
+\[
+D = \dfrac{1}{f}
+\]
+
+
+
+### 人眼成像
+
+人眼最近可以看清的距离为25cm，最远可以看清的距离为无穷远；
+
+<div align=center>
+<img src="../img/light/light26.png" width="70%">
+</div>
+
+\[
+\frac{1}{250 \, \text{mm}} + \frac{1}{25 \, \text{mm}} = \frac{1}{f}
+\]
+
+此时$f = 22.7mm$
+
+看无穷远时,$d_o = \infty, d_i = 25mm$,此时$f = 25mm$
+
+!!!idea "近视眼和远视眼可以抵消吗？"
+    近视眼和远视眼不能抵消，近视眼是看不清无穷远，成像在视网膜前方，远视眼是看不清25cm，成像在视网膜后方；两者都是因为人的晶状体变化跟不上，如果同时有近视眼和远视眼，可能只能看到特定距离的物体；
+
+
+#### 放大镜
+
+对于很小的物体，我们可以把它凑得离眼睛很近，但是这样对晶状体的压力很大，所以我们使用放大镜，凑得很近的时候，利用放大镜成一个放大的虚像
+
+例如，原本在$N$的地方有一个小物体，高度为$d_0$
+
+<div align=center>
+<img src="../img/light/light27.png" width="60%">
+</div>
+
+\[
+    \tan \theta = \frac{d_0}{N} \sim \theta = \frac{d_0}{N}
+\]
+
+
+利用放大镜
+
+<div align=center>
+<img src="../img/light/light28.png" width="60%">
+</div>
+
+\[
+\text{Compare to unaided eye:} \quad \theta = \frac{h_0}{N}, \quad \theta' = \frac{h_i}{d_i} = \frac{h_o}{d_o}
+\]
+
+放大倍数
+
+\[
+M = \frac{\theta'}{\theta} = \frac{h_o/d_o}{h_o/N} = \frac{N}{d_o}
+\]
+
+
+对于该放大镜
+
+\[
+\frac{1}{d_o} + \frac{1}{d_i} = \frac{1}{f} \quad \Rightarrow \quad \frac{1}{d_o} = \frac{1}{f} - \frac{1}{d_i}
+\]
+
+我们要把像成在N处，$d_i$是虚像，所以$-d_i = N$
+
+也就是说
+
+\[
+\frac{1}{d_o} = \frac{1}{f} + \frac{1}{N}
+\]
+
+得到放大倍数为
+
+\[
+M = \frac{N}{d_o} = N(\frac{1}{f} + \frac{1}{N}) = \frac{N}{f}+1
+\]
+
+
+
+
+## 波动光学
+
+### 光的干涉(Interference)
+
+#### 光的叠加
+
+电场强度 $E$ 的振动在空间的传播可以表示为：
+
+\[
+E = E_0 \cos(\omega t + \varphi_1 - 2\pi \frac{x}{\lambda})
+\]
+
+对于两列光波的叠加：
+
+- $\omega_1 = \omega_2 = \omega$
+- $E_1 = E_{10} \cos(\omega t + \varphi_{10})$
+- $E_2 = E_{20} \cos(\omega t + \varphi_{20})$
+
+叠加电场：
+
+\[
+E = E_1 + E_2
+\]
+
+<div align=center>
+<img src="../img/light/light14.png" width="70%">
+</div>
+<div align=center>
+<img src="../img/light/light15.png" width="70%">
+</div>
+
+- 同相位：$\Delta \varphi = 0$,相干，in phase
+- 反相位：$\Delta 
+
+
+!!!Note "复平面矢量推导"
+    对于两列光波的叠加：
+
+    - $\omega_1 = \omega_2 = \omega$
+    - $E_1 = E_{10} \cos(\omega t + \varphi_{10})$
+    - $E_2 = E_{20} \cos(\omega t + \varphi_{20})$
+
+    叠加电场：
+
+    \[
+    E = E_1 + E_2 = E_0 \cos(\omega t + \varphi_0)
+    \]
+
+    光强：
+
+    \[
+    I_0 = E_0^2 = E_{10}^2 + E_{20}^2 + 2E_{10}E_{20}\cos\Delta\varphi
+    \]
+
+    其中，$\Delta\varphi = \varphi_{20} - \varphi_{10}$
+
+    <div align=center>
+    <img src="../img/light/light16.png" width="60%"/>
+    </div>
+
+
+!!!info "干涉的光强分布"
+    干涉现象的光强分布可以表示为：
+
+    \[
+    I = I_1 + I_2 + 2\sqrt{I_1 I_2} \cos \Delta \varphi
+    \]
+
+    其中，$I_1$ 和 $I_2$ 是两列光波的强度，$\Delta \varphi$ 是相位差。
+
+    当 $I_1 = I_2$ 时，光强分布为：
+
+    \[
+    I = 4I_1 \cos^2 \frac{\Delta \varphi}{2}
+    \]
+
+    这表明光强的最大值为 $I_{\text{max}} = 4I_1$，最小值为 $I_{\text{min}} = 0$。
+
+    <div align=center>
+    <img src="../img/light/light17.png" width="60%"/>
+        </div>
+
+#### 媒质中的光程
+
+相位差在分析光的干涉时十分重要，为便于计算光通过不同媒质时的相位差，引入“光程差”的概念。(光程是 $\int n ds$)
+
+\[
+    \Delta \varphi = \dfrac{2\pi}{\lambda} \Delta L
+\]
+
+如果在介质中
+
+\[
+\lambda_n = \dfrac{v}{f} = \dfrac{c/n}{f} = \dfrac{c/f}{n} = \dfrac{\lambda_0}{n}
+\]
+
+此时
+
+\[
+     \Delta \varphi = \dfrac{2\pi}{\lambda} n \Delta  L
+\]
+
+
+!!!Summary "结论"
+    - 相干条件：振动方向相同，相位差恒定,频率相同
+
+    干涉判断：
+
+    \[
+    \Delta \varphi = 
+    \begin{cases} 
+    \pm 2k\pi, & k = 0,1,2,\ldots \quad (\text{干涉加强}) \\
+    \pm (2k + 1)\pi, & k = 0,1,2,\ldots \quad (\text{干涉减弱})
+    \end{cases}
+    \]
+
+    \[
+    \delta = 
+    \begin{cases} 
+    \pm k\lambda_0, & k = 0,1,2,\ldots \quad (\text{干涉加强}) \\
+    \pm \left(2k + 1\right)\dfrac{\lambda_0}{2}, & k = 0,1,2,\ldots \quad (\text{干涉减弱})
+    \end{cases}
+    \]
+
+#### 杨氏双缝干涉实验
+
+<div align=center>
+    <img src="../img/light/light18.png" width="60%"/>
+</div>
+
+<div align=center>
+    <img src="../img/light/light19.png" width="60%"/>
+</div>
+
+
+- 干涉相长，明纹：$\delta = d \cdot \frac{x}{D} = \pm k\lambda$
+- 干涉相消，暗纹：$\delta = d \cdot \frac{x}{D} = \pm (2k - 1)\frac{\lambda}{2}$
+- 暗纹中心：$x_{\pm(2k+1)} = \pm (2k - 1)\frac{D}{2d}\lambda, \, k = 1,2,3\ldots$
+- 明纹中心：$x_{\pm k} = \pm k\frac{D}{d}\lambda, \, k = 0,1,2,3\ldots$
+- 两相邻明纹（或暗纹）间距：$\Delta x = \frac{D}{d}\lambda$
+
+???question
+    - 若S1、S2两条缝的宽度不等，条纹有何变化？ 
+    两条缝的宽度不等，使两光束的强度不等；虽然干涉条纹中心距不变，但原极小处的强度不再为零，条纹的可见度变差。
+
+    - 若使用白光进行干涉实验，条纹有何变化？
+    若使用白光光源，则在中央零级出现白色亮纹，两侧对称排列若干彩色条纹。
+
+    - 用白光 作双缝干涉实验时，能观察 到几级清晰可辨的彩色光谱？
+    在中央白色明纹两侧， 只有第一级彩色光谱是清晰可辨的。
+
+
+#### 洛埃德镜实验
+
+<div align=center>
+    <img src="../img/light/light20.png" width="60%"/>
+</div>
+
+当屏移到A'B'位置时，在屏上的P点出现暗条纹。这一结论证实，光在镜子表面反射时有相位$\pi$突变。
+
+{==Reflection Phase Shifts==}半波损失
+
+如果光是从光 疏媒质传向光密媒质，在其分界面上反射时将发生半波损失，折射波无半波损失。在上述实验中，光从空气传向玻璃，因此在反射时发生半波损失。产生$\pi$的相位差，因此为暗纹。
+
+
+
+#### 等厚干涉
+
+当一束平行光入射到厚度不均匀的透明介质薄膜上，如图所示，两光线 $a$ 和 $b$ 的光程差：
+
+\[
+\delta = 2n_2e + \delta'
+\]
+
+其中，$\delta'$ 为因为半波损失而产生的附加光程差。
+
+- 当 $e$ 保持不变时，光程差仅与膜的厚度有关，凡厚度相同的地方光程差相同，从而对应同一条干涉条纹 —— 等厚干涉条纹。
+
+<div align=center>
+    <img src="../img/light/light21.png" width="60%"/>
+</div>
+
+**劈尖膜**
+
+<div align=center>
+    <img src="../img/light/light22.png" width="60%"/>
+</div>
+
+从空气到玻璃存在半波损失
+
+\[
+    \delta = 2ne + \frac{\lambda}{2}
+\]
+
+发生干涉时
+
+\[
+    \delta = \begin{cases}
+    2ne + \frac{\lambda}{2} = k\lambda, & \text{明纹} \\
+    2ne + \frac{\lambda}{2} = (2k - 1)\frac{\lambda}{2}, & \text{暗纹}
+    \end{cases}
+\]
+
+相邻明纹（或暗纹）间距
+
+\[
+    \Delta e = \frac{\lambda}{2n}
+\]
+
+???Example "利用劈尖测量工件凹凸"
+    <div align=center>
+        <img src="../img/light/light23.png" width="60%"/>
+    </div>
+    如果工件表面是精确的平面,等厚干涉条纹应该是等距离的平行直条纹，现在观察到的干涉条纹弯向空气膜的左端。因此，可判断工件表面是下凹的
+
+    利用相似三角形关系，我们可以得到：
+
+    \[
+    \frac{a}{b} = \frac{\Delta h}{(e_k - e_{k-1})} = \frac{\Delta h}{\frac{\lambda}{2}}
+    \]
+
+    所以：
+
+    \[
+    \Delta h = \frac{a \lambda}{b \cdot 2}
+    \]
+
+    
+
+### 光的衍射(Diffraction)
+
+### 光的偏振(Polarization)
