@@ -15,10 +15,10 @@ comments: true
   <a href="./CO/">
     <div class="number" data-card="card2">计组</div>
   </a>
-  <a href="./CTF/">
+  <a href="./CTF/CTF">
     <div class="number" data-card="card3">CTF</div>
   </a>
-  <a href="./LA/">
+  <a href="./LA/linear-algebra">
     <div class="number" data-card="card4">线性代数</div>
   </a>
   <a href="./MA/">
@@ -48,13 +48,13 @@ comments: true
             计组(Computer Organization)是计算机科学与技术专业的必修课，主要介绍计算机硬件系统的组成和工作原理。重点介绍了支持RISC-V架构的计算机的单周期处理器与流水线处理器。并覆盖了计算机的存储系统、输入输出系统、总线等内容。
         </div>
     </a>
-    <a href="./CTF/" class="card_stack" id="card3">CTF
+    <a href="./CTF/CTF" class="card_stack" id="card3">CTF
         <div class="title">CTF</div>
         <div class="description">
             CTF(Capture The Flag)为信息安全夺旗赛，此笔记为浙江大学为CTF提供的暑期短学期课程笔记。
         </div>
     </a>
-    <a href="./LA/" class="card_stack" id="card4">
+    <a href="./LA/linear-algebra" class="card_stack" id="card4">
         <div class="title">线性代数</div>
         <div class="description">
             线性代数(Linear Algebra)是大学数学中非常重要的一门课程，本笔记为浙江大学线性代数课程的笔记；
