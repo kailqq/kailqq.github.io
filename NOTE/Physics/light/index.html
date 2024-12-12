@@ -2030,7 +2030,7 @@
 
 <h1 id="_1">光学<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 3728 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 13 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 3927 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 14 分钟</p>
 </div>
 <h2 id="_2">可见光<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>在电磁波中，可见光只占了很小一部分</p>
@@ -2680,6 +2680,58 @@ I = 4I_1 \cos^2 \frac{\Delta \varphi}{2}
 \Delta h = \frac{a \lambda}{b \cdot 2}
 \]</div>
 </details>
+<p><strong>牛顿环实验</strong></p>
+<div align=center>
+    <img src="../img/light/light29.png" width="60%"/>
+</div>
+
+<p>光程差为</p>
+<div class="arithmatex">\[
+    \delta = 2e + \frac{\lambda}{2}
+\]</div>
+<div class="arithmatex">\[
+\delta = 2e + \frac{\lambda}{2} = 
+\begin{cases} 
+k\lambda, &amp; (k = 1, 2, 3, \ldots) \quad \text{明纹} \\ 
+(2k + 1)\frac{\lambda}{2}, &amp; (k = 0, 1, 2, \ldots) \quad \text{暗纹} 
+\end{cases}
+\]</div>
+<p>由几何关系可知</p>
+<div class="arithmatex">\[
+(R - e)^2 + r^2 = R^2
+\]</div>
+<p>展开并简化得到：</p>
+<div class="arithmatex">\[
+R^2 - 2Re + e^2 + r^2 = R^2
+\]</div>
+<p>忽略 <span class="arithmatex">\(e^2\)</span> 项，得到：</p>
+<div class="arithmatex">\[
+e = \frac{r^2}{2R}
+\]</div>
+<div class="arithmatex">\[
+r = 
+\begin{cases} 
+\sqrt{(k - \frac{1}{2})R\lambda}, &amp; k = 1, 2, 3, \ldots \quad \text{明环} \\ 
+\sqrt{kR\lambda}, &amp; k = 0, 1, 2, \ldots \quad \text{暗环} 
+\end{cases}
+\]</div>
+<p>对于 <span class="arithmatex">\(k = 0\)</span>，<span class="arithmatex">\(r = 0\)</span>，中心是暗斑。</p>
+<p>对于 <span class="arithmatex">\(k = 1\)</span>，</p>
+<div class="arithmatex">\[
+r = 
+\begin{cases} 
+\sqrt{\frac{1}{2}R\lambda}, &amp; k = 1, 2, 3, \ldots \quad \text{明环} \\ 
+\sqrt{R\lambda}, &amp; k = 0, 1, 2, \ldots \quad \text{暗环} 
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\Delta r = r_{k+1} - r_k = \frac{\sqrt{R\lambda}}{\sqrt{k} + \sqrt{k+1}}
+\]</div>
+<p>牛顿环是等厚干涉，其干涉条纹是内疏外密的同心圆环。</p>
+<div align=center>
+    <img src="../img/light/light30.png" width="60%"/>
+</div>
+
 <h3 id="diffraction">光的衍射(Diffraction)<a class="headerlink" href="#diffraction" title="Permanent link">&para;</a></h3>
 <h3 id="polarization">光的偏振(Polarization)<a class="headerlink" href="#polarization" title="Permanent link">&para;</a></h3>
 
@@ -2694,46 +2746,6 @@ I = 4I_1 \cos^2 \frac{\Delta \varphi}{2}
   
 
 
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
-        Do you like this page?
-      </legend>
-      <div class="md-feedback__inner">
-        <div class="md-feedback__list">
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="Man! What can I say" data-md-value="1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9h4m4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21H9m0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03V19Z"/></svg>
-            </button>
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="Mamba out!" data-md-value="0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12h-4M15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3h9m0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97V5Z"/></svg>
-            </button>
-          
-        </div>
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
-              
-              
-                
-              
-              Thanks for your feedback!
-            </div>
-          
-            <div data-md-value="0" hidden>
-              
-              
-                
-              
-              Thanks for your feedback!
-            </div>
-          
-        </div>
-      </div>
-    </fieldset>
-  </form>
 
 
 
