@@ -684,7 +684,7 @@
 <p>可悲的是，似乎我在一年前高考结束后就丧失了书写自己的文字的能力，希望多打点字可以让我稍微找回一点写作的乐趣吧</p>
 <blockquote>
 <p>长期摸鱼，尽量更新</p>
-<p>目前共 59 个页面，约 130391 字，2504 行代码。</p>
+<p>目前共 59 个页面，约 130603 字，2504 行代码。</p>
 </blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -13079,7 +13079,7 @@ E_y =-E_0 \cos (kz-\omega t)
 <p>不要把法线和光轴搞混了(-_-)</p>
 </div></section><section class="print-page" id="note-physics-quantum"><h1 id="note-physics-quantum-_1">量子力学<a class="headerlink" href="#note-physics-quantum-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1724 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1936 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
 </div>
 <blockquote>
 <p>普物的最后一舞，加油！💪</p>
@@ -13093,6 +13093,7 @@ E_y =-E_0 \cos (kz-\omega t)
      R(\lambda, T) = \frac{2\pi hc^2}{\lambda^5} \frac{1}{e^{\frac{hc}{\lambda kT}} - 1} 
 \]</div>
 <p><span class="arithmatex">\( h = 6.63 \times 10^{-34} \, \text{J} \cdot \text{s} \)</span></p>
+<p>常见的的表达有普朗克常数<span class="arithmatex">\(h\)</span> 和 约化普朗克常数<span class="arithmatex">\(\hbar = \frac{h}{2\pi}\)</span></p>
 </div>
 <h3 id="note-physics-quantum-_2">光子的性质<a class="headerlink" href="#note-physics-quantum-_2" title="Permanent link">&para;</a></h3>
 <p>光具有波粒二象性，光子具有能量和动量。</p>
@@ -13265,15 +13266,42 @@ i\hbar \frac{\partial}{\partial t} \Psi = \hat{H} \Psi
 <li>一维 <span class="arithmatex">\(\hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + U(x,t)\)</span></li>
 <li>三维 <span class="arithmatex">\(\hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + U(x,y,z,t)\)</span></li>
 </ul>
+<h4 id="note-physics-quantum-_7">定态薛定谔方程<a class="headerlink" href="#note-physics-quantum-_7" title="Permanent link">&para;</a></h4>
+<p>如果说势能<span class="arithmatex">\(U\)</span> 不随时间变化，则波函数可以写成</p>
+<div class="arithmatex">\[
+\Psi(x,t) = \psi(x) e^{-i\omega t} = \psi  e^{-i\omega t}
+\]</div>
+<div class="arithmatex">\[
+i\hbar \frac{\partial}{\partial t} \Psi = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \Psi + U\Psi
+\]</div>
+<div class="arithmatex">\[
+i\hbar \frac{\partial}{\partial t} (\psi e^{-i\omega t}) = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} (\psi e^{-i\omega t}) + U\psi e^{-i\omega t}
+\]</div>
+<div class="arithmatex">\[
+(-i\omega) i\hbar \psi e^{-i\omega t} = -\frac{\hbar^2}{2m} \frac{d^2 \psi}{dx^2} e^{-i\omega t} + U\psi e^{-i\omega t}
+\]</div>
+<p>含<span class="arithmatex">\(t\)</span>的项消去，得到</p>
+<div class="arithmatex">\[
+\hbar \omega \psi = -\frac{\hbar^2}{2m} \frac{d^2 \psi}{dx^2} + U\psi
+\]</div>
+<p>再运用<span class="arithmatex">\(E = \hbar \omega\)</span> </p>
+<div class="arithmatex">\[
+E\psi(x) = -\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} + U\psi(x)
+\]</div>
+<p>称其为一维定态薛定谔方程</p>
+<p>可以化为</p>
+<div class="arithmatex">\[
+    \frac{d^2 \psi(x)}{dx^2} + \frac{2m}{\hbar^2}(E - U)\psi(x) = 0
+\]</div>
 <div class="admonition info">
 <p class="admonition-title">其它定义</p>
 <p>虎哥只提了一下，那我也只记一下</p>
 <ul>
-<li>势垒隧道</li>
+<li>势垒隧道（barrier tunneling）</li>
 </ul>
 <p>势垒隧道是指在量子力学中，粒子能够穿过势垒（势能）的量子效应。势垒隧道效应是量子力学中的一个基本现象，它描述了粒子在势垒（通常是势能）的阻挡下仍然能够穿透的现象。</p>
 <ul>
-<li>测不准原理</li>
+<li>测不准原理（Uncertainty principle）</li>
 </ul>
 <p>测不准原理是指在量子力学中，粒子的位置和动量不能同时被精确测量。这意味着，如果我们试图精确测量粒子的位置，那么它的动量就会变得不确定，反之亦然。</p>
 <div class="arithmatex">\[
