@@ -111,19 +111,19 @@ extra:
   analytics: # 分析工具， 我反正没用到
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
-    feedback: # feedback form
-      title: Do you like this page?
-      ratings:
-        - icon: material/thumb-up-outline
-          name: Man! What can I say
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/thumb-down-outline
-          name: Mamba out!
-          data: 0
-          note: >- 
-            Thanks for your feedback!
+    # feedback: # feedback form
+    #   title: Do you like this page?
+    #   ratings:
+    #     - icon: material/thumb-up-outline
+    #       name: Man! What can I say
+    #       data: 1
+    #       note: >-
+    #         Thanks for your feedback!
+    #     - icon: material/thumb-down-outline
+    #       name: Mamba out!
+    #       data: 0
+    #       note: >- 
+    #         Thanks for your feedback!
   social: # 社交媒体
     - icon: fontawesome/brands/github
       link: https://github.com/kailqq
@@ -233,7 +233,7 @@ nav:
               - "NOTE/LA/linear-algebra.md"
               - 基础: "NOTE/LA/前置知识.md"
               - 暂时停更: "NOTE/LA/note.md"
-              - 讲义: "NOTE/LA/特征值.md"
+              - 讲义: "NOTE/LA/eigenvalue.md"
           -  CTF:
               - "NOTE/CTF/CTF.md"
               - web: "NOTE/CTF/web.md"
@@ -255,6 +255,7 @@ nav:
               - 电动力学: NOTE/Physics/electrodynamincs.md
               - Maxwell方程: NOTE/Physics/maxwell.md
               - 光学: NOTE/Physics/light.md
+              - 量子力学: NOTE/Physics/Quantum.md
           - 高级数据结构与算法分析: 
               - NOTE/ADS/index.md
               - AVL，Splay树与摊还分析: NOTE/ADS/wk1.md
@@ -270,6 +271,8 @@ nav:
               - 近似算法: NOTE/ADS/wk10.md
               - 局部搜索: NOTE/ADS/wk11.md
               - 随机算法: NOTE/ADS/wk12.md
+              - 并行算法: NOTE/ADS/wk13.md
+              - 外部排序: NOTE/ADS/wk14.md
           - 数学分析:
               - NOTE/MA/index.md
       - CS:

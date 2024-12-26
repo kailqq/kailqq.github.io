@@ -864,8 +864,842 @@ E = E_1 + E_2
     \Delta h = \frac{a \lambda}{b \cdot 2}
     \]
 
-    
+
+**牛顿环实验**
+
+<div align=center>
+    <img src="../img/light/light29.png" width="60%"/>
+</div>
+
+光程差为
+
+\[
+    \delta = 2e + \frac{\lambda}{2}
+\]
+
+
+\[
+\delta = 2e + \frac{\lambda}{2} = 
+\begin{cases} 
+k\lambda, & (k = 1, 2, 3, \ldots) \quad \text{明纹} \\ 
+(2k + 1)\frac{\lambda}{2}, & (k = 0, 1, 2, \ldots) \quad \text{暗纹} 
+\end{cases}
+\]
+
+由几何关系可知
+
+\[
+(R - e)^2 + r^2 = R^2
+\]
+
+展开并简化得到：
+
+\[
+R^2 - 2Re + e^2 + r^2 = R^2
+\]
+
+忽略 $e^2$ 项，得到：
+
+\[
+e = \frac{r^2}{2R}
+\]
+
+\[
+r = 
+\begin{cases} 
+\sqrt{(k - \frac{1}{2})R\lambda}, & k = 1, 2, 3, \ldots \quad \text{明环} \\ 
+\sqrt{kR\lambda}, & k = 0, 1, 2, \ldots \quad \text{暗环} 
+\end{cases}
+\]
+
+对于 $k = 0$，$r = 0$，中心是暗斑。
+
+对于 $k = 1$，
+
+\[
+r = 
+\begin{cases} 
+\sqrt{\frac{1}{2}R\lambda}, & k = 1, 2, 3, \ldots \quad \text{明环} \\ 
+\sqrt{R\lambda}, & k = 0, 1, 2, \ldots \quad \text{暗环} 
+\end{cases}
+\]
+
+\[
+\Delta r = r_{k+1} - r_k = \frac{\sqrt{R\lambda}}{\sqrt{k} + \sqrt{k+1}}
+\]
+
+牛顿环是等厚干涉，其干涉条纹是内疏外密的同心圆环。
+
+<div align=center>
+    <img src="../img/light/light30.png" width="60%"/>
+</div>
 
 ### 光的衍射(Diffraction)
 
+光在传播过程中遇到障碍物时，会绕过障碍物继续传播，这种现象称为光的衍射。
+
+!!!Note
+    - 菲涅尔衍射:菲涅耳衍射是指当光源和观察屏，或两者之一离障碍物（衍射屏）的距离为{==有限远==}时，所发生的衍射现象
+    - 夫琅禾费衍射:当光源和观察屏两者均离障碍物（衍射屏）的距离为{==无限远==}时，所发生的衍射现象
+
+
+!!!info "惠更斯-菲涅尔原理"
+    - 惠更斯原理：波面上的每一点都可以看作是新的次波源，这些次波源发出的球面次波(wavelets)的包络面就是新的波c面。
+    - 惠更斯-菲涅尔原理：次波源发出的球面次波在空间某点的相干叠加，决定了该点波的强度。
+
+    \[
+    dE = CK(\theta) \frac{dS}{r} \cos\left(\omega t - \frac{2\pi r}{\lambda}\right)
+    \]
+
+    - $K(\theta)$ 为倾斜因子，当 $\theta = 0$ 时，$K(\theta) = 1$( 沿原波传播方向的子波振幅最大)，$\theta$ 越大，$K(\theta)$ 越小, 当 $\theta = \frac{\pi}{2}$ 时，$K(\theta) = 0$。大于 $\frac{\pi}{2}$ 时，$K(\theta)$ 为0，子波不能向后传播。
+    
+
+!!!key-point "惠更斯-菲涅尔原理的数学表示"
+    \[
+    E(P) = \int_S \frac{CK(\theta)}{r} \cos\left(\omega t - \frac{2\pi r}{\lambda}\right) dS
+    \]  
+
+
+    在夫琅禾费衍射中，由于距离是无限远，所以 $r$ 和 $\theta$ 都是常数，可以写成：
+
+    \[ 
+    E(P) \propto \int_S  \cos\left(\omega t - \frac{2\pi r}{\lambda}\right)  dS 
+    \]
+
+
+#### 单缝夫琅禾费衍射
+
+光路图如下：
+
+<div align=center>
+    <img src="../img/light/light31.png" width="60%"/>
+</div>
+
+
+- 光程差：$\delta = a \sin \theta$，这是因为费马原理等光程
+
+<div align=center>
+    <img src="../img/light/light32.png" width="60%"/>
+</div>
+
+当 $\theta = 0$ 时，$a \sin \theta = 0$，此时为中央明纹
+
+
+#### 菲涅尔半波带法
+
+在波阵面上截取一个条状带，使它上下两边缘发的光在屏上处的光程差为 $\lambda/2$，此带称为半波带。
+
+- 当 $a \sin \theta = \lambda$ 时，可将缝分为两个“半波带”。
+
+<div align=center>
+    <img src="../img/light/light33.png" width="60%"/>
+</div>
+
+- 相邻半波带上对应点发的光在 $P$ 处干涉相消形成暗纹。
+
+
+由半波带法可得明暗纹条件：
+
+- 暗纹：$a \sin \theta = \pm k\lambda$, $k = 1,2,3,\ldots$
+- 明纹：$a \sin \theta = \pm (2k + 1)\frac{\lambda}{2}$, $k = 1,2,\ldots$
+- 中央明纹：$a \sin \theta = 0$
+
+
+对于其它角度，使用振幅矢量叠加法；
+
+
+\[
+A_\theta = A_1 + A_1 e^{i\Delta\varphi} + A_1 e^{i2\Delta\varphi} + \ldots + A_1 e^{i(N-1)\Delta\varphi}
+\]
+
+通过公式推导，我们可以得到：
+
+\[
+A_\theta = A_1 \frac{e^{iN\Delta\varphi} - 1}{e^{i\Delta\varphi} - 1} = A_1 \frac{e^{iN\Delta\varphi/2} \left(e^{iN\Delta\varphi/2} - e^{-iN\Delta\varphi/2}\right)}{e^{i\Delta\varphi/2} \left(e^{i\Delta\varphi/2} - e^{-i\Delta\varphi/2}\right)}
+\]
+
+这可以进一步简化为：
+
+\[
+A_\theta = A_1 \frac{\sin(N\Delta\varphi/2)}{\sin(\Delta\varphi/2)}
+\]
+
+振幅的绝对值为：
+
+\[
+|A_\theta| = A_1 \frac{\sin(N\Delta\varphi/2)}{\sin(\Delta\varphi/2)}
+\]
+
+当 $N\Delta\varphi = \frac{2\pi}{\lambda} a \sin \theta$ 时，我们可以定义：
+
+{==
+
+\[
+u = \frac{\pi}{\lambda} a \sin \theta
+\]
+
+==}
+
+因此，振幅可以近似为：
+
+\[
+|A_\theta| \approx A_1 N \frac{\sin u}{u}
+\]
+
+这表明光的强度分布与 $\sin u / u$ 的形式有关，称为“sinc”函数。
+
+<div align=center>
+    <img src="../img/light/light34.png" width="60%"/>
+</div>
+
+暗纹当 sinc 函数为 0, \( u = \pi \), \( a \sin \theta = k \lambda \), 即 \( \sin \theta = \frac{k \lambda}{a} \)
+
+次级大宽度为两个相邻暗纹之间的距离，即：
+
+\[
+\Delta \sin \theta = \frac{\lambda}{a}
+\]
+
+如果问实际距离，则需要乘以 $D$(前提是角度很小)
+
+!!!Note "波长变化对于衍射条纹的影响"
+    假设固定$\lambda$，变化$a$，则条纹间距会变化。
+
+    - 当 \(\frac{\lambda}{a} \to 1\) 时，\(\sin \theta_0 \to 1\)，此时屏幕已无暗纹；
+
+    - 当 \(\frac{\lambda}{a} \to \infty\) 时，\(\Delta x_0 = \infty\)，此时屏幕亮度均匀；
+
+    - 当 \(\frac{\lambda}{a} \to 0\) 时，\(\Delta x_0 \to 0\) 此时衍射图样聚集在一起，屏幕上只显出单一的亮线——单缝的几何光学像。(a很大，相当于没有阻挡，正常的几何光学成像)
+
+!!!info "圆孔的夫琅禾费衍射"
+
+    实验装置如下：
+
+    <div align=center>
+        <img src="../img/light/light35.png" width="60%"/>
+    </div>
+    
+    其会形成一系列的同心圆环，称为“爱里斑”。
+
+    <div align=center>
+        <img src="../img/light/light36.png" width="60%"/>
+    </div>
+
+
+#### 衍射受限与瑞利判据
+
+理想点光源的像是一个点，但实际上由于衍射，像是一个爱里斑。(可以近似为一个宽度为透镜高度，后面是无限大透镜的衍射)
+
+<div align=center>
+    <img src="../img/light/light37.png" width="60%"/>
+</div>
+
+很近的两个物点象斑有可能重叠，从而分辨不清。
+
+!!!Tip "瑞利判据"
+    对于两个等光强的非相干物点,若其中一点的象斑中心恰好落在另一点的象斑的边缘(第一暗纹处),则此两物点被认为是刚刚可以分辨。此时两个爱里斑重叠部分的光强为爱里斑中心光强的80%。
+
+    <div align=center>
+        <img src="../img/light/light38.png" width="60%"/>
+    </div>
+    
+#### 光栅衍射
+
+!!!Definition "光栅"
+    光栅—大量等宽等间距的平行狭缝(或反射面) 构成的光学元件。
+    
+    光栅常数：周期长度 $d = a + b$
+
+    <div align=center>
+        <img src="../img/light/grating.png" width="60%"/>
+    </div>
+
+
+光栅的衍射图样为在原单缝的中央明纹中，出现暗纹，随着 $N$ 的增加，衍射条纹的亮度会逐渐增加，但是也逐渐变细。
+
+是多个单缝衍射的干涉结果。
+
+
+<div align=center>
+    <img src="../img/light/light39.png" width="60%"/>
+</div>
+
+相邻两光的相位差为
+
+$$
+\Delta \varphi = \frac{2\pi d \sin \theta}{\lambda}
+$$
+
+相邻振动的振幅 $A_1, A_2, \ldots, A_N$
+
+$$
+A_2 = A_1 e^{i \Delta \varphi}
+$$
+
+$$
+A_3 = A_1 e^{i 2 \Delta \varphi}
+$$
+
+$$
+\vdots
+$$
+
+$$
+A_N = A_1 e^{i (N-1) \Delta \varphi}
+$$
+
+
+
+$$
+A_p = A_1 + A_2 + \ldots + A_N
+$$
+
+$$
+= A_1 + A_1 e^{i \Delta \varphi} + \ldots + A_1 e^{i (N-1) \Delta \varphi}
+$$
+
+$$
+= A_1 \frac{e^{iN\Delta \varphi/2}}{e^{i\Delta \varphi/2}} \frac{\sin(N\Delta \varphi/2)}{\sin(\Delta \varphi/2)}
+$$
+
+$$
+|A_p| = A_1 \frac{\sin(N\Delta \varphi/2)}{\sin(\Delta \varphi/2)}
+$$
+
+这里类似于单缝衍射的振幅矢量叠加法，但是也有所不同。
+
+
+- 当 $\Delta \varphi = 2k\pi$ 时，每一个振幅矢量方向相同，所以 $A_p = NA_1$，此时为最大值。
+
+即
+
+$$
+d \sin \theta = \pm k \lambda \quad k = 0, 1, 2, \ldots \quad k < \frac{d}{\lambda} \quad 
+$$
+
+这里的$k$有范围，因为$d \sin \theta$ 最大为 $d$，所以 $k$ 最大为 $\frac{d}{\lambda}$。
+
+**k为主极大级数，k=0称中央明纹。光栅极大的位置由相邻狭缝间的干涉极大决定**
+
+- 当$N\Delta \varphi = 2k\pi$时，此时矢量叠加闭合，$A_p = 0$，此时为暗纹。
+
+$$
+N d \sin \theta = \pm k' \lambda \quad k' = 1, 2, 3, \ldots, N - 1 \quad (k' \neq kN)
+$$
+
+!!!Warning 
+    k'不能取N的整数倍，因为这时是主极大的位置。
+
+
+!!!Summary "光栅衍射的谱线特点"
+    ![alt text](image-10.png)
+
+    1）主级大明纹的位置与缝数N无关，它们对称地分布在中央明纹的两侧，中央明纹光强最大；
+    
+    2）在相邻的两个主级大之间，有N−1个极小（暗纹）和N−2个光强很小的次极大，当N很大时，实际上在相邻的主极大之间形成一片暗区，即能获得又细又亮暗区很宽的光栅衍射条纹。
+
+
+!!!info "定量分析光栅衍射的光强"
+
+    \[
+    I = I_0 \left( \frac{\sin u}{u} \right)^2 \left( \frac{\sin N \beta}{\sin \beta} \right)^2
+    \]
+
+    其中
+
+    $$
+    u = \frac{\pi a \sin \theta}{\lambda}
+    $$
+
+    $$
+    \beta = \frac{\pi d \sin \theta}{\lambda}
+    $$
+
+    当 $\theta \to 0$ 时，$I_m \to N^2 I_0$，所以缝数越多，光强越大。
+
+    {==半角宽度==}
+
+    
+    ![alt text](image-13.png)
+
+    如果 $\theta$ 不小，$\sin \theta \neq \theta$
+
+    \[
+    d \sin \theta = m \lambda
+    \]
+    
+    与它最近的0点为($Nd\sin \theta' = (mN + 1) \lambda$)
+
+    \[
+    d \sin (\theta + \Delta \theta) = (m + \frac{1}{N}) \lambda
+    \]
+
+    所以使用拉格朗日中值定理，有
+
+    \[
+    d \cos \theta \cdot \Delta \theta = \frac{1}{N} \lambda
+    \]
+
+    \[
+    \Delta \theta = \frac{\lambda}{N d \cos \theta}
+    \]
+
+    $\theta$ 很小时，$\cos \theta \to 1$，所以
+
+    \[
+    \Delta \theta = \frac{\lambda}{N d}
+    \]
+
+    所以缝越多，半角宽度越小，条纹越细。
+
+#### 光栅衍射的缺极
+
+缺级：缺级是指光栅中不同单缝衍射互相干涉的主极大位置于单缝衍射的暗纹位置重合，导致光栅衍射的明纹消失。
+
+
+即
+
+\[
+    d \sin \theta = \pm k \lambda 
+\]
+
+\[
+    a \sin \theta = \pm k' \lambda
+\]
+
+当 $\dfrac{a}{d} = \dfrac{k'}{k}$ 时，光栅衍射的明纹消失。
+
+如果说第一个缺级出现在$k=2$($k'=1$),这说明$d=2a=a+b$，即$b=a$。
+
+
+![{alt text}](image-11.png)
+
+图例给出的是$d=4a$的情况；
+
+
+
+<br>
+
+
+!!!info "光栅光谱"
+    光栅光谱是指复色光照射光栅时，谱线按波长向外侧依次分开排列，形成的光谱；
+     
+    <div align=center>
+        <img src="../img/light/light40.png" width="60%"/>
+    </div>
+
+    只有第一级，第二级开始有重叠。
+
+
+!!!info "光栅光谱的分辨本领"
+    光栅的分辨本领是指把波长靠得很近的两条谱线分辨的清楚的本领。
+    
+    与瑞利判据类似，当两条谱线刚好能分辨时，一个在极大，一个在极小。
+     
+    ![{alt text}](image-12.png){ align=right}
+
+    波长为 $\lambda + \Delta \lambda$ 的第 $k$ 级主极大的角位置为：
+
+    \[
+    (a + b) \sin \theta = k (\lambda + \Delta \lambda)
+    \]
+
+    波长为 $\lambda$ 的第 $kN+1$ 级极小的角位置为：
+
+    \[
+    N (a + b) \sin \theta = (kN + 1) \lambda
+    \]
+
+    因此，分辨本领 $R$ 为：
+
+    \[
+    R = \dfrac{\lambda}{\Delta \lambda} = kN
+    \]
+
+    即要分辨清楚第$k$级光谱，需要$N$条缝。这里的$\lambda$是平均波长，$\Delta \lambda$是波长偏移。
+
+
+!!!answer "色散本领与分辨本领"
+
+    首先，对于$m$级的主极大，有
+
+    \[
+    d \sin \theta = m \lambda
+    \]
+
+    所以两边同时取微分，有
+
+    \[
+    d \cos \theta \cdot \Delta \theta = m \cdot \Delta \lambda
+    \]
+
+    所以可以定义色散本领
+
+    \[
+    D = \frac{\Delta \theta}{\Delta \lambda} = \frac{m}{d \cos \theta}
+    \]
+
+    使用瑞利判据，当其可以分辨时，两者角度相差为半角宽度，即
+
+    \[
+    \Delta \theta = \frac{\lambda}{N d \cos \theta} 
+    \]
+
+    所以此时可以分辨的极限波长差为
+
+    \[
+    \Delta \lambda =  \dfrac{\Delta \theta}{D} = \frac{\lambda}{N d \cos \theta} \cdot \frac{d \cos \theta}{m} = \frac{\lambda}{N m}
+    \]
+
+    所以分辨本领定义为
+
+    \[
+    R = \frac{\lambda}{\Delta \lambda} = Nm
+    \]
+
+#### Bragg 公式
+
+<div align=center>
+    <img src="../img/light/light41.png" width="60%"/>
+</div>
+
+布拉格公式：
+
+\[
+2d \sin \theta = n \lambda
+\]
+
+其中$d$是晶格常数，$\theta$是入射角，$n$是整数，$\lambda$是波长。
+
+解释了不同晶面间反射的干涉增强条件.
+
+
+
 ### 光的偏振(Polarization)
+在自然光中，光波的电矢量在任意时刻和任意位置的方向都是随机的，这种光称为非偏振光。而在某些情况下，光波的电矢量在某一方向上的振动，而在另一方向上的振动为零，这种光称为偏振光。
+
+#### 线偏振光
+
+自然光通过偏振片之后，只有在某一方向上的电矢量振动，这种光称为线偏振光。
+只有与偏振片的缝方向{==垂直==}的电矢量才能通过;其它的电矢量会被吸收。
+
+在自然光中，任意两个垂直分量的振幅是相等的，即可以把自然光分解为任意两个垂直方向的线偏振光的叠加，那么经过偏振片后，只有与偏振片允许(TA)的分量通过，其它分量被吸收。假设自然光的电矢量为$E_0$,则经过偏振片后的电矢量为$\dfrac{E_0}{\sqrt{2}}$。光强为$I_0$，则经过偏振片后的光强为$\dfrac{I_0}{2}$。($I_0 \propto E_0^2$)
+
+
+!!!info "马隆定律"
+    线偏振光通过与振动方向成$\theta$角的偏振片后，光强为$I = I_0 \cos^2 \theta$。
+
+    <div align=center>
+        <img src="../img/light/light42.png" width="60%"/>   
+    </div>
+
+    所以在上图中$I_2=I_1 \cos^2 \theta$
+
+
+!!!key-point "利用马隆定律推导自然光通过偏振片后的光强"
+    我们知道自然光通过任意方向偏振片光强都变为原来的一半；我们可以使用马隆定律来推导这一结论。
+
+    首先，对于自然光，可以将其看作无数个方向上的振动，它与偏振片的夹角为$\alpha$,$\alpha$满足$0$到$2\pi$的均匀分布。
+
+    概率密度为$p=\dfrac{1}{2\pi}$，所以通过偏振片后的光强为
+    对应的光强为$I = I_0 \cos^2 \alpha$，所以平均光强为
+
+    \[
+    \overline{I} = \int_0^{2\pi} \dfrac{1}{2\pi} I_0 \cos^2 \alpha d\alpha = \dfrac{1}{2} I_0
+    \]
+
+
+!!!eg "例子"
+    <div align=center>
+        <img src="../img/light/light43.png" width="60%"/>
+    </div>
+
+    一束沿$x$方向的线偏振光,经过两个偏振片，第一个偏振片(TA方向)与$x$轴成$\theta$角，第二个偏振片与$y$轴平行,求$\theta$为多少时，第二个偏振片的透射光强最大。
+
+    \[
+        I_2 = I_1 \cos^2 \theta \cos^2(90^\circ - \theta) = I_1 \cos^2 \theta \sin^2 \theta
+    \]
+
+    基本不等值可知，当$\theta = 45^\circ$时，透射光强最大。
+
+
+#### 常见偏振态
+
+**线偏振光**
+对于两束等强正交线偏振光，如果其相位差为$k \pi$，则同时变大，同时变小，合成的为线偏振光。
+
+
+**圆偏振光**
+
+<figure markdown="span">
+  ![alt text](image-15.png)
+  <figcaption>RCP</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![alt text](image-16.png)
+  <figcaption>LCP</figcaption>
+</figure>
+如果两束等强正交线偏振光的相位差为$\dfrac{\pi}{2}+k \pi$，则其中一束光最大时，另一束光最小，周期性振动，合成的为圆偏振光。
+
+由相位超前的向相位落后的旋转(也很方便记忆，由先到达最大的向后到达最大的旋转)。
+
+
+**椭圆偏振光**
+
+当两束线偏振光不等强，或者相位差不是$k \dfrac{\pi}{2}$时，合成的光为椭圆偏振光。
+
+<figure markdown="span">
+  ![Image title](./img/im.png){ width="70%" }
+  <figcaption>偏振光分类</figcaption>
+</figure>
+
+
+**无偏振光**
+    
+即最常见的自然光，可以向任意方向振动，没有固定的振动方向。自然光可以看作是由两个振动方向垂直、{==相互间没有固定相位差、等振幅的线偏振光（非相干光）==}组合而成的。
+
+无偏振光与圆偏振光的区别在于，传播的时候，无偏振光的振动方向是随机变化的，而圆偏振光的矢量轨迹是一个圆;
+
+**部分偏振光**
+
+按比例的含有自然光和偏振光的光。振动方向是随机变化的，在其中一个方向上的振动是最强的;
+
+{== 部分偏振光可分解为两束振动方向相互垂直的、不等幅的、不相干的线偏振光。==}
+
+部分偏振光与椭圆偏振光的区别在于，部分偏振光的振动方向是随机变化的，而椭圆偏振光的矢量轨迹是一个椭圆。
+
+
+!!!definition "偏振度"
+
+    \[
+    P = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}
+    \]
+
+    其中$I_{max}$是强度最大方向最大光强，$I_{min}$是强度最小方向光强,相减即为偏振光的光强，相加即为总光强。
+
+    对于线偏振光，$I_{min}=0$,偏振度为1；对于自然光，$I_{max}=I_{min}$,偏振度为0。
+    
+    
+#### Brewster 角
+
+当自然光以某一角度入射时(反射角与折射角之和为90度),反射光为线偏振光。
+
+假设入射角为$\theta_1$，折射角为$\theta_2$，则有
+
+\[
+\theta_1 + \theta_2 = 90^\circ
+\]
+
+根据折射定律，有
+
+\[
+n_1 \sin \theta_1 = n_2 \sin \theta_2
+\]
+
+所以
+
+\[
+    n_1 \sin \theta_1 = n_2 \sin \theta_2   =   n_2 \cos \theta_1
+\]
+
+所以
+
+\[
+    \tan \theta_1 = \frac{n_2}{n_1}
+\]
+
+
+
+<div align=center>
+    <img src="../img/light/light44.png" width="60%"/>
+</div>
+
+如果经过多次反射，每一次都为brewster角，则最后折射出来的光大部分都为线偏振光。
+
+
+#### 双折射现象(Birefringence)
+
+!!!definition "双折射现象"
+
+    双折射现象是指当光线通过某些各向异性介质（如方解石晶体）时，会分裂成两束偏振方向互相垂直的光线。这两束光线分别称为普通光（o光）和非常光（e光）;
+
+    具体来说，当一束未偏振的光进入双折射介质时，会分裂成两束光线：一束遵循常规折射定律（斯涅尔定律），称为普通光(ordinary light, o光)；另一束则不遵循常规折射定律，称为非常光(extraordinary light, e光)。
+
+
+    对于o光来说，其在介质中四面八方的折射率相同,其速度恒等于$v_o$,对于e光来说，其在介质中四面八方的折射率不同，其速度在不同方向上从$v_e$到$v_o$变化。
+
+    称$n_o=\dfrac{c}{v_o}$，$n_e=\dfrac{c}{v_e}$为主折射率；
+
+    双折射现象广泛应用于光学仪器中，如偏光显微镜、液晶显示器等。
+
+    <div align=center>
+        <img src="../img/light/birefringence.png" width="60%"/>
+    </div>
+
+
+!!!definition "光的快慢轴"
+    对于e光来说，其折射率在介质中不同方向不同，所以其传播速度不同，而频率不变，所以波长会变化；
+
+    对于传播方向快的；有
+
+    \[
+         v_{fast} = f \lambda_{fast}
+    \]
+
+    对于传播方向慢的；有
+
+    \[
+         v_{slow} = f \lambda_{slow}
+    \]
+
+    其中$f$是频率，$\lambda$是波长。
+
+    所以$\lambda_{fast} > \lambda_{slow}$。
+
+    <div align=center>
+        <img src="../img/light/light45.png" width="60%"/>
+    </div>
+     
+#### 光轴(Optical Axis)
+
+o光和e光沿着光轴方向传播时，速度相同，折射率相同，对于 **负晶体而言** ,$n_o > n_e$,$v_o< v_e$，对于 **正晶体而言** ，$n_o < n_e$，$v_o > v_e$。
+
+<figure markdown="span">
+  ![alt text](image-17.png)
+  <figcaption>负晶体</figcaption>
+</figure>
+
+常见的负晶体有$CaCO_3$
+
+<figure markdown="span">
+  ![alt text](image-18.png)
+  <figcaption>正晶体</figcaption>
+</figure>
+
+常见的正晶体有二氧化硅$SiO_2$
+
+{== 将光轴和光的传播方向构成的平面称为主平面(Principal Plane)。==}
+
+- o光：振动方向垂直于主平面；
+- e光：振动方向平行于主平面；
+
+!!!idea "光轴与快慢轴之间的关系"
+    负晶体而言,e光在光轴方向传播速度最慢，其它地方比o光快，光轴为慢轴，与光轴垂直的，传播速度最快的方向为快轴；
+
+    正晶体而言,e光在光轴方向传播速度最快，其它地方比o光慢，光轴为快轴，与光轴垂直的，传播速度最慢的方向为慢轴；
+
+<div align=center>
+    <img src="../img/light/light46.png" width="60%"/>
+</div>
+
+图中画虚线的为光轴，当一束光照向这样的结构时，{==可以将其振动方向分解为o光和e光的振动方向==}，由于光轴方向上o光和e光的速度相同，所以o光和e光在光轴方向上传播的距离相同，所以o光和e光在光轴方向上的相位差为0，但是在传播方向上，e光的速度为$v_e$，o光的速度为$v_o$，所以e光和o光的相位差为
+
+<div align=center>
+    <img src="../img/light/light47.png" width="60%"/>
+</div>
+
+\[
+    \Delta \phi = \dfrac{2\pi}{\lambda} (n_e - n_o) d
+\]
+
+其中$d$是片的厚度
+
+
+!!!Note "QWP和FWP"
+
+    - QWP：Quarter Wave Plate，四分之一波片，$\Delta \phi = \dfrac{\pi}{2}$
+    
+    \[
+        (n_o-n_e)d = \pm \dfrac{\lambda}{4}
+    \]
+
+    - HWP：Half Wave Plate，半波片，$\Delta \phi = \pi$
+
+    \[
+         (n_o-n_e)d = \pm \dfrac{\lambda}{2}
+    \]
+
+    - FWP：Full Wave Plate，全波片，$\Delta \phi = 2\pi$
+    
+    \[
+        (n_o-n_e)d = \pm \lambda
+    \]
+
+
+当光通过QWP时,o光和e光的相位差为$\dfrac{\pi}{2}$;
+
+- 如果是线偏振光,则一开始将其分解为o光和e光的振动方向,原本的相位差为$k\pi$,通过QWP后,相位差为$k\pi+\dfrac{\pi}{2}$,所以合成后出射的光为圆偏振光。
+
+- 如果是圆偏振光,则通过QWP或者HWP后,相位差为$k\pi$。所以合成后出射的光为线偏振光。
+
+
+!!!eg "例子"
+    <div align=center>
+        <img src="../img/light/light48.png" width="40%"/>
+    </div>
+
+    一束自然光通过45度偏振片后，出射的光为线偏振光，再通过QWP后，出射光满足
+
+    \[
+    E_x =E_0 \sin (kz-\omega t)
+    \]
+
+    \[
+    E_y =-E_0 \cos (kz-\omega t)
+    \]
+
+    即慢轴不变，快轴相当于前进了$\dfrac{3\pi}{2}$，相当于落后了$\dfrac{\pi}{2}$，所以合成后出射的光为圆偏振光。为RCP。
+
+    <div align=center>
+        <img src="../img/light/light49.png" width="40%"/>
+    </div>
+    
+
+
+
+!!!eg "例子"
+    <div align=center>
+        <img src="../img/light/light50.png" width="40%"/>
+    </div>
+
+    对于3A,第一次无法将振动方向分解为o光和e光的振动方向，所以出射的光仍为原光，第二次完全被阻挡，所以出射的光为0，$I_1=0$
+    
+    对于3B,第一次将振动方向分解为o光和e光的振动方向，由于是$1/4$波片，所以出射的光为圆偏振光,
+    
+    \[
+        E_s =E_f  = \dfrac{E_0}{\sqrt{2}}
+    \]
+     
+    第二次相当于两束线偏振光经过,由马隆定律可知
+
+    \[
+        E'_s = E'_f =  \dfrac{E_0}{\sqrt{2}} \cos 45^\circ = \dfrac{E_0}{2}
+    \]
+
+    由于快慢光独立衰减，所以最后的光强为
+
+    \[
+        I_2 = I_s + I_f = \dfrac{E_0^2}{4} + \dfrac{E_0^2}{4} = \dfrac{I_0}{2}
+    \]
+
+
+!!!Danger
+    虽说e光并不满足折射定律，但是有一种例外，当光轴与入射面垂直时(主平面与入射面垂直,光轴和法线平行)，e光满足折射定律,有
+
+    \[
+        n_e \sin \theta_e = n_1 \sin \theta_1
+    \]
+
+    和
+
+    \[
+        n_o \sin \theta_o  = n_1 \sin \theta_1
+    \]
+
+    <figure markdown="span">
+        ![alt text](image-19.png){ width="60%" }
+        <figcaption>示意图</figcaption>
+    </figure>
+
+    不要把法线和光轴搞混了(-_-)

@@ -14,3 +14,4 @@ comments: true
 - [电动力学](./electrodynamincs.md)
 - [麦克斯韦方程](./maxwell.md)
 - [光学](./light.md)
+- [量子力学](./Quantum.md)

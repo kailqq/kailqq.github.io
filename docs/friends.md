@@ -14,17 +14,27 @@ nonstatistics: true
 
   
 - title: Xestray
-  content: 你知道的，前面忘了，后面忘了，反正他强的可怕
+  content: 这是一个卷哥
   image: static/images/xestray.png
   url: https://xestray.cc
 
 - title: Xecades
-  content: 好男人，帅男人！伟大，无需多言
+  content: 满船清梦压星河
   image: static/images/Xecades.png
   url: https://xecades.xyz
 
 - title: WEDM
-  content: Friend!
+  content: 杭城少年
   image: static/images/CSN.png
   url: https://zjuhcsn.github.io
+
+- title: V1ceVarsa
+  content: 未经审视的生活是不值得过的
+  image: static/images/V1CeVersa.png
+  url: https://note.v1ceversaa.cc/
+
+- title: Clovers
+  content: 金将军！恩情！忠诚！！
+  image: static/images/Clovers.png
+  url: https://clovers2333.github.io/Clovers-Blog/
 ::/cards::  

@@ -967,6 +967,15 @@ Y = \sigma X + \mu, \quad X \sim N(0, 1)
     \varphi_{S_n}(t) = \varphi_{X_1}(t) \varphi_{X_2}(t) \cdots \varphi_{X_n}(t) = (1-p+pe^{it})^n
     \]
 
+!!!Warning
+    注意计算特征函数的时候不要直接把求期望放到指数上,即
+
+    \[
+        Ee^{itX} \neq e^{itEX}
+    \]
+
+    是不对的
+
 ### 唯一性问题
 
 分布函数和特征函数相互唯一确定吗?

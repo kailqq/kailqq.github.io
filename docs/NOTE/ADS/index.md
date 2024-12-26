@@ -4,6 +4,7 @@ comments: true
 
 # 高级数据结构与算法分析
 > 授课：[张国川](https://person.zju.edu.cn/0096209)
+> 参考：吴一航学长的ADS讲义 
 
 在数据结构基础上，进一步学习数据结构的高级应用，特别是算法分析部分，偏向数学；
 
@@ -80,6 +81,14 @@ comments: true
 <div class="ADS_card_container" style="display: flex; justify-content: space-between;">
     <a href="./wk12">
         <div class="ADS_card" style="--hover-font-size:0.7em;--initial-text:'随机算法';--hover-text:'江南可采莲，莲叶何田田，鱼戏莲叶间。鱼戏莲叶东，鱼戏莲叶西，鱼戏莲叶南，鱼戏莲叶北。';">
+        </div>
+    </a>
+    <a href="./wk13">
+        <div class="ADS_card" style="--initial-text:'并行算法';--hover-text:'一花独放不是春，百花齐放春满园';">
+        </div>
+    </a>
+    <a href="./wk14">
+        <div class="ADS_card" style="--initial-text:'外部排序';--hover-text:'独立寒秋，湘江北去，橘子洲头';">
         </div>
     </a>
 </div>
