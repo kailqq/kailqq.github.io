@@ -1748,7 +1748,7 @@
 
 <h1 id="_1">概率极限理论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1763 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2045 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
 </div>
 <h2 id="_2">伯努利大数定律<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>给定<span class="arithmatex">\(p \in (0, 1)\)</span>，记<span class="arithmatex">\(S_n \sim \text{Binomial}(n, p)\)</span>，则</p>
@@ -2025,6 +2025,7 @@ F_n(x) \to F(x), \quad n \to \infty
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="_4-依概率收敛意味着依分布收敛" name="__tabbed_2" type="radio" /><input id="_4-依分布收敛并不意味着依概率收敛" name="__tabbed_2" type="radio" /><input id="_4-依分布收敛的判别法则" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="_4-依概率收敛意味着依分布收敛">依概率收敛意味着依分布收敛</label><label for="_4-依分布收敛并不意味着依概率收敛">依分布收敛并不意味着依概率收敛</label><label for="_4-依分布收敛的判别法则">依分布收敛的判别法则</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<p>证明的关键在于构造夹逼项;</p>
 <p>如果 <span class="arithmatex">\( \xi_n \xrightarrow{P} \xi \)</span>，那么 <span class="arithmatex">\( \xi_n \xrightarrow{d} \xi \)</span></p>
 <p>假设 <span class="arithmatex">\(F\)</span> 和 <span class="arithmatex">\(F_n\)</span> 分别是 <span class="arithmatex">\(\xi\)</span> 和 <span class="arithmatex">\(\xi_n\)</span> 的分布函数，那么对任意给定 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，有</p>
 <div class="arithmatex">\[
@@ -2186,6 +2187,14 @@ E e^{itf(X_n)} = \int e^{itf(x)} dF_n(x)
 \]</div>
 <p>结论成立</p>
 </div>
+</div>
+<div class="card file-block">
+<div class="file-icon"><img src="../pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">线性性的手写证明</div>
+<div class="file-meta"></div>
+</div>
+<p><a class="down-button" target="_blank" href="../prob.pdf"  markdown="1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></span> 查看</a></p>
 </div>
 <h2 id="levy-feller">Levy-Feller 中心极限定理<a class="headerlink" href="#levy-feller" title="Permanent link">&para;</a></h2>
 <ul>
