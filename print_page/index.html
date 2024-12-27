@@ -684,7 +684,7 @@
 <p>可悲的是，似乎我在一年前高考结束后就丧失了书写自己的文字的能力，希望多打点字可以让我稍微找回一点写作的乐趣吧</p>
 <blockquote>
 <p>长期摸鱼，尽量更新</p>
-<p>目前共 59 个页面，约 130838 字，2504 行代码。</p>
+<p>目前共 59 个页面，约 130933 字，2504 行代码。</p>
 </blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -6853,18 +6853,17 @@ P(A_1 \cup A_2 \cup \ldots \cup A_{k+1}) = \sum_{i=1}^{k+1} P(A_i) - \sum_{1 \le
 <div class="arithmatex">\[
 P(A_1 \cup A_2 \cup \ldots \cup A_n) \leqslant \sum_{i=1}^{n} P(A_i). 
 \]</div>
-<h3 id="note-probability-first-133">1.3.3 概率测度的连续性<a class="headerlink" href="#note-probability-first-133" title="Permanent link">&para;</a></h3>
+<h3 id="note-probability-first-_11">概率测度的连续性<a class="headerlink" href="#note-probability-first-_11" title="Permanent link">&para;</a></h3>
 <p>给定一概率空间 <span class="arithmatex">\((\Omega, \mathcal{F}, P)\)</span>，假设 <span class="arithmatex">\(A_1, A_2, \ldots\)</span> 是一列单调增加的事件序列，即</p>
 <div class="arithmatex">\[
 A_1 \subset A_2 \subset \cdots \subset A_n \subset \cdots
 \]</div>
 <p>记 <span class="arithmatex">\(A = \bigcup_{n=1}^{\infty} A_n\)</span>，称 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(A_n\)</span> 的极限。从公理化定义可以看出，<span class="arithmatex">\(A\)</span> 仍然是一个事件。下面定理给出该事件的概率大小。</p>
-<h4 id="note-probability-first-11">定理 1.1<a class="headerlink" href="#note-probability-first-11" title="Permanent link">&para;</a></h4>
 <p>如果 <span class="arithmatex">\(A_1, A_2, \ldots\)</span> 是一列单调增加的事件序列，具有极限 <span class="arithmatex">\(A\)</span>，那么，</p>
 <div class="arithmatex">\[
 P(A) = \lim_{n \to \infty} P(A_n) .
 \]</div>
-<h3 id="note-probability-first-_11">事件的上极限和下极限<a class="headerlink" href="#note-probability-first-_11" title="Permanent link">&para;</a></h3>
+<h3 id="note-probability-first-_12">事件的上极限和下极限<a class="headerlink" href="#note-probability-first-_12" title="Permanent link">&para;</a></h3>
 <p>事件是样本点的集合，事件的上级限和下极限是事件的集合的极限。</p>
 <p>对于一个集合序列，我们定义其上极限和下极限如下：</p>
 <div class="admonition definition">
@@ -6878,8 +6877,10 @@ P(A) = \lim_{n \to \infty} P(A_n) .
 \liminf_{n \to \infty} A_n = \bigcup_{n=1}^{\infty} \bigcap_{k=n}^{\infty} A_k
 \]</div>
 <p>为事件 <span class="arithmatex">\(A_n\)</span> 的下极限。</p>
+<p>其实理解起来也是不困难的，对于上极限</p>
+<p>可以设<span class="arithmatex">\(B_n=\bigcup_{k=n}^{\infty} A_k\)</span>，则<span class="arithmatex">\(B_1\supset B_2 \supset \cdots\)</span>，即<span class="arithmatex">\(B_n\)</span>是单调递减的(因为参与并的集合越来越少了)，我们取这个单调递减的序列的交(也就相当于取极限,从最大的开始不断剔除里面多余的元素)，就是上极限</p>
+<p>而对于下极限，我们可以设<span class="arithmatex">\(C_n=\bigcap_{k=n}^{\infty} A_k\)</span>，则<span class="arithmatex">\(C_1\subset C_2 \subset \cdots\)</span>，即<span class="arithmatex">\(C_n\)</span>是单调递增的(因为参与交的集合越来越少了)，我们取这个单调递增的序列的并(也就相当于取极限,从最小的开始不断添加里面缺失的元素)，就是下极限</p>
 </div>
-<p>对于上极限，是事件的先并后交，相当于是所有并集的交集，<strong>其中包含了无穷多个集合</strong> 对于下极限，是事件的先交后并，相当于是所有交集的并集，<strong>只有有限个集合包含下极限</strong>。</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="arithmatex">\[\begin{align*}
@@ -6887,13 +6888,13 @@ P(A) = \lim_{n \to \infty} P(A_n) .
    A_2 &amp;=\{2,3,4\} \\
    A_3 &amp;=\{3,4\} \\
    A_4 &amp;=\{2，4\} \\
-   A_k &amp;=\{4\} \enspace k \geqslant 4 \\
+   A_k &amp;=\{2,3,4\} 或者 \{3,4\} 或者 \{2,4\} \enspace k \geqslant 4 \\
 \end{align*}\]</div>
 <p>则有</p>
 <p>上极限：<span class="arithmatex">\(\limsup_{n \to \infty} A_n = \{2,3,4\}\)</span></p>
 <p>下极限：<span class="arithmatex">\(\liminf_{n \to \infty} A_n = \{4\}\)</span></p>
 </div>
-<h2 id="note-probability-first-_12">条件概率和链式法则<a class="headerlink" href="#note-probability-first-_12" title="Permanent link">&para;</a></h2>
+<h2 id="note-probability-first-_13">条件概率和链式法则<a class="headerlink" href="#note-probability-first-_13" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">条件概率 <span class="arithmatex">\(P(A|B)\)</span></p>
 <p>事件 <span class="arithmatex">\(B\)</span> 发生条件下事件 <span class="arithmatex">\(A\)</span> 发生的概率，称为事件 <span class="arithmatex">\(A\)</span> 关于事件 <span class="arithmatex">\(B\)</span> 的 <strong>条件概率 (conditional probability)</strong> </p>
@@ -6918,7 +6919,7 @@ P(A) = \lim_{n \to \infty} P(A_n) .
     P\left(A_{1}\right) \cdot P\left(A_{2} \mid A_{1}\right) \cdot P\left(A_{3} \mid A_{1} A_{2}\right) \cdots P\left(A_{n} \mid A_{1} A_{2} \cdots A_{n-1}\right)
 \]</div>
 </details>
-<h2 id="note-probability-first-_13">全概率公式<a class="headerlink" href="#note-probability-first-_13" title="Permanent link">&para;</a></h2>
+<h2 id="note-probability-first-_14">全概率公式<a class="headerlink" href="#note-probability-first-_14" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">分割(完备事件组)</p>
 <p>在概率空间 (<span class="arithmatex">\(\Omega, \mathcal{F}, P\)</span>) 中，若事件 <span class="arithmatex">\(\{A_1, A_2, \cdots, A_n\}\)</span>(<span class="arithmatex">\(n&lt;\infty\)</span> 或 <span class="arithmatex">\(n=\infty\)</span>) 满足：</p>
@@ -6950,7 +6951,7 @@ P(A) = \lim_{n \to \infty} P(A_n) .
 \end{aligned}
 \]</div>
 </details>
-<h2 id="note-probability-first-_14">贝叶斯公式<a class="headerlink" href="#note-probability-first-_14" title="Permanent link">&para;</a></h2>
+<h2 id="note-probability-first-_15">贝叶斯公式<a class="headerlink" href="#note-probability-first-_15" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">贝叶斯 (Bayes) 公式</p>
 <div class="arithmatex">\[
@@ -6967,8 +6968,8 @@ P(A_i|B)=\dfrac{P(A_i)P(B|A_i)}
 <p><span class="arithmatex">\(P(A_i)\)</span>：不知 <span class="arithmatex">\(B\)</span> 是否发生，称为 <strong>先验 (priori) 概率</strong></p>
 <p><span class="arithmatex">\(P(A_i|B)\)</span>：以 <span class="arithmatex">\(B\)</span> 发生为已知条件，称为 <strong>后验 (posteriori) 概率</strong></p>
 </div>
-<h2 id="note-probability-first-_15">事件独立性<a class="headerlink" href="#note-probability-first-_15" title="Permanent link">&para;</a></h2>
-<h3 id="note-probability-first-_16">两个事件的独立性<a class="headerlink" href="#note-probability-first-_16" title="Permanent link">&para;</a></h3>
+<h2 id="note-probability-first-_16">事件独立性<a class="headerlink" href="#note-probability-first-_16" title="Permanent link">&para;</a></h2>
+<h3 id="note-probability-first-_17">两个事件的独立性<a class="headerlink" href="#note-probability-first-_17" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title"><span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 相互独立(统计独立)</p>
 <p>称事件 <span class="arithmatex">\(A\)</span> 与事件 <span class="arithmatex">\(B\)</span> <strong>相互独立(统计独立，statistical independence)</strong>，如果满足</p>
@@ -6985,7 +6986,7 @@ P(A_i|B)=\dfrac{P(A_i)P(B|A_i)}
     P(B|A)=\frac{P(AB)}{P(A)}=P(B)
 \]</div>
 <p>如果 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 不相互独立，也称为 <strong>统计相依 (statistical dependence)</strong></p>
-<h3 id="note-probability-first-_17">多个事件的独立性<a class="headerlink" href="#note-probability-first-_17" title="Permanent link">&para;</a></h3>
+<h3 id="note-probability-first-_18">多个事件的独立性<a class="headerlink" href="#note-probability-first-_18" title="Permanent link">&para;</a></h3>
 <p>对于一组事件 <span class="arithmatex">\(A_1,A_2,\cdots,A_n\)</span>，存在两两独立和整体的相互独立两种概念。</p>
 <p>不妨先以三个事件 <span class="arithmatex">\(A,B,C\)</span> 为例进行研究。</p>
 <ul>
@@ -7023,7 +7024,7 @@ P(ABC)=P(A)\cdot P(B)\cdot P(C)
 P \left( \prod_{i=1}^r A_{n_i} \right) = \prod_{i=1}^r P(A_{n_i}),\;
 1 \leqslant n_1 &lt; n_2 &lt; \cdots &lt;n_r \leqslant n\]</div>
 </details>
-<h2 id="note-probability-first-_18">伯努利试验<a class="headerlink" href="#note-probability-first-_18" title="Permanent link">&para;</a></h2>
+<h2 id="note-probability-first-_19">伯努利试验<a class="headerlink" href="#note-probability-first-_19" title="Permanent link">&para;</a></h2>
 <p>伯努利概型（Bernoulli trial）是概率论中的一个基本概念，它描述了只有两个可能结果的随机试验，通常称为“成功”和“失败”。每次试验都是独立的，并且每次成功的概率都是相同的，记作 <span class="arithmatex">\( p \)</span>，而失败的概率则为 <span class="arithmatex">\( 1-p \)</span>。</p>
 <p>伯努利概型的特点包括：</p>
 <ol>
@@ -7046,7 +7047,7 @@ P(B_3) = \binom{10}{3} \times 0.5^3 \times 0.5^{10-3} = 0.1172.
 \]</div>
 <p>所以恰好 3 次正面朝上的概率是 0.1172。</p>
 </div>
-<h2 id="note-probability-first-_19">乘积概率空间<a class="headerlink" href="#note-probability-first-_19" title="Permanent link">&para;</a></h2>
+<h2 id="note-probability-first-_20">乘积概率空间<a class="headerlink" href="#note-probability-first-_20" title="Permanent link">&para;</a></h2>
 <div class="admonition definition">
 <p class="admonition-title">乘积概率空间</p>
 <p>设有两个概率空间 <span class="arithmatex">\((\Omega_1, \mathcal{F}_1, P_1)\)</span> 和 <span class="arithmatex">\((\Omega_2, \mathcal{F}_2, P_2)\)</span>,对应试验为 <span class="arithmatex">\(E_1\)</span> 和 <span class="arithmatex">\(E_2\)</span>,独立地做两个试验，记录其结果为 <span class="arithmatex">\((\omega_1, \omega_2)\)</span>,则称 <span class="arithmatex">\((\Omega_1 \times \Omega_2, \mathcal{F}_1 \times \mathcal{F}_2, P_1 \times P_2)\)</span> 为 <span class="arithmatex">\((\Omega_1, \mathcal{F}_1, P_1)\)</span> 和 <span class="arithmatex">\((\Omega_2, \mathcal{F}_2, P_2)\)</span> 的 <strong>乘积概率空间</strong>。</p>
@@ -8827,9 +8828,11 @@ P(X = k) = a_k, \quad k = \ldots, -2, -1, 0, 1, 2, \ldots,
 &amp;= e^{-\frac{1}{2} (t_1, t_2) \Sigma (t_1, t_2)'}
 \end{align*}
 \]</div>
-</div></section><section class="print-page" id="note-probability-fourth"><h1 id="note-probability-fourth-_1">概率极限理论<a class="headerlink" href="#note-probability-fourth-_1" title="Permanent link">&para;</a></h1>
+</div></section><section class="print-page" id="note-probability-fourth"><h1 id="note-probability-fourth-第四章">第四章</h1><hr />
+<h2 id="note-probability-fourth-commentstrue">comments：true<a class="headerlink" href="#note-probability-fourth-commentstrue" title="Permanent link">&para;</a></h2>
+<h1 id="note-probability-fourth-_1">概率极限理论<a class="headerlink" href="#note-probability-fourth-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2045 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2140 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
 </div>
 <h2 id="note-probability-fourth-_2">伯努利大数定律<a class="headerlink" href="#note-probability-fourth-_2" title="Permanent link">&para;</a></h2>
 <p>给定<span class="arithmatex">\(p \in (0, 1)\)</span>，记<span class="arithmatex">\(S_n \sim \text{Binomial}(n, p)\)</span>，则</p>
@@ -9276,6 +9279,24 @@ E e^{itf(X_n)} = \int e^{itf(x)} dF_n(x)
 <div class="file-meta"></div>
 </div>
 <p><a class="down-button" target="_blank" href="../NOTE/Probability/prob.pdf"  markdown="1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></span> 查看</a></p>
+</div>
+<div class="admonition idea">
+<p class="admonition-title">心得</p>
+<p>在证明这些性质时常用的放缩有</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(P( a &lt; A) \leqslant P( b &lt; A ) (b&lt;a)\)</span> 大的发生(小于A)，小的一定也发生</p>
+</li>
+<li>
+<p><span class="arithmatex">\(P(a &gt; A) \leqslant P(b &gt; A) (b &gt; a)\)</span> 小的发生(大于A)，大的一定也发生</p>
+</li>
+<li>
+<p><span class="arithmatex">\(P(A_n) \leqslant P(A_n,B_n)+P(A_n,B_n^c)\)</span>,至少有一个发生</p>
+</li>
+<li>
+<p><span class="arithmatex">\(P(A_n) \geqslant P(A_n,B_n)\)</span> 条件加强，概率变小,反过来使用就是条件减弱，概率变大</p>
+</li>
+</ul>
 </div>
 <h2 id="note-probability-fourth-levy-feller">Levy-Feller 中心极限定理<a class="headerlink" href="#note-probability-fourth-levy-feller" title="Permanent link">&para;</a></h2>
 <ul>
