@@ -1874,7 +1874,11 @@
 
 <h1 id="_1">事件及其概率<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1366 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 5 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1370 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 5 分钟</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>本章节部分内容参考了<a href="https://zhoutimemachine.github.io/note/courses/probability/">周学长的blog</a></p>
 </div>
 <h2 id="_2">随机现象域统计规律性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">随机现象<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -2033,7 +2037,7 @@ P = \frac{g \, \text{的面积}}{\Omega \, \text{的面积}} = \frac{\int_0^{\pi
 <li>相等</li>
 <li>并(至少一个发生)</li>
 <li>交(同时发生)</li>
-<li>差(<span class="arithmatex">\(A \ B\)</span>,<span class="arithmatex">\(A\)</span>发生但<span class="arithmatex">\(B\)</span>不发生<span class="arithmatex">\(A \ B = A\overline{B}\)</span>)</li>
+<li>差(<span class="arithmatex">\(A\)</span> 差 <span class="arithmatex">\(B\)</span>,<span class="arithmatex">\(A\)</span>发生但<span class="arithmatex">\(B\)</span>不发生<span class="arithmatex">\(A\)</span>差<span class="arithmatex">\(B = A\overline{B}\)</span>)</li>
 <li>互不相容($A\cap B = \emptyset $)</li>
 <li>互逆事件($A \cap B = \emptyset $ 且 <span class="arithmatex">\(A \cup B = \Omega\)</span>)</li>
 </ul>
@@ -2074,19 +2078,19 @@ P = \frac{g \, \text{的面积}}{\Omega \, \text{的面积}} = \frac{\int_0^{\pi
 <div class="arithmatex">\[
 \mathcal{F}_2 = \{ \Omega \text{的一切子集} \}+
 \]</div>
-<p>也是<span class="arithmatex">\(\sigma\)</span>-代数，所以要适当选择。特别地，若Ω为有限或可列个样本点组成，则常取Ω的一切子集所成的集类作为  </p>
+<p>也是<span class="arithmatex">\(\sigma\)</span>-代数，所以要适当选择。特别地，若<span class="arithmatex">\(\Omega\)</span>为有限或可列个样本点组成，则常取<span class="arithmatex">\(\Omega\)</span>的一切子集所成的集类作为  </p>
 <div class="arithmatex">\[
 \mathcal{F}
 \]</div>
 <p>像在古典概率中那样。不难验证，<span class="arithmatex">\(\mathcal{F}\)</span>是<span class="arithmatex">\(\sigma\)</span>-代数。</p>
 <p>若 <span class="arithmatex">\(\Omega = \mathbf{R}\)</span>（一维实数全体），此时常取一切左开右闭有界区间和它们的（有限或可列）并、（有限或可列）交、逆所成的集的全体为<span class="arithmatex">\(\mathcal{F}\)</span>（通常记为<span class="arithmatex">\(\mathcal{B}\)</span>），称为一维波雷尔（Borel）<span class="arithmatex">\(\sigma\)</span>-代数，其中的集称为一维波雷尔集，它是比全体区间大得多的一个集类。</p>
 <p>若<span class="arithmatex">\(\Omega = \mathbf{R}^{n}\)</span>n维实数全体），则常取一切左开右闭有界n维矩形和它们的（有限或可列）并、（有限或可列）交、逆所成的集的全体为<span class="arithmatex">\(\mathcal{F}\)</span>（通常记为<span class="arithmatex">\(\mathcal{B}^n\)</span>），它包含了我们感兴趣的所有情形，称为n维波雷尔<span class="arithmatex">\(\sigma\)</span>-代数。</p>
-<p>如果我们对Ω的某个子集类<span class="arithmatex">\(\mathcal{C}\)</span>感兴趣，所选的事件域<span class="arithmatex">\(\mathcal{F}\)</span>可以是包含<span class="arithmatex">\(\mathcal{C}\)</span>的最小<span class="arithmatex">\(\sigma\)</span>-代数，这种<span class="arithmatex">\(\sigma\)</span>-代数是存在的，因为：</p>
+<p>如果我们对<span class="arithmatex">\(\Omega\)</span>的某个子集类<span class="arithmatex">\(\mathcal{C}\)</span>感兴趣，所选的事件域<span class="arithmatex">\(\mathcal{F}\)</span>可以是包含<span class="arithmatex">\(\mathcal{C}\)</span>的最小<span class="arithmatex">\(\sigma\)</span>-代数，这种<span class="arithmatex">\(\sigma\)</span>-代数是存在的，因为：</p>
 <ol>
 <li>至少有一个包含<span class="arithmatex">\(\mathcal{C}\)</span>的<span class="arithmatex">\(\sigma\)</span>-代数，即上述<span class="arithmatex">\(\mathcal{F}_2\)</span>；</li>
 <li>若有很多包含<span class="arithmatex">\(\mathcal{C}\)</span>的<span class="arithmatex">\(\sigma\)</span>-代数，则它们的交也是<span class="arithmatex">\(\sigma\)</span>-代数，且就是最小的。</li>
 </ol>
-<p>特别地，如果我们只对Ω的一个子集A感兴趣，则包含A的最小<span class="arithmatex">\(\sigma\)</span>-代数就是  </p>
+<p>特别地，如果我们只对<span class="arithmatex">\(\Omega\)</span>的一个子集A感兴趣，则包含A的最小<span class="arithmatex">\(\sigma\)</span>-代数就是  </p>
 <div class="arithmatex">\[
 \mathcal{F} = \{ \emptyset, A, A^c, \Omega \}.
 \]</div>
@@ -2244,7 +2248,7 @@ P(A) = \lim_{n \to \infty} P(A_n) .
 <div class="arithmatex">\[
     P\left(\prod_{i=i}^nA_i\right)=\prod_{i=1}^n P\left(A_i\bigg|\prod_{j=1}^{i-1}A_j\right)
 \]</div>
-<p>特别定义 <span class="arithmatex">\(a&gt;b\)</span> 时，<span class="arithmatex">\(\prod_{i=a}^bA_i\)</span> 为必然事件。或者这样写可能更容易看懂：</p>
+<p>特别定义 <span class="arithmatex">\(a&gt;b\)</span> 时，<span class="arithmatex">\(\prod_{i=a}^bA_i\)</span> 为必然事件。</p>
 <div class="arithmatex">\[
     P\left(A_{1} A_{2} \cdots A_{n}\right) =
     P\left(A_{1}\right) \cdot P\left(A_{2} \mid A_{1}\right) \cdot P\left(A_{3} \mid A_{1} A_{2}\right) \cdots P\left(A_{n} \mid A_{1} A_{2} \cdots A_{n-1}\right)
