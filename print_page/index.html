@@ -9351,7 +9351,19 @@ P\left(\frac{\sum_{k=1}^{n} (\xi_k - \mu_k)}{\sqrt{B_n}} \leqslant x\right) \to 
 <li>
 <p>解决了不同分布的随机变量和的中心极限问题。</p>
 </li>
+<li>
+<p>Lyapunov  条件可以推出 Lindeberg 条件</p>
+</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Lindeberg 条件</p>
+<p>假设 <span class="arithmatex">\(\{\xi_n\}\)</span> 是独立随机变量序列，<span class="arithmatex">\(F_k\)</span> 为对应分布函数，且每个变量有有限期望和方差 <span class="arithmatex">\(a_k, \sigma_k^2\)</span>。</p>
+<p>记 <span class="arithmatex">\(B_n^2 = \sum_{k=1}^{n} \sigma_k^2\)</span>。</p>
+<p>Lindeberg 条件为：</p>
+<div class="arithmatex">\[
+\lim_{n \to \infty} \frac{1}{B_n^2} \sum_{k=1}^{n} \int_{|x-a_k| \geq \epsilon B_n} (x-a_k)^2 dF_k(x) = 0
+\]</div>
+</div>
 </div>
 <h2 id="note-probability-fourth-_5">几乎处处收敛<a class="headerlink" href="#note-probability-fourth-_5" title="Permanent link">&para;</a></h2>
 <div class="admonition definition">
