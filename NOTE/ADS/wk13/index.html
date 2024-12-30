@@ -1908,8 +1908,8 @@
 <p><strong>加速比 (Speedup)</strong>  是指在并行计算中，使用 <span class="arithmatex">\( p \)</span> 个处理器时相对于使用一个处理器时的性能提升比例，记为 <span class="arithmatex">\( S(p) \)</span>，</p>
 <div class="arithmatex">\[ S(p) = \frac{T_1}{T_p} \]</div>
 <p>其中 <span class="arithmatex">\( T_1 \)</span> 是使用一个处理器时的运行时间，<span class="arithmatex">\( T_p \)</span> 是使用 <span class="arithmatex">\( p \)</span> 个处理器时的运行时间。</p>
-<p>理想加速比:
-[ S(p) = \frac{T_1}{T_p} = p ]</p>
+<p>理想加速比:</p>
+<div class="arithmatex">\[ S(p) = \frac{T_1}{T_p} = p \]</div>
 <p><strong>内存共享方式</strong></p>
 <ol>
 <li>
@@ -2030,7 +2030,7 @@ T_p = \sum_{i=1}^{D} \left\lceil \frac{W_i}{p} \right\rceil = \sum_{i=1}^{D} \le
 <div class="arithmatex">\[
 B[l] &lt; A[i] &lt; B[l+1]
 \]</div>
-<p>的位置，那么 <span class="arithmatex">\( B \)</span> 中有 <span class="arithmatex">\( l+1 \)</span> 个元素在合并后的 <span class="arithmatex">\( C \)</span> 中位于 <span class="arithmatex">\( A[i] \)</span> 前面。因此此时 <span class="arithmatex">\( A[i] \)</span> 在 <span class="arithmatex">\( C \)</span> 中的位置就是 <span class="arithmatex">\( C[i + j + 1] \)</span>，这样它前面就有 <span class="arithmatex">\( i + (l + 1) \)</span> 个元素。对 <span class="arithmatex">\( B \)</span> 中的元素 <span class="arithmatex">\( B[k] \)</span> 也有类似的分析。</p>
+<p>的位置，那么 <span class="arithmatex">\( B \)</span> 中有 <span class="arithmatex">\( l+1 \)</span> 个元素在合并后的 <span class="arithmatex">\( C \)</span> 中位于 <span class="arithmatex">\( A[i] \)</span> 前面。因此此时 <span class="arithmatex">\( A[i] \)</span> 在 <span class="arithmatex">\( C \)</span> 中的位置就是 <span class="arithmatex">\( C[i + l + 1] \)</span>，这样它前面就有 <span class="arithmatex">\( i + (l + 1) \)</span> 个元素。对 <span class="arithmatex">\( B \)</span> 中的元素 <span class="arithmatex">\( B[k] \)</span> 也有类似的分析。</p>
 </div>
 <figure>
   <img alt="Image title" src="../merge.png" width="80%" />

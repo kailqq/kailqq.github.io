@@ -1960,7 +1960,7 @@
 <div class="arithmatex">\[
     \hat{c_i}=c_i+1-k=2
 \]</div>
-<p>故单步操作复杂度为<span class="arithmatex">\(O(n)\)</span></p>
+<p>故单步操作复杂度为<span class="arithmatex">\(O(1)\)</span></p>
 </div>
 <h2 id="_3">二项堆的代码实现<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>因为每个结点的孩子数量可能不只有2个，因此我们使用LeftChild和NextSibling的组合实现。直观上来看用LeftChild和NextSibling是让二项树翻转了：原先是根的子树从左到右高度依次增大，现在依次减小了。并且为了方便索引每棵二项树，我们用一个数组存储每棵二项树的根，其中数组的索引就对应二项树的高度</p>
