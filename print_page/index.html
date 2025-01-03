@@ -3294,7 +3294,7 @@ Dividend  = quotient \times Divisor + Reminder
 </div>
 <div class="admonition key-point">
 <p class="admonition-title">Key-point</p>
-<p>总的来说，G位如果大于进制的一半，则看它的下一位R位，如果R位大于0了，那么进位，如果为0，那么看S位，如果S位大于0，那么进位。如果RS位都是0了，那么选择最近的偶数来进位。(LSB是奇数，进位；LSB是偶数，舍去屁股后面的)</p>
+<p>总的来说，G位如果等于进制的一半，则看它的下一位R位，如果R位大于0了，那么进位，如果为0，那么看S位，如果S位大于0，那么进位。如果RS位都是0了，那么选择最近的偶数来进位。(LSB是奇数，进位；LSB是偶数，舍去屁股后面的)</p>
 </div>
 <p>损失不会超过 0.5 个 ulp. </p>
 <h2 id="note-co-wk2-instruction">instruction<a class="headerlink" href="#note-co-wk2-instruction" title="Permanent link">&para;</a></h2>
@@ -11762,7 +11762,7 @@ R^2 &lt; \frac{4L}{C}
 <div class="arithmatex">\[
     \begin{cases}
     \oiint \boldsymbol{B} \cdot \boldsymbol{dS} = q_m \\
-    \oint \boldsymbol{E} \cdot \boldsymbol{dl} = \dfrac{dq_m}{dt}= -\oiint \dfrac{\partial \boldsymbol{B}}{\partial t} \cdot \boldsymbol{dS}
+    \oint \boldsymbol{E} \cdot \boldsymbol{dl} = \dfrac{dq_m}{dt} -\oiint \dfrac{\partial \boldsymbol{B}}{\partial t} \cdot \boldsymbol{dS}
     \end{cases} 
 \]</div>
 <h2 id="note-physics-maxwell-stokez">Stokez公式与麦克斯韦方程<a class="headerlink" href="#note-physics-maxwell-stokez" title="Permanent link">&para;</a></h2>
@@ -12213,7 +12213,7 @@ U = U_E + U_B
     <img src="../NOTE/Physics/img/mx10.png" width=60%/>
 </div>
 
-<p>首先假设其有一个力<span class="arithmatex">\(\Delta F\)</span>，那么这个力会使电荷做功，即<span class="arithmatex">\(\Delta W = \Delta F \cdot \Delta l\)</span>;而这一部分功就是这个物体吸收的净能量;</p>
+<p>首先假设其有一个力<span class="arithmatex">\(\Delta F\)</span>，那么这个力会对电荷做功，即<span class="arithmatex">\(\Delta W = \Delta F \cdot \Delta l\)</span>;而这一部分功就是这个物体吸收的净能量;</p>
 <div class="arithmatex">\[
 \Delta \boldsymbol{F} \cdot c \Delta t = (\boldsymbol{S_{in}} - \boldsymbol{S_{out}}) \cdot \Delta A \Delta t
 \]</div>
