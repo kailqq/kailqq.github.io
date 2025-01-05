@@ -234,7 +234,7 @@
 
 .card_stack .description {
   color: var(--md-primary-fg-color);
-  font-size: clamp(0.02em, 1.2em, 1.2em);
+  font-size: 1em;
   text-align: center;
   border-radius: 5px;
   padding: 10px;
