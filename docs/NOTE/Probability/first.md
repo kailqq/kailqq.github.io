@@ -2,8 +2,12 @@
 comments: true
 ---
 
+
+
 # 事件及其概率
 
+!!!Quote
+    本章节部分内容参考了[周学长的blog](https://zhoutimemachine.github.io/note/courses/probability/)
 
 ## 随机现象域统计规律性
 
@@ -182,7 +186,7 @@ $A_g=\{\text{任取样本点，位于区域 }g\in\Omega\text{ 的概率}\}$
 - 相等
 - 并(至少一个发生)
 - 交(同时发生)
-- 差($A \ B$,$A$发生但$B$不发生$A \ B = A\overline{B}$)
+- 差($A$ 差 $B$,$A$发生但$B$不发生$A$差$B = A\overline{B}$)
 - 互不相容($A\cap B = \emptyset $)
 - 互逆事件($A \cap B = \emptyset $ 且 $A \cup B = \Omega$)
 
@@ -227,7 +231,7 @@ $A_g=\{\text{任取样本点，位于区域 }g\in\Omega\text{ 的概率}\}$
 \mathcal{F}_2 = \{ \Omega \text{的一切子集} \}+
 \]  
 
-也是$\sigma$-代数，所以要适当选择。特别地，若Ω为有限或可列个样本点组成，则常取Ω的一切子集所成的集类作为  
+也是$\sigma$-代数，所以要适当选择。特别地，若$\Omega$为有限或可列个样本点组成，则常取$\Omega$的一切子集所成的集类作为  
 
 \[
 \mathcal{F}
@@ -239,12 +243,12 @@ $A_g=\{\text{任取样本点，位于区域 }g\in\Omega\text{ 的概率}\}$
 
 若$\Omega = \mathbf{R}^{n}$n维实数全体），则常取一切左开右闭有界n维矩形和它们的（有限或可列）并、（有限或可列）交、逆所成的集的全体为\(\mathcal{F}\)（通常记为\(\mathcal{B}^n\)），它包含了我们感兴趣的所有情形，称为n维波雷尔$\sigma$-代数。
 
-如果我们对Ω的某个子集类\(\mathcal{C}\)感兴趣，所选的事件域\(\mathcal{F}\)可以是包含\(\mathcal{C}\)的最小$\sigma$-代数，这种$\sigma$-代数是存在的，因为：
+如果我们对$\Omega$的某个子集类\(\mathcal{C}\)感兴趣，所选的事件域\(\mathcal{F}\)可以是包含\(\mathcal{C}\)的最小$\sigma$-代数，这种$\sigma$-代数是存在的，因为：
 
 1. 至少有一个包含\(\mathcal{C}\)的$\sigma$-代数，即上述\(\mathcal{F}_2\)；
 2. 若有很多包含\(\mathcal{C}\)的$\sigma$-代数，则它们的交也是$\sigma$-代数，且就是最小的。
 
-特别地，如果我们只对Ω的一个子集A感兴趣，则包含A的最小$\sigma$-代数就是  
+特别地，如果我们只对$\Omega$的一个子集A感兴趣，则包含A的最小$\sigma$-代数就是  
 
 \[
 \mathcal{F} = \{ \emptyset, A, A^c, \Omega \}.
@@ -350,7 +354,7 @@ P(A_1 \cup A_2 \cup \ldots \cup A_n) \leqslant \sum_{i=1}^{n} P(A_i).
 \]
 
 
-### 1.3.3 概率测度的连续性
+### 概率测度的连续性
 
 给定一概率空间 \((\Omega, \mathcal{F}, P)\)，假设 \(A_1, A_2, \ldots\) 是一列单调增加的事件序列，即
 
@@ -360,9 +364,6 @@ A_1 \subset A_2 \subset \cdots \subset A_n \subset \cdots
 
 记 \(A = \bigcup_{n=1}^{\infty} A_n\)，称 \(A\) 为 \(A_n\) 的极限。从公理化定义可以看出，\(A\) 仍然是一个事件。下面定理给出该事件的概率大小。
 
-
-
-#### 定理 1.1
 
 如果 \(A_1, A_2, \ldots\) 是一列单调增加的事件序列，具有极限 \(A\)，那么，
 
@@ -391,8 +392,11 @@ P(A) = \lim_{n \to \infty} P(A_n) .
 
     为事件 \(A_n\) 的下极限。
     
-对于上极限，是事件的先并后交，相当于是所有并集的交集，**其中包含了无穷多个集合** 对于下极限，是事件的先交后并，相当于是所有交集的并集，**只有有限个集合包含下极限**。
+    其实理解起来也是不困难的，对于上极限
 
+    可以设$B_n=\bigcup_{k=n}^{\infty} A_k$，则$B_1\supset B_2 \supset \cdots$，即$B_n$是单调递减的(因为参与并的集合越来越少了)，我们取这个单调递减的序列的交(也就相当于取极限,从最大的开始不断剔除里面多余的元素)，就是上极限
+
+    而对于下极限，我们可以设$C_n=\bigcap_{k=n}^{\infty} A_k$，则$C_1\subset C_2 \subset \cdots$，即$C_n$是单调递增的(因为参与交的集合越来越少了)，我们取这个单调递增的序列的并(也就相当于取极限,从最小的开始不断添加里面缺失的元素)，就是下极限
 
 !!!Example
     \begin{align*}
@@ -400,7 +404,7 @@ P(A) = \lim_{n \to \infty} P(A_n) .
        A_2 &=\{2,3,4\} \\
        A_3 &=\{3,4\} \\
        A_4 &=\{2，4\} \\
-       A_k &=\{4\} \enspace k \geqslant 4 \\
+       A_k &=\{2,3,4\} 或者 \{3,4\} 或者 \{2,4\} \enspace k \geqslant 4 \\
     \end{align*}
 
     则有
@@ -433,7 +437,7 @@ $$
         P\left(\prod_{i=i}^nA_i\right)=\prod_{i=1}^n P\left(A_i\bigg|\prod_{j=1}^{i-1}A_j\right)
     $$
 
-    特别定义 $a>b$ 时，$\prod_{i=a}^bA_i$ 为必然事件。或者这样写可能更容易看懂：
+    特别定义 $a>b$ 时，$\prod_{i=a}^bA_i$ 为必然事件。
 
     $$
         P\left(A_{1} A_{2} \cdots A_{n}\right) =

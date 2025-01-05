@@ -17,7 +17,7 @@ comments: true
 
     还要求 $\xi(\omega)$ 的任意取值组合对应的样本点集合构成的事件在事件域 $\mathcal{F}$ 中，这样就可以称 $\xi(\omega)$ 为 **随机变量 (random variable)**
 
-    即将$\xi$看成一个函数，我们希望它的值域$A(\in R)$也满足事件的运算，所以要求它是博雷尔集,落在博雷尔域$\mathcal{B}$中
+    即将$\xi$看成一个函数，我们希望它的值域集合$A(\in R)$也满足事件的运算，所以要求它是博雷尔集,落在博雷尔域$\mathcal{B}$中，即从事件域$\mathcal{F}$到事件域的映射，由于原$\Omega$中的样本点映射到了$\mathbb R$中，所以映射之后的事件域称为波列尔域$\mathcal{B}$
 
 
 ### 离散型随机变量
@@ -63,6 +63,8 @@ comments: true
         \end{matrix}
         \right]
         $$
+
+        即样本空间的所有点都映射到一个确定的实数上，概率为1
 
     === "两点分布"
         即 **伯努利分布** ，Bernoulli distribution
@@ -280,7 +282,7 @@ X \sim \begin{pmatrix} x_1 & x_2 & \dots & x_i & \dots \\ p_1. & p_2. & \dots & 
 其中
 
 \[
-p_i = \sum_{j=1}^{\infty} p_{ij}, \quad p_i \geq 0, \quad \sum_{i=1}^{\infty} p_i = 1
+p_{i.} = \sum_{j=1}^{\infty} p_{ij}, \quad p_{i.} \geq 0, \quad \sum_{i=1}^{\infty} p_{i.} = 1
 \]
 
 类似地，
@@ -320,7 +322,7 @@ P(Y = y_j | X = x_i) = \frac{p_{ij}}{p_i}
 #### 条件分布列
 
 \[
-Y | X = x_i \sim \begin{pmatrix} y_1 & y_2 & \dots & y_j & \dots \\ \frac{p_{i1}}{p_i} & \frac{p_{i2}}{p_i} & \dots & \frac{p_{ij}}{p_i} & \dots \end{pmatrix}
+Y | (X = x_i) \sim \begin{pmatrix} y_1 & y_2 & \dots & y_j & \dots \\ \frac{p_{i1}}{p_i} & \frac{p_{i2}}{p_i} & \dots & \frac{p_{ij}}{p_i} & \dots \end{pmatrix}
 \]
 
 同理也可以得到 $X|Y$ 的条件分布
@@ -719,7 +721,7 @@ F_{\mathbf{X}}(\mathbf{x}) = \prod_{i=1}^{m} F_{X_i}(x_i), \quad \forall \mathbf
             \]
 
             \[
-            = -\int_{-\infty}^z \int_{-\infty}^0 \frac{1}{x} p\left(x, \frac{y}{x}\right) \, dx \, du + \int_0^{\infty} \int_0^z \frac{1}{x} p\left(x, \frac{y}{x}\right) \, dx \, du
+            = -\int_{\infty}^z \int_{-\infty}^0 \frac{1}{x} p\left(x, \frac{u}{x}\right) \, dx \, du + \int_0^{\infty} \int_0^z \frac{1}{x} p\left(x, \frac{u}{x}\right) \, dx \, du
             \]
 
 
@@ -730,6 +732,8 @@ F_{\mathbf{X}}(\mathbf{x}) = \prod_{i=1}^{m} F_{X_i}(x_i), \quad \forall \mathbf
             \[
             = \int_{-\infty}^{\infty} \frac{1}{|x|} p\left(x, \frac{z}{x}\right) \, dx
             \]
+
+            推导过程中不管$z$是正还是负，积分区域总能这样划分
 
         
         === "$\eta=\dfrac{\xi_1}{\xi_2}$"
@@ -752,6 +756,8 @@ F_{\mathbf{X}}(\mathbf{x}) = \prod_{i=1}^{m} F_{X_i}(x_i), \quad \forall \mathbf
             \[
             p_{\eta}(z) = \int_{-\infty}^{\infty} p(z x, x) |x| \, dx.
             \]
+
+            推导过程中不管$y$是正还是负，积分区域总能这样划分
 
         === "次序统计量的分布"
             设 \( \xi_1, \xi_2, \dots, \xi_n \) 独立同分布，分布函数都为 \( F(x) \)。把 \( \xi_1, \xi_2, \dots, \xi_n \) 每取一组值 \( \xi_1(\omega), \xi_2(\omega), \dots, \xi_n(\omega) (\omega \in \Omega) \) 都按大小次序排列，所得随机变量 \( \xi_{(1)}, \xi_{(2)}, \dots, \xi_{(n)} \) 称为 **次序统计量**  (order statistics)，它们满足 \( \xi_{(1)} \leq \xi_{(2)} \leq \dots \leq \xi_{(n)} \)。按定义，\( \xi_{(1)} = \min(\xi_1, \xi_2, \dots, \xi_n) \)，\( \xi_{(n)} = \max(\xi_1, \xi_2, \dots, \xi_n) \)。
@@ -936,6 +942,12 @@ J = \left| \begin{array}{cc} \frac{\partial f_1^{-1}(u, v)}{\partial u} & \frac{
         \[
         \Sigma = \begin{pmatrix} \sigma_1^2 & \rho\sigma_1\sigma_2 \\ \rho\sigma_1\sigma_2 & \sigma_2^2 \end{pmatrix}
         \]
+        
+        \[
+            \Sigma^{-1} =A \begin{pmatrix} \dfrac{1}{\sigma_1^2} & -\dfrac{\rho}{\sigma_1\sigma_2} \\ -\dfrac{\rho}{\sigma_1\sigma_2} & \dfrac{1}{\sigma_2^2} \end{pmatrix}
+        \]
+
+        其中A为\(\dfrac{1}{1-\rho^2}\)的一个数乘矩阵
 
         那么联合正态分布的密度函数为
 
@@ -1011,7 +1023,7 @@ J = \left| \begin{array}{cc} \frac{\partial f_1^{-1}(u, v)}{\partial u} & \frac{
     
     !!!key-point
         即$(U,V)$的协方差矩阵为$A \Sigma A^{\mathrm{T}}$, 均值为$A\boldsymbol{\mu}$;
-        总结而言，对于$(X,Y)$的联合正态分布做线性变换，新的随机向量仍然是联合正态分布，且均值也做了相应的线性变换，协方差矩阵做了相应的**合同变换**，但是转置在后面。
+        总结而言，对于$(X,Y)$的联合正态分布做线性变换，新的随机向量仍然是联合正态分布，且均值也做了相应的线性变换，协方差矩阵做了相应的 **变换** ，但是转置在后面。
 
     
     如果做极坐标变换
@@ -1026,7 +1038,7 @@ J = \left| \begin{array}{cc} \frac{\partial f_1^{-1}(u, v)}{\partial u} & \frac{
     **联合密度函数**：
 
     \[
-       p(\rho, \theta) = \frac{1}{2\pi} e^{-\frac{1}{2}((\rho \cos \theta)^2 + (\rho \sin \theta)^2)\rho}
+       p(\rho, \theta) = \frac{1}{2\pi} e^{-\frac{1}{2}((\rho \cos \theta)^2 + (\rho \sin \theta)^2)} \rho
     \]
     
        可以简化为：
@@ -1125,7 +1137,7 @@ J = \left| \begin{array}{cc} \frac{\partial f_1^{-1}(u, v)}{\partial u} & \frac{
 
         - 要判断随机变量的几个函数是否独立，可用随机变量变换求得它们的联合分布，再用独立性的各种必要条件来判断；
 
-        - 要求随机变量的一个函数的分布，有时可作适当补充，先求它们的联合分布，而后要求的函数的分布则作为其边际分布。
+        - 要求随机变量的一个函数的分布，有时可作适当补充，先求它们的联合分布，而后要求的函数的分布则作为求其边际分布。
 
         所以对于我们前面讨论的单元函数，也可以将其补全为多元，再计算边际分布，例如对于$\alpha = \xi + \eta$，我们可以将其补全为$(\alpha,\beta) = (\xi + \eta, \eta)$，再计算$(\alpha,\beta)$的联合分布，最后求出$\alpha$的边际分布，这与我们前面的结果是一样的
 

@@ -22,7 +22,7 @@
 - 法拉第电磁感应定律
 
 \[
-    \oint \boldsymbol{E} \cdot \boldsymbol{dl} = -\frac{d\Phi_B}{dt} = -\oiint \frac{\partial \boldsymbol{B}}{\partial t} \cdot \boldsymbol{dS}
+    \oint \boldsymbol{E} \cdot \boldsymbol{dl} = -\frac{d\Phi_B}{dt} = -\iint \frac{\partial \boldsymbol{B}}{\partial t} \cdot \boldsymbol{dS}
 \]
 
 - 安培环路定理
@@ -58,7 +58,7 @@
 \[
     \begin{cases}
     \oiint \boldsymbol{B} \cdot \boldsymbol{dS} = q_m \\
-    \oint \boldsymbol{E} \cdot \boldsymbol{dl} = \dfrac{dq_m}{dt}= -\oiint \dfrac{\partial \boldsymbol{B}}{\partial t} \cdot \boldsymbol{dS}
+    \oint \boldsymbol{E} \cdot \boldsymbol{dl} = \dfrac{dq_m}{dt} -\oiint \dfrac{\partial \boldsymbol{B}}{\partial t} \cdot \boldsymbol{dS}
     \end{cases} 
 \]
 
@@ -686,7 +686,7 @@ U = U_E + U_B
     <img src="../img/mx10.png" width=60%/>
 </div>
 
-首先假设其有一个力$\Delta F$，那么这个力会使电荷做功，即$\Delta W = \Delta F \cdot \Delta l$;而这一部分功就是这个物体吸收的净能量;
+首先假设其有一个力$\Delta F$，那么这个力会对电荷做功，即$\Delta W = \Delta F \cdot \Delta l$;而这一部分功就是这个物体吸收的净能量;
 
 \[
 \Delta \boldsymbol{F} \cdot c \Delta t = (\boldsymbol{S_{in}} - \boldsymbol{S_{out}}) \cdot \Delta A \Delta t
@@ -718,17 +718,17 @@ U = U_E + U_B
     \Delta g  = \dfrac{F \cdot \Delta t}{\Delta A c \Delta t} = \dfrac{F}{c \Delta A} = \dfrac{1}{c^2}(\boldsymbol{S_{in}} - \boldsymbol{S_{out}})
 \]
 
-$g_in=\dfrac{1}{c^2}S_{in}$ 为入射光的动量密度，$g_out=\dfrac{1}{c^2}S_{out}$ 为反射光的动量密度
+$g_{in}=\dfrac{1}{c^2}S_{in}$ 为入射光的动量密度，$g_{out}=\dfrac{1}{c^2}S_{out}$ 为反射光的动量密度
 
 
 !!!key-point
-    对于白体，$S_{in}=S_{out}$，故$g_in=g_out$
+    对于白体，$S_{in}=S_{out}$，故$g_{in}=g_{out}$
     
     \[
         P = \dfrac{2}{c} \boldsymbol{S_{in}}
     \]
     
-    对于黑体，$S_{out}=0$，故$g_in=\dfrac{1}{c^2}S_{in}$
+    对于黑体，$S_{out}=0$，故$g_{in}=\dfrac{1}{c^2}S_{in}$
 
     \[
         P = \dfrac{1}{c} \boldsymbol{S_{in}}

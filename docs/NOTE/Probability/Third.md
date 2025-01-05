@@ -504,7 +504,7 @@ P(|X - EX| > \varepsilon) = \int_{x: |x - EX| > \varepsilon} p(x) \, dx
 
 
 !!!Example
-    二元联合正态分布的协方差为$\pho$
+    二元联合正态分布的协方差为$\rho \sigma_1 \sigma_2$
 
 ### 相关系数
 
@@ -1014,8 +1014,7 @@ F_X(x) = F_Y(x), \quad \forall x \in \mathbb{R}
     \]
 
 
-
-    取$x_1$为负无穷,并求导，得到以下推论：
+    有推论:
 
     如果 \( X \) 的特征函数 \( \varphi(t) \) 绝对可积，即
 
@@ -1103,4 +1102,182 @@ $$
     \end{align*}
     \]
     
-      
+    这里最后一个等号是运用了 $\phi_{U,V}$特征函数的变量替换和转置的性质；
+
+    这种变换的方式很好用，可以把标准联合正态分布的相关系数变为0；
+    
+    !!!info  "多元随机向量的特征函数"
+        
+        设$\mathbf{X}$是一个多元随机向量,$\mathbf{t}=(t_1,t_2,\ldots,t_n) \in \mathbb{R}^n$,定义
+
+        \[
+        \varphi_{\mathbf{X}}(\mathbf{t}) = Ee^{i\mathbf{t}\cdot\mathbf{X}}
+        \]
+
+        即两者做内积的期望;
+
+
+## 常见分布
+
+至今为止,概率论的数字特征部分已经结束,开始概率极限理论的学习之前,在此总结一下苏老师课上提到过的各种分布的表达,密度函数(或概率),期望,方差,特征函数;
+
+=== "退化分布"
+     退化分布,为离散型随机变量,取某个值的概率为1,其余取值的概率为0;
+
+     $$
+     P(X=a)=1
+     $$
+     
+
+     期望为$E(X)=a$,方差为$Var(X)=0$,特征函数为$e^{ita}$;
+
+=== "两点分布"
+    即 **伯努利分布** ，Bernoulli distribution,离散型
+
+    $$
+    \left[
+    \begin{matrix}
+    1&0\\
+    p&1-p
+    \end{matrix}
+    \right],p\in (0,1)
+    $$
+
+    可以记为$X\sim B(1,p)$;
+
+    期望为$E(X)=p$,方差为$Var(X)=p(1-p)$,特征函数为$pe^{it}+1-p$;
+
+=== "二项分布"
+    即 binomial distribution，离散型
+
+
+    $$
+    P(\xi=k)=\begin{pmatrix}
+        n\\k
+    \end{pmatrix}
+    p^k(1-p)^{n-k},p\in (0,1),k=0,1,\cdots,n
+    $$
+
+    记为 $\xi\sim B(n,p)$
+
+    期望为$E(X)=np$,方差为$Var(X)=np(1-p)$,特征函数为$(pe^{it}+1-p)^n$;
+
+=== "泊松分布"
+    即 Poisson distribution，离散型
+   
+    $$
+    P(\xi=k)=\frac{\lambda^k}{k!}e^{-\lambda}
+    ,\lambda>0,k\in \mathbb N
+    $$
+
+    记为 $\xi\sim\mathcal{P}(\lambda)$
+    
+    期望和方差均为$\lambda$,特征函数为$e^{\lambda(e^{it}-1)}$,使用凑成泰勒展开推导;
+
+=== "几何分布"
+    即 geometry distribution,一般用于解决第一次成功的问题,离散型
+
+    $$
+    P(\xi=k)=p(1-p)^{k-1},p\in (0,1),k\in \mathbb{N}_+
+    $$
+
+    可以记为$X\sim G(p)$;(Geometric distribution)
+
+    期望为$E(X)=\frac{1}{p}$,方差为$Var(X)=\frac{1-p}{p^2}$,特征函数为$\frac{pe^{it}}{1-(1-p)e^{it}}$;推导过程是等比数列求和.
+
+=== "超几何分布"
+    即 hypergeometry distribution，一般用于解决次品抽样问题,离散型
+
+    $$
+    P(\xi=k)=\frac{\displaystyle
+    \begin{pmatrix}
+        M\\k
+    \end{pmatrix}
+    \begin{pmatrix}
+        N-M\\n-k
+    \end{pmatrix}
+        }{\displaystyle
+    \begin{pmatrix}
+        N\\n
+    \end{pmatrix}}
+    ,n\leqslant N,M\leqslant N,k=0,1,\cdots, \min\{n,M\}
+    $$
+
+    可以记为$X\sim H(N,M,n)$;(Hypergeometry distribution)
+
+    期望为$E(X)=\frac{nM}{N}$,方差为$Var(X)=\frac{nM}{N}(1-\frac{M}{N})(\frac{N-n}{N-1})$,特征函数似乎没见过;
+
+=== "均匀分布"
+    即 uniform distribution,连续型,有密度函数
+
+    $$
+    f(x)=\begin{cases}
+    \frac{1}{b-a},&a<x<b\\
+    0,&x\leqslant a \text{ or } x\geqslant b
+    \end{cases}
+    $$
+
+    记为$X\sim U(a,b)$;
+
+    数学期望为$E(X)=\frac{a+b}{2}$,方差为$Var(X)=\frac{(b-a)^2}{12}$,特征函数为$\frac{e^{itb}-e^{ita}}{it(b-a)}$;三者推导都是无情积分;
+
+=== "指数分布"
+    即 exponential distribution,连续型
+
+    $$
+    f(x)=\begin{cases}
+    \lambda e^{-\lambda x},&x\geqslant 0\\
+    0,&x<0
+    \end{cases}
+    $$
+
+    记为$X\sim E(\lambda)$;
+
+    数学期望为$E(X)=\frac{1}{\lambda}$,方差为$Var(X)=\frac{1}{\lambda^2}$,特征函数为$\frac{\lambda}{\lambda-it}$;
+
+=== "正态分布"
+    即 normal distribution,连续型,有密度函数
+
+    $$
+    f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+    $$
+
+    记为$X\sim N(\mu,\sigma^2)$;
+
+    数学期望为$E(X)=\mu$,方差为$Var(X)=\sigma^2$,特征函数为$e^{i\mu t-\frac{1}{2}\sigma^2 t^2}$;
+    特别地，$X\sim N(0,1)$称为标准正态分布;其特征函数为$e^{-\frac{1}{2}t^2}$;
+
+
+=== "卡方分布"
+     若$\xi_1,\xi_2,\cdots,\xi_n$独立同分布于标准正态分布$N(0,1)$,则称$\xi_1^2+\xi_2^2+\cdots+\xi_n^2$服从卡方分布,为连续型
+
+     有密度函数
+
+    $$
+     f(x)=\frac{1}{2^{\frac{v}{2}}\Gamma(\frac{v}{2})}x^{\frac{v}{2}-1}e^{-\frac{x}{2}}
+    $$
+
+     记为$\chi^2 \sim \chi^2(v)$;
+     
+    $v$ 为自由度,指的是自由变量的个数($n-r$),$r$ 为约束条件的个数;
+
+
+    期望为$E(\chi^2)=v$,方差为$Var(\chi^2)=2v$,特征函数为$(1-2it)^{-\frac{v}{2}}$;
+
+    记忆较为繁琐,可以只记住伽马分布即可;
+
+
+=== "Gamma分布"
+    即 Gamma distribution,连续型,有密度函数
+
+    $$
+    f(x)=\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}
+    $$
+
+    记为$X\sim \Gamma(\alpha,\lambda)$;
+
+    期望为$E(X)=\frac{\alpha}{\lambda}$,方差为$Var(X)=\frac{\alpha}{\lambda^2}$;
+
+    特征函数为$(1-\dfrac{it}{\lambda})^{-\alpha}$;
+
+    可以看到令$\lambda=\dfrac{1}{2},\alpha=\dfrac{v}{2}$时,$\Gamma$分布即为$\chi^2$分布;

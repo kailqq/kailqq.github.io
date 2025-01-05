@@ -793,6 +793,7 @@ $t=0$,$i_0=\dfrac{\varepsilon}{R}$
 
 !!!key-point
     磁场的能量密度
+    
     \[
         u_m = \dfrac{1}{2\mu_0}B^2
     \]

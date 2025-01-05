@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 概率极限理论
 
 
@@ -356,6 +360,9 @@ F_n(x) \to F(x), \quad n \to \infty
 
 !!!info "依概率收敛与依分布收敛的关系"
     === "依概率收敛意味着依分布收敛"
+
+        证明的关键在于构造夹逼项;
+        
         如果 \( \xi_n \xrightarrow{P} \xi \)，那么 \( \xi_n \xrightarrow{d} \xi \)
 
         假设 \(F\) 和 \(F_n\) 分别是 \(\xi\) 和 \(\xi_n\) 的分布函数，那么对任意给定 \(\epsilon > 0\)，有
@@ -548,6 +555,26 @@ F_n(x) \to F(x), \quad n \to \infty
 
         结论成立
 
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">线性性的手写证明</div>
+<div class="file-meta"></div>
+</div>
+<a class="down-button" target="_blank" href="../prob.pdf"  markdown="1">:fontawesome-solid-download: 查看</a>
+</div>
+
+!!!idea "心得"
+    在证明这些性质时常用的放缩有
+
+    - $P( a < A) \leqslant P( b < A ) (b<a)$ 大的发生(小于A)，小的一定也发生
+
+    - $P(a > A) \leqslant P(b > A) (b > a)$ 小的发生(大于A)，大的一定也发生
+
+    - $P(A_n) \leqslant P(A_n,B_n)+P(A_n,B_n^c)$,至少有一个发生
+
+    - $P(A_n) \geqslant P(A_n,B_n)$ 条件加强，概率变小,反过来使用就是条件减弱，概率变大
+
 ## Levy-Feller 中心极限定理
 
 - Levy-Feller 中心极限定理
@@ -604,6 +631,19 @@ P\left(\frac{\sum_{k=1}^{n} (\xi_k - \mu_k)}{\sqrt{B_n}} \leqslant x\right) \to 
     - 推广了 Levy-Feller 中心极限定理。
 
     - 解决了不同分布的随机变量和的中心极限问题。
+    
+    - Lyapunov  条件可以推出 Lindeberg 条件
+
+    !!!info "Lindeberg 条件"
+         假设 \(\{\xi_n\}\) 是独立随机变量序列，\(F_k\) 为对应分布函数，且每个变量有有限期望和方差 \(a_k, \sigma_k^2\)。
+
+        记 \(B_n^2 = \sum_{k=1}^{n} \sigma_k^2\)。
+
+        Lindeberg 条件为：
+
+        \[
+        \lim_{n \to \infty} \frac{1}{B_n^2} \sum_{k=1}^{n} \int_{|x-a_k| \geq \epsilon B_n} (x-a_k)^2 dF_k(x) = 0
+        \]
 
 
 

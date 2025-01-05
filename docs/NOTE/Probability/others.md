@@ -67,3 +67,5 @@ S(n, m) = m \cdot S(n-1, m) + S(n-1, m-1)
     n! \approx \sqrt{2\pi n} \left( \frac{n}{e} \right)^n
 \]
 
+
+

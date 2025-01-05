@@ -423,8 +423,8 @@ y \approx o \cdot \theta, \, -y' = i \cdot \theta'
 
 \[
 \begin{cases} 
-\frac{f_1'}{i_1} + \frac{f_1}{o_1} = 1 \tag{1} \\ 
-\frac{f_2'}{i_2} + \frac{f_2}{o_2} = 1 \tag{2}
+\frac{f_1'}{i_1} + \frac{f_1}{o_1} = 1  \\ 
+\frac{f_2'}{i_2} + \frac{f_2}{o_2} = 1 
 \end{cases}
 \]
 
@@ -476,7 +476,7 @@ $o_2$是Q经过第一个球面镜的虚像像距,所以
 \]
 
 \[
-    f = \frac{f_1 f_2}{f_1 + f_2}
+    f = \frac{f_1 f_2}{f_1' + f_2}
 \]
 
 ####  磨镜者公式(Lens Maker's Equation)
@@ -486,7 +486,7 @@ f' = \frac{f_1' f_2'}{f_1' + f_2} = \frac{\frac{n_L}{n_L - n} \cdot \frac{n'}{n'
 \]
 
 \[
-f = \frac{f_1 f_2}{f_1 + f_2} = \frac{\frac{n}{n_L - n} \cdot \frac{n_L}{n' - n_L} r_1 r_2}{\frac{n}{n_L - n} r_1 + \frac{n_L}{n' - n_L} r_2} = \frac{n}{\frac{n_L - n}{r_1} + \frac{n' - n_L}{r_2}}
+f = \frac{f_1 f_2}{f_1' + f_2} = \frac{\frac{n}{n_L - n} \cdot \frac{n_L}{n' - n_L} r_1 r_2}{\frac{n_L}{n_L - n} r_1 + \frac{n_L}{n' - n_L} r_2} = \frac{n}{\frac{n_L - n}{r_1} + \frac{n' - n_L}{r_2}}
 \]
 
 
@@ -560,6 +560,8 @@ m = m_1 m_2 = \dfrac{n i_1}{n_L o_1} \cdot \dfrac{n_L i_2}{n' o_2} = \dfrac{n i_
 D = \dfrac{1}{f}
 \]
 
+眼镜度数定义为100D；
+
 
 
 ### 人眼成像
@@ -593,7 +595,7 @@ D = \dfrac{1}{f}
 </div>
 
 \[
-    \tan \theta = \frac{d_0}{N} \sim \theta = \frac{d_0}{N}
+    \tan \theta = \frac{h_0}{N} \sim \theta = \frac{h_0}{N}
 \]
 
 
@@ -669,7 +671,7 @@ E = E_1 + E_2
 </div>
 
 - 同相位：$\Delta \varphi = 0$,相干，in phase
-- 反相位：$\Delta 
+- 反相位：$\Delta \varphi = \pi$，out of phase
 
 
 !!!Note "复平面矢量推导"
@@ -840,7 +842,7 @@ E = E_1 + E_2
     \end{cases}
 \]
 
-相邻明纹（或暗纹）间距
+相邻明纹（或暗纹）
 
 \[
     \Delta e = \frac{\lambda}{2n}
@@ -1316,7 +1318,7 @@ $$
     R = \dfrac{\lambda}{\Delta \lambda} = kN
     \]
 
-    即要分辨清楚第$k$级光谱，需要$N$条缝。这里的$\lambda$是平均波长，$\Delta \lambda$是波长偏移。
+    即要分辨清楚第$k$级谱线，需要$N$条缝。这里的$\lambda$是平均波长，$\Delta \lambda$是波长偏移。
 
 
 !!!answer "色散本领与分辨本领"
@@ -1420,7 +1422,7 @@ $$
         I_2 = I_1 \cos^2 \theta \cos^2(90^\circ - \theta) = I_1 \cos^2 \theta \sin^2 \theta
     \]
 
-    基本不等值可知，当$\theta = 45^\circ$时，透射光强最大。
+    基本不等式可知，当$\theta = 45^\circ$时，透射光强最大。
 
 
 #### 常见偏振态
@@ -1442,7 +1444,7 @@ $$
 </figure>
 如果两束等强正交线偏振光的相位差为$\dfrac{\pi}{2}+k \pi$，则其中一束光最大时，另一束光最小，周期性振动，合成的为圆偏振光。
 
-由相位超前的向相位落后的旋转(也很方便记忆，由先到达最大的向后到达最大的旋转)。
+由先到达最大的向后到达最大的旋转.
 
 
 **椭圆偏振光**
@@ -1631,7 +1633,7 @@ o光和e光沿着光轴方向传播时，速度相同，折射率相同，对于
 
 - 如果是线偏振光,则一开始将其分解为o光和e光的振动方向,原本的相位差为$k\pi$,通过QWP后,相位差为$k\pi+\dfrac{\pi}{2}$,所以合成后出射的光为圆偏振光。
 
-- 如果是圆偏振光,则通过QWP或者HWP后,相位差为$k\pi$。所以合成后出射的光为线偏振光。
+- 如果是圆偏振光,则通过QWP后,相位差为$k\pi$。所以合成后出射的光为线偏振光。
 
 
 !!!eg "例子"
@@ -1649,7 +1651,7 @@ o光和e光沿着光轴方向传播时，速度相同，折射率相同，对于
     E_y =-E_0 \cos (kz-\omega t)
     \]
 
-    即慢轴不变，快轴相当于前进了$\dfrac{3\pi}{2}$，相当于落后了$\dfrac{\pi}{2}$，所以合成后出射的光为圆偏振光。为RCP。
+    即慢轴不变，快轴变为$\sin(kz-\omega t-\dfrac{\pi}{2})$，所以合成后出射的光为圆偏振光。为RCP,注意，快轴领先，所以它会先到达最大，所以是减去，在图上看来也是如此,从缝里出来后，先遇到了快轴的最大($-y$方向上)，然后才是慢轴的最大。
 
     <div align=center>
         <img src="../img/light/light49.png" width="40%"/>
