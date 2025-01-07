@@ -8,6 +8,8 @@
 }
  */
 
-[data-md-color-scheme="slate"] {
-    --md-hue: 278; 
+  [data-md-color-scheme="theme"] {
+    --md-primary-fg-color: #FF8C00;
+    --md-primary-bg-color: #ffffff;
+    --md-card-color: #ffffff;
   }
