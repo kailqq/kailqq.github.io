@@ -222,7 +222,7 @@ comments: true
 
 !!!Note "3 $\sigma$ 原则"
     \[
-    0.6827 \quad 0.9545 \quad 0.99.73
+    0.6827 \quad 0.9545 \quad 0.9973
     \]
 
 

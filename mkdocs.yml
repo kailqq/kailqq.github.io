@@ -51,7 +51,7 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)" # 浅色
       scheme: theme
-      primary: blue-grey
+      primary: custom
       accent: pink
       toggle:
         icon: material/weather-night
@@ -111,19 +111,24 @@ extra:
   analytics: # 分析工具， 我反正没用到
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
-    # feedback: # feedback form
-    #   title: Do you like this page?
-    #   ratings:
-    #     - icon: material/thumb-up-outline
-    #       name: Man! What can I say
-    #       data: 1
-    #       note: >-
-    #         Thanks for your feedback!
-    #     - icon: material/thumb-down-outline
-    #       name: Mamba out!
-    #       data: 0
-    #       note: >- 
-    #         Thanks for your feedback!
+    feedback: # feedback form
+      ratings:
+        - icon: fontawesome/solid/star
+          name: 对您有帮助的话，给我一个star吧！
+          data: 5
+          note: >-
+            <div class="button" href="https://github.com/kailqq/kailqq.github.io" target="_blank">Give me a star⭐</div>
+
+        - icon: fontawesome/solid/mug-hot
+          name: 你想请我喝杯咖啡吗？
+          data: 1
+          note: >-
+                <div align="center">
+                <img src="static/images/pay.jpg" width="200" height="200" />
+                </div>
+
+                
+           
   social: # 社交媒体
     - icon: fontawesome/brands/github
       link: https://github.com/kailqq

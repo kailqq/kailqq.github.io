@@ -214,7 +214,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--md-default-fg-color);
+  background-color: var(--md-card-color);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s ease;
@@ -233,13 +233,15 @@
 }
 
 .card_stack .description {
-  color:var(--md-primary-fg-color);
-  font-size: clamp(0.02em, 1.2vw, 1.2em);
+  color: var(--md-primary-fg-color);
+  font-size: 1em;
   text-align: center;
   border-radius: 5px;
   padding: 10px;
   margin-top: auto;
   overflow-wrap: break-word;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .card_stack:nth-child(1) {
@@ -307,5 +309,21 @@
 
 .number:hover {
   background-color: #bbb;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f8f8f818;
+  color: #f8d4d4;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
 }
 
