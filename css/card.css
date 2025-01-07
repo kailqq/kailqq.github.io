@@ -311,3 +311,19 @@
   background-color: #bbb;
 }
 
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f8f8f818;
+  color: #f8d4d4;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
