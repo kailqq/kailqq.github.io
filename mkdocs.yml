@@ -55,14 +55,21 @@ theme:
       accent: pink
       toggle:
         icon: material/weather-night
-        name: 夜深了，my friend
+        name: 万籁俱寂
     - media: "(prefers-color-scheme: dark)" # 深色
       scheme: slate
       primary: black
-      accent: yellow
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: 萧瑟凌晨
+    - media: "(prefers-color-scheme: no-preference)" # 默认
+      scheme: simple
+      primary: custom
+      accent: indigo
       toggle:
         icon: material/weather-sunny
-        name: Hey,天亮了
+        name: 烈日灼心
 
     
   icon: # 一些用到的icon
