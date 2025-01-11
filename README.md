@@ -1,6 +1,6 @@
 # Welcome !!! 👋
 
-:point_right: www.kailqq.cc :point_left:
+:point_right: note.kailqq.cc :point_left:
 
 欢迎访问我的个人网站的 GitHub 仓库！这个仓库包含了我个人网站的所有源代码和相关资源。
 ## 简介
