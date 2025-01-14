@@ -37,4 +37,9 @@ nonstatistics: true
   content: 金将军！恩情！忠诚！！
   image: static/images/Clovers.png
   url: https://clovers2333.github.io/Clovers-Blog/
+
+- title: 沈檀
+  content: 是沈檀的妙妙屋哦
+  image: static/images/shentan.jpg
+  url: https://santal0.github.io/
 ::/cards::  

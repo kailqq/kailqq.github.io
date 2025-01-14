@@ -1,4 +1,4 @@
-# Welcome !!! 👋
+# 基于Mkdocs搭建的笔记网站👋
 
 :point_right: note.kailqq.cc :point_left:
 

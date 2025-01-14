@@ -25,7 +25,7 @@ comments: true
 !!!idea "Newton's Third Law"
     Case 1: 两电流元平行
     <div align="center">
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410232204374.png" width="30%"/>
+        <img src="../img/part3/1.png" width="30%"/>
     </div>
 
     \[
@@ -58,7 +58,7 @@ comments: true
 ## Biot-Savart Law
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410232218692.png" width="30%"/>
+    <img src="../img/part3/2.png" width="30%"/>
 </div>
 
 继续根据电场中的思想，引入试探电流源并定义 **磁感应强度**
@@ -95,7 +95,7 @@ comments: true
 ###  长直导线周围的磁场场
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410232229307.png" width="30%"/>
+    <img src="../img/part3/3.png" width="30%"/>
 </div>
 
 \begin{align*}
@@ -129,12 +129,12 @@ comments: true
 ### 圆电流轴线上的磁场
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410232305141.png" width="30%"/>
+    <img src="../img/part3/4.png" width="30%"/>
 </div>
 
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410232255157.png" width="30%"/>
+    <img src="../img/part3/5.png" width="30%"/>
 </div>
 
 其中由于对称性在与圆环平行的方向上，磁感应强度为零。
@@ -196,7 +196,7 @@ comments: true
 ### 电流平面产生的磁场
 
 <div align="center">
-    <img src ="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410241258154.png" width="30%"/>
+    <img src ="../img/part3/6.png" width="30%"/>
 </div>
 
 由于对称性，在只会在$x$方向上产生磁场
@@ -236,7 +236,7 @@ B_x = \frac{\mu_0 i}{2\pi aR} \int \cos^2 \theta dx = \frac{\mu_0 i}{2\pi a} \in
 在通电螺旋管内部，会产生匀强磁场
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410241320154.png" width="30%"/>
+    <img src="../img/part3/7.png" width="30%"/>
 </div>
 
 
@@ -263,7 +263,7 @@ B_x = \frac{\mu_0 i}{2\pi aR} \int \cos^2 \theta dx = \frac{\mu_0 i}{2\pi a} \in
 ### 多层通电螺线管产生的磁场
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410242125937.png" width="30%"/>
+    <img src="../img/part3/8.png" width="30%"/>
 </div>
 
 
@@ -297,7 +297,7 @@ $ni$ 为每一层单位长度的电流，
     毁了啊，secx的原函数都记不住:cry:
 
     <div align="center">
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410242152695.png" width="70%"/>
+        <img src="../img/part3/9.png" width="70%"/>
     </div>
 
 
@@ -310,7 +310,7 @@ $ni$ 为每一层单位长度的电流，
 
     !!!Proof 
         <div align="center">
-            <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410292004927.png" width="30%"/>
+            <img src="../img/part3/10.png" width="30%"/>
         </div>
 
         考虑在轴线处的$ids$产生的磁场，对于红色的闭合曲面，可以考虑一个穿过去的小圆环；
@@ -352,7 +352,7 @@ $ni$ 为每一层单位长度的电流，
 #### 带电无穷长圆柱周围的磁场
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410292011048.png" width="30%"/>
+    <img src="../img/part3/11.png" width="30%"/>
 </div>
 
 因为磁场方向与积分方向平行；半径如果是大于圆柱的半径，则
@@ -377,7 +377,7 @@ $ni$ 为每一层单位长度的电流，
     这说明磁场在R处达到最大
 
     <div align="center">
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410292022183.png" width="30%"/>
+        <img src="../img/part3/12.png" width="30%"/>
     </div>
     
 
@@ -386,7 +386,7 @@ $ni$ 为每一层单位长度的电流，
 #### 无穷大的板
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410292023290.png" width="30%"/>
+    <img src="../img/part3/13.png" width="30%"/>
 </div>
 
 因为水平方向上由于对称性，磁场为零；
@@ -407,7 +407,7 @@ $ni$ 为每一层单位长度的电流，
 
 !!!idea "通电无穷长螺线管?为什么不是两块板"
     <div align="center">
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410292026676.png" width="30%"/>
+        <img src="../img/part3/14.png" width="30%"/>
     </div>
 
     如果把螺线管中间切一刀，情况就与两块板很相似了，对于两侧，由于方向不同可以消去；
@@ -423,7 +423,7 @@ $ni$ 为每一层单位长度的电流，
 #### 螺绕环
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410292030973.png" width="30%"/>
+    <img src="../img/part3/15.png" width="30%"/>
 </div>
 
 
@@ -449,7 +449,7 @@ $ni$ 为每一层单位长度的电流，
 
 !!!Example
     <div align="center">
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410292038289.png" width="60%"/>
+        <img src="../img/part3/16.png" width="60%"/>
     </div>
 
     平的部分很简单，弯弯的部分使用微分，发现水平部分的力由于对称性为零，只有竖直部分的力
@@ -477,7 +477,7 @@ $ni$ 为每一层单位长度的电流，
 对于一个矩形线圈，如果它能绕着一个轴旋转，如图
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410292048830.png" width="50%"/>
+    <img src="../img/part3/17.png" width="50%"/>
 </div>
 
 
@@ -503,7 +503,7 @@ $ni$ 为每一层单位长度的电流，
 现在将结论推广到任意形状的线圈，如图，磁偶极矩与磁场垂直
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410292055592.png" width="50%"/>
+    <img src="../img/part3/18.png" width="50%"/>
 </div>
 
 将线圈分割为一个个小矩形，每个小矩形内部电流依次相消，最后合电流为原电流

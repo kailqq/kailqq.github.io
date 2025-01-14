@@ -10,45 +10,10 @@ comments: true
 ### A ring of charge
 
 
-???Abstract "Table of contents"
-      - [Electric Charge and Coulomb's Law(电荷和库仑定律)](#electric-charge-and-coulombs-law电荷和库仑定律)
-        - [A ring of charge](#a-ring-of-charge)
-        - [A disk of charge](#a-disk-of-charge)
-        - [Dipole(电偶极矩)](#dipole电偶极矩)
-          - [电偶极矩产生的电场](#电偶极矩产生的电场)
-          - [电偶极矩在电场中](#电偶极矩在电场中)
-      - [Gauss's Law(高斯定理)](#gausss-law高斯定理)
-        - [电场的高斯定理](#电场的高斯定理)
-        - [静电场的环路定律](#静电场的环路定律)
-      - [Electric Potential(电势)](#electric-potential电势)
-        - [电势能与电势](#电势能与电势)
-        - [球壳的电势](#球壳的电势)
-        - [圆环和圆盘的电势](#圆环和圆盘的电势)
-        - [通过电势求电场](#通过电势求电场)
-      - [Capacitance(电容)](#capacitance电容)
-        - [平行板电容器](#平行板电容器)
-        - [圆柱电容器](#圆柱电容器)
-        - [球形电容器](#球形电容器)
-        - [电容器的并联和串联](#电容器的并联和串联)
-          - [并联(电压一致)](#并联电压一致)
-          - [串联(电荷一致)](#串联电荷一致)
-        - [电容器的能量](#电容器的能量)
-        - [电介质，电场中的绝缘体](#电介质电场中的绝缘体)
-          - [宏观解释](#宏观解释)
-          - [极化微观解释](#极化微观解释)
-        - [极化强度矢量(Polarization)](#极化强度矢量polarization)
-        - [电介质的极化规](#电介质的极化规)
-        - [Guass定律的推广](#guass定律的推广)
-      - [恒定电流](#恒定电流)
-        - [电流与电流密度](#电流与电流密度)
-        - [电阻与电导](#电阻与电导)
-        - [电功率与焦耳定律](#电功率与焦耳定律)
-        - [欧姆定律的微观解释](#欧姆定律的微观解释)
-
 
 对于一个均匀带电的圆环，距离其中心 $z$ 的带电量为 $q_0$ 所受的沿 $Z$ 方向的力 $F_z$ 
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/image.png" width=55%/></div>
+<div align=center><img src="../img/part1/1.png" width=55%/></div>
 
 先计算电荷密度
 
@@ -88,7 +53,7 @@ F_z = \int dF_z = \int dF \cos \theta = \int \frac{q_0 \lambda Rd\phi}{4 \pi \ep
 
 如果是一个圆盘，$F_z$ 可以用圆环来逼近
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/image-1.png" width=55%/></div>
+<div align=center><img src="../img/part1/2.png" width=55%/></div>
 
 \[
 \sigma = \frac{q}{\pi R^2}
@@ -130,7 +95,7 @@ $$ z \to +\infty, F_z \to \frac{1}{4 \pi \epsilon_0} \dfrac{q_0q}{z^2} $$
 
 **A infinite stick of charge**
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240917150153.png" width=55%/></div>
+<div align=center><img src="../img/part1/3.png" width=55%/></div>
 
 由于对称性，在$x$方向上没有电场
 
@@ -166,7 +131,7 @@ $$
     
 根据电偶极矩可以将分子间作用力分为几种类型
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240917121336.png" width=55%/></div>
+<div align=center><img src="../img/part1/4.png" width=55%/></div>
 
 
 - **离子-偶极相互作用（Ion-Dipole Interaction）**
@@ -194,7 +159,7 @@ $$
 
 #### 电偶极矩产生的电场
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240917122502.png" width=45%/></div>
+<div align=center><img src="../img/part1/5.png" width=45%/></div>
 
 
 
@@ -250,7 +215,7 @@ E_y(0,y) &= \frac{Q}{4 \pi \varepsilon_0} \cdot \left(\frac{1}{(y-a)^2}-\frac{1}
 
 #### 电偶极矩在电场中
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240918084819.png" width=55%/></div>
+<div align=center><img src="../img/part1/6.png" width=55%/></div>
 
 $$
    \tau = F \cdot \frac{d}{2} \sin \theta + F \cdot \frac{d}{2} \sin \theta = Fd \sin \theta = qEd \sin \theta
@@ -389,7 +354,7 @@ V = \frac{q}{4 \pi \varepsilon_0 r}
 
 根据点电荷产生的电势，可以得到电偶极矩产生的电势
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301225077.png" width=55%/></div>
+<div align=center><img src="../img/part1/7.png" width=55%/></div>
 
 \begin{align*}
   V &= \dfrac{q}{4 \pi \varepsilon_0} \left( \frac{1}{r_1} - \frac{1}{r_2} \right)\\
@@ -408,7 +373,7 @@ $\theta = \frac{\pi}{2},V=0;\theta=0,V_{max}>0;\theta=\pi,V_{min}<0$
 
 也可以推导电四偶极矩的电势
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301236247.png" width=55%/></div>
+<div align=center><img src="../img/part1/8.png" width=55%/></div>
 
 \begin{align*}
 V(r) &= \sum_i V_i(r_i) \\
@@ -430,11 +395,11 @@ $$For \enspace d << r, \frac{d^2}{r^2} << 1 \\ V(r) = \frac{2 q d^2}{4 \pi \epsi
           = \frac{1}{4 \pi \epsilon_0} \sum_i \frac{A_i}{r^i}
       $$
 
-      <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301247738.png" width=55%/></div>
+     
 
 ### 球壳的电势
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301338523.png" width=45%/></div>
+<div align=center><img src="../img/part1/9.png" width=45%/></div>
 
 利用Guass定理，我们可以得到球壳的电场分布：
 
@@ -467,14 +432,6 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
     \end{align*}
 
 
-### 圆环和圆盘的电势
-
-[圆环](http://www.kailqq.cc/NOTE/Physics/eletronic/#a-ring-of-charge)     
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301354099.png" width=45%/></div>
-
-[圆盘](http://www.kailqq.cc/NOTE/Physics/eletronic/#a-disk-of-charge)
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409301400786.png" width=45%/></div>
-
 
 ### 通过电势求电场
 由于我们有
@@ -498,7 +455,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 !!!Note "射影法求电场"
     通过电场线的类似性构造新的电荷来求电场；例如感应在无穷长的导体板上的电场，可以类似于在对称的位置上放上一个点电荷
-    <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121000435.png" width=50%></div>
+    <div align=center><img src="../img/part1/10.png" width=50%></div>
 
     
 ## Capacitance(电容)
@@ -514,7 +471,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 ### 平行板电容器
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121523209.png" width=50%/></div>
+<div align=center><img src="../img/part1/11.png" width=50%/></div>
 
 \[
   V=\int_{a}^{b} \boldsymbol{E} \cdot d\boldsymbol{l} = E \cdot d = \frac{\sigma}{\varepsilon_0}d
@@ -530,7 +487,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 ### 圆柱电容器
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121529315.png" width=50%/></div>
+<div align=center><img src="../img/part1/12.png" width=50%/></div>
 
 首先用高斯定律计算电场
 
@@ -554,7 +511,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 ### 球形电容器
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121537193.png" width=50%/></div>
+<div align=center><img src="../img/part1/13.png" width=50%/></div>
 
 
 \[
@@ -578,7 +535,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 #### 并联(电压一致)
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121551607.png" width=50%/></div>
+<div align=center><img src="../img/part1/14.png" width=50%/></div>
 
 \[
   V=\frac{Q_1}{C_1}=\frac{Q_2}{C_2} \Rightarrow Q = Q_1 + Q_2 = C_1 V + C_2 V = (C_1 + C_2) V
@@ -590,7 +547,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 #### 串联(电荷一致)
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410121553861.png" width=50%/></div>
+<div align=center><img src="../img/part1/15.png" width=50%/></div>
 
 
 \[
@@ -651,7 +608,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 - 在平行板电容器中插入一根导体，其表面会产生感应电荷，相当于两个电容器串联
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410122234944.png" width=50%/></div>
+<div align=center><img src="../img/part1/16.png" width=50%/></div>
 
 
 \begin{align*}
@@ -664,7 +621,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 - 在平行板电容器中插入一根电介质，使其充满间隙；其表面会产生束缚电荷，在介质之间会产生感应电场，抵消掉原电场的一部分（但是不为0）；两极板间的电场减小，电压减小，电荷量不变，电容增大；此时我们称该介质被极化(polarization)了
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410122246704.png" width=50%/></div>
+<div align=center><img src="../img/part1/17.png" width=50%/></div>
 
 !!!info 
     其实，在英文的教材中，不管是感应电荷还是束缚电荷，都使用 **induced charge** 来表示，在中文中，我们为了区分导体产生的与非导体产生的，所以使用了不同的词汇
@@ -677,14 +634,14 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
   
 对于 Non-polar dielectrics，当电场作用于其上时，它会将重合的正负电荷中心分开，形成电偶极矩，这样就会产生一个与电场方向相反的电场，从而减小了电场强度(内部的电场矢量求和之后，相当于在表面分别产生正负电荷)
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410122257865.png" width=50%/></div>
+<div align=center><img src="../img/part1/18.png" width=50%/></div>
 
 !!!Note
     其本质是电子云位移的结果
 
 对于 Polar dielectrics，当电场作用于其上时，它会给原本杂乱无章的电偶极矩一个力矩，[这个力矩会使得电偶极矩偏向电场方向](http://www.kailqq.cc/NOTE/Physics/eletronic/#电偶极矩在电场中)，这样的极化叫做 **取向极化**
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410122302366.png" width=50%/></div>
+<div align=center><img src="../img/part1/19.png" width=50%/></div>
 
 !!!Note
     当取向极化发生时，电子云的位移也会发生，但是彼此差了两个量级，一般忽略了电子云的位移；但是当外部电场变化频率很大时，电偶极矩转来转去是跟不上的，但是电子云的左右移动是可以的，这时候电子云的位移是主要影响的因素
@@ -704,7 +661,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 对于任意的电介质，在其表面取一个小斜圆筒，母线与电场方向一致，长度为一个电偶长度；底面与该表面的法向量垂直，这样斜斜圆筒内只可能有正电荷；
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410191117888.png" width=50%/></div>
+<div align=center><img src="../img/part1/20.png" width=50%/></div>
 
 设 $n$ 为单位体积内的电偶极矩数目(分子数目)
 则
@@ -735,7 +692,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 面电荷密度等于极化强度矢量在法向上的分量；由夹角来控制正负
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410191128315.png" width=50%/></div>
+<div align=center><img src="../img/part1/21.png" width=50%/></div>
 
 ### 电介质的极化规律
 
@@ -749,7 +706,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 考虑一个正电荷 $q_0$ 放在电介质中，其周围会产生极化
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410191136392.png" width=50%/></div>
+<div align=center><img src="../img/part1/22.png" width=50%/></div>
 
 由 高斯定理，我们可以得到
 
@@ -851,7 +808,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 对于不规则物体，采用积分计算电阻
 
 ???eg "计算电阻"
-     <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410202217928.png" width=60%/></div>
+     <div align=center><img src="../img/part1/23.png" width=60%/></div>
 
      在地质勘探中，时常利用这种方法来勘探地底的资源，因为各种材料的电导率不同
 
@@ -892,7 +849,7 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 ### 欧姆定律的微观解释
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410202244591.png" width=50%/></div>
+<div align=center><img src="../img/part1/24.png" width=50%/></div>
 
 原本在导体中做热运动的电子，在施加了外部电场后，会产生漂移速度；
 
@@ -908,5 +865,5 @@ U &= \sum_{i,j=1 (j > i)}^{n} \frac{q_i q_j}{4 \pi \varepsilon_0 r_{ij}} \\
 
 这种算法给出了我们经典物理学中关于电阻的解释，与$T$是开方函数的关系，但是这只在定性方面的正确的，确实随着温度的升高，电阻会增大；但是更加现实具体的推导需要量子力学的帮助，才能给出很好的解释
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410202243687.png" width=50%/></div>
+<div align=center><img src="../img/part1/25.png" width=50%/></div>
 

@@ -30,7 +30,7 @@ comments: true
 
 !!!Proof
     <div align=center>
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411062107903.png" width="50%">
+        <img src="../img/part2/1.png" width="50%">
     </div>
     克服洛伦兹力的分量做功转化为非静电力做功,洛伦兹力总的不做功
      
@@ -58,7 +58,7 @@ comments: true
 发电机
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411062102050.png" width="50%">
+    <img src="../img/part2/2.png" width="50%">
 </div>
 
 \[
@@ -96,7 +96,7 @@ comments: true
 
     !!!Example
         <div align=center>
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411062107903.png" width="50%">
+        <img src="../img/part2/3.png" width="50%">
         </div>
         
         磁场静止，动生电动势$\varepsilon=BDv$
@@ -147,7 +147,7 @@ comments: true
 ### 互感
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111625514.png" width="50%">
+    <img src="../img/part2/4.png" width="50%">
 </div>
 
 $i_1$产生的磁场会使得$s_2$感应出$\varepsilon_2$
@@ -190,7 +190,7 @@ M_{21} = \frac{\Psi_{21}}{i_2} = \frac{N_1 \Phi_{21}}{i_2}; \quad \varepsilon_1 
 ### 自感
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111639365.png" width="50%"> 
+    <img src="../img/part2/5.png" width="50%"> 
 </div>
 
 类似的有
@@ -209,7 +209,7 @@ M_{21} = \frac{\Psi_{21}}{i_2} = \frac{N_1 \Phi_{21}}{i_2}; \quad \varepsilon_1 
 
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111647198.png" width="50%">
+    <img src="../img/part2/6.png" width="50%">
 </div>
 
 $n$为单位长度的匝数
@@ -248,7 +248,7 @@ L_l = \frac{L}{l} = \mu_0 n^2 A
 #### 长方形截面螺绕环
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111649355.png" width="50%">
+    <img src="../img/part2/7.png" width="50%">
 </div>
 
 \[
@@ -275,7 +275,7 @@ B = \frac{\mu_0 i N}{2 \pi r}
 #### 同轴电缆
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111655502.png" width="50%">
+    <img src="../img/part2/8.png" width="50%">
 </div>
 
 
@@ -302,7 +302,7 @@ B = \frac{\mu_0 i}{2 \pi r}
 #### 线圈拼接
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111851310.png" width="50%">
+    <img src="../img/part2/9.png" width="50%">
 </div>
 
 其互感系数为
@@ -348,7 +348,7 @@ B = \frac{\mu_0 i}{2 \pi r}
 ### 价电子的磁偶极矩
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111908864.png" width="50%">
+    <img src="../img/part2/10.png" width="50%">
 </div>
 
 $$
@@ -417,14 +417,14 @@ L = mvr
 > 在电容部分，我们引入了极化强度$P$，在磁场部分，我们也类似的引入磁化强度$M$用于刻画磁性材料的磁性质
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111925051.png" width="30%">
+    <img src="../img/part2/11.png" width="30%">
 </div>
 
 
 向通电螺线管中插入铁磁材料，原本杂乱无章的分子磁矩会受到磁场的作用，使得磁矩方向趋于一致，朝向磁场方向，在宏观上相当于在材料外围产生了一个电流
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111925792.png" width="30%">
+    <img src="../img/part2/12.png" width="30%">
 </div>
 
 此时磁场被增强
@@ -451,7 +451,7 @@ L = mvr
 \]
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111940269.png" width="30%">
+    <img src="../img/part2/13.png" width="30%">
 </div>
 
 红色的是电流，电流面密度为
@@ -477,7 +477,7 @@ M \cdot \Delta z = i'
 ## 磁场强度
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111945537.png" width="30%">
+    <img src="../img/part2/14.png" width="30%">
 </div>
 
 由环路定律
@@ -517,7 +517,7 @@ M \cdot \Delta z = i'
     在上面的例子中，我们可以得到
 
     <div align=center>
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411111956691.png" width="30%">
+        <img src="../img/part2/15.png" width="30%">
     </div>
     
     \[
@@ -559,7 +559,7 @@ M \cdot \Delta z = i'
 原本杂乱无章的磁矩，在外磁场下，材料内部的磁矩会朝向磁场方向,但是与温度有关
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411130816706.png" width="30%">
+    <img src="../img/part2/16.png" width="30%">
 </div>
 
 
@@ -582,7 +582,7 @@ M \cdot \Delta z = i'
 \]
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411130821749.png" width="30%">
+    <img src="../img/part2/17.png" width="30%">
 </div>
 
 原本电子磁矩相消，加上外磁场后，电受到洛伦兹力，不管它是被加速还是被减速，都会产生一个与外磁场方向相反的磁矩(***抗磁***);
@@ -628,11 +628,11 @@ u = iA = \frac{ev}{2\pi r} \left( \pi r^2 \right) = \frac{1}{2} evr = \frac{e r^
 磁化强度矢量与温度的关系
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411130841931.png" width="30%">
+    <img src="../img/part2/18.png" width="30%">
 </div>
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411130842412.png" width="30%">
+    <img src="../img/part2/19.png" width="30%">
 </div>
 
 ***居里-维斯定理***
@@ -679,7 +679,7 @@ u = iA = \frac{ev}{2\pi r} \left( \pi r^2 \right) = \frac{1}{2} evr = \frac{e r^
     \]
 
 <div align=center>
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411130905148.png" width="30%">
+    <img src="../img/part2/20.png" width="30%">
 </div>
 
 ### 开关打到a
