@@ -70,7 +70,7 @@ X 的叔叔（即父亲的兄弟）是红色的，X 无论左右孩子都是该�
 !!!Note "wyy有话说"
     这里所有结点都带子树，一方面至少有 NIL 结点，另一方面这可以不仅仅表示刚刚插入的情况，也可以表示经过几次调整后还在被这种情况困扰，因此更具一般性。注意 G 一定是黑色，因为 P 是红色，插入前它们就在红黑树中，因此不可能违背定义第四条
 
-<div align=center><img src ="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240920211232.png" width=60%/></div>
+<div align=center><img src ="../part1/4.png" width=60%/></div>
 
 
 我们的想法是将X的红色甩掉，此时它的父亲和叔叔都是红色了，自然只能求助于祖父，但是我们不能直接交换它们的颜色(如果祖父是红色而叔叔父亲是红色，也不满足条件)，所以我们的方案将X的祖父染红，将X的父亲和叔叔染成黑色,(可以理解为将祖父的黑色分配给父亲和叔叔)此时不影响黑高的性质，但是并不代表问题已经解决了，因为曾祖父仍然可能是红色，但是至少问题网上推进了。如果一直推给根节点，根节点染黑即可，否则就是接下来的两种情况 
@@ -80,7 +80,7 @@ X 的叔叔（即父亲的兄弟）是红色的，X 无论左右孩子都是该�
 - 情况2：X 的叔叔（即父亲的兄弟）是黑色的，且 X 是右孩子
 - 情况3：X 的叔叔（即父亲的兄弟）是黑色的，且 X 是左孩子
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240920212653.png" width=60%/></div>
+<div align=center><img src="../part1/5.png" width=60%/></div>
 
 
 情况2和情况3之间是存在互相转换的(由图可知)，解决方案与AVL tree也是一致的，通过判断红色是LR还是LL来进行旋转，旋转完之后，重新染色，第一层是黑，第二层是红即可
@@ -90,7 +90,7 @@ X 的叔叔（即父亲的兄弟）是红色的，X 无论左右孩子都是该�
 
 
 !!!quote "吴一航学长的ADS讲义"
-    <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240920220121.png" width=60%/></div>
+    <div align=center><img src="../part1/6.png" width=60%/></div>
     如果插入后直接落入情况三，只需要一次旋转染色即可解决，直接落入情况二，一次旋转进入情况三，再一次旋转染色即可解决，但如果落入情况一，一次调整后可能还在情况一，可能直到最后都是通过情况一加上染黑根结点解决，也可能几次调整后进入情况二或三后解决。根据这一流程我们知道，**红黑树插入最多可能的旋转次数为 2**（因为只有情况 2 和 3 会要旋转进入情况 2 后 1 次旋转必定进入情况 3，进入情况 3 后 1 次旋转必定解决），然后 **更改颜色最多是 $O(\log n)$** 次，因为进入情况 2 或 3 只需要一次染色，在情况 1 最差也是每两层染一次色，而我们已经证明红黑树的最大高度是$O(\log n)$的。
     因此插入操作包括$O(\log n)$的搜索时间，加常数的旋转，加$O(\log n)$的染色，因此还是$O(\log n)$的时
     间复杂度
@@ -135,7 +135,7 @@ X 的叔叔（即父亲的兄弟）是红色的，X 无论左右孩子都是该�
 
 - 情况1: X有红色的兄弟
   
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240921105023.png" width=60%/></div>
+<div align=center><img src="../part1/7.png" width=60%/></div>
 
 此时父结点一定是黑色,我们的想法很简单，兄弟是红色，那就希望兄弟能两肋插刀，把兄弟转上去，为了保持红黑树性质，很可惜只能把父亲染红，自己还承受双黑 debuff。但是好处在于，这个问题转化为了接下来的情况234中的一种,此时X的兄弟一定是黑色,因为这个兄弟之前是X红色兄弟的孩子:
 
@@ -143,7 +143,7 @@ X 的叔叔（即父亲的兄弟）是红色的，X 无论左右孩子都是该�
 
 !!!Note
     根据距离划分为近、远侄子，用远近而不用左右是为了对称情况不混淆左右
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240921105409.png" width=60%?/></div>
+<div align=center><img src="../part1/8.png" width=60%?/></div>
 
 此时没有红色能救一下了,我们就把希望寄托于父节点,因为根节点一定能救,所以此时的做法就是将这一层的黑色往上推,将X的一层黑色去掉,将兄弟染红,父亲给一层黑色,如果父亲是红色,那么直接染黑即可,如果父亲是黑色,那么就又多了一层黑色
 
@@ -152,7 +152,7 @@ X 的叔叔（即父亲的兄弟）是红色的，X 无论左右孩子都是该�
 
 - 情况3:X 的兄弟是黑色的，且近侄子是红色,远侄子是黑色
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240921110306.png" width=60%?/></div>    
+<div align=center><img src="../part1/9.png" width=60%?/></div>    
 
 这时我们借用 AVL 树的想法，红色在父亲 P 的 RL 位置，因此做 single rotation 后会变成情况 4 的 RR 的情况
 
@@ -162,7 +162,7 @@ X 的叔叔（即父亲的兄弟）是红色的，X 无论左右孩子都是该�
 
 - 情况4:X 的兄弟是黑色的，且远侄子是红色,近侄子是任意颜色
 
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240921110804.png" width=60%?/></div>
+<div align=center><img src="../part1/10.png" width=60%?/></div>
 
 此时对应 AVL 树的 RR，于是再一次 single rotation 即可把双黑的一重黑丢给红色远侄子（即 X 和 N2 都变成黑色），但要注意为了保证红黑树性质的颜色变化，如果 P 一开始是黑色,那么旋转前后到N2的路径上黑色结点数目不变，都是2,如果P是红色,那么旋转前后到N2的路径上黑色结点数目增多，此时需要将S染红，P染黑,总的来说,可以交换P和S的颜色
 
@@ -173,7 +173,7 @@ X 的叔叔（即父亲的兄弟）是红色的，X 无论左右孩子都是该�
 ???question
     考虑将一个结点 X 插入红黑树 T0，得到红黑树 T1，然后紧接着下一步操作又立刻将 X 从 T1 删除得到 T2，请问 T0 和 T2 是否一定一样？若是，请给出清晰的证明；若不是，请举出反例。
 
-    <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240921111920.png" width=60%?/></div>
+    <div align=center><img src="../part1/11.png" width=60%?/></div>
 
 
 ## B+树

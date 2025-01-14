@@ -19,8 +19,7 @@
 **Our chosen instruction set: RISC V**
 
 ???eg "各种指令集的区别"
-     <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410081053826.png" width="60%"></div>
-
+     <div align=center><img src="../pc/16.png" width="60%"></div>
 
 
 **Von Neumann’ Computer**
@@ -46,7 +45,7 @@
 指令集的基本结构
 
 operator+operands
-<div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410081104617.png" width="60%"></div>
+<div align=center><img src="../pc/17.png" width="60%"></div>
 
 
 !!!Note

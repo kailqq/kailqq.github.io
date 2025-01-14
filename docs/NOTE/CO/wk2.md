@@ -76,9 +76,9 @@ counter: True
 * Overflow detection:
 !!!Note "Overflow detection"
     无符号数的溢出：
-    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240919201635.png" width = 25%/> </div>  
+    <div align=center> <img src="../pc/1.png" width = 25%/> </div>  
     有符号数的溢出：
-     <div align=center> <img src=" https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240919202513.png" width = 25%/> </div>  
+     <div align=center> <img src="../pc/2.png" width = 25%/> </div>  
     在二进制加减法中，溢出（Overflow）是指计算结果超出了可表示的数值范围，通常发生在 **有符号数** 运算中。
 
     在设计加减法器时，通常在数据位的基础上再增加一位用于判断是否溢出或者进位。这一位通常称为 **溢出位**（Overflow Bit）或 **进位位**（Carry Bit）。
@@ -112,25 +112,24 @@ $$ Multiplicand   \times Multiplier = Product$$
 
 ???Note "Version 1"
     第一种乘法器，判断乘数的最低位是否为 1，如果是则被乘数加部分和存到结果里面，否则加0。每次左移被乘数，右移乘数。
-    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240919203634.png" width = 55%/> </div>
+    <div align=center> <img src="../pc/3.png" width = 55%/> </div>
     但是这种乘法器对于32位的乘法却需要 64位的寄存器存储被乘数，如下：
-    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240919203604.png" width = 60%/> </div>  
+    <div align=center> <img src="../pc/4.png" width = 60%/> </div>  
     需要 64+64+32 bit 的寄存器，和一个 64 bit ALU.  
 
 ???Note "Version 2"
       在Version1中，实际上每次进行的加法都是32位的，每次加完以后，product的最低位就不会变化，因此我们可以使用32位的ALU，每次右移product而不是左移乘数，然后让乘数与product相加即可。
-      <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240919204250.png" width = 60%/> </div>  
       这样原本需要64+64+32 bit 的寄存器，和一个 64 bit ALU. 变成了 32+64+32 bit 的寄存器，和一个 32 bit ALU.
-      <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240919205025.png" width = 60%/> </div>  
+      <div align=center> <img src="../pc/5.png" width = 60%/> </div>  
 
 ???definition "Version3"
     Version2中，64位的product每次右移，其中只有高32位有用，那么低32位恰好可以用来存放乘数。这样我们就可以只用32位的寄存器和ALU来实现乘法。
-    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240919205411.png" width = 60%/> </div>
+    <div align=center> <img src="../pc/6.png" width = 60%/> </div>
     如下
-    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240919205432.png" width = 55%/> </div> 
+    <div align=center> <img src="../pc/7.png" width = 55%/> </div> 
     
 ???eg "例-4位乘法,高四位结果，低四位乘数"
-    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240919205638.png" width = 55%/> </div>  
+    <div align=center> <img src="../pc/8.png" width = 55%/> </div>  
 
 #### Signed multiplication
 
@@ -181,28 +180,28 @@ $$
 ???Version 1
     - At At first the divisor is in the left half of the divisor register,the dividend is in the right half of the remainder register.
     - Shift the divisor right each step
-    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241404170.png" width = 60%/> </div>  
+    <div align=center> <img src="../pc/9.png" width = 60%/> </div>  
     即对每一步，都在余数中减去除数，如果结果大于等于0，那么商左移上1，否则将结果加回去，商左移上0。
-     <div align=center> <img src="  https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241412849.png" width = 60%/> </div>
+     <div align=center> <img src="../pc/10.png" width = 60%/> </div>
 
     **需要注意的是,由于一开始remainder寄存器右边是被除数，divisor寄存器左半边是除数，前很多次的结果都是负的**
 
 !!!eg "7 / 2"
     $00000111 / 0010$
-    <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241417339.png" width = 60%/> </div>   
+    <div align=center><img src="../pc/11.png" width = 60%/> </div>   
   
 
 ???Version final
     优化过程与乘法类似，因为每次都是remainder的最高位在减，减完就没用了，可以移出去，不再右移divisor，而是左移remainder，并且将quotient也存在Remainder寄存器每次左移产生的空位中
-    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241424728.png" width = 60%/> </div>
+    <div align=center> <img src="../pc/12.png" width = 60%/> </div>
     如下
-    <div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241426038.png" width = 60%/> </div>
+    <div align=center> <img src="../pc/13.png" width = 60%/> </div>
 
 !!!key-point 
    remainder 寄存器其实要多一位的，因为最后一步要右移，不能直接把它丢掉
 
 !!!eg
-    <div align=center> <img src=" https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409241436680.png" width = 60%/> </div>
+    <div align=center> <img src="../pc/14.png" width = 60%/> </div>
     4.1 时其实我们已经结束了除法操作，此时的高位就是我们的余数，但是这最后一次的结果还没有放回到 Reminder 中，因此我们需要再往左移一位为商留出空间，放入后，再把高位余数往右移动以抵消影响。
     
 !!!question "为什么除法的移位这么奇怪“
@@ -248,7 +247,7 @@ $x=(-1)^s\times((0+Fraction)\times 2^{1-Bias})$
 **注意此时指数是 $1-Bias=-126/-1022$**.   
 
 
-<div align=center> <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202409261348992.png" width = 80%/> </div>   
+<div align=center> <img src="../pc/15.png" width = 80%/> </div>   
 
 ### Precision
 

@@ -90,7 +90,7 @@ int fib(int n) {
     
 ???eg "简单例子"
     <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041445983.png" width=60%>
+    <img src="../part1/20.png" width=60%>
     </div>
 
     在这个图中有 8 个独立子集：
@@ -130,7 +130,7 @@ int fib(int n) {
 如果我们需要重构出构成最优解有哪一些点，那么可以自顶向下根据递推式来判断当前图的最后一个点是否在解中
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041506528.png" width=60%>
+    <img src="../part1/21.png" width=60%>
 </div>
 
 ## 背包问题
@@ -172,7 +172,7 @@ def knapsack(weights, values, capacity):
 解的重构
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041540027.png" width=60%>
+    <img src="../part1/22.png" width=60%>
 </div>
 
 ## 矩阵乘法的计算顺序
@@ -288,7 +288,7 @@ c_{ij} = \sum_{k=i}^{j} p_k + \min\limits_{i \leqslant k \leqslant j} \{ c_{i,k-
 
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041641526.png" width=60%>
+    <img src="../part1/23.png" width=60%>
 </div>
 
 

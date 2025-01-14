@@ -274,7 +274,7 @@ Splay 树并不在乎二叉树是否时刻都平衡，而是通过在每次操�
     即以$x$为根的子树的结点数的对数，包括$x$本身
     
     对于Zig操作,有一次旋转，real cost = 1
-    <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240920140650.png" width=55%/></div>
+    <div align=center><img src="../part1/1.png" width=55%/></div>
 
     在放缩的过程中，我们保留$X$
     $$
@@ -286,7 +286,7 @@ Splay 树并不在乎二叉树是否时刻都平衡，而是通过在每次操�
 
     对于Zig-zag操作，有两次旋转，real cost = 2
 
-    <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240920141923.png" width=55%/></div>
+    <div align=center><img src="../part1/2.png" width=55%/></div>
 
     $$
     \hat{c}_i = 2 + R_2(X) - R_1(X) \\
@@ -308,7 +308,7 @@ Splay 树并不在乎二叉树是否时刻都平衡，而是通过在每次操�
 
     对于Zig-zig操作，有两次旋转，real cost = 2
 
-    <div align=center><img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/20240920143234.png" width=55%/></div>
+    <div align=center><img src="../part1/3.png" width=55%/></div>
 
     $$
     \hat{c}_i = 2 + R_2(X) - R_1(X) \\

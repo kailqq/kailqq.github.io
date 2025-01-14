@@ -81,7 +81,7 @@
 因为每个结点的孩子数量可能不只有2个，因此我们使用LeftChild和NextSibling的组合实现。直观上来看用LeftChild和NextSibling是让二项树翻转了：原先是根的子树从左到右高度依次增大，现在依次减小了。并且为了方便索引每棵二项树，我们用一个数组存储每棵二项树的根，其中数组的索引就对应二项树的高度
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410141610053.png" width="70%">
+    <img src="../part1/18.png" width="70%">
 </div>
 
 !!!Key-point
@@ -125,7 +125,7 @@ CombineTrees( BinTree T1, BinTree T2 )
 ```
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202410141617170.png" width="70%">
+    <img src="../part1/19.png" width="70%">
 </div>
 
 

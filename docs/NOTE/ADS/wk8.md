@@ -57,7 +57,7 @@
     
 
     <div align="center">
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101119899.png" width=60%/>
+        <img src="../part1/24.png" width=60%/>
     </div>
 
     (a) 展示了一个例子,我们可以看到最多同一时间有三个活动那同时进行，所以我们需要三个教室，如果需要四个教室，说明至少某一时刻有四个活动同时进行，这是不可能的。
@@ -127,7 +127,7 @@
 !!!Extra
     - **最小化最大延时**:设有 $n$ 个任务，每个任务 $j$ 具有一个完成需要的时间 $t_j$，以及一个截止日期 $d_j$。我们只能依次完成这些任务，不能并行
     <div align="center">
-        <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101201607.png" width=60%/>
+        <img src="../part1/25.png" width=60%/>
     </div>
     三个任务长度分别为 1、2、3，截止日期分别为 2、4、6，按如图方式排序，所有任务都能在截止前完成。
          
@@ -176,7 +176,7 @@
 我们以二叉树的形式来构建编码树，信息都存储在叶子节点上，非叶子节点不存储信息。从根节点到叶子节点的路径上的 0 和 1 分别代表左右子树。
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101249628.png" width=60%/>
+    <img src="../part1/26.png" width=60%/>
 </div>
 
 例如我们要编码一串$aaaxuaxz$像这样的一颗树，a的前缀编码是00，u是01，等等。
@@ -190,7 +190,7 @@
 如果根据频率来编码，我们可以构建这样一颗树
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101254352.png" width=60%/>
+    <img src="../part1/27.png" width=60%/>
 </div>
 
 
@@ -289,7 +289,7 @@
 $C$ 为一个字母表，其中每个字符 $c \in C$ 都有一个频率 $c.freq$.令 $x$ 和 $y$ 是 $C$ 中频率最低的两个字符。那么存在 $C$ 的一个最优前缀码，$x$ 和 $y$ 的码字长度相同，且只有最后一个二进制位不同(即在编码二叉树中，它们是兄弟节点)。
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101309493.png" width=60%/>
+    <img src="../part1/28.png" width=60%/>
 </div>
 
 我们也可以用交换法，如上图，可以证明交换后的树所用的编码长度不会变大，如果原来的是最优解，那么交换后的也是最优解。
@@ -303,7 +303,7 @@ $C′$ 也定义频率集合，不同之处只是 $z.freq = x.freq + y.freq$。�
     如果上面这一命题正确，那么我们每次合并 $x$ 和 $y$ 得到 $z$ 之后，按照没有 $x$ 和 $y$，只有 $z$ 的子问题继续推进我们的贪心算法可以得到 $T′$ 这一子问题的最优解，它和合并 $x$ 和 $y$ 得到 $z$ 这一前面已经验证正确性的贪心选择一起，就构成了整体的最优解。
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101317848.png" width=60%/>
+    <img src="../part1/29.png" width=60%/>
 </div>
 
 
