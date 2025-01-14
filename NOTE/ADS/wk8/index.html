@@ -1930,7 +1930,7 @@ c_{ij} = \max \{ c_{ik} + c_{kj} + 1 \mid f_i \leqslant s_k &lt; f_k \leqslant s
 </li>
 </ul>
 <p><div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101119899.png" width=60%/>
+    <img src="../part1/24.png" width=60%/>
 </div></p>
 <p>(a) 展示了一个例子,我们可以看到最多同一时间有三个活动那同时进行，所以我们需要三个教室，如果需要四个教室，说明至少某一时刻有四个活动同时进行，这是不可能的。</p>
 <p>(b) 展示了一个贪心算法的实现，我们可以看到从前往后，我们首先选择a,b,c,发现三个活动同时进行，所以开出三个教室，然后到e，d，发现其可以放进不冲突的c，a教室中，以此类推，最后用三个教室解决问题</p>
@@ -1988,7 +1988,7 @@ t_1 - t_2 = w_i l_j - w_j l_i \geqslant 0,
 <li>
 <p><strong>最小化最大延时</strong>:设有 <span class="arithmatex">\(n\)</span> 个任务，每个任务 <span class="arithmatex">\(j\)</span> 具有一个完成需要的时间 <span class="arithmatex">\(t_j\)</span>，以及一个截止日期 <span class="arithmatex">\(d_j\)</span>。我们只能依次完成这些任务，不能并行
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101201607.png" width=60%/>
+    <img src="../part1/25.png" width=60%/>
 </div>
 三个任务长度分别为 1、2、3，截止日期分别为 2、4、6，按如图方式排序，所有任务都能在截止前完成。</p>
 <ul>
@@ -2038,7 +2038,7 @@ H(X) = -\sum_{i=1}^{32} \frac{1}{32} \log_2 \frac{1}{32} = 5
 <h3 id="_4">算法描述<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>我们以二叉树的形式来构建编码树，信息都存储在叶子节点上，非叶子节点不存储信息。从根节点到叶子节点的路径上的 0 和 1 分别代表左右子树。</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101249628.png" width=60%/>
+    <img src="../part1/26.png" width=60%/>
 </div>
 
 <p>例如我们要编码一串<span class="arithmatex">\(aaaxuaxz\)</span>像这样的一颗树，a的前缀编码是00，u是01，等等。</p>
@@ -2048,7 +2048,7 @@ H(X) = -\sum_{i=1}^{32} \frac{1}{32} \log_2 \frac{1}{32} = 5
 \]</div>
 <p>如果根据频率来编码，我们可以构建这样一颗树</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101254352.png" width=60%/>
+    <img src="../part1/27.png" width=60%/>
 </div>
 
 <div class="admonition note">
@@ -2141,7 +2141,7 @@ H(X) = -\sum_{i=1}^{32} \frac{1}{32} \log_2 \frac{1}{32} = 5
 <h4 id="_5">贪心选择性质<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(C\)</span> 为一个字母表，其中每个字符 <span class="arithmatex">\(c \in C\)</span> 都有一个频率 <span class="arithmatex">\(c.freq\)</span>.令 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 是 <span class="arithmatex">\(C\)</span> 中频率最低的两个字符。那么存在 <span class="arithmatex">\(C\)</span> 的一个最优前缀码，<span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的码字长度相同，且只有最后一个二进制位不同(即在编码二叉树中，它们是兄弟节点)。</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101309493.png" width=60%/>
+    <img src="../part1/28.png" width=60%/>
 </div>
 
 <p>我们也可以用交换法，如上图，可以证明交换后的树所用的编码长度不会变大，如果原来的是最优解，那么交换后的也是最优解。</p>
@@ -2153,7 +2153,7 @@ H(X) = -\sum_{i=1}^{32} \frac{1}{32} \log_2 \frac{1}{32} = 5
 <p>如果上面这一命题正确，那么我们每次合并 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 得到 <span class="arithmatex">\(z\)</span> 之后，按照没有 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span>，只有 <span class="arithmatex">\(z\)</span> 的子问题继续推进我们的贪心算法可以得到 <span class="arithmatex">\(T′\)</span> 这一子问题的最优解，它和合并 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 得到 <span class="arithmatex">\(z\)</span> 这一前面已经验证正确性的贪心选择一起，就构成了整体的最优解。</p>
 </div>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411101317848.png" width=60%/>
+    <img src="../part1/29.png" width=60%/>
 </div>
 
 <div class="admonition proof">

@@ -1873,7 +1873,7 @@
 <details class="eg">
 <summary>简单例子</summary>
 <p><div align="center">
-<img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041445983.png" width=60%>
+<img src="../part1/20.png" width=60%>
 </div></p>
 <p>在这个图中有 8 个独立子集：</p>
 <ul>
@@ -1905,7 +1905,7 @@
 <p>我们在<span class="arithmatex">\(O(n)\)</span>复杂度内完成了这一工作</p>
 <p>如果我们需要重构出构成最优解有哪一些点，那么可以自顶向下根据递推式来判断当前图的最后一个点是否在解中</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041506528.png" width=60%>
+    <img src="../part1/21.png" width=60%>
 </div>
 
 <h2 id="_2">背包问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -1939,7 +1939,7 @@ V_{i-1,c}, &amp; \text{if } s_i &gt; c \\
 </span></code></pre></div>
 <p>解的重构</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041540027.png" width=60%>
+    <img src="../part1/22.png" width=60%>
 </div>
 
 <h2 id="_3">矩阵乘法的计算顺序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -2039,7 +2039,7 @@ c_{ij} = \sum_{k=i}^{j} p_k + \min\limits_{i \leqslant k \leqslant j} \{ c_{i,k-
 <p>其中<span class="arithmatex">\(p_k\)</span>代表权重，<span class="arithmatex">\(c_{ij}\)</span>代表从<span class="arithmatex">\(i\)</span>到<span class="arithmatex">\(j\)</span>的最优成本，<span class="arithmatex">\(c_{i,k-1}\)</span>代表左子树的最优成本，<span class="arithmatex">\(c_{k+1,j}\)</span>代表右子树的最优成本。</p>
 <p>前面第一项是因为由于根节点的存在，所有的节点都加深一层，是两个子问题结合的结果，后面的项是左右子树的最优解。</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/kailqq/cdn_img/master/img/202411041641526.png" width=60%>
+    <img src="../part1/23.png" width=60%>
 </div>
 
 <p>这个算法是<span class="arithmatex">\(O(n^3)\)</span>的，但是可以优化到<span class="arithmatex">\(O(n^2)\)</span></p>
