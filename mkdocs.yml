@@ -124,7 +124,9 @@ extra:
           name: 对您有帮助的话，给我一个star吧！
           data: 5
           note: >-
-            <div class="button" href="https://github.com/kailqq/kailqq.github.io" target="_blank">Give me a star⭐</div>
+                <a href="https://github.com/kailqq/kailqq.github.io">
+                  <div class="button"  target="_blank">Give me a star⭐</div>
+                </a>
 
         - icon: fontawesome/solid/mug-hot
           name: 你想请我喝杯咖啡吗？
@@ -296,6 +298,9 @@ nav:
                - 程序格式: NOTE/CS/ASM/wk1_2.md
                - 数据表示: NOTE/CS/ASM/wk2.md
                - 寻址方式: NOTE/CS/ASM/wk3.md
+      - language:
+          - index: NOTE/Language/index.md
+          - English: NOTE/Language/English.md
       
   - Friends: friends.md
   # - Verifications: googleb8ce910372c2ff85.html

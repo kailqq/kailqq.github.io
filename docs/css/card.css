@@ -301,14 +301,15 @@
   display: inline-block;
   margin: 0 10px;
   padding: 5px 10px;
-  background-color: #ddd;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .number:hover {
-  background-color: #bbb;
+  box-shadow: 0 4px 8px var(--md-primary-fg-color);
 }
 
 .button {
@@ -326,4 +327,5 @@
 .button:hover {
   background-color: #0056b3;
 }
+
 

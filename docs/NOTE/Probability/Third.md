@@ -580,7 +580,7 @@ P(|X - EX| > \varepsilon) = \int_{x: |x - EX| > \varepsilon} p(x) \, dx
     所以
 
     \[
-        E(X=x|Y=y)=\int_{-\infty}^{+infty} x  P(X=x|Y=y) dx
+        E(X=x|Y=y)=\int_{-\infty}^{+\infty} x  P(X=x|Y=y) dx
     \]
     
     要求该积分绝对可积
