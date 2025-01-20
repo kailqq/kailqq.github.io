@@ -151,6 +151,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://note.kailqq.cc/NOTE/CS/GIT/</loc>
+         <lastmod>2025-01-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://note.kailqq.cc/NOTE/CS/RUST/RUST/</loc>
          <lastmod>2025-01-20</lastmod>
          <changefreq>daily</changefreq>
