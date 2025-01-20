@@ -291,6 +291,7 @@ nav:
               - NOTE/MA/index.md
       - CS:
           - NOTE/CS/index.md 
+          - Git: NOTE/CS/GIT/index.md
           - verilog学习笔记: NOTE/CS/Verilog/verilog.md 
           - RUST学习笔记:  NOTE/CS/RUST/RUST.md 
           - 汇编学习笔记: 
