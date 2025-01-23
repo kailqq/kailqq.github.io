@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Git 笔记
 
 作为计科专业的学生,怎么能不会Git呢
@@ -45,12 +49,12 @@ git --version
     5. **版本库 (Repository)**: 版本库是 Git 用来保存项目历史记录的地方。它包含了所有提交的记录和项目的所有版本。在本地仓库中,版本库是.git文件夹,在远程仓库中,版本库是远程仓库里面的.git文件夹
 
     <figure markdown="span">
-    ![Image title](./img/git.png){ width="500" }
+    ![Image title](./img/git.png){ width="400" }
     <figcaption>示意图</figcaption>
     </figure>
     
     <figure markdown="span">
-    ![Image title](./img/git1.png){ width="500" }
+    ![Image title](./img/git1.png){ width="400" }
     <figcaption>版本库,工作区和暂存区</figcaption>
     </figure>
 
@@ -67,7 +71,7 @@ git init
 这条命令会在当前目录下创建一个.git文件夹,这个文件夹就是版本库
 
 <figure markdown="span">
-![Image title](./img/init.png){ width="500" }
+![Image title](./img/init.png){ width="400" }
 <figcaption>初始化</figcaption>
 </figure>
 
@@ -89,7 +93,7 @@ git status
 
 
 <figure markdown="span">
-![Image title](./img/add.png){ width="500" }
+![Image title](./img/add.png){ width="400" }
 <figcaption>添加文件</figcaption>
 </figure>
 
@@ -168,7 +172,7 @@ git commit -m "添加text.txt文件"
 来进行提交
 
 <figure markdown="span">
-![Image title](./img/commit.png){ width="500" }
+![Image title](./img/commit.png){ width="400" }
 <figcaption>提交</figcaption>
 </figure>
 
@@ -189,7 +193,7 @@ git log
 来查看提交信息
 
 <figure markdown="span">
-![Image title](./img/log.png){ width="500" }
+![Image title](./img/log.png){ width="400" }
 <figcaption>查看提交信息</figcaption>
 </figure>
 
@@ -200,7 +204,7 @@ git log --oneline
 ```
 
 <figure markdown="span">
-![Image title](./img/log1.png){ width="500" }
+![Image title](./img/log1.png){ width="400" }
 <figcaption>查看提交信息</figcaption>
 </figure>
 
@@ -215,21 +219,21 @@ Git使用git reset 命令来回退版本,git reset 命令有三个参数
 3. --mixed: 回退到某个版本,保留工作区的修改，丢弃暂存区的修改
 
 <figure markdown="span">
-![Image title](./img/reset.png){ width="500" }
+![Image title](./img/reset.png){ width="400" }
 <figcaption>绿色代表保存,红色代表丢弃</figcaption>
 </figure>
 
 接下来我们具体看看它们是怎么工作的,首先我们创建两个文件,并进行两次提交
 
 <figure markdown="span">
-![Image title](./img/reset1.png){ width="500" }
+![Image title](./img/reset1.png){ width="400" }
 <figcaption>创建两个文件,并进行两次提交</figcaption>
 </figure>
 
 此时Head指向的是第三次提交,也就是master分支的最新版本,此时工作区有三个文件,暂存区为空
 
 <div align="center">
-<img src="./img/reset2.png" width="500">
+<img src="./img/reset2.png" width="400">
 </div>
 
 为了方便比对三种不同指令,将这个仓库复制两个副本,分别命名为git_practice1和git_practice2
@@ -240,20 +244,20 @@ Git使用git reset 命令来回退版本,git reset 命令有三个参数
 现在,我们修改text1.txt文件,并进行一次add
 
 <div align="center">
-<img src="./img/reset3.png" width="500">
+<img src="./img/reset3.png" width="400">
 </div>
 
 现在，使用soft指令回退到第第一次提交
 
 <div align="center">
-<img src="./img/reset4.png" width="500">
+<img src="./img/reset4.png" width="400">
 </div>
 
 可以看到,工作区没有发生任何变化,但是暂存区发生了变化,我们之前提交的text2和text3文件变成了new file;
 
 
 <div align="center">
-<img src="./img/reset5.png" width="500">
+<img src="./img/reset5.png" width="400">
 </div>
 
 同时两次提交都不见了,HEAD指向了第一次提交
@@ -268,7 +272,7 @@ Git使用git reset 命令来回退版本,git reset 命令有三个参数
 使用hard指令回退到第一次提交
 
 <div align="center">
-<img src="./img/reset6.png" width="500">
+<img src="./img/reset6.png" width="400">
 </div>
 
 可以看到,工作区,暂存区,和提交都发生了变化,工作区,暂存区,和提交都变成了第一次提交的样子
@@ -280,7 +284,7 @@ Git使用git reset 命令来回退版本,git reset 命令有三个参数
 现在,我们进入git_practice2,并进行一次add，然后使用mixed指令回退到第一次提交
 
 <div align="center">
-<img src="./img/reset7.png" width="500">
+<img src="./img/reset7.png" width="400">
 </div>
 
 可以看到,暂存区空空如也,而工作区仍然是修改后的样子,**相当于进行了修改,但是没有进行任何提交**
@@ -337,15 +341,15 @@ git diff
 ```
 
 <figure markdown="span">
-![Image title](./img/diff1.png){ width="500" }
+![Image title](./img/diff1.png){ width="400" }
 <figcaption>删除文件</figcaption>
 </figure>
 
 可以发现,工作区中删除了text.txt文件,而暂存区中没有发生变化
 
 <div align="center">
-<img src="./img/diff2.png" width="500">
-<img src="./img/diff3.png" width="500">
+<img src="./img/diff2.png" width="400">
+<img src="./img/diff3.png" width="400">
 </div>
 
 这时git diff会显示工作区与暂存区之间的差异，删除了text.txt文件，什么都没有增加
@@ -365,7 +369,7 @@ git diff HEAD
 ```
 
 <figure markdown="span">
-![Image title](./img/diff4.png){ width="500" }
+![Image title](./img/diff4.png){ width="400" }
 <figcaption>工作区与提交</figcaption>
 </figure>
 
@@ -386,7 +390,7 @@ git diff --cached HEAD
 ```
 
 <figure markdown="span">
-![Image title](./img/diff5.png){ width="500" }
+![Image title](./img/diff5.png){ width="400" }
 <figcaption>未add</figcaption>
 </figure>
 
@@ -400,7 +404,7 @@ git diff --cached HEAD
 ```
 
 <figure markdown="span">
-![Image title](./img/diff6.png){ width="500" }
+![Image title](./img/diff6.png){ width="400" }
 <figcaption>已add</figcaption>
 </figure>
 
@@ -409,7 +413,7 @@ git diff --cached HEAD
 此时运行`git ls-files`可以看到暂存区中的文件,只包含text2.txt文件
 
 <figure markdown="span">
-![Image title](./img/diff7.png){ width="500" }
+![Image title](./img/diff7.png){ width="400" }
 <figcaption>暂存区中的文件</figcaption>
 </figure>
 
@@ -428,7 +432,7 @@ git diff HEAD HEAD^
 ```
 
 <figure markdown="span">
-![Image title](./img/diff8.png){ width="500" }
+![Image title](./img/diff8.png){ width="400" }
 <figcaption>提交与提交</figcaption>
 </figure>
 
@@ -489,24 +493,24 @@ git rm --cached text.txt
 我们首先在仓库里多创建几个文件,然后测试三条指令
 
 <figure markdown="span">
-![Image title](./img/rm1.png){ width="500" }
+![Image title](./img/rm1.png){ width="400" }
 <figcaption>rm+add</figcaption>
 </figure>
 
 <figure markdown="span">
-![Image title](./img/rm2.png){ width="500" }
+![Image title](./img/rm2.png){ width="400" }
 <figcaption>git rm</figcaption>
 </figure>
 
 <figure markdown="span">
-![Image title](./img/rm3.png){ width="500" }
+![Image title](./img/rm3.png){ width="400" }
 <figcaption>git rm --cached</figcaption>
 </figure>
 
  最后我们commit一次,将三个文件从版本库中删除
 
 <figure markdown="span">
-![Image title](./img/rm4.png){ width="500" }
+![Image title](./img/rm4.png){ width="400" }
 <figcaption>commit</figcaption>
 </figure>
 
@@ -514,9 +518,184 @@ git rm --cached text.txt
 
 
 
+### 分支
+
+分支是Git中一个非常重要的概念，它允许你在同一个仓库中同时进行多个开发工作。分支的存在使得你可以在不影响主线代码的情况下进行开发、测试和实验。
+
+分支的存在使得多人的协同开发变得容易,可以同时进行多个开发工作,而保持主线的稳定工作;
+
+每个分支都有自己的提交历史,分支之间可以相互合并,也可以相互独立;
+
+<figure markdown="span">
+![Image title](./img/branch1.png){ width="400" }
+<figcaption>分支示意图</figcaption>
+</figure>
+
+创建一个分支，可以使用以下命令
+
+```bash
+git branch <branch_name>
+```
+
+例如,创建一个名为`dev`的分支
+
+```bash
+git branch dev
+```
+
+创建之后，可以使用`git branch`查看所有分支
+
+```bash
+git branch
+```
+<div align="center">
+<img src="./img/branch2.png" width="200">
+</div>
+这里可以看到master和dev两个分支,前面的`*`表示当前所在的分支,也就是master分支
+
+现在，假设我们要在dev分支上进行一系列开发工作,首先需要切换到dev分支
+
+```bash
+git checkout dev
+```
+
+!!!warning "git switch"
+    使用`git checkout`命令的时候，可能会存在一些潜在的问题:除了切换分支之外,`git checkout`还可以用来恢复文件或者目录到之前的某一个状态,比如我们意外修改了某一个文件,可以使用`git checkout -- <file_path>`来恢复文件(如果暂存区中有,则恢复到暂存区中的文件,否则恢复到上一次提交的文件);而这个时候如果分支名和文件名相同,就会出现歧义,`git checkout`会默认切换分支而不是恢复文件,为了避免这种情况,可以使用`git switch`命令来切换分支;
+
+切换之后，可以使用`git branch`查看当前所在的分支;
+
+<figure markdown="span">
+![Image title](./img/branch3.png){ width="200" }
+<figcaption>切换分支</figcaption>
+</figure>
+
+现在,我们在dev分支上进行一系列开发工作,添加一系列文件；
+
+在这一过程中，我们的主线上也进行的提交
+
+<figure markdown="span">
+![Image title](./img/branch4.png){ width="300" }
+<figcaption>过程</figcaption>
+</figure>
 
 
+现在假设dev上的开发以已经完成了,我们想要将dev分支合并到master分支上,可以使用以下命令
 
+```bash
+git merge dev
+```
+
+意为将dev分支合并到 **当前所在分支** (master分支)上,合并之后,如果没有冲突,会自动进行一次commit;
+
+<figure markdown="span">
+![Image title](./img/branch5.png){ width="300" }
+<figcaption>git log </figcaption>
+</figure>
+
+
+!!!info  
+    使用`git log --oneline --graph`可以查看分支合并的过程
+    
+    实际上,`git log`有很多参数可以使用
+
+    - `--oneline`: 只显示一行提交信息
+    - `--graph`: 显示分支合并的过程
+    - `--all`: 显示所有分支的提交历史
+    - `--reverse`: 逆序显示提交历史
+    - `--since=<date>`: 显示从某个日期开始的提交历史
+    - `--until=<date>`: 显示到某个日期为止的提交历史
+    - `--author=<pattern>`: 显示某个作者的提交历史
+    - `--grep=<pattern>`: 显示包含某个关键字的提交历史
+
+    并且可以组合使用,例如`git log --oneline --graph --all`
+
+
+merge结束后的分支仍然存在,如果想要删除某个分支,可以使用
+
+```bash
+git branch -d <branch_name>
+```
+
+注意`-d`只能删除已经进行过合并的分支,如果想要强制删除某个分支,可以使用
+
+```bash
+git branch -D <branch_name>
+```
+
+即使用大写的`D`
+
+#### 分支合并冲突
+
+假设不同的开发者同时对同一个文件的同一个地方进行修改,那么合并的时候就会发生冲突,Git会提示你发生了冲突,你需要手动解决冲突
+
+<figure markdown="span">
+![Image title](./img/branch6.png){ width="400" }
+<figcaption>冲突制造过程</figcaption>
+</figure>
+
+在这一过程中,我首先在分支feat上对main.txt文件进行了修改,然后进行了一次commit,然后切换到master分支,对main.txt文件相同位置进行了修改,然后进行了一次commit;
+
+现在我们试图将feat分支合并到master分支上,会发生冲突;
+
+此时查看main.txt文件,可以看到发生了冲突;
+
+```text
+> cat main.txt
+main
+<<<<<<< HEAD
+main line 2 updated after feat
+=======
+aha~ now is feat!
+>>>>>>> feat
+```
+
+<div align="center">
+<img src="./img/branch8.png" width="400">
+</div>
+
+运行`git diff`或者直接查看发生冲突的文件都可以看到冲突;
+
+
+解决冲突，保留我们想要的内容，然后进行一次commit，解决冲突；
+
+
+最后我们来看看合并后的的git log
+
+<figure markdown="span">
+![Image title](./img/branch9.png){ width="300" }
+<figcaption>git log</figcaption>
+</figure>
+
+可以看到,master分支的提交历史中包含了feat分支的提交历史;成功合并了feat分支;
+
+
+## 关联远程仓库
+
+Git的强大之处在于它能够与远程仓库进行交互,远程仓库可以是一个服务器,也可以是一个云平台,例如GitHub,GitLab,Gitee等,开发者们在自己的电脑上进行开发,然后将代码推送到远程仓库,其他人可以在远程仓库上进行协作;
+
+这里主要介绍如何与GitHub进行交互;
+
+<figure markdown="span">
+![Image title](./img/remote1.png){ width="400" }
+<figcaption>示意图</figcaption>
+</figure>
+
+
+首先注册一个Github账号,然后创建一个仓库;例如创建一个名为`test`的仓库;
+
+然后使用`git remote add <remote_name> <remote_url>`命令将本地仓库与远程仓库关联;
+
+或者使用`git clone <remote_url>`命令将远程仓库克隆到本地;
+
+然后在本地进行一系列操作,例如添加文件,进行commit,然后使用`git push <remote_name> <branch_name>`命令将本地仓库推送到远程仓库;
+
+这一步实际上是在合并本地仓库和远程仓库;
+
+如果是多人协作,在你push之前,可能别人已经修改过远程仓库,这时候你需要先pull一下,然后再push;
+
+如果pull的时候发生冲突,你需要解决冲突,然后再push;
+
+现在,尽情实践,感受Git的强大和Github开源社区的魅力吧!
 
 
 
