@@ -735,7 +735,7 @@ Git的强大之处在于它能够与远程仓库进行交互,远程仓库可以�
 这里主要介绍如何与GitHub进行交互;
 
 <figure markdown="span">
-![Image title](./img/remote1.png){ width="400" }
+![Image title](./img/remote.png){ width="400" }
 <figcaption>示意图</figcaption>
 </figure>
 
