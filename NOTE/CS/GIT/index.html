@@ -1404,6 +1404,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rebase
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1884,6 +1893,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rebase
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1931,7 +1949,7 @@
 
 <h1 id="git">Git 笔记<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 4233 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 52 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 15 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 4581 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 56 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 16 分钟</p>
 </div>
 <p>作为计科专业的学生,怎么能不会Git呢</p>
 <p>git命令比较多,有些命令的意义比较长难以一直记住,在这里推荐一个非常好用的工具<a href="https://tldr.sh/">tldr</a>，Too long don't read~</p>
@@ -2389,11 +2407,43 @@
 <figcaption>git log</figcaption>
 </figure>
 <p>可以看到,master分支的提交历史中包含了feat分支的提交历史;成功合并了feat分支;</p>
+<h3 id="rebase">Rebase<a class="headerlink" href="#rebase" title="Permanent link">&para;</a></h3>
+<p>除了使用merge命令进行分支合并,还可以使用rebase命令进行分支合并;</p>
+<p>与merge不同,rebase执行完毕后,会将两次分支的提交历史合并成一条线,而不是像溪流一样汇聚在一起；</p>
+<figure>
+<img alt="Image title" src="img/rebase1.png" width="400" />
+<figcaption>示意图</figcaption>
+</figure>
+<p>rebase的工作原理是，找到两个分支的共同祖先，然后从共同祖先开始，将当前分支的提交应用到目标分支上；</p>
+<p>为了演示两种不同的合并方式,我创建了两个分支,然后进行了一系列的commit;并把这个仓库复制一遍；</p>
+<p>现在有两个分支,分别是main和rbs,共同祖先为<code>merge conflict</code>这一次提交,两个分支各自进行了一次提交,为<code>main 1</code>和<code>rbs 1</code>;</p>
+<p>现在，假设我们要把main分支rebase到rbs分支上</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>git<span class="w"> </span>switch<span class="w"> </span>main
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>git<span class="w"> </span>rebase<span class="w"> </span>rbs
+</span></code></pre></div>
+这条命令会将<code>merge conflict</code>后，main分支上的提交接在rbs分支上</p>
+<figure>
+<img alt="Image title" src="img/rebase2.png" width="300" />
+<figcaption>rebase</figcaption>
+</figure>
+<p>然后再试试看rebase rbs到main上</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>git<span class="w"> </span>switch<span class="w"> </span>rbs
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>git<span class="w"> </span>rebase<span class="w"> </span>main
+</span></code></pre></div>
+<figure>
+<img alt="Image title" src="img/rebase3.png" width="300" />
+<figcaption>rebase</figcaption>
+</figure>
+<p>可以看到两次的提交记录是不同的;</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>rebase的中文是"变基",这一含义十分清楚,再某个分支上运行<code>git rebase &lt;branch_name&gt;</code>命令,就是将当前分支的提交历史变基到目标分支上,即从两个分支的共同祖先开始,将当前分支的提交接在目标分支上;</p>
+</div>
 <h2 id="_11">关联远程仓库<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>Git的强大之处在于它能够与远程仓库进行交互,远程仓库可以是一个服务器,也可以是一个云平台,例如GitHub,GitLab,Gitee等,开发者们在自己的电脑上进行开发,然后将代码推送到远程仓库,其他人可以在远程仓库上进行协作;</p>
 <p>这里主要介绍如何与GitHub进行交互;</p>
 <figure>
-<img alt="Image title" src="./img/remote1.png" width="400" />
+<img alt="Image title" src="img/remote.png" width="400" />
 <figcaption>示意图</figcaption>
 </figure>
 <p>首先注册一个Github账号,然后创建一个仓库;例如创建一个名为<code>test</code>的仓库;</p>
