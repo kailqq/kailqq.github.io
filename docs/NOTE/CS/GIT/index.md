@@ -668,6 +668,65 @@ aha~ now is feat!
 
 可以看到,master分支的提交历史中包含了feat分支的提交历史;成功合并了feat分支;
 
+### Rebase
+
+除了使用merge命令进行分支合并,还可以使用rebase命令进行分支合并;
+
+与merge不同,rebase执行完毕后,会将两次分支的提交历史合并成一条线,而不是像溪流一样汇聚在一起；
+
+<figure markdown="span">
+![Image title](./img/rebase1.png){ width="400" }
+<figcaption>示意图</figcaption>
+</figure>
+
+rebase的工作原理是，找到两个分支的共同祖先，然后从共同祖先开始，将当前分支的提交应用到目标分支上；
+
+为了演示两种不同的合并方式,我创建了两个分支,然后进行了一系列的commit;并把这个仓库复制一遍；
+
+现在有两个分支,分别是main和rbs,共同祖先为`merge conflict`这一次提交,两个分支各自进行了一次提交,为`main 1`和`rbs 1`;
+
+现在，假设我们要把main分支rebase到rbs分支上
+
+```bash
+git switch main
+git rebase rbs
+```
+这条命令会将`merge conflict`后，main分支上的提交接在rbs分支上
+
+<figure markdown="span">
+![Image title](./img/rebase2.png){ width="300"}
+<figcaption>rebase</figcaption>
+</figure>
+
+然后再试试看rebase rbs到main上
+
+```bash
+git switch rbs
+git rebase main
+```
+
+<figure markdown="span">
+![Image title](./img/rebase3.png){ width="300"}
+<figcaption>rebase</figcaption>
+</figure>
+
+可以看到两次的提交记录是不同的;
+
+!!!note
+     rebase的中文是"变基",这一含义十分清楚,再某个分支上运行`git rebase <branch_name>`命令,就是将当前分支的提交历史变基到目标分支上,即从两个分支的共同祖先开始,将当前分支的提交接在目标分支上;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 关联远程仓库
 
