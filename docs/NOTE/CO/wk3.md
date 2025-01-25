@@ -75,7 +75,35 @@ operator+operands
 |x28-31|t3-6|临时变量|caller|
 
 
+!!!note "saver"
+    在riscv代码中,当进行函数调用时,需要考虑caller save和callee save;
 
+    所谓caller save,就是指在函数调用时,调用者需要保存自己的寄存器,一般是参数还有返回值;
+
+    所谓callee save,就是指在函数调用时,被调用者需要保存某些重要寄存器里面的值,比如`x8-11`这些寄存器;
+
+    caller需要保证调用子函数时,x1,x5,x6-7,a0-7寄存器可以被子函数使用;
+
+    callee需要保证调用结束后,x8-11寄存器里面的值不会改变;
+
+    保存的方法是使用堆栈
+
+    ```assembly
+    addi sp, sp, -8
+    sw x1, 4(sp)
+    sw x2, 0(sp) #push
+    ...
+    ...
+    lw x2, 0(sp)
+    lw x1, 4(sp) #pop
+    ```
+    <figure markdown="span">
+    ![Image title](./pc/push.png){ width="400" }
+    <figcaption>示意图</figcaption>
+    </figure>
+
+
+    `sp`始终指向栈顶
 !!! Section "RISC-V 指令集的类型"
     === "R-type"
         R-type指令是指令集中的一种类型，它们的操作码字段是固定的，而剩余的字段则根据指令的具体功能而变化。R-type指令通常用于执行算术运算和逻辑运算等操作;R-type指令的格式如下所示：

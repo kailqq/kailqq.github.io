@@ -243,6 +243,7 @@ nav:
              - 绪论: "NOTE/CO/wk1.md"
              - 指令集: "NOTE/CO/wk3.md"
              - 计算机中的算数: "NOTE/CO/wk2.md"
+             - 处理器: "NOTE/CO/wk4.md"
           -  LINEAR-ALGEBRA:
               - "NOTE/LA/linear-algebra.md"
               - 基础: "NOTE/LA/前置知识.md"
