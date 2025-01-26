@@ -5,7 +5,7 @@ site_author: Kailqq # 作者
 site_description: >- # 项目描述
     人生苦短，纵情燃烧
 # 代码仓库信息
-repo_name: Kailqq # 仓库名称
+repo_name: 𝓚𝓪𝓲𝓵𝓺𝓺 # 仓库名称
 repo_url: https://github.com/kailqq/kailqq.github.io # 仓库地址
 
 # 版权信息
@@ -244,6 +244,8 @@ nav:
              - 指令集: "NOTE/CO/wk3.md"
              - 计算机中的算数: "NOTE/CO/wk2.md"
              - 处理器: "NOTE/CO/wk4.md"
+             - 内存层次: "NOTE/CO/wk5.md"
+             - 存储和IO: "NOTE/CO/wk6.md"
           -  LINEAR-ALGEBRA:
               - "NOTE/LA/linear-algebra.md"
               - 基础: "NOTE/LA/前置知识.md"
