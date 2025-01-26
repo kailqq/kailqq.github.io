@@ -121,7 +121,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://note.kailqq.cc/NOTE/CO/wk4/</loc>
+         <lastmod>2025-01-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://note.kailqq.cc/NOTE/CO/%E8%8D%89%E7%A8%BF/</loc>
+         <lastmod>2025-01-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://note.kailqq.cc/NOTE/CO/pc/wk4/</loc>
          <lastmod>2025-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
