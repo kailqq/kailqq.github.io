@@ -2,11 +2,15 @@
 
 呃啊，硬件:innocent:
 
-## 目录
 
-- [绪论](./wk1.md)
-- [指令集](./wk3.md)
-- [计算机中的算数](./wk2.md)
-- [处理器](./wk4.md)
-- [内存层次](./wk5.md)
-- [存储和IO](./wk6.md)
+<div class="toc-container">
+    <div class="toc-header">目录</div>
+    <ul class="toc">
+        <li><a href="./wk1">绪论</a></li>
+        <li><a href="./wk3">指令集</a></li>
+        <li><a href="./wk2">计算机中的算数</a></li>
+        <li><a href="./wk4">处理器</a></li>
+        <li><a href="./wk5">内存层次</a></li>
+        <li><a href="./wk6">存储和IO</a></li>
+    </ul>
+</div>

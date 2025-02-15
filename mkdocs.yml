@@ -21,14 +21,15 @@ theme:
   custom_dir: overrides
   features: # 功能  
     - announce.dismiss # 可以叉掉公告的功能
-    - content.action.edit # 编辑按钮，似乎没啥用
-    - content.action.view # 查看按钮，似乎没啥用
+    # - content.action.edit # 编辑按钮，似乎没啥用
+    # - content.action.view # 查看按钮，似乎没啥用
     - content.code.annotate # 代码注释，具体不清楚
     - content.code.copy # 复制代码按钮
     - content.code.select # 选择代码按钮
     # - content.tabs.link # 链接标签
     - content.tooltips # 不太清楚呢这个
     # - header.autohide # 自动隐藏header
+
     - navigation.expand # 默认展开导航栏
     - navigation.footer # 底部导航栏
     - navigation.indexes # 索引按钮可以直接触发文件，而不是只能点击其下属选项浏览，这个功能可以给对应的section提供很好的预览和导航功能
@@ -39,11 +40,11 @@ theme:
     - navigation.prune # 只构建可见的页面
     - navigation.sections # 导航栏的section
     - navigation.tabs # 顶级索引被作为tab
-    - navigation.tabs.sticky # tab始终可见
+    # - navigation.tabs.sticky # tab始终可见
     - navigation.top # 开启顶部导航栏
     - navigation.tracking # 导航栏跟踪
+    
     - search.highlight # 搜索高亮
-    - navigation.path
     - search.share # 搜索分享
     - search.suggest # 搜索建议
     - toc.follow # 目录跟踪-页面右侧的小目录
@@ -102,12 +103,6 @@ plugins:
   - tags # 标签功能插件
   - search # 搜索插件
   - changelog  
-  # - git-revision-date-localized:
-  #     enable_creation_date: true
-  #     locale: zh
-  #     type: date
-  #     timezone: Asia/Shanghai
-  # - social
   - print-site
 
 extra:
@@ -214,6 +209,7 @@ extra_javascript:
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
   - javascripts/card.js
+  - javascripts/toc.js
 
   
 extra_css:
@@ -228,6 +224,8 @@ extra_css:
   - css/tableandsize.css
   - css/flink.css
   - css/float_card.css
+  - css/fdtoc.css
+  - css/tocindex.css
   - https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
 # 导航树 - 请按照我的做法来做，否则可能无法正常工作。引号可以省略。开头的点和斜杠也可以省略 ("./HOME/about.md" 或 Home/about.md) 。注意，导航树这里的文件名是 filename.md 这样的，但在文件夹中，它实际上被命名为 filename.en.md 和 filename.zh.md。我猜测默认是英文，所以, index.en.md 和 index.md 是一样的。i18n插件会自动识别文件名，然后根据文件名的后缀来切换语言。所以，如果你想添加一个新页面，你需要添加两个文件，一个是 filename.en.md，另一个是 filename.zh.md。其中，filename.en.md 也可以被命名为 filename.md，但是 filename.zh.md 不能被命名为 filename.md，否则会导致无法识别。
@@ -294,6 +292,16 @@ nav:
               - NOTE/MA/index.md
       - CS:
           - NOTE/CS/index.md 
+          - TMS:
+              - NOTE/CS/TMS/index.md
+              - 概览与shell: NOTE/CS/TMS/overview-and-shell.md
+              - shell工具与脚本: NOTE/CS/TMS/shell-tools-and-scripts.md
+              - 数据整理: NOTE/CS/TMS/data-wrangling.md
+              - 命令行环境: NOTE/CS/TMS/command-line-environment.md
+              - 调试与性能分析: NOTE/CS/TMS/debugging-and-profiling.md
+              - 元编程: NOTE/CS/TMS/metaprogramming.md
+              - 安全和密码学: NOTE/CS/TMS/security-and-cryptography.md
+              - 大杂烩: NOTE/CS/TMS/miscellaneous.md
           - Git: NOTE/CS/GIT/index.md
           - verilog学习笔记: NOTE/CS/Verilog/verilog.md 
           - RUST学习笔记:  NOTE/CS/RUST/RUST.md 

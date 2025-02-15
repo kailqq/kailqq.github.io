@@ -32,5 +32,3 @@ statistics: True
 [欢迎来我的主页看看](https://kailqq.cc)
 
 [源码仓库:fontawesome-brands-github:](https://github.com/kailqq/kailqq.github.io)
-
-
