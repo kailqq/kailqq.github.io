@@ -36,6 +36,9 @@ comments: true
   <a href="./Language/" class="number" data-card="card9">
     语言
   </a>
+   <a href="./DB/" class="number" data-card="card10">
+    DB
+  </a>
 </div>
 
 <div class="card-container">
@@ -92,5 +95,11 @@ comments: true
             <div class="description">
                 ADS(Advanced Data Structures)是一门数据结构与算法分析的课程，主要在FDS(Fundamental Data Structures)的基础上，介绍一些高级数据结构与算法,参考教材为《算法导论》
             </div>
+    </a>
+    <a href="./DB/" class="card_stack" id="card10">
+        <div class="title">数据库系统</div>
+        <div class="description">
+            数据库系统(Database system),主要学习数据库的应用和数据库的具体实现.
+        </div>
     </a>
 </div>

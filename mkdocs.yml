@@ -236,6 +236,9 @@ nav:
   - NOTE:
       - NOTE/index.md
       -  课程笔记:
+          - 数据库系统:
+            - NOTE/DB/index.md
+            - Introduction: NOTE/DB/lec1.md
           - 计算机组成与设计:
              - NOTE/CO/index.md
              - 绪论: "NOTE/CO/wk1.md"
