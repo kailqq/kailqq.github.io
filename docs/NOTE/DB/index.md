@@ -7,3 +7,4 @@ comments: true
 > 授课教师：[陈刚](https://dilab-zju.github.io/team.html)
 
 - [x] [introduction](./lec1.md)
+- [ ] [relation model](./lec2.md)

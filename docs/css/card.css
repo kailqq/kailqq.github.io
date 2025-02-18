@@ -283,6 +283,9 @@
 .card_stack:nth-child(10) {
   transform: translate(1.8%, 1.8%);
 }
+.card_stack:nth-child(11) {
+  transform: translate(1.8%, 1.8%);
+}
 
 
 

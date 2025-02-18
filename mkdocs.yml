@@ -238,7 +238,8 @@ nav:
       -  课程笔记:
           - 数据库系统:
             - NOTE/DB/index.md
-            - Introduction: NOTE/DB/lec1.md
+            - 介绍: NOTE/DB/lec1.md
+            - 关系模型: NOTE/DB/lec2.md
           - 计算机组成与设计:
              - NOTE/CO/index.md
              - 绪论: "NOTE/CO/wk1.md"
@@ -293,6 +294,9 @@ nav:
               - 外部排序: NOTE/ADS/wk14.md
           - 数学分析:
               - NOTE/MA/index.md
+          - 计算机体系结构:
+              - NOTE/Arch/index.md
+              - Fundamentals: NOTE/Arch/chap1.md
       - CS:
           - NOTE/CS/index.md 
           - TMS:

@@ -8,7 +8,51 @@ comments: true
 
 ## 目录
 
+
+
+<div class="toc-container">
+    <div class="toc-header">目录</div>
+    <ul class="toc">
+        <li>
+            <a href="./Arch/" class="number" data-card="card11">Arch</a>
+        </li>
+        <li>
+            <a href="./ADS/" class="number" data-card="card1">ADS</a>
+        </li>
+        <li>
+            <a href="./CO/" class="number" data-card="card2">计组</a>
+        </li>
+        <li>
+            <a href="./CTF/CTF" class="number" data-card="card3">CTF</a>
+        </li>
+        <li>
+            <a href="./LA/linear-algebra" class="number" data-card="card4">线性代数</a>
+        </li>
+        <li>
+            <a href="./MA/" class="number" data-card="card5">数学分析</a>
+        </li>
+        <li>
+            <a href="./Physics/" class="number" data-card="card6">普通物理</a>
+        </li>
+        <li>
+            <a href="./Probability/" class="number" data-card="card7">概率论</a>
+        </li>
+        <li>
+            <a href="./CS/" class="number" data-card="card8">其它</a>
+        </li>
+        <li>
+            <a href="./Language/" class="number" data-card="card9">语言</a>
+        </li>
+        <li>
+            <a href="./DB/" class="number" data-card="card10">DB</a>
+        </li>
+    </ul>
+</div>
+<!-- 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+  <a href="./Arch/" class="number" data-card="card11">
+    Arch
+  </a>
   <a href="./ADS/" class="number" data-card="card1">
     ADS
   </a>
@@ -39,7 +83,9 @@ comments: true
    <a href="./DB/" class="number" data-card="card10">
     DB
   </a>
-</div>
+</div> -->
+
+
 
 <div class="card-container">
     <a href="./CO/" class="card_stack" id="card2">
@@ -94,6 +140,12 @@ comments: true
             <div class="title">高级数据结构与算法分析</div>
             <div class="description">
                 ADS(Advanced Data Structures)是一门数据结构与算法分析的课程，主要在FDS(Fundamental Data Structures)的基础上，介绍一些高级数据结构与算法,参考教材为《算法导论》
+            </div>
+    </a>
+    <a href="./Arch/" class="card_stack" id="card11">
+            <div class="title">计算机体系结构</div>
+            <div class="description">
+                直接承接计组的内容，主要包括各种cache和CPU，乱序等内容
             </div>
     </a>
     <a href="./DB/" class="card_stack" id="card10">
