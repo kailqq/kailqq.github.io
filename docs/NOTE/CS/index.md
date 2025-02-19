@@ -10,6 +10,7 @@
         <li><a href="./RUST/RUST">Rust</a></li>
         <li><a href="./GIT/">Git</a></li>
         <li><a href="./TMS/">The Missing Semester</a></li>
+        <li><a href="./CV/">Computer Version</a></li>
     </ul>
 
 </div>

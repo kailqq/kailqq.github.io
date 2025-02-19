@@ -3,7 +3,7 @@ comments: true
 ---
 # 我的笔记
 
-用于记录课程内容或者自学知识的笔记，希望能帮助到你.
+用于记录课程内容的笔记，希望能帮助到你.
 :kissing:
 
 ## 目录
@@ -36,12 +36,6 @@ comments: true
         </li>
         <li>
             <a href="./Probability/" class="number" data-card="card7">概率论</a>
-        </li>
-        <li>
-            <a href="./CS/" class="number" data-card="card8">其它</a>
-        </li>
-        <li>
-            <a href="./Language/" class="number" data-card="card9">语言</a>
         </li>
         <li>
             <a href="./DB/" class="number" data-card="card10">DB</a>
@@ -122,18 +116,6 @@ comments: true
         <div class="title">概率论</div>
         <div class="description">
             本笔记为浙江大学概率论课程的笔记，主要内容为概率论的基本概念、随机变量、概率分布、大数定律、中心极限定理等。
-        </div>
-    </a>
-    <a href="./CS/" class="card_stack" id="card8">
-        <div class="title">其它</div>
-        <div class="description">
-            这部分主要为一些自学内容，包括但不限于常用工具，编程语言等
-        </div>
-    </a>
-    <a href="./Language/" class="card_stack" id="card9">
-        <div class="title">语言</div>
-        <div class="description">
-            嗯，我要学外语了
         </div>
     </a>
      <a href="./ADS/" class="card_stack" id="card1">

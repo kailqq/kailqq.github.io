@@ -234,8 +234,8 @@ nav:
   # - HOME: index.md
   - change_log: changelog.md
   - NOTE:
-      - NOTE/index.md
       -  课程笔记:
+          - NOTE/index.md
           - 数据库系统:
             - NOTE/DB/index.md
             - 介绍: NOTE/DB/lec1.md
@@ -297,7 +297,7 @@ nav:
           - 计算机体系结构:
               - NOTE/Arch/index.md
               - Fundamentals: NOTE/Arch/chap1.md
-      - CS:
+      - 自学笔记:
           - NOTE/CS/index.md 
           - TMS:
               - NOTE/CS/TMS/index.md
@@ -317,10 +317,10 @@ nav:
                - 程序格式: NOTE/CS/ASM/wk1_2.md
                - 数据表示: NOTE/CS/ASM/wk2.md
                - 寻址方式: NOTE/CS/ASM/wk3.md
-      - language:
-          - index: NOTE/Language/index.md
-          - English: NOTE/Language/English.md
-      
+          - language:
+              - index: NOTE/Language/index.md
+              - English: NOTE/Language/English.md
+          
   - Friends: friends.md
   # - Verifications: googleb8ce910372c2ff85.html
   # - sitemap: sitemap.xml
