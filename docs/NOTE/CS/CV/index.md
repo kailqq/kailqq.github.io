@@ -13,3 +13,4 @@ comments: true
 目录:
 
 - [x] [Image Classification](./lec1.md)
+- [x] [Linear Classifiers](./lec2.md)
