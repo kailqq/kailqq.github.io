@@ -164,3 +164,84 @@ Assume there exists relations $r$ and $s$: $r(A, B, C)$, $s(B, D)$, we can say t
 Primary key and foreign key are integrated constraints. 
 即外键和主键是一体的约束，协同工作。
 
+
+## Fundamental relational-algebra operations
+
+### Select
+
+Notation: $\sigma_{p}(r)$,where $r$ is a relation and $p$ is a predicate.
+
+Defined as:
+
+\[ \sigma_{p}(r) = \{t|t\in r \land p(t)\} \]
+
+where $p(t)$ is a predicate that is true for a tuple $t$ if the tuple satisfies the condition specified by the predicate.And $p$ is a formula in propositional calculus consistion of terms connected by logical operators.
+
+And each term is of the form :
+
+\[
+    <attribute> <operator> <constant> or <attribute> <operator> <attribute>
+\]
+
+where $<operator>$ is one of the following: $=, \neq, <, \leq, >, \geq$
+
+Eg. $\sigma_{age>20}(Student)$
+
+
+### Project(投影)
+
+>如果说select是对行的操作，那么project就是对列的操作
+
+Notation: $\pi_{A_1,A_2,\ldots,A_n}(r)$,where $r$ is a relation and $A_1,A_2,\ldots,A_n$ are attributes of $r$.
+
+The result of the operation is obtained by deleting columns that are not in the list of attributes.And duplicate rows will be removed
+
+<figure markdown="span">
+![](./img/lec2-4.png){ width="500" }
+<figcaption>Example</figcaption>
+</figure>
+
+
+### Union
+
+Notation: $r \cup s$, where $r$ and $s$ are relations with the same schema.
+
+Defined as:
+
+\[
+    r \cup s = \{t|t\in r \lor t\in s\}
+\]
+
+Eg.
+
+<figure markdown="span">
+![](./img/lec2-5.png){ width="500" }
+<figcaption>Example</figcaption>
+</figure>
+
+
+### set difference
+
+Notation: $r - s$, where $r$ and $s$ are relations with the same schema.
+
+Defined as:
+
+\[
+    r - s = \{t|t\in r \land t\notin s\}
+\]
+
+set difference must be taken between two compatible relations.
+
+- $r$ and $s$ must have the same arity
+- Attribute domains must be compatible
+
+Eg.
+
+<figure markdown="span">
+![](./img/lec2-6.png){ width="500" }
+<figcaption>Example</figcaption>
+</figure>
+
+### Cartesian product
+
+### Rename
