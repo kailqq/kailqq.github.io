@@ -510,8 +510,5 @@ Use the *generalized projection* operator to do this task
 				r \leftarrow \Pi_{F1, F2,\ldots, Fn}(r) 
 \]
 
-where each $F_i$ is either the $i$th attribute of $r$, if the $i$th attribute is not updated, or, if the attribute is to be updated $F_i$  is an expression, involving only constants and the attributes of $r$, which gives the new value for the attribute. 
-
-
-
+where each $F_i$ is either the $i$th attribute of $r$, if the $i$th attribute is not updated, or, if the attribute is to be updated $F_i$  is an expression, involving only constants and the attributes of $r$, which gives the new value for the attribute
 
