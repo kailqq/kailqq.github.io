@@ -1,5 +1,8 @@
 # Optimization
 
+!!!quote
+    对于矩阵求导的知识，可以参考[矩阵求导](https://zhuanlan.zhihu.com/p/273729929)
+
 For linear classifiers, we need to find the best weight matrix $W$ to separate the data.
 
 A simple idea is to find such a $W^*$ that satisfies the following equation:

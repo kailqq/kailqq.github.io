@@ -15,3 +15,4 @@ comments: true
 - [x] [Image Classification](./lec1.md)
 - [x] [Linear Classifiers](./lec2.md)
 - [x] [Optimization](./lec3.md)
+- [x] [Neural Networks](./lec4.md)
