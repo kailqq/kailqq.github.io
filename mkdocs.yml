@@ -240,6 +240,7 @@ nav:
             - NOTE/DB/index.md
             - 介绍: NOTE/DB/lec1.md
             - 关系模型: NOTE/DB/lec2.md
+            - SQL: NOTE/DB/sql.md
           - 计算机组成与设计:
              - NOTE/CO/index.md
              - 绪论: "NOTE/CO/wk1.md"
