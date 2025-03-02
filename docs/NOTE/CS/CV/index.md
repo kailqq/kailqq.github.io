@@ -16,3 +16,4 @@ comments: true
 - [x] [Linear Classifiers](./lec2.md)
 - [x] [Optimization](./lec3.md)
 - [x] [Neural Networks](./lec4.md)
+- [x] [Backpropagation](./lec5.md)
