@@ -1165,3 +1165,190 @@ SET balance = CASE
     ELSE balance * 1.06
 END;
 ```
+
+#### Update of view
+
+Example:Create a view of all loan data in loan relation, hiding the amount attribute. 
+
+```sql
+CREATE VIEW branch_loan as 
+SELECT branch_name, loan_number 
+FROM loan;
+```
+
+Add a new tuple to branch_loan. 
+
+```sql
+INSERT INTO branch_loan 
+VALUES (‘Perryridge’, ‘L-307’) 
+```
+
+This insertion will be translated into: 
+
+```sql
+INSERT INTO loan 
+VALUES (‘L-307’, ‘Perryridge’, null) 
+```
+
+Updates on more complex views are difficult or impossible to translate into updates on the base relations,and hence are not allowed.
+
+
+#### Summary of update on view
+
+- View 是虚表，对其进行的所有操作都将转化为对基表的操作。
+- 查询操作时，VIEW与基表没有区别，但对VIEW的更新操作有严格限制，如只有行列视图(建立在单个基本表上的视图，且视图的列对应表的列，称为“行列视图”。)，可更新数据
+- 大多数SQL实现只允许在单个关系上定义的简单视图上进行更新操作，且不包含聚合函数
+
+
+### Transaction
+
+在 SQL 中，事务（Transaction）是指一系列查询和数据更新语句，这些语句作为一个单一的逻辑单元执行。事务的目的是确保数据库操作的完整性和一致性。事务通常具有以下四个特性，简称为 ACID：
+
+1. **原子性（Atomicity）**：事务中的所有操作要么全部完成，要么全部不完成。事务不能只完成其中的一部分。
+
+2. **一致性（Consistency）**：事务的执行必须使数据库从一个一致的状态转变为另一个一致的状态。
+
+3. **隔离性（Isolation）**：一个事务的执行不能被其他事务干扰。即使多个事务并发执行，在事务之间的操作结果是相互隔离的。
+
+4. **持久性（Durability）**：一旦事务提交，其结果就应该永久保存在数据库中，即使系统发生故障。
+
+在 SQL 中，事务通常是隐式启动的，并通过以下两种方式之一来终止：
+
+- **COMMIT WORK**：提交事务，将事务中所有的更新永久地保存到数据库中。这意味着事务中的所有操作都被确认并生效。
+
+- **ROLLBACK WORK**：回滚事务，撤销事务中执行的所有更新。这意味着事务中的所有操作都被取消，数据库状态恢复到事务开始之前的状态。
+
+通过使用 `COMMIT` 和 `ROLLBACK`，可以控制事务的完成或取消，从而确保数据库的可靠性和一致性，即使在出现错误或系统崩溃的情况下。
+
+## Joined Relations
+
+Join operations take as input two relations and return as a result another relation. 
+
+<span style="color:red">Join condition</span> – defines which tuples in the two relations match, and what attributes are present in the result of the join. 
+
+
+<span style="color:red">Join type</span> – defines how tuples in each relation that do not match any tuple in the other relation (based on the join condition) are treated. 
+
+- 自然连接：自然连接是一种特殊的等值连接，它要求两个关系中所有同名属性都相等，不需要指定连接条件。
+
+```sql
+R natural {inner join, left join, right join, full join} S 
+```
+
+
+- 非自然连接： 需要指定连接条件。
+
+```sql
+R {inner join, left join, right join, full join} S on condition using (A1, A2, ..., An)
+```
+
+
+### INNER JOIN
+
+- **作用**：返回两个表中匹配的行。
+- **语法**：
+  ```sql
+  SELECT columns
+  FROM table1
+  INNER JOIN table2 ON table1.column = table2.column;
+  ```
+
+---
+
+### LEFT JOIN (LEFT OUTER JOIN)
+- **作用**：返回左表所有行 + 右表匹配的行（未匹配的右表字段为 `NULL`）。
+- **语法**：
+  ```sql
+  SELECT columns
+  FROM table1
+  LEFT JOIN table2 ON table1.column = table2.column;
+  ```
+
+---
+
+### RIGHT JOIN (RIGHT OUTER JOIN)
+- **作用**：返回右表所有行 + 左表匹配的行（未匹配的左表字段为 `NULL`）。
+- **语法**：
+  ```sql
+  SELECT columns
+  FROM table1
+  RIGHT JOIN table2 ON table1.column = table2.column;
+  ```
+
+---
+
+### FULL OUTER JOIN
+- **作用**：返回左右表所有行（未匹配的字段为 `NULL`）。
+- **语法**：
+  ```sql
+  SELECT columns
+  FROM table1
+  FULL OUTER JOIN table2 ON table1.column = table2.column;
+  ```
+
+---
+
+### CROSS JOIN
+- **作用**：返回两表的笛卡尔积（无连接条件）。
+- **语法**：
+  ```sql
+  SELECT columns
+  FROM table1
+  CROSS JOIN table2;
+  ```
+
+---
+
+### SELF JOIN
+- **作用**：将表与自身连接，常用于层级或对称关系查询。
+- **语法**：
+  ```sql
+  SELECT a.column, b.column
+  FROM table a
+  JOIN table b ON a.column = b.column;
+  ```
+
+---
+
+### JOIN condition
+
+#### ON 
+- **作用**：指定任意连接条件（支持多条件和复杂逻辑）。
+- **语法**：
+  ```sql
+  SELECT *
+  FROM orders
+  JOIN customers ON orders.customer_id = customers.id;
+  ```
+
+#### USING 
+- **作用**：简化同名列的连接（自动匹配列名）。
+- **语法**：
+  ```sql
+  SELECT *
+  FROM employees
+  JOIN departments USING (dept_id);
+  ```
+
+---
+
+### JOIN performance optimization
+1. **索引优化**：  
+   - 在连接列（如 `dept_id`）上创建索引。
+2. **减少数据量**：  
+   - 先通过 `WHERE` 过滤再 `JOIN`。
+3. **避免笛卡尔积**：  
+   - 确保 `CROSS JOIN` 是必要且可控的。
+4. **使用 EXPLAIN**：  
+   - 分析查询计划，检查连接顺序和算法（如 Nested Loop、Hash Join）。
+
+---
+
+### Summary
+| JOIN 类型          | 匹配规则                          | 是否保留未匹配数据       |
+|--------------------|-----------------------------------|--------------------------|
+| `INNER JOIN`       | 仅匹配的行                        | 否                       |
+| `LEFT JOIN`        | 左表全保留 + 右表匹配             | 左表未匹配行保留         |
+| `RIGHT JOIN`       | 右表全保留 + 左表匹配             | 右表未匹配行保留         |
+| `FULL OUTER JOIN`  | 左右表全保留                      | 左右表未匹配行均保留     |
+| `CROSS JOIN`       | 无条件，笛卡尔积                  | 不适用                   |
