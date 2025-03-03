@@ -693,14 +693,475 @@ HAVING AVG(salary) > (SELECT AVG(salary) FROM employees);
     SELECT customer_name FROM depositor;
     ```
 
+    Find  all customers who have both an account and a loan at the Perryridge branch. 
+
+    - query 1:
+    ```sql
+    SELECT DISTINCT customer_name
+    FROM borrower B, loan L
+    WHERE B.loan_number = L.loan_number
+      AND branch_name = 'Perryridge'
+      AND (branch_name, customer_name) IN (
+        SELECT branch_name, customer_name
+        FROM depositor D, account A
+        WHERE D.account_number = A.account_number
+      );
+    ```
+    
+    - query 2:
+    ```sql
+    SELECT DISTINCT customer_name
+    FROM borrower B, loan L
+    WHERE B.loan_number = L.loan_number
+      AND branch_name = 'Perryridge'
+      AND customer_name IN (
+        SELECT customer_name
+        FROM depositor D, account A
+        WHERE D.account_number = A.account_number
+          AND branch_name = 'Perryridge'
+    );
+    ```
+
+    - query 3:指定名称，将外层的结果传递进去
+    ```sql
+    SELECT DISTINCT customer_name
+    FROM borrower B, loan AS t
+    WHERE B.loan_number = t.loan_number
+      AND branch_name = 'Perryridge'
+      AND customer_name IN (
+        SELECT customer_name
+        FROM depositor D, account A
+        WHERE D.account_number = A.account_number
+          AND branch_name = t.branch_name -- branch_name is the same as the branch_name in the outer (Perryridge)
+    );
+    ```
 
 
+Find the account_number with the maximum balance for every branch.
+
+```sql
+SELECT account_number, balance 
+	      FROM account 
+        WHERE balance >= max(balance) 
+        GROUP BY branch_name 
+```
+
+错，聚合函数不能在where子句中使用
+
+```sql
+SELECT account_number, max(balance) 
+FROM account 
+GROUP BY branch_name 
+```
+错误，account_number不是聚合函数的一部分，且没有在group by子句中
+
+正确的为
+
+```sql
+-- Select account number and balance from the account table
+SELECT account_number AS AN, balance
+FROM account A
+-- Filter to get accounts with the maximum balance in each branch
+WHERE balance >= (
+    -- Subquery to get the maximum balance for each branch
+    SELECT max(balance)
+    FROM account B
+    WHERE A.branch_name = B.branch_name
+)
+-- Order the results by balance
+ORDER BY balance;
+```
+但是
+```sql
+SELECT account_number, balance 
+FROM account 
+GROUP by branch_name 
+HAVING balance >= max(balance) 
+ORDER by balance 
+```
+错误，max(balance)是聚合列，balance不是聚合列
+
+### Set Comparison
+
+Find all branches that have greater assets than some branch located in Brooklyn. 
+
+```sql
+SELECT branch_name
+FROM branch
+WHERE assets > SOME (
+    SELECT assets
+    FROM branch
+    WHERE branch_city = 'Brooklyn'
+);
+```
+
+Find all branches that have greater assets than all branches located in Brooklyn.
+
+```sql
+SELECT branch_name
+FROM branch
+WHERE assets > ALL (
+    SELECT assets
+    FROM branch
+    WHERE branch_city = 'Brooklyn'
+);
+```
+or
+
+```sql
+SELECT branch_name
+FROM branch
+WHERE assets > (SELECT MAX(assets) FROM branch WHERE branch_city = 'Brooklyn');
+```
+
+### Test for Empty Relations
+
+The `exists` construct returns the value true if the argument subquery is non-empty. 
+
+- `exists` $r$ equal to $r \neq \emptyset$
+- `not exists` $r$ equal to $r = \emptyset$
 
 
+!!!Example
+    Find all customers who have accounts at all branches located in city Brooklyn. 
+
+    ```sql
+     SELECT DISTINCT S.customer_name
+     FROM depositor AS S
+     WHERE NOT EXISTS (
+         (SELECT branch_name
+          FROM branch
+          WHERE branch_city = 'Brooklyn')
+         EXCEPT
+         (SELECT DISTINCT R.branch_name
+          FROM depositor AS T, account AS R
+          WHERE T.account_number = R.account_number
+          AND S.customer_name = T.customer_name)
+     );
+    ```
+
+    即挑出的S将满足，**Brooklyn所有支行的branch_number减去S有账户的branch_number后，为空**。
+    而由于
+
+    \[
+       A - B = \emptyset \iff A \subseteq B
+    \]
+
+    所以挑出的S将满足，**S有账户的branch_number包含了Brooklyn所有支行的branch_number**。
+
+    也就满足了要求。
+    
+    ```sql
+    SELECT DISTINCT S.customer_name
+    FROM depositor AS S
+    WHERE NOT EXISTS (
+        SELECT *
+        FROM branch B
+        WHERE branch_city = 'Brooklyn' AND NOT EXISTS (
+            SELECT *
+            FROM depositor AS T, account AS R
+            WHERE T.account_number = R.account_number
+            AND R.branch_name = B.branch_name
+            AND S.customer_name = T.customer_name
+        )
+    );
+    ```   
+
+    这里有两个not exists，里面的select子句挑出了在Brooklyn中没有某些支行账户的表格，外面的not exists挑出了不存在这一条件的客户;
+    即 **不存在在Brooklyn中不存在账户的客户** ，也就是 **在Brooklyn的所有支行都有账户的客户** 。
+
+### Test for Absence of Duplicate Tuples
+
+The unique construct tests whether a subquery has any duplicate tuples in its result. 
+
+!!!Example
+     Find all customers who have at most one account at the Perryridge branch. 
+     
+     ```sql
+     SELECT customer_name
+     FROM depositor AS T
+     WHERE UNIQUE (
+         SELECT R.customer_name
+         FROM account, depositor AS R
+         WHERE T.customer_name = R.customer_name
+         AND R.account_number = account.account_number
+         AND account.branch_name = 'Perryridge'
+     );
+     ```
+
+     Find all customers who have at least two accounts at the Perryridge branch. 
+
+     ```sql
+     SELECT DISTINCT T.customer_name
+     FROM depositor AS T
+     WHERE NOT UNIQUE (
+           SELECT R.customer_name
+           FROM account, depositor AS R
+           WHERE T.customer_name = R.customer_name
+           AND R.account_number = account.account_number
+           AND account.branch_name = 'Perryridge'
+     );
+     ```
+## Views
+
+A view is a virtual table that is defined by a query. It is a stored query that can be used to simplify complex queries and to provide a consistent view of the data.
+
+Provide a mechanism to hide certain data from the view of certain users. 
+
+### Create View
+
+```sql
+CREATE VIEW view_name AS SELECT attribute_list FROM table_name WHERE condition;
+-- or
+CREATE VIEW view_name (c1, c2, ..., cn) AS SELECT attribute_list FROM table_name WHERE condition;
+```
 
 
+!!!advice
+    Benefits of using views 
+    - Security 
+    - Easy to use, support logical independence
+    - Simplify complex queries
+    - Hide certain data from the view of certain users
+
+### Drop View
+
+```sql
+DROP VIEW view_name;
+```
+
+!!!Example
+    Create a view consisting of branches and their customer names. 
+
+    ```sql
+    CREATE VIEW all_customer AS 
+    (
+        (SELECT branch_name, customer_name 
+         FROM depositor, account 
+         WHERE depositor.account_number = account.account_number) 
+       UNION
+        (SELECT branch_name, customer_name 
+         FROM borrower, loan 
+         WHERE borrower.loan_number = loan.loan_number)
+    );
+    ```
 
 
+## Derived Relations
+
+In SQL, Derived Relations (derived relations) are created through subqueries (subquery) in the `FROM` clause. They are typically used to simplify complex queries and make them more readable.
+
+Such as:Find the average account balance of those branches where the average account balance is greater than $500. 
+
+```sql
+SELECT branch_name, avg_bal 
+     FROM (SELECT branch_name, avg(balance) 
+      FROM account 
+      GROUP BY branch_name) 
+      as result (branch_name, avg_bal) 
+     WHERE avg_bal > 500 
+```
+> The derived table must have its own alias
+
+### With Clause
+
+The WITH clause allows views to be defined locally for a query, rather than globally. 
+>`WITH` 子句允许在查询中局部定义视图，而不是全局定义。这意味着你可以在一个特定的查询中创建一个临时的视图，这个视图只在该查询的上下文中可用，而不会影响数据库的其他部分。这种方法的好处是可以简化复杂查询，使其更易于阅读和维护，同时避免在数据库中创建永久视图。使用 `WITH` 子句，你可以在查询中定义多个子查询，并在主查询中引用它们，从而提高查询的可读性和效率。
 
 
+Such as:Find all accounts with the maximum balance. 
 
+```sql
+WITH max_balance(value) AS (
+    SELECT max(balance) 
+    FROM account
+)
+SELECT account_number 
+FROM account, max_balance 
+WHERE account.balance = max_balance.value;
+```
+
+## Modification of Database
+
+### Deletion
+
+```sql
+DELETE FROM table_name WHERE condition;
+```
+
+such as:
+ Delete all accounts and relevant information at depositor for every branch located in Needham city. 
+
+
+```sql
+DELETE FROM account 
+WHERE branch_name IN (
+    SELECT branch_name 
+    FROM branch 
+    WHERE branch_city = 'Needham'
+);
+
+DELETE FROM depositor 
+WHERE account_number IN (
+    SELECT account_number 
+    FROM branch B, account A 
+    WHERE branch_city = 'Needham' 
+    AND B.branch_name = A.branch_name
+);
+```
+
+以下写法错误
+
+```sql
+DELETE FROM account, depositor, branch
+WHERE account.account_number = depositor.account_number
+AND branch.branch_name = account.branch_name
+AND branch_city = 'Needham';
+```
+
+<div style="color: red;">
+每一个delete语句，只能够针对一个表进行操作，不能够针对多个表进行操作。
+</div>
+
+Example2:
+
+ Delete the record of all accounts with balances below the average at the bank. 
+
+```sql
+DELETE FROM account WHERE balance < (SELECT avg(balance) FROM account);
+```
+
+**Problem:** as we delete tuples from account, the average 
+balance changes.
+
+**Solution:**
+
+```sql
+WITH avg_balance AS (
+    SELECT avg(balance) AS avg_bal
+    FROM account
+),
+to_delete AS (
+    SELECT account_number
+    FROM account
+    WHERE balance < (SELECT avg_bal FROM avg_balance)
+)
+DELETE FROM account
+WHERE account_number IN (SELECT account_number FROM to_delete);
+```
+
+!!!info
+    在同一SQL语句内，除非外层查询的元组变量引入内层查询，否则层查询只进行一次.
+
+    这句话的意思是：在一个 SQL 语句中，除非外层查询的元组变量（即表的别名或列名）被引入到内层查询中，否则内层查询只会执行一次。
+
+    换句话说，如果内层查询不依赖于外层查询的任何变量或条件，那么内层查询会在整个 SQL 语句执行过程中只运行一次，并将其结果用于外层查询的每一行。如果内层查询依赖于外层查询的变量，那么内层查询可能会为外层查询的每一行执行一次。
+
+
+### Insertion
+
+Add a new tuple to the relation.
+
+Format:
+
+```sql
+INSERT INTO <table|view> [(c1, c2,…)] 
+      VALUES (e1, e2, …) 
+-- or
+INSERT INTO <table|view> [(c1, c2,…)] 
+      SELECT e1, e2, … 
+      FROM … 
+```
+
+```sql
+INSERT INTO account (account_number, branch_name, balance)
+VALUES ('A_9732', 'Perryridge', 1200);
+
+-- or equivalently
+
+INSERT INTO account (branch_name, balance, account_number)
+VALUES ('Perryridge', 1200, 'A_9732');
+```
+
+Such as:Provide as a gift for all loan customers of the Perryridge branch, a $200 savings account.  Let the loan number serve as the account number for the new savings account. 
+
+```sql
+-- Step 1: insert into account
+INSERT INTO account (account_number, branch_name, balance)
+SELECT loan_number, branch_name, 200
+FROM loan
+WHERE branch_name = 'Perryridge';
+
+-- Step 2: insert into depositor
+INSERT INTO depositor (customer_name, account_number)
+SELECT customer_name, A.loan_number
+FROM loan A, borrower B
+WHERE A.branch_name = 'Perryridge' AND A.loan_number = B.loan_number;
+```
+
+
+!!!question "what? select 200?"
+    在 SQL 中，`SELECT` 语句可以用于从一个或多个表中提取数据，
+    并且可以在 `SELECT` 子句中使用常量值。常量值会被应用到每一行的结果中。
+
+    代码中：
+
+    ```sql
+    INSERT INTO account (account_number, branch_name, balance)
+    SELECT loan_number, branch_name, 200
+    FROM loan
+    WHERE branch_name = 'Perryridge';
+    ```
+
+    这里的 `SELECT loan_number, branch_name, 200` 是从 `loan` 表中选择 `loan_number` 和 `branch_name`，并且为每一行都插入一个常量值 `200` 作为 `balance`。
+    这意味着对于每一个符合条件的 `loan` 表中的记录，都会插入一条新的记录到 `account` 表中，其中 `balance` 字段的值固定为 `200`。
+    这种用法在 SQL 中是合法的，并且常用于在插入数据时为某些字段设置默认值或固定值。
+
+The “select from where” statement is fully evaluated before any of its results are inserted into the relation. 
+
+
+### Updates
+
+Update the value of an attribute of a tuple.
+
+Format:
+
+```sql
+UPDATE <table | view> 
+ 	      SET <c1 = e1 [, c2 = e2, …]> [WHERE <condition>] 
+```
+
+Such as:
+
+```sql
+UPDATE account 
+SET balance = balance * 1.05 
+WHERE branch_name = 'Perryridge';
+```
+
+!!!Example
+    Increase all accounts with balances over $10,000 by 6%, all other accounts receive 5%. 
+
+    ```sql
+    UPDATE account 
+    SET balance = balance * 1.06 
+    WHERE balance > 10000;
+    
+    UPDATE account 
+    SET balance = balance * 1.05 
+    WHERE balance <= 10000;
+    ```
+    The order is important.
+    如果顺序反过来，那么有可能一开始没有10000，先更新了，然后就变成10000了，然后又可以增加6%了。
+
+#### Case Statement for Conditional Updates
+
+The same query as before: Increase all accounts with balances over $10,000 by 6%, and all other accounts receive 5%. 
+
+```sql
+UPDATE account
+SET balance = CASE
+    WHEN balance <= 10000 THEN balance * 1.05
+    ELSE balance * 1.06
+END;
+```
