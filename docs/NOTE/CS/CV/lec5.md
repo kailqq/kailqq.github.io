@@ -267,8 +267,8 @@ $\frac{d y}{d x_{11}}$ is a 2D matrix,
 
 \[
     \frac{d y}{d x_{11}} = \begin{bmatrix}
-        \frac{d y_{11}}{d x_{11}} & \frac{d y_{12}}{d x_{11}}\\
-        \frac{d y_{21}}{d x_{11}} & \frac{d y_{22}}{d x_{11}}
+        \frac{d y_{11}}{d x_{11}} & \frac{d y_{12}}{d x_{11}} &\frac{d y_{13}}{d x_{11}} & \frac{d y_{14}}{d x_{11}} \\
+        \frac{d y_{21}}{d x_{11}} & \frac{d y_{22}}{d x_{11}} & \frac{d y_{23}}{d x_{11}} & \frac{d y_{24}}{d x_{11}} 
     \end{bmatrix} = \begin{bmatrix}
        W_1\\
        \mathbf{0}
@@ -276,6 +276,7 @@ $\frac{d y}{d x_{11}}$ is a 2D matrix,
 \]
 
 So  
+
 \[
     \frac{d L}{d x_{11}}=\frac{d L}{d x_{11}} \cdot \frac{d L}{d y}=3
 \]

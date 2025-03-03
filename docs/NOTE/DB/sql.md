@@ -199,4 +199,38 @@ CREATE TABLE employees (
 <strong style="font-size: 2em;color: red;">Be careful to use the DROP command!!!</strong>
 </div>
 
+#### Drop Table
+
+the drop table statement is used to delete a table from the database.
+
+```sql
+DROP TABLE employees;
+```
+
+#### Alter Table
+
+the alter table statement is used to modify the structure of a table.
+
+
+the format is 
+
+```sql
+ALTER TABLE table_name ADD column_name data_type;
+-- add a new column
+ALTER TABLE table_name ADD (column_name data_type, column_name data_type, ...);
+-- add multiple columns
+ALTER TABLE table_name DROP COLUMN column_name;
+-- drop a column
+ALTER TABLE table_name MODIFY column_name data_type;
+-- modify the data type of a column
+```
+
+
+```sql
+ALTER TABLE employees ADD COLUMN email VARCHAR(100);
+```
+
+
+
+
 
