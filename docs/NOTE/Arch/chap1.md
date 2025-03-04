@@ -254,9 +254,73 @@ when designing an ISA, we need to consider the following basic principles:
 - Security:
       - The ISA should be secure enough to prevent attacks.
 
+### Instruction Set design issues
+
+- Where are operands stored?: registers,memory,stack,accumulator,etc.
+- How many operands are needed?: 0,1,2,3,etc. <span style="color:red">Classification of instructions</span>
+- How is the operand location specified?: immediate,direct,indirect,relative,etc. <span style="color:red">Addressing modes</span>
+- What type and  size of operands are needed?: integer,floating-point,vector,etc. <span style="color:red">Data representation</span>
+- What operations are supported?: arithmetic,logic,control,etc. <span style="color:red">Types of instructions</span>
 
 
+**ISA Classes**
 
+- Stack architecture
+- Accumulator architecture
+- Register architecture
+- General-purpose registers architecture(GPR)
+
+对于`A*B-(A+C*B)`
+
+```assembly
+; Stack architecture
+PUSH A
+PUSH B
+MUL         ; A * B
+PUSH A
+PUSH C
+PUSH B
+MUL         ; C * B
+ADD         ; A + (C * B)
+SUB         ; (A * B) - (A + C * B)
+```
+
+```assembly
+; Accumulator architecture
+LOAD A      ; Acc = A
+MUL B       ; Acc = A * B
+STORE TEMP  ; Store result in TEMP
+LOAD B      ; Acc = B
+MUL C       ; Acc = C * B
+ADD A       ; Acc = A + (C * B)
+STORE TEMP2 ; Store result in TEMP2
+LOAD TEMP    ; Acc = (A * B)
+SUB TEMP2   ; Acc = (A * B) - (A + C * B)
+```
+
+```assembly
+; Register architecture
+LOAD R1, A  ; R1 = A
+LOAD R2, B  ; R2 = B
+MUL R3, R1, R2  ; R3 = A * B
+LOAD R4, C  ; R4 = C
+MUL R4, R4, R2  ; R4 = C * B
+ADD R4, R4, R1  ; R4 = A + C * B
+SUB R3, R3, R4  ; R3 = (A * B) - (A + C * B)
+```
+
+
+```assembly
+; General-purpose registers architecture(GPR)
+load R1, A
+load R2, B
+mul R3, R1, R2  ; R3 = A * B
+load R4, C
+load R5, B
+mul R6, R4, R5  ; R6 = C * B
+add R6, R6, R1  ; R6 = A + C * B
+sub R3, R3, R6  ; R3 = (A * B) - (A + C * B)
+```
 
 
 
