@@ -42,4 +42,9 @@ nonstatistics: true
   content: 是沈檀的妙妙屋哦
   image: static/images/shentan.jpg
   url: https://santal0.github.io/
+
+- title: Asteroid
+  content: 行星撞地球
+  image: static/images/Asteroid.png
+  url: https://labafan.cc/
 ::/cards::  
