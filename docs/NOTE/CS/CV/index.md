@@ -17,3 +17,4 @@ comments: true
 - [x] [Optimization](./lec3.md)
 - [x] [Neural Networks](./lec4.md)
 - [x] [Backpropagation](./lec5.md)
+- [x] [Convolutional Neural Networks](./lec6.md)
