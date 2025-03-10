@@ -138,6 +138,20 @@ Data model is a collection of conceptual tools for describing
 
 Different level of data abstraction needs different data model to describe 
 
+common data models
+
+- Relational model (关系模型)
+  - Database system level model based on tables
+- Entity-Relationship (实体-联系) data model
+  - Used at requirements analysis level
+- Object-based data models:
+  - Object-oriented (面向对象数据模型)
+  - Object-relational (对象-关系模型)
+- Semistructured data model (XML) (半结构化数据模型)
+- Other older models:
+  - Network model (网状模型)
+  - Hierarchical model (层次模型)
+
 ## Database language
 
 - Data Definition Language (DDL): Specification notation for defining the database schema. 

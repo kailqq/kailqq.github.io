@@ -1352,3 +1352,476 @@ R {inner join, left join, right join, full join} S on condition using (A1, A2, .
 | `RIGHT JOIN`       | 右表全保留 + 左表匹配             | 右表未匹配行保留         |
 | `FULL OUTER JOIN`  | 左右表全保留                      | 左右表未匹配行均保留     |
 | `CROSS JOIN`       | 无条件，笛卡尔积                  | 不适用                   |
+
+## Advanced SQL
+
+### SQL Data Types and Schemas
+
+- [Built-in types](https://www.postgresql.org/docs/current/datatype.html)
+
+#### User-defined types
+
+```sql
+CREATE TYPE address as varchar(255);
+```
+也可以定义复合类型
+
+```sql
+CREATE TYPE address as (
+    street varchar(255),
+    city varchar(255)
+);
+```
+
+Create a table with the address type:
+
+```sql
+CREATE TABLE person (
+    id int,
+    name varchar(255),
+    person_address address
+);
+```
+
+Drop the address type:
+
+```sql
+DROP TYPE address;
+```
+
+#### Create new domain
+
+```sql
+CREATE DOMAIN domain_name AS data_type
+[ DEFAULT default_value ]
+[ CONSTRAINT constraint_name CHECK (expression) ];
+```
+
+such as
+```sql
+Create domain Dollars as numeric(12, 2) not null; 
+Create domain Pounds as numeric(12,2); 
+Create table employee 
+        (eno char(10) primary key, 
+            ename varchar(15), 
+            job varchar(10), 
+            salary Dollars, 
+            comm Pounds); 
+```
+
+!!!Note "domain vs type"
+    在 SQL 中，`DOMAIN` 和 `TYPE` 都用于定义自定义的数据类型，但它们有不同的用途和特性。
+
+    `DOMAIN` 是基于现有数据类型的约束集合。它允许你为特定的数据类型添加约束条件，以确保数据的完整性。
+    主要用于在多个表中重用相同的数据类型和约束。例如，定义一个 `DOMAIN` 来表示电子邮件地址，并附加格式检查约束。
+    可以附加 `CHECK` 约束来验证数据的有效性。
+    `DOMAIN` 继承了基础数据类型的所有特性，并可以在其上添加额外的约束。
+    示例:
+    ```sql
+    CREATE DOMAIN email_domain AS VARCHAR(255)
+    CHECK (VALUE ~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
+    ```
+
+    `TYPE` 是用于定义新的数据类型，特别是复合类型（包含多个字段）或枚举类型。
+    适用于需要定义复杂数据结构的场景，例如需要在表中存储地址信息的多个字段。
+    复合类型可以包含多个字段，每个字段可以有不同的数据类型。
+    枚举类型可以定义一组固定的值。
+    示例:
+    复合类型:
+    ```sql
+    CREATE TYPE address AS (
+        street VARCHAR(255),
+        city VARCHAR(100),
+        zip_code VARCHAR(10)
+    );
+    ```
+    枚举类型:
+    ```sql
+    CREATE TYPE mood AS ENUM ('happy', 'sad', 'neutral');
+    ```
+
+#### Large object types
+
+SQL provides two types of large object data types:
+
+- `BLOB` (Binary Large Object)
+    - Stores large collections of uninterpreted binary data
+    - Examples: images, videos, CAD files
+    - Interpretation is handled by external applications
+    - Maximum size depends on DBMS implementation
+
+- `CLOB` (Character Large Object) 
+    - Stores large collections of character/text data
+    - Examples: documents, XML files, long text
+    - Data is interpreted as character strings
+    - Maximum size depends on DBMS implementation
+
+When querying large objects, the database returns a pointer/reference to the data rather than the full object itself. This helps optimize performance and memory usage.
+
+Example usage:
+
+```sql
+CREATE TABLE students (
+    sid char(10) PRIMARY KEY,
+    name varchar(10),
+    gender char(1),
+    photo blob(20MB),
+    cv clob(10KB)
+);
+```
+
+<figure markdown="span">
+![](./img/asql-1.png){ width="500" }
+</figure>
+
+### Integrity Constraints
+
+Integrity constraints guard against accidental damage to the database, by ensuring that authorized changes to the database do not result in a loss of data consistency. 
+
+- 实体完整性、参照完整性和用户定义的完整性约束 
+- 完整性约束是数据库实例(Instance)必须遵循的 
+- 完整性约束由DBMS维护 
+
+!!!extra
+    Constraints on a single relation：
+    
+    - Not null
+    - Unique
+    - Primary key
+    - Foreign key
+    - Check(Predicate)
+
+    Eg.
+    ```sql
+    Create table branch2 
+    (branch_name varchar(30) primary key, 
+    branch_city varchar(30), 
+    assets integer not null, 
+    check (assets >= 100)) 
+    ```
+
+#### Domain Constraints
+The check clause in SQL-92 permits domains to be restricted: 
+```sql
+Create domain hourly-wage numeric(5, 2) 
+Constraint value-test check(value > = 4.00) 
+--The clause constraint value-test is optional; useful to indicate which constraint an update violated. 
+
+```
+为约束命名可以更容易地诊断问题；
+
+
+
+#### Referential Integrity
+Let $r_1(R_1)$ and $r_2(R_2)$ be the relations with primary keys $K_1$ and $K_2$, respectively. 
+
+The subset $\alpha$ of $R_2$ is a foreign key referencing $K_1$ in relation $r_1$, if for every $t_2$ in $r_2$ there must be a tuple $t_1$ in $r_1$ such that $t_1[K_1] = t_2[\alpha]$. 
+
+\[
+    \forall t_2 \in r_2, \exists t_1 \in r_1, t_1[K_1] = t_2[\alpha]
+\]
+
+Referential integrity constraint also called subset dependency, since its can be written as 
+
+\[
+    \Pi_{\alpha}(r_2) \subseteq \Pi_{K_1}(r_1)
+\]
+
+在这里$r_2$是参照关系(referencing relation)，$r_1$是被参照关系(referenced relation)。
+
+参照关系中外码的值必须在被参照关系中实际存在，或为null. 
+
+For example, the following constraint ensures that the `branch_name` in the `employee` relation must match the `branch_name` in the `branch` relation:
+
+```sql
+Create table employee 
+(eno char(10) primary key, 
+ename varchar(15), 
+job varchar(10), 
+branch_name varchar(10), 
+foreign key (branch_name) references branch(branch_name));
+```
+
+
+- INSERT:If a tuple $t_2$ is inserted into $r_2$, the system must ensure that there is a tuple $t_1$ in $r_1$ such that $t_1[K_1] = t_2[\alpha]$, 例如如果插入一个员工，则该员工所属的branch_name必须在branch表中存在。
+
+
+- DELETE: If a tuple $t_1$ is deleted from $r_1$, the system must compute the set of tuples in $r_2$ that reference $t_1$:
+
+\[
+    \sigma_{\alpha = t_1[K_1]}(r_2)
+\] 
+
+>如果r2中存在与r1中被删记录匹配的元组 
+
+If this set is not empty, then either the delete command is rejected as an error, or the tuples in $t_2$ that references $t_1$ must themselves be deleted (cascading deletions are possible). 
+
+例如如果删除了一个branch，则所有属于该branch的employee也必须被删除，或者这个删除操作被拒绝。
+
+
+- UPDATE CASE 1: If a tuple $t_2$ is updated in relation $r_2$ and the update modifies values for foreign key $\alpha$, then a test similar to the insert case is made:
+
+Let $t_2'$ denote the new value of tuple $t_2$. The system must ensure that 
+
+	$t_2'[K_1] \in \Pi_{K_1}(r_1)$ 
+
+例如如果更新一个employee的branch_name，则该employee的branch_name必须在branch表中存在。
+
+
+- UPDATE CASE 2: If a tuple $t_1$ is updated in relation $r_1$ and the update modifies values for candidate key $K$, then a test similar to the delete case is made: 
+
+Either the update command is rejected as an error, or the tuples in $t_2$ that references $t_1$ must themselves be updated(cascading updates are possible). 
+
+例如如果更新了branch里面的branch_name，则所有属于该branch的employee的branch_name也必须被更新，或者拒绝这个更新操作。
+
+
+!!!key-point "Referential Integrity"
+    Primary, candidate keys, and foreign keys can be specified as part of the SQL create table statement: 
+
+    - The primary key clause lists attributes that comprise the primary key. 
+    - The unique key clause lists attributes that comprise a candidate key. 
+    - The foreign key clause lists the attributes that comprise the foreign key and the name of the relation referenced by the foreign key. 
+    
+    EG
+    ```sql
+    Create table employee 
+    (eno char(10), 
+    ename varchar(15), 
+    job varchar(10), 
+    branch_name varchar(10), 
+    foreign key (branch_name) references branch(branch_name),
+    primary key (eno),
+    unique (ename));
+    ```
+
+    By default, a foreign key references the primary key attributes of the referenced table: 
+
+    E.g., 
+    ```sql
+    foreign key (account-number) references account 
+    --如果不指定，则默认引用account表的primary key
+    ```
+
+    Short form for specifying a single column as foreign key: 
+    E.g., 
+    ```sql
+    account-number char (10) references account 
+    -- 简写，指定account-number为外码
+    ```
+
+    Reference columns in the referenced table can be explicitly specified
+    
+    but must be declared as primary/candidate keys: 
+    ```sql
+    foreign key (account-number) references account (account-number) 
+
+    -- 指定account-number为外码，并引用account表的account-number，也可以使用不同的名字，例如
+
+    foreign key (account-number) references account (acnum) 
+    ```
+
+!!!info "Cascading actions"
+    ```sql
+    Create table account ( 
+			. . . 
+	foreign key (branch-name) references branch 
+		[ on delete cascade] 
+		[ on update cascade ] 
+		. . . ); 
+    ```
+   
+    加了on delete cascade，如果branch表中删除了一个元组，则account表中所有引用该branch的元组也会被删除。
+
+    加了on update cascade，如果branch表中更新了一个元组的branch-name，则account表中所有引用该branch的元组也会被更新。
+
+    如果在多个关系之间存在一系列的外键依赖关系，并且每个依赖关系都指定了on delete cascade，那么在链的一端进行的删除或更新操作可以传播到整个链。
+
+    但是，如果级联更新或删除导致了一个无法通过进一步级联操作来处理的约束违反，系统将会中止该事务。
+
+    As a result, all the changes caused by the transaction and its cascading actions are undone. 
+    
+    在 SQL 中，外键约束用于维护表之间的参照完整性。除了级联删除（`ON DELETE CASCADE`）之外，还有其他选项可以在删除被引用的记录时指定外键的行为：
+
+    1. **`ON DELETE SET NULL`** : 当被引用的记录被删除时，将外键列的值设置为 `NULL`。这意味着如果一个记录在被引用的表中被删除，那么在引用表中所有引用该记录的外键列将被设置为 `NULL`。
+
+    2. **`ON DELETE SET DEFAULT`** : 当被引用的记录被删除时，将外键列的值设置为一个默认值。这个默认值必须在创建表时定义。
+
+    关于外键属性中的空值（`NULL`）：
+
+    - 如果外键的任何属性为 `NULL`，则该元组被定义为满足外键约束。这是因为 `NULL` 表示未知或不适用，因此 SQL 允许外键列包含 `NULL` 值，而不违反参照完整性。
+
+    然而，外键属性中的 `NULL` 值会使 SQL 的参照完整性语义变得复杂。因此，通常建议使用 `NOT NULL` 约束来防止外键属性中出现 `NULL` 值，以确保数据的一致性和完整性。
+
+    例如：
+
+    ```sql
+    CREATE TABLE orders (
+        order_id INT PRIMARY KEY,
+        customer_id INT,
+        FOREIGN KEY (customer_id) REFERENCES customers(id)
+        ON DELETE SET NULL
+    );
+    ```
+
+    在这个例子中，如果 `customers` 表中的某个 `id` 被删除，那么 `orders` 表中所有引用该 `id` 的 `customer_id` 列将被设置为 `NULL`。
+
+!!!idea 
+    参照完整性只在事务结束时才会被检查
+
+    也就是说：在事务执行过程中的中间步骤允许违反参照完整性，只要在事务结束时这些违反被消除即可。
+    
+    否则，某些数据库状态将无法创建，例如：插入两个相互引用的元组（它们的外键互相指向对方）
+
+#### Assertions
+
+An assertion is a predicate expressing a condition that we wish the database always to satisfy. --- for complex check condition on several relations! 
+
+Format:
+```sql
+Create assertion constraint_name check <condition>;
+```
+
+When an assertion is made, the system tests it for validity on every update that may violate the assertion. (when the predicate is true, it is Ok, otherwise report error.) 
+
+这种测试可能会带来大量的系统开销；因此，断言应该谨慎使用。
+
+!!!Example
+    if we require “the sum of all loan amounts for each branch must be less than the sum of all account balances at the branch”. 
+     
+    But SQL does not provide a construct for asserting: 
+    ```sql
+    for all X, P(X) 
+    ```
+    So it is achieved in a round-about fashion, using: 
+
+    ```sql
+    not exists X, such that not P(X)  
+    ```
+
+    ```sql
+    CREATE ASSERTION sum-constraint CHECK
+        (NOT EXISTS (SELECT * FROM branch B
+        WHERE 
+        (SELECT SUM(amount) FROM loan
+        WHERE loan.branch-name = B.branch-name)
+        > (SELECT SUM(balance) FROM account
+          WHERE account.branch-name = B.branch-name)
+          )
+        );
+    ```
+
+#### Triggers
+
+A trigger is a statement that is executed automatically by the system as a side-effect of a modification to the database. 
+
+To design a trigger mechanism, we must: 
+
+1. Specify the conditions under which the trigger is to be executed. 
+- Specify the actions to be taken when the trigger executes. 
+
+>Triggers were introduced to SQL standard in SQL:1999, but supported even earlier using non-standard syntax by most databases. 
+
+Format:
+```sql
+Create trigger trigger_name
+{before | after} {insert | delete | update} [of attribute_name]
+on relation_name
+[for each row]
+[when (condition)]
+begin
+    <action>
+end;
+```
+
+
+!!!Note
+    触发器可以限制在特定属性的更新上：
+    例如：
+    ```sql
+    Create trigger overdraft-trigger 
+	        	after update of balance on account … 
+    ```
+
+    更新前后的属性值可以被引用：
+    Referencing old row as：用于删除和更新操作
+    Referencing new row as：用于插入和更新操作
+
+
+
+
+!!!Example
+    Suppose that instead of allowing negative account balances, the bank deals with overdrafts by (the actions): 
+
+    - Setting the account balance to zero 
+    - Creating a loan in the amount of the overdraft, giving this loan a loan number identical to the account number of the overdrawn account 
+
+    The condition for executing the trigger is an update to the account relation that results in a negative balance value. 
+
+    ```sql
+    CREATE TRIGGER overdraft-trigger after update on account 
+        referencing new row as nrow 
+        for each row 
+        when nrow.balance < 0 
+    begin atomic 
+        insert into borrower 
+            (select customer_name, account_number from depositor 
+            where nrow.account_number = depositor.account_number) 
+        insert into loan values 
+            (nrow.account_number, nrow.branch_name, -nrow.balance) 
+        update account set balance = 0 
+            where account.account_number = nrow.account_number 
+    end 
+    ```
+
+!!!info "Statement Level Triggers"
+    Instead of executing a separate action for each affected row, a single action can be executed for all rows affected by a transaction. 
+
+    - Use for each statement instead of for each row 
+    - Use referencing old table or referencing new table to refer to temporary tables  (called transition tables) containing the affected rows 
+    - Can be more efficient when dealing with SQL statements that update a large number of rows 
+    
+
+    当然，这里有一个使用语句级触发器的示例。假设我们有一个 `orders` 表，我们希望在更新订单状态时记录所有受影响订单的日志。
+
+    表结构
+
+    ```sql
+    CREATE TABLE orders (
+        order_id INT PRIMARY KEY,
+        order_status VARCHAR(20),
+        last_updated TIMESTAMP
+    );
+
+    CREATE TABLE order_log (
+        log_id SERIAL PRIMARY KEY,
+        order_id INT,
+        old_status VARCHAR(20),
+        new_status VARCHAR(20),
+        change_time TIMESTAMP
+    );
+    ```
+
+    语句级触发器
+
+    ```sql
+    CREATE TRIGGER log_order_status_change
+    AFTER UPDATE OF order_status ON orders
+    REFERENCING OLD TABLE AS old_orders NEW TABLE AS new_orders
+    FOR EACH STATEMENT
+    BEGIN
+        INSERT INTO order_log (order_id, old_status, new_status, change_time)
+        SELECT old_orders.order_id, old_orders.order_status, new_orders.order_status, CURRENT_TIMESTAMP
+        FROM old_orders, new_orders
+        WHERE old_orders.order_id = new_orders.order_id;
+    END;
+    ```
+
+    这个触发器在 `orders` 表的 `order_status` 列更新后执行一次，将所有受影响的订单状态变化记录到 `order_log` 表中。这样可以有效地记录批量更新的变化，而不需要为每一行单独执行触发器。
+
+
+
+!!!info "External World Actions"
+   
+
+
+
