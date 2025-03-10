@@ -1563,7 +1563,9 @@ If this set is not empty, then either the delete command is rejected as an error
 
 Let $t_2'$ denote the new value of tuple $t_2$. The system must ensure that 
 
-	$t_2'[K_1] \in \Pi_{K_1}(r_1)$ 
+\[
+    t_2'[K_1] \in \Pi_{K_1}(r_1)
+\] 
 
 例如如果更新一个employee的branch_name，则该employee的branch_name必须在branch表中存在。
 
@@ -1821,7 +1823,79 @@ end;
 
 
 !!!info "External World Actions"
+    We sometimes require external world actions to be triggered on a database update 
+    E.g., Re-ordering an item whose quantity in a warehouse has become small, or turning on an alarm light. （当库存低于警戒线，增加订货或报警） 
    
+    Triggers cannot be used to directly implement external-world actions, BUT 
+    Triggers can be used to record actions-to-be-taken in a separate table 
+    Have an external process that repeatedly scans the table, carries out external-world actions and deletes action from table. 
+
+    Suppose a warehouse has the following tables 
+    
+    `inventory(item, level)`: How much of each item is in the warehouse presently 
+
+    `minlevel(item, level)`: What is the minimum desired level of each item 
+
+    `reorder(item, amount)`: What quantity should we re-order at a time 
+
+    `orders(item, quantity)`: Orders to be placed  (to be read by external process) 
+    
+
+    ```sql
+    CREATE TRIGGER reorder-trigger 
+    after update of level on inventory 
+	referencing old row as orow, new row as nrow 
+   	for each row 
+	when nrow.level < = (select level 
+	                      from minlevel 
+	                      where minlevel.item = nrow.item) 
+                   and orow.level > (select level 
+			                        from minlevel 
+		                            where minlevel.item = orow.item) 
+	begin 
+		insert into orders 
+			(select item, amount 
+			from reorder 
+		    where reorder.item = orow.item) 
+	end 
+    ```
+
+    虽然这个trigger不能直接执行外部世界的操作，但是可以记录下需要执行的操作，然后由外部进程来执行。
+      
+    这个触发器在 `inventory` 表的 `level` 列更新后执行。它会检查更新后的库存量是否低于最低期望库存量，并且更新前的库存量是否高于最低期望库存量。如果满足条件，就会在 `orders` 表中插入一条新的订单记录。这样，外部进程可以读取 `orders` 表中的记录来执行实际的订购操作。
 
 
 
+触发器在早些年被用于以下任务：
+维护汇总数据（例如，每个部门的总工资）
+通过记录对特殊关系（称为变更或增量关系）的更改并让一个单独的进程将更改应用到副本来复制数据库。
+
+现在有更好的方法来完成这些任务：
+如今的数据库提供内置的物化视图功能来维护汇总数据；
+数据库提供内置的复制支持。
+
+!!!Summary "Check vs assertion vs trigger"
+    在 SQL 中，`CHECK` 约束、`ASSERTION` 和 `TRIGGER` 是用于维护数据完整性和一致性的三种不同机制。以下是它们的比较：
+
+    - CHECK：用于在表级别定义简单的条件，以确保列中的数据满足特定条件。限于单个表的单个列或多个列。通常性能较好，因为它们在插入或更新时直接在表级别进行检查。不能跨多个表进行复杂的条件检查。
+
+    ```sql
+    CREATE TABLE employees (
+        employee_id INT PRIMARY KEY,
+        salary DECIMAL(10, 2) CHECK (salary > 0)
+    );
+    ```
+
+    - ASSERTION：用于定义跨多个表的复杂条件，以确保数据库的整体一致性。可以跨多个表进行检查。可能会影响性能，因为每次相关表更新时都需要检查断言。在许多数据库系统中不被广泛支持。
+
+    ```sql
+    CREATE ASSERTION salary_check
+    CHECK (
+        (SELECT AVG(salary) FROM employees) < 100000
+    );
+    ```
+
+    - TRIGGER：用于在特定事件（如插入、更新或删除）发生时自动执行一段代码。可以执行几乎任何类型的操作，包括调用外部程序。可能会影响性能，特别是在触发器中执行复杂逻辑时。
+    - 限制：在许多数据库系统中不被广泛支持。
+
+    ```
