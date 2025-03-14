@@ -8,8 +8,6 @@ comments: true
 
 课程链接：[Deep Learning for Computer Vision Winter 2022](https://web.eecs.umich.edu/~justincj/teaching/eecs498/WI2022/schedule.html)
 
-[My assignment repo :fontawesome-brands-github: ](https://github.com/kailqq/DPLNCV/blob/main/README.md)
-
 目录:
 
 - [x] [Image Classification](./lec1.md)
@@ -18,3 +16,4 @@ comments: true
 - [x] [Neural Networks](./lec4.md)
 - [x] [Backpropagation](./lec5.md)
 - [x] [Convolutional Neural Networks](./lec6.md)
+- [x] [CNN Architectures in history](./lec7_8.md)

@@ -240,7 +240,7 @@ Pooling layer is a downsampling layer.
 
     - **Learnable parameters**: None
 
-    实际上是与卷积filter的作用是类似的，都是把一个局部映射成一个值来缩小，但池化比较EZ。
+    实际上是与卷积filter的作用是类似的，都是把一个局部映射成一个值来缩小，但池化比较EZ。且池化不会改变通道数。
 
 
 ???Example

@@ -321,7 +321,14 @@ nav:
           - language:
               - index: NOTE/Language/index.md
               - English: NOTE/Language/English.md
-          
+          - Computer Vision:
+              - NOTE/CS/CV/index.md
+              - Image Classification: NOTE/CS/CV/lec1.md
+              - Linear Classifiers: NOTE/CS/CV/lec2.md
+              - Optimization: NOTE/CS/CV/lec3.md
+              - Neural Networks: NOTE/CS/CV/lec4.md
+              - Backpropagation: NOTE/CS/CV/lec5.md
+              - Convolutional Neural Networks: NOTE/CS/CV/lec6.md
+              - CNN Architectures in history: NOTE/CS/CV/lec7_8.md
+                  
   - Friends: friends.md
-  # - Verifications: googleb8ce910372c2ff85.html
-  # - sitemap: sitemap.xml
