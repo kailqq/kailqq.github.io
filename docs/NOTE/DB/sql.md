@@ -989,8 +989,7 @@ WHERE account.balance = max_balance.value;
 DELETE FROM table_name WHERE condition;
 ```
 
-such as:
- Delete all accounts and relevant information at depositor for every branch located in Needham city. 
+such as: Delete all accounts and relevant information at depositor for every branch located in Needham city. 
 
 
 ```sql
@@ -1117,7 +1116,7 @@ WHERE A.branch_name = 'Perryridge' AND A.loan_number = B.loan_number;
     这意味着对于每一个符合条件的 `loan` 表中的记录，都会插入一条新的记录到 `account` 表中，其中 `balance` 字段的值固定为 `200`。
     这种用法在 SQL 中是合法的，并且常用于在插入数据时为某些字段设置默认值或固定值。
 
-The “select from where” statement is fully evaluated before any of its results are inserted into the relation. 
+The "select from where" statement is fully evaluated before any of its results are inserted into the relation. 
 
 
 ### Updates
@@ -1180,14 +1179,14 @@ Add a new tuple to branch_loan.
 
 ```sql
 INSERT INTO branch_loan 
-VALUES (‘Perryridge’, ‘L-307’) 
+VALUES ('Perryridge', 'L-307') 
 ```
 
 This insertion will be translated into: 
 
 ```sql
 INSERT INTO loan 
-VALUES (‘L-307’, ‘Perryridge’, null) 
+VALUES ('L-307', 'Perryridge', null) 
 ```
 
 Updates on more complex views are difficult or impossible to translate into updates on the base relations,and hence are not allowed.
@@ -1196,7 +1195,7 @@ Updates on more complex views are difficult or impossible to translate into upda
 #### Summary of update on view
 
 - View 是虚表，对其进行的所有操作都将转化为对基表的操作。
-- 查询操作时，VIEW与基表没有区别，但对VIEW的更新操作有严格限制，如只有行列视图(建立在单个基本表上的视图，且视图的列对应表的列，称为“行列视图”。)，可更新数据
+- 查询操作时，VIEW与基表没有区别，但对VIEW的更新操作有严格限制，如只有行列视图(建立在单个基本表上的视图，且视图的列对应表的列，称为"行列视图"。)，可更新数据
 - 大多数SQL实现只允许在单个关系上定义的简单视图上进行更新操作，且不包含聚合函数
 
 
@@ -1688,7 +1687,7 @@ When an assertion is made, the system tests it for validity on every update that
 这种测试可能会带来大量的系统开销；因此，断言应该谨慎使用。
 
 !!!Example
-    if we require “the sum of all loan amounts for each branch must be less than the sum of all account balances at the branch”. 
+    if we require "the sum of all loan amounts for each branch must be less than the sum of all account balances at the branch". 
      
     But SQL does not provide a construct for asserting: 
     ```sql
@@ -1898,4 +1897,513 @@ end;
     - TRIGGER：用于在特定事件（如插入、更新或删除）发生时自动执行一段代码。可以执行几乎任何类型的操作，包括调用外部程序。可能会影响性能，特别是在触发器中执行复杂逻辑时。
     - 限制：在许多数据库系统中不被广泛支持。
 
+
+### Authorization
+
+#### Security
+
+Security involves protection from malicious attempts to steal or modify data. It can be addressed at various levels:
+
+- **Database System Level**: Authentication and authorization mechanisms allow specific users access only to required data. 
+
+- **Operating System Level**: Operating system super-users can do anything they want to the database! Good operating system level security is required.
+
+- **Network Level**: Must use encryption to prevent:
+  - Eavesdropping (unauthorized reading of messages)
+  - Masquerading (pretending to be an authorized user or sending messages supposedly from authorized users)
+
+- **Physical Level**: Physical access to computers allows destruction of data by intruders; traditional lock-and-key security is needed. Computers must also be protected from floods, fire, etc. -- (Recovery)
+
+- **Human Level**: Users must be screened to ensure that authorized users do not give access to intruders. Users should be trained on password selection and secrecy.
+
+
+#### Forms of Authorization on Parts of the Database
+
+- **Read Authorization**: Allows reading, but not modification of data.
+- **Insert Authorization**: Allows insertion of new data, but not modification of existing data.
+- **Update Authorization**: Allows modification, but not deletion of data.
+- **Delete Authorization**: Allows deletion of data.
+
+#### Forms of Authorization to Modify the Database Schema
+
+- **Index Authorization**: Allows creation and deletion of indices.
+- **Resources Authorization**: Allows creation of new relations.
+- **Alteration Authorization**: Allows addition or modifying of attributes in a relation.
+- **Drop Authorization**: Allows deletion of relations.
+
+
+!!!info 
+    Users can be given authorization on views, without being given any authorization on the relations used in the view definition. 
+
+    Ability of views to hide data serves both to simplify usage of the system and to enhance security by allowing users access only to data they need for their job. 
+
+    A combination of relational-level security and view-level security can be used to limit a user's access to precisely  the data that user needs. 
+
+
+!!!Example
+    Suppose a bank clerk needs to know the names of the customers of each branch, but is not authorized to see specific loan information. 
+
+    Approach: Deny direct access to the loan relation, but grant access to the view cust-loan, which consists only of  the names of customers and the branches at which they have a loan. 
+    The cust-loan view is defined in SQL as follows: 
+
+    ```sql
+    CREATE VIEW cust-loan as 
+    SELECT branchname, customer-name 
+    FROM borrower, loan 
+    WHERE borrower.loan-number = loan.loan-number 
     ```
+
+    The clerk can now read the cust-loan view, which will give him the information he needs without seeing the loan relation. 
+    
+    Creation of view does not require resources authorization since no real relation is being created. 
+
+    the creator of a view gets only those privileges that provide no additional authorization beyond that he already had. 
+
+
+
+
+#### Granting of Privileges
+
+<figure>
+    <img src="../img/sql-2.png" alt="grant" width="500">
+    <figcaption>Authorization Graph</figcaption>
+</figure>
+    
+        
+该图的节点是用户。图的根节点是数据库管理员。
+考虑对贷款进行更新授权的图。
+
+一个边 \( U_i \rightarrow U_j \) 表示用户 \( U_i \) 已将对贷款的更新授权授予用户 \( U_j \)。
+
+!!!property
+    授权图中的所有边必须是从数据库管理员开始的某条路径的一部分。
+
+    - **如果数据库管理员撤销了对 U1 的授权：**
+    - 必须从 U4 撤销授权，因为 U1 不再拥有授权。
+    - 不必从 U5 撤销授权，因为 U5 通过 U2 还有另一条从数据库管理员到达的授权路径。
+
+    - **必须防止没有从根节点路径的授权循环：**
+    - 数据库管理员授予 U7 授权
+    - U7 授予 U8 授权
+    - U8 授予 U7 授权
+    - 数据库管理员撤销了对 U7 的授权
+
+    必须撤销从 U7 到 U8 和从 U8 到 U7 的授权，因为不再有从数据库管理员到 U7 或 U8 的路径。
+
+#### Grant Statement
+
+The grant statement is used to grant privileges to users.
+
+```sql
+GRANT <privilege-list> ON <table|view> TO <user-name-list>
+```
+
+- `user name list`:
+
+- user-ids
+- public, which allows all valid users the privilege granted 
+- A role 
+
+!!!info
+    1 **Public**（公共）：
+
+    - 在 SQL 中，`public` 关键字用于将权限授予所有用户。当你将某个权限授予 `public` 时，意味着每个有权访问数据库的用户都可以执行指定的操作。
+    - 例如，如果你将某个表的 `SELECT` 权限授予 `public`，那么任何用户都可以查询该表。
+    - 这是使某些数据或操作普遍可访问的一种方式，而无需指定具体的用户。
+
+    2 **Role**（角色）：
+    
+    - SQL 中的 `role` 是一组相关权限的命名集合，可以授予用户或其他角色。角色用于简化用户权限的管理。
+    - 与其将相同的一组权限单独授予多个用户，不如创建一个包含这些权限的角色，然后将该角色授予用户。
+    - 角色也可以授予其他角色，从而允许层次化的权限管理。
+    - 角色有助于更高效地组织和管理权限，特别是在拥有众多用户的大型数据库中。
+
+
+
+- `privilege-list`:
+
+- `SELECT`:allows read access to relation, or the ability to query using the view 
+- `Insert`: the ability to insert tuples. 
+- `Update`: the ability to update using the SQL update statement. 
+- `Delete`: the ability to delete tuples. 
+- `References`: ability to declare foreign keys when creating relations. 
+- `All privileges`: used as a short form for all the allowable privileges. 
+- `All`: used as a short form for all the allowable privileges. 
+
+e.g.
+
+```sql
+GRANT SELECT, INSERT ON loan TO U1,U2,U3
+```
+
+- `WITH GRANT OPTION`: Allows a user who is granted a privilege to pass the privilege on to other users. 
+
+e.g.
+
+```sql
+GRANT SELECT ON loan TO U1 WITH GRANT OPTION
+```
+现在U1不仅有对loan表的查找权限，还可以将这个权限传递给其它的用户
+
+
+#### Roles
+>permiting common privileges for a class of users can be specified just once, by creating a corresponding “role”. 
+
+Privileges can be granted to or revoked from roles, just like user;  roles can be assigned to users, and even to other roles. 
+
+```sql
+Create role teller; 
+Create role manager; 
+Grant select on branch to teller; 
+Grant update (balance) on account to teller; 
+Grant all privileges on account to manager; 
+Grant teller to manager; 
+Grant teller to alice, bob; 
+Grant manager to avi; 
+```
+
+####  Revoking Authorization
+
+Revoking authorization is the inverse of granting authorization. 
+
+The revoke statement is used to revoke authorization. 
+
+format
+
+```sql
+REVOKE <privilege list> ON <table | view> 
+	     	FROM <user list> [restrict | cascade] 
+```
+
+- `<privilege list>`：要撤销的权限列表，例如 `SELECT`、`INSERT`、`UPDATE` 和`ALL`等·
+- `<table | view>`：指定要撤销权限的表或视图。
+- `<user list>`：指定要从中撤销权限的用户列表，pubilc表示所有用户
+- `[restrict | cascade]`：指定撤销权限的方式。
+    - `restrict`：如果有其他用户依赖于被撤销的权限，则不允许撤销。
+    - `cascade`：即使有其他用户依赖于被撤销的权限，也强制撤销，并同时撤销所有依赖的权限。
+
+e.g.
+
+```sql
+Revoke select on branch from U1, U3 cascade; 
+--移除U1和U3在branch上的select权限，如果有依赖也一并移除
+Revoke select on branch from U1, U3 restrict; 
+-- 移除U1和U3在branch上的select权限，如果有依赖就fail
+```
+
+!!!info "limitations" 
+    SQL 不支持在元组级别进行授权。例如，我们无法通过授权限制学生只能查看（存储）自己的成绩。
+
+    随着 Web 访问数据库的增长，数据库访问主要来自应用程序服务器。终端用户没有数据库用户 ID，他们都被映射到同一个数据库用户 ID。
+
+    一个应用程序（例如 Web 应用程序）的所有终端用户可能被映射到一个单一的数据库用户。
+
+    在上述情况下，授权的任务由应用程序来完成，而没有 SQL 的支持。
+
+    - **好处** ：应用程序可以实现细粒度的授权，例如对单个元组的授权。
+    - **缺点** ：授权必须在应用程序代码中完成，并且可能分散在整个应用程序中。由于需要阅读大量的应用程序代码，检查授权漏洞的缺失变得非常困难。
+
+#### Audit Trails
+
+An audit trail is a log of all changes (inserts/deletes/updates) to the database along with information such as which user performed the change, and when the change was performed. 
+
+Used to track erroneous/fraudulent updates. 
+
+Can be implemented using triggers, but many database systems provide direct support. 
+
+
+语句审计: 
+
+E.g., audit table by scott by access whenever successful ---- 审计用户scott每次成功地执行有关table的语句 (create table, drop table, alter table)。 
+
+格式：
+
+```sql
+AUDIT <st-opt> [BY <users>] [BY SESSION | ACCESS] [WHENEVER SUCCESSFUL | WHENEVER NOT SUCCESSFUL] 
+```
+
+- 当 BY <users> 缺省，对所有用户审计。 
+- BY SESSION每次会话期间，相同类型的需审计的SQL语句仅记录一次。 
+- 常用的<St-opt>：table, view, role, index, … 
+- 取消审计：NOAUDIT …(其余同audit语句)。 
+
+对象(实体)审计： 
+
+E.g., audit delete, update on student --- 审计所有用户对student表的delete和update操作。 
+格式：
+
+```sql
+AUDIT <obj-opt> ON <obj> | DEFAULT [BY SESSION | BY ACCESS]  [WHENEVER SUCCESSFUL | WHENEVER NOT SUCCESSFUL] 
+```
+
+- obj-opt: insert, delete, update, select, grant, … 
+- 实体审计对所有的用户起作用。 
+- ON <obj> 指出审计对象表、视图名。 
+- ON DEFAULT 对其后创建的所有对象起作用。 
+- 取消审计：NOAUDIT … 
+
+怎样看审计结果： 
+审计结果记录在数据字典表: sys.aud$中，也可从dba_audit_trail, dba_audit_statement, dba_audit_object中获得有关情况。 
+上述数据字典表需在DBA用户（system）下才可见。 
+
+
+
+### Embedded SQL
+
+SQL标准定义了在多种编程语言中嵌入SQL的方式，例如Pascal、PL/I、Fortran、C和Cobol。 
+
+在其中嵌入SQL查询的语言被称为宿主语言（Host language），而在宿主语言中允许的SQL结构组成了嵌入式SQL。 
+
+EXEC SQL语句用于标识嵌入式SQL请求给预处理器： 
+
+```sql
+EXEC SQL <嵌入式SQL语句> END_EXEC 
+```
+
+注意：这在不同语言中有所不同，例如，Java嵌入使用# 
+
+```java
+# SQL { …. } 
+```
+
+#### SELECT
+
+- 单行查询
+
+```c
+EXEC SQL BEGIN DECLARE SECTION; 
+char V_an[20], bn[20]; 
+float  bal; 
+EXEC SQL END DECLARE SECTION; 
+……. 
+scanf(“%s”, V_an);   // 读入账号,然后据此在下面的语句获得bn, bal的值 
+EXEC SQL SELECT branch_name, balance INTO :bn, :bal FROM 
+account WHERE account_number = :V_an; 
+END_EXEC
+    printf(“%s, %s, %f”, V_an, bn, bal); 
+……. 
+```
+
+```c
+#include <stdio.h>
+#include <sqlca.h>  // SQL Communications Area
+
+int main() {
+    EXEC SQL BEGIN DECLARE SECTION;
+    int emp_id;
+    char first_name[50];
+    char last_name[50];
+    float salary;
+    EXEC SQL END DECLARE SECTION;
+
+    // 读取用户输入的员工ID
+    printf("Enter Employee ID: ");
+    scanf("%d", &emp_id);
+
+    // 执行SQL查询
+    EXEC SQL SELECT first_name, last_name, salary
+    INTO :first_name, :last_name, :salary
+    FROM employees
+    WHERE employee_id = :emp_id;
+
+    // 检查SQL执行结果
+    if (sqlca.sqlcode == 0) {
+        // 输出查询结果
+        printf("Employee ID: %d\n", emp_id);
+        printf("First Name: %s\n", first_name);
+        printf("Last Name: %s\n", last_name);
+        printf("Salary: %.2f\n", salary);
+    } else {
+        // 处理错误
+        printf("Error: Employee not found or SQL error occurred.\n");
+    }
+
+    return 0;
+}
+```
+
+- 多行查询
+
+在嵌入式SQL中，多行查询通常使用游标（Cursor）来处理。游标允许程序逐行处理查询结果集。
+
+
+假设我们有以下三个表：`depositor`、`customer`和`account`。我们希望找到在某个账户中余额超过给定金额的客户的姓名和城市。
+
+- STEP 1: 声明游标
+
+首先，声明一个游标来保存查询结果。
+
+````c
+EXEC SQL BEGIN DECLARE SECTION;
+float v_amount;
+char cn[50];  // customer name
+char ccity[50];  // customer city
+EXEC SQL END DECLARE SECTION;
+
+// 声明游标
+EXEC SQL DECLARE c CURSOR FOR
+SELECT customer_name, customer_city
+FROM depositor D, customer B, account A
+WHERE D.customer_name = B.customer_name
+      AND D.account_number = A.account_number
+      AND A.balance > :v_amount;
+END_EXEC
+````
+
+- STEP 2: 打开游标
+
+使用`OPEN`语句执行查询并打开游标。
+
+````c
+// 打开游标
+EXEC SQL OPEN c END_EXEC;
+````
+
+- STEP 3: 获取数据
+
+使用`FETCH`语句逐行获取查询结果，并将结果存储在宿主语言变量中。
+
+````c
+// 获取数据
+while (1) {
+    EXEC SQL FETCH c INTO :cn, :ccity END_EXEC;
+    if (sqlca.sqlcode == 100) {  // SQLSTATE '02000' indicates no more data
+        break;
+    }
+    printf("Customer Name: %s, City: %s\n", cn, ccity);
+}
+````
+
+- STEP 4: 关闭游标
+
+使用`CLOSE`语句关闭游标并释放资源。
+
+````c
+// 关闭游标
+EXEC SQL CLOSE c END_EXEC;
+````
+
+#### Update
+
+- 单行修改
+
+在嵌入式SQL中，单行修改操作允许我们通过SQL语句直接更新数据库中的数据。
+
+假设我们有一个`account`表，其中包含字段`account_number`和`balance`。我们希望根据用户输入的账号和存款额来更新账户余额。
+
+首先，声明用于存储用户输入的账号和存款额的变量。
+
+```c
+EXEC SQL BEGIN DECLARE SECTION;
+char an[20];  // account number
+float bal;    // balance to add
+EXEC SQL END DECLARE SECTION;
+```
+
+使用`scanf`函数读取用户输入的账号和存款额。
+
+```c
+// 读取账号和存款额
+printf("Enter account number and amount to deposit: ");
+scanf("%s %f", an, &bal);
+```
+
+使用`EXEC SQL UPDATE`语句更新数据库中的账户余额。
+
+```c
+// 更新账户余额
+EXEC SQL UPDATE account SET balance = balance + :bal
+WHERE account_number = :an;
+```
+
+- 多行修改
+
+在嵌入式SQL中，可以通过声明游标为可更新（`FOR UPDATE`）来更新游标获取的元组。这允许在游标当前指向的记录上执行更新操作。以下是一个示例，展示如何在C语言中使用嵌入式SQL和游标来更新数据库中的数据。
+
+假设我们有一个`account`表，我们希望更新`Perryridge`分行的所有账户余额，每个账户增加100。
+
+首先，声明用于存储查询结果的变量，并声明一个可更新的游标。
+
+```c
+EXEC SQL BEGIN DECLARE SECTION;
+char an[20];  // account number
+float bal;    // balance
+EXEC SQL END DECLARE SECTION;
+
+// 声明可更新游标
+EXEC SQL DECLARE csr CURSOR FOR
+SELECT *
+FROM account
+WHERE branch_name = 'Perryridge'
+FOR UPDATE OF balance;
+```
+
+使用`OPEN`语句执行查询并打开游标。
+
+```c
+// 打开游标
+EXEC SQL OPEN csr;
+```
+
+
+使用`FETCH`语句逐行获取查询结果，并在游标当前指向的记录上执行更新操作。
+
+```c
+// 获取和更新数据
+while (1) {
+    EXEC SQL FETCH csr INTO :an, :bal;
+    if (sqlca.sqlcode != 0) {  // 检查是否成功获取数据
+        break;
+    }
+    // 处理数据（例如打印）
+    printf("Account Number: %s, Balance: %.2f\n", an, bal);
+
+    // 更新当前游标位置的记录
+    EXEC SQL UPDATE account
+    SET balance = balance + 100
+    WHERE CURRENT OF csr;
+}
+```
+
+
+使用`CLOSE`语句关闭游标并释放资源。
+
+```c
+// 关闭游标
+EXEC SQL CLOSE csr;
+```
+
+### Dynamic SQL
+
+
+
+动态SQL（Dynamic SQL）允许程序在运行时构建和提交SQL查询。这种技术非常有用，因为它提供了灵活性，使程序能够根据用户输入或其他运行时条件生成SQL语句。
+
+
+```c
+char *sqlprog = "update account set balance = balance * 1.05 where account_number = ?"; 
+EXEC SQL PREPARE dynprog FROM :sqlprog; 
+char v_account [10] = “A_101”; 
+……
+EXEC SQL EXECUTE dynprog USING :v_account;
+```
+
+- `char *sqlprog`定义了一个包含占位符?的SQL语句。占位符用于在执行时插入实际的值。
+- `EXEC SQL PREPARE dynprog FROM :sqlprog;`准备动态SQL程序dynprog，将SQL语句从字符串变量sqlprog中读取。
+- `char v_account[10] = "A_101";`定义了一个变量v_account，用于存储要更新的账户号码。
+- `EXEC SQL EXECUTE dynprog USING :v_account;`执行准备好的SQL程序dynprog，并通过USING子句将v_account的值插入到SQL语句中的占位符位置。
+
+## ODBC and JDBC
+
+
+
+
+
+
+
+
+
+
+
+        
+
