@@ -2047,7 +2047,7 @@ GRANT SELECT ON loan TO U1 WITH GRANT OPTION
 
 
 #### Roles
->permiting common privileges for a class of users can be specified just once, by creating a corresponding “role”. 
+>permiting common privileges for a class of users can be specified just once, by creating a corresponding "role". 
 
 Privileges can be granted to or revoked from roles, just like user;  roles can be assigned to users, and even to other roles. 
 
@@ -2383,7 +2383,7 @@ EXEC SQL CLOSE csr;
 ```c
 char *sqlprog = "update account set balance = balance * 1.05 where account_number = ?"; 
 EXEC SQL PREPARE dynprog FROM :sqlprog; 
-char v_account [10] = “A_101”; 
+char v_account [10] = "A_101"; 
 ……
 EXEC SQL EXECUTE dynprog USING :v_account;
 ```
@@ -2395,11 +2395,186 @@ EXEC SQL EXECUTE dynprog USING :v_account;
 
 ## ODBC and JDBC
 
+开放数据库互连（ODBC，Open DataBase Connectivity）  
+一种用于应用程序与数据库服务器通信的标准。  
+通过应用程序接口（API）来：  
+
+- 打开与数据库的连接，
+- 发送查询和更新，
+- 获取结果。
+
+GUI、电子表格等应用程序可以使用 ODBC。
+
+嵌入式 SQL 与 ODBC 的比较：  
+
+- 嵌入式 SQL：预编译器是特定于 DBMS 的。
+- ODBC 提供了一种通过 API 将数据库连接到应用程序程序员的标准化方式。
+- 不特定于 DBMS。
+- 不需要预编译。
+
+ODBC提供了一个公共的、与具体数据库无关的应用程序设计接口API 。它为开发者提供单一的编程接口，这样同一个应用程序就可以访问不同的数据库服务器。 
+
+使用ODBC访问数据库的方法：
+
+- ODBC API访问数据库 
+- Visual C++的MFC提供了丰富的ODBC类，它们封装了大量的函数用以完成数据库的大部分应用 
+
+访问数据库的其他方法: 
+
+- OLE DB (Object Link and Embedding DataBase) --- 是一套通过COM (Component Object Model,组件对象模型)接口访问数据库的ActiveX的底层接口技术,速度快，支持关系型和非关系型数据库，编程量大。 
+- ADO---基于COM，建立在OLE DB 之上，更易于使用. 
+- DAO (Data Access Objects) 
+
+<figure>
+    <img src="../img/sql-3.png" alt="ODBC Architecture">
+    <figcaption>ODBC Architecture</figcaption>
+</figure>
+
+**句柄**（Handle）是一种抽象的引用，用于标识和管理系统资源。句柄通常是一个整数或指针，程序通过它来访问和操作特定的资源，而不需要直接与资源的底层实现交互。
 
 
+```mermaid
+graph TD
+    A[应用程序] --> B[环境句柄]
+    B --> C[连接句柄]
+    B --> D[连接句柄]
+    B --> E[连接句柄]
+    D --> F[语句句柄]
+    D --> G[语句句柄]
+    D --> H[语句句柄]
+```
+
+1. 分配环境句柄
+```c
+HENV henv;
+SQLAllocEnv ( &henv );
+```
+
+2. 分配连接句柄
+```c
+HDBC hdbc;
+SQLAllocConnect(henv, &hdbc);
+```
+
+3.用已分配的连接句柄连接数据源
+```c
+SQLConnect (hdbc, szDSN, cbDSN, szUID, cbUID, szAuthStr, 
+cbAuthStr) ; 
+```
+说明：`hdbc`是一个已分配的连接句柄；
+`szDSN`和`cbDSN`分别表示系统所要连接的数据源名称字符串及其长度；
+`szUID`和`cbUID`分别表示连接数据源的用户名字符串及其长度 
+`szAuthStr`和`cbAuthStr`分别表示连接数据源的权限字符串及其长
+度。
 
 
+4. 分配语句句柄
+```c
+HSTMT hstmt;
+SQLAllocStmt (hdbc, &hstmt); 
+```
 
+
+5. 1直接执行SQL语句
+```c
+SQLExecDirect ( hstmt, szSqlStr, cbSqlStr );
+```
+说明：`hstmt`是一个有效的语句句柄；
+`szSqlStr`和`cbSqlStr`分别表示将要执行的SQL语句的字符串及其长度。
+例子：`retcode=SQLExecDirect(hstmt, "delete from book where ISBN=1", SQL_NTS);`
+说明：删除book表中ISBN=1的记录。SQL_NTS是ODBC的一个常数，当字符串是以NULL结束时，可用它来表示字符串的长度。
+
+
+5.2有准备地执行SQL语句
+如果SQL语句需要执行几次，则采用有准备的执行更好，避免了SQL语句的多次分析。有准备的执行需要两个函数。
+```c
+SQLPrepare ( hstmt, szSqlStr, cbSqlStr);
+```
+说明：SQL语句准备函数，参数同SQLExecDirect。
+```c
+SQLExecute ( hstmt );
+```
+说明：SQL语句执行函数
+
+6. 查询结果的获取
+```c
+SQLFetch(hstmt);
+```
+说明：把游标移到下一行，当查询语句执行后第一次调用时移到结果集的第一行。
+```c
+SQLGetData(hstmt, icol, fCType, rgbValue, cbValueMax, pcbValue);
+```
+说明：读取游标指向行的列值。
+icol和fCType分别表示结果集的列号和类型；
+rgbValue和cbValueMax是接收数据存储区的指针和最大长度；
+pcbValue是返回参数，表示本次调用后实际接收到的数据的字节数。
+
+7.释放语句句柄
+```c
+SQLfreeStmt(hstmt, foption);
+```
+说明：`foption`指定选项，一个选项是用`SQL_DROP`表示释放所有与该句 
+柄相关的资源。
+
+8.断开数据源连接
+```c
+SQLDisconnect(hdbc);
+```
+9.释放连接句柄
+```c
+SQLFreeConnect(hdbc);   
+```
+
+10.释放环境句柄
+```c
+SQLFreeEnv(henv); 
+```
+
+<figure>
+    <img src="../img/sql-4.png" alt="ODBC Architecture">
+    <figcaption>ODBC 编程流程</figcaption>
+</figure>
+
+
+!!!Example
+    ```c
+    int ODBCexample()   // 程序结构 
+	{ 
+	   RETCODE error; 
+	   HENV env;   /* environment */ 
+	   HDBC conn;   /* database connection */ 
+	   SQLAllocEnv(&env); 
+	   SQLAllocConnect(env, &conn);   /* 建立连接句柄 */ 
+	   SQLConnect (conn, "MySQLServer", SQL_NTS, "user", SQL_NTS, "password", SQL_NTS);  /* 建立用户user与数据源的连接，SQL_NTS表示前一参量以null结尾 */ 
+
+	   char branchname[80]; 
+	   float balance; 
+	   int lenOut1, lenOut2; 
+	   HSTMT stmt; 
+
+	   SQLAllocStmt(conn, &stmt);   /* 为该连接建立数据区，将来存放查询结果 */ 
+	   char *sqlquery = "select branch_name, sum(balance) from account group by branch_name";   /* 装配SQL语句 */ 
+	   error = SQLExecDirect(stmt, sqlquery, SQL_NTS); /* 执行sql语句,查询结果存放到数据区stmt，同时sql语句执行状态的返回值送变量error */ 
+
+	   if (error == SQL_SUCCESS) { 
+	       SQLBindCol(stmt, 1, SQL_C_CHAR, branchname, 80, &lenOut1); 
+	       SQLBindCol(stmt, 2, SQL_C_FLOAT, &balance, 0, &lenOut2); 
+	       /* 对stmt中的返回结果数据加以分离，并与相应变量绑定。第1项数据转换为C的字符类型，送变量branchname(最大长度为80)，lenOut1为实际字符串长度（若＝-1代表null），第2项数据转换为C的浮点类型送变量balance中 */ 
+
+	       while (SQLFetch(stmt) >= SQL_SUCCESS) { /* 逐行从数据区stmt中取数据，放到绑定变量中 */ 
+	           printf("%s  %.2f\n", branchname, balance); 
+	           /* 对取出的数据进行处理 */ 
+	       } 
+	   } 
+
+	   SQLFreeStmt(stmt, SQL_DROP);  /* 释放数据区 */ 
+	   SQLDisconnect(conn); 
+	   SQLFreeConnect(conn); 
+	   SQLFreeEnv(env); 
+	}
+    ```
+
+JDBC（Java Database Connectivity）是Java语言中用于连接和操作数据库的API。它提供了一种标准的方法，使Java应用程序能够与各种数据库进行交互。JDBC允许开发者执行SQL语句、检索和更新数据库中的数据。
 
 
 
