@@ -16,4 +16,9 @@ comments: true
 - [x] [Neural Networks](./lec4.md)
 - [x] [Backpropagation](./lec5.md)
 - [x] [Convolutional Neural Networks](./lec6.md)
-- [x] [CNN Architectures in history](./lec7_8.md)
+- [x] [CNN Architectures](./lec7_8.md)
+- [x] [More CNN Architectures](./lec8.md)
+- [x] [Training Neural Networks](./lec9_10.md)
+- [x] [Software in CV](./lec11_12.md)
+
+

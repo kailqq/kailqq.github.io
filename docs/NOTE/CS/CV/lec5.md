@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Backpropagation
 
 ## Backprop with scalars

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # CNN Architectures in history
 
 ## AlexNet
@@ -289,6 +293,80 @@ Like GoogleNet：
     <figcaption>Summary2</figcaption>
 </figure>
 
+
+## Group Convolution
+
+<figure markdown="span">
+    ![](./images/lec8-1.png){ width="70%" }
+    <figcaption>标准卷积</figcaption>
+</figure>
+
+传统的卷积操作中, 每个卷积核的通道数与输入的通道数相同, 即一个卷积核的通道数为$C_{in}$。
+
+<figure markdown="span">
+    ![](./images/lec8-2.png){ width="70%" }
+    <figcaption>Group Convolution</figcaption>
+</figure>
+
+而Group Convolution将输入通道分成若干组（Groups），每组独立进行卷积操作，最后合并结果。
+
+输入通道被均分为 \( G \) 组，每组有 \( C/G \) 个通道。
+
+每个卷积核也对应分成 \( G \) 组，每组卷积核仅处理对应的输入通道组。
+>每个Group也可以多个卷积核
+
+各组卷积结果在通道维度拼接，形成最终输出。
+
+!!!Note "Group Convolution"
+    - input: $C_{in} \times H \times W$
+    - output: $C_{out} \times H \times W$
+    - weight: $G \times \dfrac{C_{out}}{G} \times \dfrac{C_{in}}{G} \times K \times K$
+    - FLOPS: $C_out \times H \times W \times K \times K \times \dfrac{C_{in}}{G}$
+
+    如果是常规的卷积，那么$G=1$,FLOPS: $C_out \times H \times W \times K \times K \times C_{in}$
+
+计算量直接变为$\dfrac{1}{G}$
+
+<figure markdown="span">
+    ![](./images/lec8-5.png){ width="70%" }
+    <figcaption>Group Convolution</figcaption>
+</figure>
+
+**并行性增强**：各组可并行计算（如在多GPU训练中）。
+
+**模型表达能力调整**：通过调整组数 \( G \)，平衡效率与性能（如ResNeXt通过增加组数提升性能）。
+
+> 在torch.nn.Conv2d中，可以通过groups参数设置分组卷积。
+
+!!!Example 
+    <figure markdown="span">
+    ![](./images/lec8-3.png){ width="70%" }
+    <figcaption>Parallel Convolution</figcaption>
+    </figure>
+
+    对于常规的卷积操作，其FLOPS为：
+
+    - 第一层：$HWC \times 4C\times 1\times 1$
+    - 第二层：$HWC \times C\times 3\times 3$
+    - 第三层：$4HWC \times C\times 1\times 1$
+
+    总的为$17HWC^2$
+
+    对于Parallel Convolution，每一小组的$C_{out}$为$c$
+
+    每一小组的FLOPS为
+
+    - 第一层：$HWc \times 4C \times 1\times 1$
+    - 第二层：$HWc \times c\times 3\times 3$
+    - 第三层：$HWc \times 4c\times 1\times 1$
+
+    总的为$G(8Cc+9c^2)HWG$,通过设置不同的参数可以实现一样的计算量
+
+    <figure markdown="span">
+        ![](./images/lec8-4.png){ width="70%" }
+        <figcaption>具体的实现，是在中间分组</figcaption>
+    </figure>
+   
 
 
 

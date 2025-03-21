@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # linear classifier
 
 ## Format of the score function

@@ -330,5 +330,7 @@ nav:
               - Backpropagation: NOTE/CS/CV/lec5.md
               - Convolutional Neural Networks: NOTE/CS/CV/lec6.md
               - CNN Architectures in history: NOTE/CS/CV/lec7_8.md
-                  
+              - Training Neural Networks: NOTE/CS/CV/lec9_10.md
+              - Software in CV: NOTE/CS/CV/lec11_12.md
   - Friends: friends.md
+ 
