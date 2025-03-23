@@ -19,5 +19,9 @@ comments: true
 - [x] [CNN Architectures](./lec7_8.md)
 - [x] [Training Neural Networks](./lec9_10.md)
 - [x] [Software in CV](./lec11_12.md)
-
+- [ ] [Object Detection](./lec13.md)
+- [ ] [Object Detectors](./lec14.md)
+- [ ] [Image Segmentation](./lec15.md)
+- [x] [Recurrent Neural Networks](./lec16.md)
+- [x] [Attention](./lec17.md)
 
