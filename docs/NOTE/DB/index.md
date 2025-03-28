@@ -8,4 +8,5 @@ comments: true
 
 - [x] [introduction](./lec1.md)
 - [x] [relation model](./lec2.md)
-- [ ] [SQL](./sql.md)
+- [x] [SQL](./sql.md)
+- [x] [ER model](./ER.md)
