@@ -1,13 +1,14 @@
 # Entity Relationship Model
 
 
-!!definition "Steps of Database design"
-   - Requirement analysis
-   - Conceptual database design,一般在这个阶段使用ER图来描述数据库的结构
-   - Logical database design,将ER图转换为关系模式
-   - Schema refinement,对关系模式进行优化
-   - Physical database design,选择合适的数据库管理系统，并进行优化
-   - Implementation,将数据库设计文档转换为实际的数据库
+!!!definition "Steps of Database design"
+
+    - Requirement analysis
+    - Conceptual database design,一般在这个阶段使用ER图来描述数据库的结构
+    - Logical database design,将ER图转换为关系模式
+    - Schema refinement,对关系模式进行优化
+    - Physical database design,选择合适的数据库管理系统，并进行优化
+    - Implementation,将数据库设计文档转换为实际的数据库
 
 
 ## Entity Sets
@@ -199,6 +200,10 @@ ER图是表示实体集和关系集之间关系的一种图形化表示方法。
     ![](./img/ER-12.png){ width="80%" }
     <figcaption>Participation Degree</figcaption>
 </figure>
+
+在loan的上方有1..1代表每个loan至多至少参与一个borrow关系，而customer的上方有0..\*代表每个customer可以不参与任何borrow关系,也可以参与多个borrow关系；
+
+即customer和loan的关系是one-to-many
 
 
 ### Binary Vs N-ary Relationships
