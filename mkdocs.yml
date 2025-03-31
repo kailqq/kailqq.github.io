@@ -206,15 +206,14 @@ markdown_extensions: # markdown extensions
 
 extra_javascript:
   - javascripts/katex.js
-  - https://unpkg.com/katex@0/dist/katex.min.js
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - javascripts/katex.min.js
+  - javascripts/auto-render.min.js
   - javascripts/card.js
   - javascripts/toc.js
 
   
 extra_css:
-  - https://unpkg.com/katex@0/dist/katex.min.css
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  - css/katex.min.css
   - css/cards.css
   - css/card.css
   - css/newfonts.css
@@ -242,6 +241,7 @@ nav:
             - 关系模型: NOTE/DB/lec2.md
             - SQL: NOTE/DB/sql.md
             - ER模型: NOTE/DB/ER.md
+            - 关系数据库设计: NOTE/DB/lec7.md
           - 计算机组成与设计:
              - NOTE/CO/index.md
              - 绪论: "NOTE/CO/wk1.md"

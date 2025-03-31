@@ -10,3 +10,4 @@ comments: true
 - [x] [relation model](./lec2.md)
 - [x] [SQL](./sql.md)
 - [x] [ER model](./ER.md)
+- [x] [Relational Database Design](./lec7.md)
