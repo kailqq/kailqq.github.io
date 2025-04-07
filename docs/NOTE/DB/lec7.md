@@ -359,7 +359,7 @@ There are three kind uses if the atrribute set closure:
 
 - Test if an attribute is a superkey,查看$A^+$是否等于R
 - Testing functional dependencies,查看$X \rightarrow Y$是否在$F^+$中，只需要查看$Y \subseteq X^+$
-- Computing closure of F,计算$F^+$，对于每个属性集$X$，计算$X^+$，对于每个$Y \subseteq X^+$，$Y \rightarrow X$在$F^+$中,输出所有的$Y \rightarrow X$组成$F^+$
+- Computing closure of F,计算$F^+$，对于每个属性集$X$，计算$X^+$，对于每个$Y \subseteq X^+$，$X \rightarrow Y$在$F^+$中,输出所有的$X \rightarrow Y$组成$F^+$
 
 ### Canonical cover
 
