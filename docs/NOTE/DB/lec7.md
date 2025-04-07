@@ -912,3 +912,210 @@ return (R1, R2, ..., Ri)
     - 如果能够得到无损连接且保持依赖的BCNF分解，优先选择BCNF
     - 如果BCNF分解无法保持依赖，而效率检查很重要，则选择3NF
     - 有时也会选择混合方案：一部分关系采用BCNF，一部分采用3NF
+
+## Multivalued Dependencies 
+
+!!!Definition
+    Let $R$ be a relation schema and let $\alpha \in R$ and $\beta \in R$, the multivalued dependency
+
+    \[ 
+        \alpha \rightarrow\rightarrow \beta 
+    \]
+    
+    holds on $R$, if in any legal relation $r(R)$, for **all pairs** of tuples $t_1$ and $t_2$ 
+    in $r$ such that $t_1[\alpha] = t_2[\alpha]$, there exist tuples $t_3$ and $t_4$ in $r$ such that:
+     
+    \[t_1[\alpha] = t_2[\alpha] = t_3[\alpha] = t_4[\alpha]\]
+     
+    \[t_3[\beta] = t_1[\beta]\]
+
+    \[t_3[R - \alpha - \beta] = t_2[R - \alpha - \beta]\]
+     
+    \[t_4[\beta] = t_2[\beta]\]
+
+    \[t_4[R - \alpha - \beta] = t_1[R - \alpha - \beta]\]
+
+    Let $R - \alpha - \beta = Z$:
+    
+    \[t_3[Z] = t_2[Z]\]
+
+    \[t_4[Z] = t_1[Z]\]
+
+    如果$\beta \in \alpha$，则$\alpha \rightarrow\rightarrow \beta$是平凡的
+
+    如果$\alpha \cup \beta = R$，则$\alpha \rightarrow\rightarrow \beta$是平凡的
+
+!!!Example
+    Let R be a relation schema with a set of attributes that are partitioned into 3 nonempty subsets. 
+    
+    \[Y, Z, W\]
+    
+    We say that $Y \rightarrow\rightarrow Z$ (Y multi-determines Z) if and only if for all possible relations r(R) $t_1=(y1, z1, w1) \in r$ and $t_2=(y1, z2, w2) \in r$ 
+    
+    then $t_3=(y1, z1, w2) \in r$ and $t_4=(y1, z2, w1) \in r$ 
+    
+    Note that since the behavior of Z and W are identical, it follows that $Y \rightarrow\rightarrow Z$ if $Y \rightarrow\rightarrow W$. 
+    
+多值依赖可以这样理解：当一个属性A($\alpha$)确定了另一组属性B($\beta$)的一组值，并且这组值 **独立于** 其他属性C($R-\alpha-\beta$)时，我们说A多值依赖于B（写作A→→B）。
+
+简单来说："如果我知道A的值，那么B的值集合与C的值集合是相互独立的组合"。
+
+
+想象一个学生选课表：
+
+- 每个学生可以选多门课程
+- 每个学生有多个爱好
+- 学生选什么课与他有什么爱好没有关系
+
+这就形成了：
+
+- 学生ID →→ 课程（学生ID多值依赖于课程）
+- 学生ID →→ 爱好（学生ID多值依赖于爱好）
+
+
+假设张三选了数学和物理两门课，他有绘画和游泳两个爱好，表中就会出现：
+
+| 学生ID | 课程 | 爱好 |
+|-------|-----|------|
+| 张三 | 数学 | 绘画 |
+| 张三 | 数学 | 游泳 |
+| 张三 | 物理 | 绘画 |
+| 张三 | 物理 | 游泳 |
+
+注意：表中每个课程都与每个爱好组合出现了一次，这就是多值依赖导致的**数据冗余**。
+
+
+因为多值依赖表示的是"独立的多对多关系"：
+
+- 学生与课程是多对多关系
+- 学生与爱好是多对多关系
+- 这两种关系相互独立
+
+当我们把独立的关系放在同一张表中，必然会产生所有可能组合，导致冗余。
+
+
+将表分解为两个独立的关系：
+
+1. 学生-课程表：(学生ID, 课程)
+- 学生-爱好表：(学生ID, 爱好)
+
+这样既减少了冗余，也反映了数据的真实语义：课程选择和爱好是两个独立的多值事实。
+
+这就是为什么我们需要第四范式(4NF)：消除非平凡且非函数依赖的多值依赖。
+
+## Fourth Normal Form
+
+!!!Definition
+    The closure $D^+$ of $D$ is the set of all functional and multivalued dependencies logically implied by $D$. 即D的闭包
+
+    一个关系模式$R$在给定的函数依赖集和多值依赖集$D$下满足第四范式(4NF)，当且仅当对于所有在$D^+$中的多值依赖$\alpha \rightarrow\rightarrow \beta$（其中$\alpha \subseteq R$且$\beta \subseteq R$），至少满足以下条件之一：
+
+    - **平凡依赖**：$\alpha \rightarrow\rightarrow \beta$是平凡的，意味着$\beta \subseteq \alpha$（$\beta$是$\alpha$的子集）或$\alpha \cup \beta = R$（$\alpha$和$\beta$的并集等于整个关系）
+    - **超键约束**：$\alpha$是$R$的超键
+
+- 如果一个关系满足4NF，它必然满足BCNF
+- 4NF主要解决了多值依赖导致的数据冗余问题
+- 4NF比BCNF更严格
+
+以学生-课程-爱好关系为例：
+
+| 学生ID | 课程 | 爱好 |
+|-------|-----|------|
+| 张三 | 数学 | 绘画 |
+| 张三 | 数学 | 游泳 |
+| 张三 | 物理 | 绘画 |
+| 张三 | 物理 | 游泳 |
+
+这个关系存在多值依赖：
+- 学生ID →→ 课程
+- 学生ID →→ 爱好
+
+但学生ID不是该关系的超键，因此违反4NF。
+
+将违反4NF的关系分解为满足4NF的关系：
+
+1. 学生-课程关系：(学生ID, 课程)
+- 学生-爱好关系：(学生ID, 爱好)
+
+
+### Requirements for decomposition
+
+> Restriction of MVDs
+
+Assume $R$ is decomposed into $R_1, R_2, ..., R_n$, each $R_i$ is required to conform to 4NF. 
+
+The restriction of $D$ to $R_i$ is the set $D_i$ consisting of :
+
+- All functional dependencies in $D^+$ that include only attributes of $R_i$
+- All multivalued dependencies of the form 
+
+\[\alpha \rightarrow\rightarrow (\beta \cap R_i)\]
+
+where $\alpha \subseteq R_i$ and $\alpha \rightarrow\rightarrow \beta$ is in $D^+$
+
+所有在$D^+$中（$D$的闭包）仅包含$R_i$属性的函数依赖会被保留在$D_i$中。
+
+例如：如果原关系有依赖$A \rightarrow B$，且$A$和$B$都在子关系$R_i$中，则$A \rightarrow B$会保留在$D_i$中。
+
+对于$D^+$中的每个多值依赖$\alpha \rightarrow\rightarrow \beta$：
+
+如果$\alpha$包含在$R_i$中
+
+则$\alpha \rightarrow\rightarrow (\beta \cap R_i)$会被包含在$D_i$中
+
+这表示在子关系上，多值依赖的右侧被"裁剪"为只包含该子关系的属性
+
+### Algorithm for 4NF Decomposition
+
+```
+result := {R};        // 初始结果集包含原始关系R
+done := false;        // 设置循环继续标志
+compute D+;           // 计算依赖集D的闭包
+Let Di denote the restriction of D+ to Ri  // 确定D+对每个关系的限
+while (not done) {
+    // 检查result中是否存在不满足4NF的关系
+    if (存在关系Ri不满足4NF) {
+        // 找到一个违反4NF的多值依赖
+        选择非平凡多值依赖 α →→ β，使得:
+            - α不是Ri的超键
+            - α与β没有交集(α∩β=∅)
+            
+        // 分解关系Ri
+        result := (result - Ri) ∪ (α, β) ∪ (Ri - β);
+    }
+    else {
+        done := true;  // 所有关系都满足4NF，算法结束
+    }
+}
+```
+
+!!!Example "4NF分解示例"
+    有关系模式 $R = (A, B, C, G, H, I)$
+    
+    函数依赖和多值依赖集：
+
+    ```
+    D = {A →→ B
+         B →→ HI
+         CG →→ H}
+    ```
+
+    从中也可以推导出$A \rightarrow\rightarrow H$,$A \rightarrow\rightarrow I$$
+    
+    $R$ 不满足4NF，因为 $A →→ B$ 中 $A$ 不是超键。
+    
+    **分解过程**：
+    
+    a) $R_1 = (A, B)$ ($R_1$ 满足4NF)
+    
+    b) $R_2 = (A, C, G, H, I)$ ($R_2$ 不满足4NF,将其分解为$R_3$和$R_4$)
+    
+    c) $R_3 = (C, G, H)$ ($R_3$ 满足4NF)
+    
+    d) $R_4 = (A, C, G, I)$ ($R_4$ 不满足4NF,因为$A →→ I$中$A$不是超键)
+    
+    e) $R_5 = (A, I)$ ($R_5$ 满足4NF)
+    
+    f) $R_6 = (A, C, G)$ ($R_6$ 满足4NF)
+    
+    最终的分解结果是：$R_1$, $R_3$, $R_5$, $R_6$，所有这些关系都满足4NF，并且分解是无损连接的。
