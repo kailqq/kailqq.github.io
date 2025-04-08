@@ -11,7 +11,9 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
       - run: pip install mkdocs-material 
-      - run: pip install mkdocs-changelog-plugin
+      - run: git clone https://github.com/TonyCrane/mkdocs-changelog-plugin.git
+      - run: cd mkdocs-changelog-plugin
+      - run: pip install . # or pip install -e
       - run: pip install neoteroi-mkdocs
       - run: pip install mkdocs-statistics-plugin
       - run: pip install mkdocs-git-revision-date-localized-plugin
