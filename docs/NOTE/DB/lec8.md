@@ -530,16 +530,567 @@ RAID 6
     
     - 多个PB（\(10^{15}\)字节）。
 
-
-## Tertiary Storage 
-
 ## Storage Access
+
+<figure markdown="span">
+![](./img/lec8-10.png){ width="400" }
+<figcaption>
+Storage Access
+</figcaption>
+</figure>
+
+数据库文件被逻辑上划分为固定长度的存储单元，称为块（blocks）;块是数据库系统中存储分配和数据传输的单位。
+
+
+缓冲区（Buffer）
+
+- 定义：主存中可用来存储磁盘块副本的部分。
+- 目标：数据库系统旨在最小化磁盘和内存之间的块传输次数。
+- 减少磁盘访问次数：通过在主存中保留尽可能多的块来实现——即缓冲区。
+- 限制：缓冲区的大小是有限的。
+
+缓冲区管理器（Buffer Manager）
+
+- 职责：负责在主存中分配缓冲区空间的子系统。
+
+<figure markdown="span">
+![](./img/lec8-11.png){ width="400" }
+</figure>
+
+缓冲池（Buffer Pool）：
+
+- 位于主存中，用于存储磁盘页的副本。
+- 黑色方块表示已占用的磁盘页，白色方块表示空闲帧。
+
+页面请求：
+
+- 来自更高层次的请求需要访问数据。
+- 数据必须在RAM中才能被DBMS操作。
+
+磁盘（Disk）和数据库（DB）：
+
+- 数据库文件存储在磁盘上。
+- 数据从磁盘加载到缓冲池中。
+
+帧选择：
+
+- 由替换策略决定哪个帧用于存储新加载的页面。
+
+帧和页的关系：
+
+- 页（Page）：数据的单位。
+- 块（Block）：磁盘空间的单位。
+- 帧（Frame）：缓冲池的单位。
+- 实际上，块和页不完全相同。
+
+维护表：
+
+- 维护一个`<frame#, pageid>`对的表，用于跟踪缓冲池中的数据。
+
+### Buffer Management
+
+请求块：
+
+- 应用程序需要从磁盘获取块时，会调用缓冲管理器。
+
+检查缓冲区：
+
+- 如果块已在缓冲区中：
+    - 请求程序获得块在主存中的地址。
+- 如果块不在缓冲区中：
+    - 缓冲管理器在缓冲区中为块分配空间。
+- 如果没有空闲空间，则替换（丢弃）一些旧页。
+
+写回磁盘：
+
+- 被丢弃的块如果被修改过，则写回磁盘。
+
+读取新块：
+
+- 一旦在缓冲区中分配了空间，缓冲管理器从磁盘读取块到缓冲区，并将块在主存中的地址传递给请求者。
+
+替换策略：
+
+- 使用LRU（最近最少使用）或MRU（最近最多使用）策略。
+
+固定块(Pinned Block)：
+
+- 被固定的块不允许写回磁盘，直到使用结束。
+
+立即丢弃策略：
+
+- 块的最后一个元组处理完后，立即释放空间。
+
+强制输出：
+    - 请求者必须解锁块，并指示页面是否被修改。
+    - 使用“脏位”标识修改。
+
+页面请求：
+
+- 缓冲池中的页面可能被多次请求。
+- 使用固定计数(Pin Count)，只有当固定计数为0时，页面才是替换的候选。
+
+### Buffer-replacement Policies
+
+1. **LRU策略（最近最少使用策略）** ：
+    - **原理** ：替换最近最少使用的块。
+    - **思路** ：使用过去的块引用模式作为未来引用的预测。
+    - **优点** ：适用于有明确访问模式的查询。
+    - **缺点** ：对于涉及重复扫描数据的查询，LRU可能表现不佳。
+
+<figure markdown="span">
+![](./img/lec8-12.png){ width="400" }
+</figure>
+
+设 M = 5 (buffer has 5 blocks), 1 for borrower, 3 for customer, 1 for out 对customer, LRU的块可能是下面快要用的块(循环)，而最近刚用过的块则暂时不用，当空间不够时倒是可以将其覆盖的, 故LRU策略不佳。
+
+2. **MRU策略（最近最常用策略）** ：
+    - **原理** ：系统固定当前正在处理的块。
+    - **过程** ：块的最后一个元组处理完后，块被解锁，成为最常用的块。
+    - **优点** ：适用于某些特定的访问模式。
+
+3. **统计信息** ：
+    - 缓冲管理器可以维护统计信息，以提高请求引用特定关系的概率。
+    - 例如，数据字典通常被频繁访问。
+
+4. **强制输出** ：
+    - 缓冲管理器支持块的强制输出，以便进行恢复。
+
+5. **混合策略** ：
+    - 与查询优化器提供的替换策略结合使用。
+
+
+
 
 ## File Organization
 
+The database is stored as a collection of files. 
+
+- Each file is a sequence of records. 
+- A record is a sequence of fields. 
+- Two kinds of record: 
+    - Fixed-length records.
+    - Variable-length records. 
+
+### Fixed-length Records
+
+- **优势：方法简单**：
+   - 记录 \(i\) 从字节 \(n \times (i - 1)\) 开始存储，其中 \(n\) 是每个记录的大小。
+   - 记录访问简单，但记录可能会跨越块。
+
+修改:
+
+- 不允许记录跨越块边界。
+
+<figure markdown="span">
+![](./img/lec8-13.png){ width="400" }
+<figcaption>
+Fixed-length Records
+</figcaption>
+</figure>
+
+
+
+删除记录 \(i\) 的方法:
+
+1. **方法1** ：将记录 \(i+1\) 到 \(n\) 向前移动。
+2. **方法2** ：将记录 \(n\) 移动到位置 \(i\)。
+3. **方法3** ：不移动记录，而是将所有空闲记录链接到一个空闲列表（free list）中。
+
+
+
+#### Free Lists
+
+<figure markdown="span">
+![](./img/lec8-14.png){ width="400" }
+<figcaption>
+Free Lists
+</figcaption>
+</figure>
+
+空闲列表（Free List）
+
+- 存储地址：在文件头中存储第一个被删除记录的地址。
+- 链接记录：使用第一个被删除的记录来存储第二个被删除记录的地址，依此类推。
+- 指针概念：这些存储的地址可以视为指针，因为它们“指向”记录的位置。
+- 优势
+     - 空间效率：更高效的空间表示。
+     - 重新利用空闲记录的正常属性空间来存储指针。
+     - 使用中的记录中不存储指针。
+     - 空闲列表通过链接被删除的记录，优化了存储空间的使用和管理。
+
+### Variable-length Records
+出现方式：
+
+- 文件中存储多种记录类型。
+- 允许一个或多个字段具有可变长度的记录类型（如字符串）。
+- 允许重复字段的记录类型（用于一些旧的数据模型）。
+
+属性存储：
+
+- 按顺序存储。
+- 可变长度属性用固定大小（偏移量、长度）表示，实际数据存储在所有定长属性之后。
+- 空值用空值位图表示。
+
+<figure markdown="span">
+![](./img/lec8-15.png){ width="400" }
+<figcaption>
+Variable-length Records
+</figcaption>
+</figure>
+
+#### Slotted Page Structure
+
+<figure markdown="span">
+![](./img/lec8-16.png){ width="400" }
+<figcaption>
+Slotted Page Structure
+</figcaption>
+</figure>
+
+结构组成
+
+- 块头（Block Header）：
+    - 包含有关页面的元数据
+    - 存储记录条目数量
+    - 标记空闲空间的结束位置
+    - 包含每条记录的位置和大小信息
+
+- 槽（Slot）：
+    - 页头中的一个条目
+    - 包含两个关键信息：
+        - 记录长度（记录大小）
+        - 记录指针（指向实际记录的位置）
+    - 槽的标识形式为：rid = `<slot# pid>`（记录ID由槽号和页ID组成）
+
+- 记录区域：
+    - 实际存储数据记录的区域
+    - 记录从页面尾部开始向前存储（`#1, #2, #3, #4`）
+    - 中间可能有空闲空间
+
+工作原理
+
+- 当需要访问记录时，系统首先查找页头中的相应槽
+- 通过槽中的指针找到实际记录位置
+- 记录可以在页面内移动，以保持数据连续性（没有空隙）
+- 移动记录后，只需更新页头中的槽信息，而不需要更新外部指针
+- 指针不应直接指向记录，而应指向头中的记录条目（间接指针）。
+
+### Representation
+
+#### 保留空间（Reserved Space）
+
+<figure markdown="span">
+![](./img/lec8-17.png){ width="400" }
+<figcaption>
+Reserved Space
+</figcaption>
+</figure>
+
+原理
+
+- 使用已知最大长度的定长记录
+- 为每条记录分配固定大小的空间
+- 较短记录中的未使用空间用空值或记录结束符填充
+
+特点
+
+- **简单性**：实现和管理简单直接
+- **预测性**：记录位置可以通过简单公式计算
+- **存取效率**：随机访问速度快，无需额外索引
+- **空间浪费**：短记录会造成空间浪费
+- **限制性**：对超过预定最大长度的记录无法处理
+
+应用场景
+
+- 记录长度变化不大的数据
+- 对随机访问性能要求高的应用
+- 简单数据结构的存储
+
+#### 指针（Pointers）
+
+<figure markdown="span">
+![](./img/lec8-18.png){ width="400" }
+<figcaption>
+Pointers
+</figcaption>
+</figure>
+
+原理
+
+- 使用指针指向实际数据的位置
+- 可以是直接指针（指向实际数据）或间接指针（指向中间结构）
+
+特点
+
+- **灵活性**：支持任意长度的记录
+- **空间效率**：可以减少空间浪费
+- **复杂性**：实现和管理相对复杂
+- **性能开销**：访问数据需要额外的指针解析步骤
+
+应用场景
+
+- 记录长度差异大的数据
+- 存储大型对象或文档
+- 需要灵活空间管理的应用
+
+
+**空间浪费**：除了链中的第一条记录外，所有记录中都有浪费的空间（用于分支名称），这意味着在溢出链中的记录结构可能包含未使用的字段，造成存储效率降低
+
+解决方案：
+
+<figure markdown="span">
+![](./img/lec8-19.png){ width="400" }
+<figcaption>
+Pointer Structure
+</figcaption>
+</figure>   
+
+通过在文件中使用两种不同类型的块：
+
+1. **锚块（Anchor Block，锚块）**：
+    - 包含链中的第一条记录
+    - 这些记录需要存储完整信息，包括分支名称等所有字段
+    - 通常是哈希表的主要存储区域
+
+2. **溢出块（Overflow Block，溢出块）**：
+    - 包含除链中第一条记录以外的其他记录
+    - 这些记录可以使用更紧凑的结构，省略不必要的字段
+    - 专门设计用于存储冲突记录
+
+溢出记录不再需要存储冗余信息，结构优化：可以为不同用途的记录设计专门的结构，性能提升：更紧凑的记录意味着每个块可以存储更多记录，减少I/O操作
+
+!!!Summary "两种方法的比较"
+    | 特性 | 保留空间 | 指针 |
+    |------|---------|------|
+    | 实现复杂度 | 低 | 中到高 |
+    | 空间利用率 | 低到中 | 中到高 |
+    | 访问速度 | 快 | 较慢（需解析指针） |
+    | 记录长度灵活性 | 有限 | 高 |
+    | 更新操作效率 | 高（原地更新） | 可能需要重定位 |
+
+    保留空间方法更适合记录长度相对固定且对访问速度要求高的场景，而指针方法则更适合处理变长记录和需要高空间利用率的情况。
+
 ## Organization of Records in Files
+
+- Heap file (堆文件, 流水文件):a record can be placed anywhere in the file where there is space,有空间就可以放
+
+- Sequential file (顺序文件):store records in sequential order, based on the value of a search key of each record ，根据搜索键的值存储记录
+
+- Hashing file (散列文件):a hash function computed on some attribute of each record; the result specifies in which block of the file the record should be placed ，根据每个记录的某个属性计算散列值，结果指定记录应该存储在文件的哪个块中
+
+- Clustering file organization (聚集文件组织):records of several different relations can be stored in the same file ，几个不同的关系的记录可以存储在同一个文件中
+>  Motivation: store related records in different relations on the same block to minimize I/O ，在同一个块中存储相关记录以最小化I/O操作
+
+
+### Sequential File Organization
+
+<figure markdown="span">
+![](./img/lec8-20.png){ width="400" }
+<figcaption>
+Sequential File Organization
+</figcaption>
+</figure>
+
+- 适用于：需要对整个文件进行顺序处理的应用
+- 数据排序：文件中的记录按搜索键排序（如图中按账号-分支名排序）
+- 唯一性：一个顺序文件只有一个搜索键
+- 操作机制
+1. 删除操作
+    使用指针链（pointer chains）处理删除
+    被删除的记录位置可通过指针链接起来形成空闲列表
+2. 插入操作
+
+需要找到记录应该插入的正确位置（保持排序顺序）
+<figure markdown="span">
+![](./img/lec8-21.png){ width="400" }
+<figcaption>
+Insertion in Sequential File
+</figcaption>
+</figure>
+
+插入策略：
+
+- 如果插入位置有空闲空间，直接插入
+- 如果没有空闲空间，将记录插入溢出块
+- 在任何情况下，都需要更新指针链
+
+3. 文件重组:随着插入和删除操作的频繁进行，文件的顺序性会下降;需要定期重新组织文件以恢复顺序
+重组过程消耗资源，但能提高后续访问效率
+
+### Multitable Clustering
+
+<figure markdown="span">
+![](./img/lec8-22.png){ width="400" }
+<figcaption>
+Multitable Clustering
+</figcaption>
+</figure>
+
+多关系存储：
+
+- 在一个文件中存储多个关系表（如图中的department和instructor表）
+- 数据按照关系间的连接属性进行排序和组织
+
+物理布局：
+
+- 首先是逻辑表视图：department表和instructor表分别展示
+- 然后是物理存储视图：department和instructor记录交错存储，按关系聚类
+
+聚类方式：
+
+- 相关记录物理上相邻（如Comp.Sci.部门记录后紧跟该部门的所有教师记录）
+- 每个部门的记录块后面是属于该部门的所有教师记录
+
+优缺点：
+
+- 优点
+    - 适合联合查询：
+        - 对涉及department和instructor的连接查询效率高
+        - 对查询单个部门及其所有教师的操作性能好
+        - 减少磁盘I/O，因为相关数据物理上相近
+    - 可扩展性：
+        - 支持可变大小的记录
+
+- 缺点
+    - 单表查询劣势：
+        - 对仅涉及department表的查询效率低，可以添加指针链来链接特定关系的记录
+        - 必须扫描整个文件来定位所有部门记录
+    - 复杂度：
+        - 插入和删除操作复杂
+
+<figure markdown="span">
+![](./img/lec8-23.png){ width="400" }
+<figcaption>
+Pointer Relation
+</figcaption>
+</figure>
+> 添加指针连接department关系，这样可优化对于department表的查询
+
+
+维护聚类结构需要额外开销
 
 ## Data-Dictionary Storage
 
-## Storage Structures for Object-Oriented Databases
+Data dictionary (also called system catalog) stores metadata:  that is, data about data, such as:
 
+- Information about relations
+    - Names of relations
+    - Names and types of attributes of each relation
+    - Names and definitions of views
+    - Integrity constraints
+
+- User and accounting information, including passwords
+
+- Statistical and descriptive data
+    - Number of tuples in each relation
+
+- Physical file organization information
+    - How relation is stored (sequential/hash/...)
+    - Physical location of relation
+    - Operating system file name or
+    - Disk addresses of blocks containing records of the relation
+- Information about indices 
+
+### Relational Representation of System Metadata
+
+<figure markdown="span">
+![](./img/lec8-24.png){ width="400" }
+<figcaption>
+Relational Representation of System Metadata
+</figcaption>
+</figure>
+
+- 关系表示法：
+    - 关系表示法是一种用于存储和管理元数据的结构化方式
+    - 关系表示法将元数据存储在关系数据库中，每个关系表示一个元数据实体
+    - 关系表示法可以方便地进行查询和更新
+
+### Column-Oriented Storage
+
+<figure markdown="span">
+![](./img/lec8-25.png){ width="400" }
+<figcaption>
+Column-Oriented Storage
+</figcaption>
+</figure>
+
+列式存储，也称为列式表示（columnar representation），是一种数据库表的物理存储方法，与传统的行式存储截然不同。
+
+基本概念
+
+- 核心思想：分别存储关系表的每个属性（列）
+- 存储方式：相同列的数据被连续存储在一起，而不是将一行数据存储在一起
+
+
+图中示例展示了一个表格，分为四列（可能是员工ID、姓名、部门和薪资）：
+
+- 每一列单独存储（如ID列：10101, 12121, 15151...）
+- 姓名列单独存储（Srinivasan, Wu, Mozart...）
+- 部门列单独存储（Comp. Sci., Finance, Music...）
+- 薪资列单独存储（65000, 90000, 40000...）
+
+列式存储的优势
+
+- 减少I/O量：
+    - 当查询只需访问少量列时，可以只读取需要的列
+    - 避免读取不需要的数据，显著减少I/O操作
+- 改善CPU缓存性能：
+    - 同质数据连续存储增强数据局部性
+    - 更好地利用CPU缓存，减少缓存未命中
+- 更好的压缩效率：
+    - 同一列的数据通常具有相似性，压缩效率更高
+    - 可以应用专门针对列数据特性的压缩算法
+- 支持向量处理：
+    - 适合现代CPU架构的SIMD（单指令多数据）操作
+    - 能同时对多个数据元素进行相同操作
+
+列式存储的缺点
+
+- 元组重构成本：
+    - 需要从多个列中重新组合数据以重建完整行
+    - 增加查询处理复杂性
+- 更新和删除操作成本：
+    - 修改一行数据需要修改多个不同的存储位置
+    - 使更新操作更加复杂
+- 解压缩成本：
+    - 访问压缩数据需要额外的解压缩步骤
+
+应用场景
+
+- 决策支持系统：列式存储被证明比行式存储更高效
+- 事务处理：传统行式存储更适合
+- 混合系统：一些数据库支持混合行列存储，称为混合行/列存储
+- 列式存储特别适合分析型工作负载（OLAP），如数据仓库和商业智能应用，这些应用通常只需访问少量列但需要处理大量行数据。
+
+#### Representation
+
+<figure markdown="span">
+![](./img/lec8-26.png){ width="400" }
+<figcaption>
+ORC
+</figcaption>
+</figure>
+
+ORC和Parquet：两种流行的列式存储文件格式,这些格式在文件内部采用列式存储方式
+
+图中展示了ORC文件格式的结构
+
+应用场景：
+
+- 非常适合大数据应用
+- 被广泛应用于数据仓库和分析系统
+
+ORC文件结构：
+
+- 文件分条带(Stripe)：整个文件被分为多个条带（Stripe 1, Stripe 2, ..., Stripe n）
+- 每个条带包含：
+    - 索引数据(Index Data)：存储每列的统计信息和位置信息
+    - 行数据(Row Data)：按列组织的实际数据
+    - 条带页脚(Stripe Footer)：包含条带的元数据
+
+内部组织：
+
+- 每列数据单独存储（Col1, Col2, Col3等）
+- 数据分为索引部分（Col1 Index, Col2 Index等）和数据部分（Col1 Data, Col2 Data等）
+- 最下方有文件页脚(File Footer)，包含整个文件的元数据
