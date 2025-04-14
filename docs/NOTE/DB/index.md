@@ -11,3 +11,4 @@ comments: true
 - [x] [SQL](./sql.md)
 - [x] [ER model](./ER.md)
 - [x] [Relational Database Design](./lec7.md)
+- [ ] [Storage and File Structure](./lec8.md)
