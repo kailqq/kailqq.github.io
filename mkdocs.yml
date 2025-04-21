@@ -255,6 +255,8 @@ nav:
             - SQL: NOTE/DB/sql.md
             - ER模型: NOTE/DB/ER.md
             - 关系数据库设计: NOTE/DB/lec7.md
+            - 内存管理: NOTE/DB/lec8.md
+            - 索引: NOTE/DB/indexing.md
           - 计算机组成与设计:
              - NOTE/CO/index.md
              - 绪论: "NOTE/CO/wk1.md"
@@ -266,7 +268,7 @@ nav:
           -  LINEAR-ALGEBRA:
               - "NOTE/LA/linear-algebra.md"
               - 基础: "NOTE/LA/前置知识.md"
-              - 暂时停更: "NOTE/LA/note.md"
+              - 停更: "NOTE/LA/note.md"
               - 讲义: "NOTE/LA/eigenvalue.md"
           -  CTF:
               - "NOTE/CTF/CTF.md"
