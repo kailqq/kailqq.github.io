@@ -22,4 +22,5 @@ comments: true
 - [x] [Object Detection](./lec13_15.md)
 - [x] [Recurrent Neural Networks](./lec16.md)
 - [x] [Attention](./lec17.md)
+- [x] [visualizing](./lec21.md)
 
