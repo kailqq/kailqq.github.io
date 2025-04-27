@@ -13,3 +13,4 @@ comments: true
 - [x] [Relational Database Design](./lec7.md)
 - [x] [Storage and File Structure](./lec8.md)
 - [x] [Index](./indexing.md)
+- [x] [Query Processing](./query.md)
