@@ -14,3 +14,4 @@ comments: true
 - [x] [Storage and File Structure](./lec8.md)
 - [x] [Index](./indexing.md)
 - [x] [Query Processing](./query.md)
+- [x] [Query Optimization](./optimization.md)
