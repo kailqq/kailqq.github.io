@@ -128,7 +128,7 @@ extra:
           data: 1
           note: >-
                 <div align="center">
-                <img src="static/images/pay.png" width="200" height="200" />
+                <img src="/static/images/pay.png" width="200" height="200" />
                 </div>
 
                 
