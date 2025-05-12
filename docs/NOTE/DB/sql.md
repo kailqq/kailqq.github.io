@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # SQL 
 
 SQL includes several parts:

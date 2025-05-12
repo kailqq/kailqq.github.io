@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Relational Datavase design
 
 ## First Normal Form

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Query Optimization
 
 ## Transformation of Relational Expressions

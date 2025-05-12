@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Query Processing
 
 ## Measures of Query Cost

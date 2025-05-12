@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Indexing and Hashing
 
 索引的结构一般由搜索键(search key)和指针(pointer)组成
