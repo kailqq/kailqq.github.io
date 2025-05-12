@@ -16,3 +16,4 @@ comments: true
 - [x] [Query Processing](./query.md)
 - [x] [Query Optimization](./optimization.md)
 - [x] [Transaction](./transaction.md)
+- [x] [Concurrency Control](./concurrency.md)

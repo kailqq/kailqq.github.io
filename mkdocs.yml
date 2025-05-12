@@ -260,6 +260,7 @@ nav:
             - 查询处理: NOTE/DB/query.md
             - 查询优化: NOTE/DB/optimization.md
             - 事务: NOTE/DB/transaction.md
+            - 并发控制: NOTE/DB/concurrency.md
           - 计算机组成与设计:
              - NOTE/CO/index.md
              - 绪论: "NOTE/CO/wk1.md"
