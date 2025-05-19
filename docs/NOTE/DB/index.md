@@ -17,3 +17,4 @@ comments: true
 - [x] [Query Optimization](./optimization.md)
 - [x] [Transaction](./transaction.md)
 - [x] [Concurrency Control](./concurrency.md)
+- [x] [Recovery](./recovery.md)
