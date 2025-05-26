@@ -593,9 +593,9 @@ Example of Shadow Paging
     1. 反向扫描日志
     - 如果找到日志记录 `<Ti, X, V1, V2>`，执行撤销操作，并记录一个特殊的仅重做日志记录 `<Ti, X, V1>`。
     - 如果找到 `<Ti, Oj, operation-end, U>` 记录：
-            - 使用撤销信息 U 逻辑地回滚操作。
-            - 回滚期间执行的更新与正常操作执行时一样被记录。
-            - 在操作回滚结束时，不记录 operation-end 记录，而是生成一条记录 `<Ti, Oj, operation-abort>`。
+        - 使用撤销信息 U 逻辑地回滚操作。
+        - 回滚期间执行的更新与正常操作执行时一样被记录。
+        - 在操作回滚结束时，不记录 operation-end 记录，而是生成一条记录 `<Ti, Oj, operation-abort>`。
     - a 如果找到仅重做记录，忽略它。
     - b 如果找到 `<Ti, Oj, operation-abort>` 记录：
           - 跳过 Ti 的所有前面的日志记录，直到找到记录 `<Ti, Oj, operation-begin>`。
