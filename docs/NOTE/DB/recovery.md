@@ -606,6 +606,76 @@ Example of Shadow Paging
         上述情况a和情况b只有在数据库在回滚事务时崩溃时才会发生。
         如情况b中所述，跳过日志记录对于防止同一操作的多次回滚是至关重要的。
 
+!!!Example
+    ```html
+    <T0 start> 
+    <T0, B, 2000, 2050>
+    <T0, O1, operation-begin>
+    <T0, C, 700, 600> #如果在这里abort，就是进行物理层面的undo
+    <T0, O1, operation-end, (C, +100)> # operation-end记录，如果abort，则进行逻辑层面的undo
+    <T1 start>
+    <T1, O2, operation-begin>
+    <T1, C, 600, 400>
+    <T1, O2, operation-end, (C, +200)>
+    #假设在这里，T0打算要abort，那么根据上面的规则，从后往前扫描；首先，遇到了 <T0, O1, operation-end, (C, +100)> 记录
+    <T0, C, 400, 500> #使用U信息，对C进行加100的操作
+    <T0, O1, operation-abort> #记录abort信息
+    <T0, B, 2000> # 遇到了    <T0, B, 2000, 2050>，恢复并记录仅重做信息
+    <T0 abort>  # 遇到 <T0 start> 记录，结束回滚
+    <T1 commit>
+    ```
+
+
+###  When recovering from system crash
+
+1. **从最近的 `<checkpoint L>` 日志记录开始，向前扫描日志：**
+    - 确保自上次检查点以来的所有更新都被考虑。
+
+- **重做所有更新（重演历史）：**
+    - 物理上重做检查点之后所有事务的所有更新操作。
+    - 这样可以将数据库恢复到崩溃时的状态，包括已提交和未提交事务的所有更改。
+
+- **在扫描过程中维护 undo-list：**
+    - 初始化 `undo-list` 为检查点记录中的事务集合 `L`。
+    - 每遇到 `<Ti start>` 日志记录，就将 `Ti` 加入 `undo-list`。
+    - 每遇到 `<Ti commit>` 或 `<Ti abort>` 日志记录，就将 `Ti` 从 `undo-list` 中移除。
+
+- **完成上述步骤后：**
+    - 逆向扫描日志，对 `undo-list` 中的事务执行撤销操作。
+    - 按照之前描述的方式回滚事务。
+    - 当在 `undo-list` 中的事务 Ti 找到 `<Ti start>` 记录时，写入 `<Ti abort>` 日志记录。
+    - 当所有 `undo-list` 中的事务 Ti 找到 `<Ti start>` 记录时，停止扫描。
+    - 这将撤销未完成事务（即没有提交或中止日志记录的事务）的影响。恢复过程现在完成。
+
+<figure markdown="span">
+    ![模糊检查点](./img/recovery_logical_undo.png){ width="500" }
+    <figcaption>Failure Recovery with Logical Undo</figcaption>
+</figure>
+
+
+### Checkpointing
+
+- **标准检查点：**
+    - 将内存中的所有日志记录输出到稳定存储。
+    - 将所有修改过的缓冲区块输出到磁盘。
+    - 在稳定存储的日志中输出一条 `<checkpoint L>` 记录。
+    - 在检查点进行期间，不允许事务执行任何操作。
+
+- **模糊检查点：** 允许事务在检查点的最耗时部分进行时继续进行。
+
+模糊检查点的执行步骤如下：
+
+1. 暂时停止所有事务的更新操作。
+- 写入一条 `<checkpoint L>` 日志记录，并将日志强制写入稳定存储。
+- 记录已修改的缓冲区块列表 `M`。
+- 允许事务继续进行其操作。
+- 将列表 `M` 中的所有已修改缓冲区块输出到磁盘。
+    - 在输出过程中，块不应被更新。
+    - 遵循 WAL 原则：所有与块相关的日志记录必须在块输出之前被输出。
+- 在磁盘的固定位置 `last_checkpoint` 存储指向检查点记录的指针。
+
+- 使用模糊检查点进行恢复时，从 `last_checkpoint` 指向的检查点记录开始扫描。在 `last_checkpoint` 之前的日志记录，其更新已反映在磁盘上的数据库中，无需重做。不完整的检查点（即系统在执行检查点时崩溃）也能被安全处理。
+
 
 ## ARIES Recovery Algorithm
 

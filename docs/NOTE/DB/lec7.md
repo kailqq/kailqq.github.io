@@ -506,7 +506,7 @@ $F_c=\{A \rightarrow B, B \rightarrow C, A \rightarrow D\}$
 
     - The decomposition is a lossless-join decomposition(无损连接分解).
     - The decomposition is dependency preservation(依赖保持).
-    -Each relation Ri is in a good form(BCNF or 3NF)
+    - Each relation Ri is in a good form(BCNF or 3NF)
 
 ### Desirable properties of a decomposition
 
@@ -514,7 +514,7 @@ $F_c=\{A \rightarrow B, B \rightarrow C, A \rightarrow D\}$
 - 子关系必须是无损连接的,对于一分为二的分解，分解后的两个子模式的共同属性必须是R1或者R2
 - 子关系必须保持函数依赖(Dependency preserving)
 
--为了高效地检查更新（确保不违反任何FD），允许在子关系$R_i$中分别进行更新验证，而无需执行它们的连接操作。
+- 为了高效地检查更新（确保不违反任何FD），允许在子关系$R_i$中分别进行更新验证，而无需执行它们的连接操作。
 
 - F对$R_i$的限制是：$F_i \subseteq F^+$；$F_i$只包含$R_i$的属性。
 
@@ -670,9 +670,7 @@ let $\alpha \rightarrow \beta$ be a nontrivial functional
 
 dependency that holds on Ri such
 
-that $\alpha \rightarrow Ri$ is not in F+, and $\alpha \cap \beta = 
-
-\emptyset$;
+that $\alpha \rightarrow Ri$ is not in F+, and $\alpha \cap \beta = \emptyset$;
 
 result := (result - Ri)  $\cup$ ($\alpha, \beta$)  $\cup$ (Ri - $\beta$);
 

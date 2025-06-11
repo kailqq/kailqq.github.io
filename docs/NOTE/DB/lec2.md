@@ -297,7 +297,7 @@ For a Banking example,we have following relations:
 <figcaption>instance</figcaption>
 </figure>
 
-- Find the names of all customers who have an account at the Perryridge branch.
+- Find the names of all customers who have an loan at the Perryridge branch.
 
 we have following queries:
 
@@ -330,7 +330,7 @@ Just use the result above and do a set difference operation.
 - Finally, find the largest balance in the relation
 
 \[
-    \Pi_{balance}(account)-\Pi_{account.balance}(\sigma_{account.balance>d.balance}(account \times \rho_d(account)))
+    \Pi_{balance}(account)-\Pi_{account.balance}(\sigma_{account.balance < d.balance}(account \times \rho_d(account)))
 \]
 
 例如一个(4x1)表其中含有1,2,3,4;那么Cartesian product之后会得到(16x2)的表，上面减号右边的表达式会取出例如[1,2],[1,3],[1,4];[2,3]...[3,4]这样的表，然后再投影到account balance上就得到了不包含最大值的所有项，然后进行set difference就OK了
@@ -379,7 +379,7 @@ Example: R=(A,B,C,D),S=(B,D,E)
 
 #### Theta Join Operation
 
-Notation: $r \bowtie_\theta s$ where $\theta is the predicate on attributes in the schema$
+Notation: $r \bowtie_\theta s$ where $\theta$ is the predicate on attributes in the schema
 
 Theta join:  $r \bowtie_\theta s= \sigma_theta(r \times s)$
 
