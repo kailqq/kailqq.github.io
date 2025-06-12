@@ -242,9 +242,6 @@ end
 
 - **不可重复加锁**：一旦某个数据项被Ti锁定并解锁后，Ti不能再次锁定该数据项。
 
-<figure markdown="span">
-![Tree Protocol](./img/tree_protocol_example.png){ width="500" }
-</figure>
 
 !!!Summary
     树协议的优缺点：

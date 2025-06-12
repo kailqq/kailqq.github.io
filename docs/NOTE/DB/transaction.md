@@ -212,7 +212,7 @@ comments: true
 !!!Definition "可恢复调度(Recoverable Schedule)"
     如果一个调度 \( S \) 满足以下条件，则称其为可恢复调度(Recoverable Schedule)：
     
-    对于调度中的每个事务 \( T_i \)，如果 \( T_i \) 读取了一个由事务 \( T_j \) 写入的数据项，那么 \( T_i \) 的提交操作必须出现在 \( T_j \) 的提交操作之前。
+    对于调度中的每个事务 \( T_i \)，如果 \( T_i \) 读取了一个由事务 \( T_j \) 写入的数据项，那么 \( T_i \) 的提交操作必须出现在 \( T_j \) 的提交操作之后。
     
     
 <figure markdown="span">
