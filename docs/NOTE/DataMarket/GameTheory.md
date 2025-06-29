@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # LEC 3-4
 
 ## 社会福利
@@ -91,7 +95,7 @@
 
 
 <figure markdown="span">
-    ![Dominant Strategy Equilibrium](./img/Dominant.png) { width=50% }
+    ![Dominant Strategy Equilibrium](./img/Dominant.png) { width="50%" }
     <figcaption>占优策略</figcaption>
 </figure>
 
