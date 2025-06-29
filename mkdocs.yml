@@ -320,6 +320,9 @@ nav:
               - NOTE/Arch/index.md
               - Fundamentals: NOTE/Arch/chap1.md
               - 指令级并行: NOTE/Arch/chap4.md
+          -  数据要素市场:
+              - 博弈论基础: NOTE/DataMarket/GameTheory.md
+              
       - 自学笔记:
           - NOTE/CS/index.md 
           - TMS:
