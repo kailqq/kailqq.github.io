@@ -324,6 +324,7 @@ nav:
               - 博弈论基础: NOTE/DataMarket/GameTheory.md
               - 多臂老虎机算法: NOTE/DataMarket/mab.md
               - Shapley值: NOTE/DataMarket/Shapley.md
+              - 拍卖与机制设计基础: NOTE/DataMarket/auction.md
               
       - 自学笔记:
           - NOTE/CS/index.md 
