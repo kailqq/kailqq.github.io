@@ -326,6 +326,7 @@ nav:
               - Shapley值: NOTE/DataMarket/Shapley.md
               - 拍卖与机制设计基础: NOTE/DataMarket/auction.md
               - 最优机制: NOTE/DataMarket/optauction.md
+              - 贝叶斯劝说: NOTE/DataMarket/Beyesian.md
               
       - 自学笔记:
           - NOTE/CS/index.md 
