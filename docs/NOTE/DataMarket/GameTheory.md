@@ -36,7 +36,7 @@ comments: true
         - **例子**: 各种形式的拍卖 (Auctions)。
     - **不完全信息动态博弈 (Incomplete Information Dynamic Game)**
         - **定义**: 参与者的行动有先后顺序，并且信息不完全。这类博弈通常涉及从行动中推断信息。
-        - **例子**: 剪刀石头布。
+        - **例子**: 拍卖。
 
 
 ## 伯川德竞争 (Bertrand Competition)
