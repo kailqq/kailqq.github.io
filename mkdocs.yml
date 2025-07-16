@@ -242,61 +242,37 @@ extra_css:
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
 # 导航树 - 请按照我的做法来做，否则可能无法正常工作。引号可以省略。开头的点和斜杠也可以省略 ("./HOME/about.md" 或 Home/about.md) 。注意，导航树这里的文件名是 filename.md 这样的，但在文件夹中，它实际上被命名为 filename.en.md 和 filename.zh.md。我猜测默认是英文，所以, index.en.md 和 index.md 是一样的。i18n插件会自动识别文件名，然后根据文件名的后缀来切换语言。所以，如果你想添加一个新页面，你需要添加两个文件，一个是 filename.en.md，另一个是 filename.zh.md。其中，filename.en.md 也可以被命名为 filename.md，但是 filename.zh.md 不能被命名为 filename.md，否则会导致无法识别。
 nav: 
-  - Welcome: index.md
-  # - HOME: index.md
-  - change_log: changelog.md
-  - NOTE:
-      -  课程笔记:
-          - NOTE/index.md
+  - 首页: index.md
+  
+  - 📚 学习笔记:
+      - NOTE/index.md
+      
+      # 课程笔记 
+      - 🎓 课程笔记:
           - 数据库系统:
-            - NOTE/DB/index.md
-            - 介绍: NOTE/DB/lec1.md
-            - 关系模型: NOTE/DB/lec2.md
-            - SQL: NOTE/DB/sql.md
-            - ER模型: NOTE/DB/ER.md
-            - 关系数据库设计: NOTE/DB/lec7.md
-            - 内存管理: NOTE/DB/lec8.md
-            - 索引: NOTE/DB/indexing.md
-            - 查询处理: NOTE/DB/query.md
-            - 查询优化: NOTE/DB/optimization.md
-            - 事务: NOTE/DB/transaction.md
-            - 并发控制: NOTE/DB/concurrency.md
-            - 恢复: NOTE/DB/recovery.md
+              - NOTE/DB/index.md
+              - 介绍: NOTE/DB/lec1.md
+              - 关系模型: NOTE/DB/lec2.md
+              - SQL: NOTE/DB/sql.md
+              - ER模型: NOTE/DB/ER.md
+              - 关系数据库设计: NOTE/DB/lec7.md
+              - 内存管理: NOTE/DB/lec8.md
+              - 索引: NOTE/DB/indexing.md
+              - 查询处理: NOTE/DB/query.md
+              - 查询优化: NOTE/DB/optimization.md
+              - 事务: NOTE/DB/transaction.md
+              - 并发控制: NOTE/DB/concurrency.md
+              - 恢复: NOTE/DB/recovery.md
+              
           - 计算机组成与设计:
-             - NOTE/CO/index.md
-             - 绪论: "NOTE/CO/wk1.md"
-             - 指令集: "NOTE/CO/wk3.md"
-             - 计算机中的算数: "NOTE/CO/wk2.md"
-             - 处理器: "NOTE/CO/wk4.md"
-             - 内存层次: "NOTE/CO/wk5.md"
-             - 存储和IO: "NOTE/CO/wk6.md"
-          -  LINEAR-ALGEBRA:
-              - "NOTE/LA/linear-algebra.md"
-              - 基础: "NOTE/LA/前置知识.md"
-              - 停更: "NOTE/LA/note.md"
-              - 讲义: "NOTE/LA/eigenvalue.md"
-          -  CTF:
-              - "NOTE/CTF/CTF.md"
-              - web: "NOTE/CTF/web.md"
-              - Misc: "NOTE/CTF/Misc.md"
-              - Crypto: "NOTE/CTF/Crypto.md"
-              - reverse: "NOTE/CTF/reverse.md"
-              - 心得: "NOTE/CTF/结课心得.md"
-          - 概率论:
-              - "NOTE/Probability/index.md"
-              - 第一章: NOTE/Probability/first.md
-              - 第二章: NOTE/Probability/second.md
-              - 第三章: NOTE/Probability/Third.md
-              - 第四章: NOTE/Probability/Fourth.md
-              - 其它: NOTE/Probability/others.md
-          - 普通物理学二: 
-              - NOTE/Physics/index.md
-              - 电学: NOTE/Physics/eletronic.md
-              - 磁学: NOTE/Physics/magnetism.md
-              - 电动力学: NOTE/Physics/electrodynamincs.md
-              - Maxwell方程: NOTE/Physics/maxwell.md
-              - 光学: NOTE/Physics/light.md
-              - 量子力学: NOTE/Physics/Quantum.md
+              - NOTE/CO/index.md
+              - 绪论: NOTE/CO/wk1.md
+              - 指令集: NOTE/CO/wk3.md
+              - 计算机中的算数: NOTE/CO/wk2.md
+              - 处理器: NOTE/CO/wk4.md
+              - 内存层次: NOTE/CO/wk5.md
+              - 存储和IO: NOTE/CO/wk6.md
+              
           - 高级数据结构与算法分析: 
               - NOTE/ADS/index.md
               - AVL，Splay树与摊还分析: NOTE/ADS/wk1.md
@@ -314,13 +290,14 @@ nav:
               - 随机算法: NOTE/ADS/wk12.md
               - 并行算法: NOTE/ADS/wk13.md
               - 外部排序: NOTE/ADS/wk14.md
-          - 数学分析:
-              - NOTE/MA/index.md
+              
           - 计算机体系结构:
               - NOTE/Arch/index.md
               - Fundamentals: NOTE/Arch/chap1.md
               - 指令级并行: NOTE/Arch/chap4.md
-          -  数据要素市场:
+              
+          - 数据要素市场:
+              - NOTE/DataMarket/index.md
               - 博弈论基础: NOTE/DataMarket/GameTheory.md
               - 多臂老虎机算法: NOTE/DataMarket/mab.md
               - Shapley值: NOTE/DataMarket/Shapley.md
@@ -328,9 +305,39 @@ nav:
               - 最优机制: NOTE/DataMarket/optauction.md
               - 贝叶斯劝说: NOTE/DataMarket/Beyesian.md
               
-      - 自学笔记:
+      # 数学与物理
+      - 🔬 数学与物理:
+          - 线性代数 (LINEAR-ALGEBRA):
+              - NOTE/LA/linear-algebra.md
+              - 基础: NOTE/LA/前置知识.md
+              - 停更: NOTE/LA/note.md
+              - 讲义: NOTE/LA/eigenvalue.md
+              
+          - 概率论:
+              - NOTE/Probability/index.md
+              - 第一章: NOTE/Probability/first.md
+              - 第二章: NOTE/Probability/second.md
+              - 第三章: NOTE/Probability/Third.md
+              - 第四章: NOTE/Probability/Fourth.md
+              - 其它: NOTE/Probability/others.md
+              
+          - 数学分析:
+              - NOTE/MA/index.md
+              
+          - 普通物理学二: 
+              - NOTE/Physics/index.md
+              - 电学: NOTE/Physics/eletronic.md
+              - 磁学: NOTE/Physics/magnetism.md
+              - 电动力学: NOTE/Physics/electrodynamincs.md
+              - Maxwell方程: NOTE/Physics/maxwell.md
+              - 光学: NOTE/Physics/light.md
+              - 量子力学: NOTE/Physics/Quantum.md
+              
+      # 自学笔记
+      - 💻 自学笔记:
           - NOTE/CS/index.md 
-          - TMS:
+          
+          - Missing Semester (TMS):
               - NOTE/CS/TMS/index.md
               - 概览与shell: NOTE/CS/TMS/overview-and-shell.md
               - shell工具与脚本: NOTE/CS/TMS/shell-tools-and-scripts.md
@@ -340,18 +347,20 @@ nav:
               - 元编程: NOTE/CS/TMS/metaprogramming.md
               - 安全和密码学: NOTE/CS/TMS/security-and-cryptography.md
               - 大杂烩: NOTE/CS/TMS/miscellaneous.md
-          - Git: NOTE/CS/GIT/index.md
-          - verilog学习笔记: NOTE/CS/Verilog/verilog.md 
-          - RUST学习笔记:  NOTE/CS/RUST/RUST.md 
-          - 汇编学习笔记: 
-               - 硬件组成: NOTE/CS/ASM/wk1.md
-               - 程序格式: NOTE/CS/ASM/wk1_2.md
-               - 数据表示: NOTE/CS/ASM/wk2.md
-               - 寻址方式: NOTE/CS/ASM/wk3.md
-          - language:
-              - index: NOTE/Language/index.md
-              - English: NOTE/Language/English.md
-          - Computer Vision:
+              
+          - Git 版本控制:
+              - NOTE/CS/GIT/index.md
+              
+          - 编程语言:
+              - Verilog学习笔记: NOTE/CS/Verilog/verilog.md 
+              - RUST学习笔记: NOTE/CS/RUST/RUST.md 
+              - 汇编学习笔记: 
+                  - 硬件组成: NOTE/CS/ASM/wk1.md
+                  - 程序格式: NOTE/CS/ASM/wk1_2.md
+                  - 数据表示: NOTE/CS/ASM/wk2.md
+                  - 寻址方式: NOTE/CS/ASM/wk3.md
+                  
+          - 计算机视觉 (Computer Vision):
               - NOTE/CS/CV/index.md
               - Image Classification: NOTE/CS/CV/lec1.md
               - Linear Classifiers: NOTE/CS/CV/lec2.md
@@ -365,6 +374,21 @@ nav:
               - Object Detection: NOTE/CS/CV/lec13_15.md
               - Recurrent Neural Networks: NOTE/CS/CV/lec16.md
               - Attention: NOTE/CS/CV/lec17.md
-              - Visiualize: NOTE/CS/CV/lec21.md
-  - Friends: friends.md
+              - Visualize: NOTE/CS/CV/lec21.md
+              
+          - 语言学习:
+              - NOTE/Language/index.md
+              - English: NOTE/Language/English.md
+              
+      # 安全与竞赛
+      - 🛡️ 安全与竞赛:
+          - CTF 竞赛:
+              - NOTE/CTF/CTF.md
+              - Web: NOTE/CTF/web.md
+              - Misc: NOTE/CTF/Misc.md
+              - Crypto: NOTE/CTF/Crypto.md
+              - Reverse: NOTE/CTF/reverse.md
+              - 心得: NOTE/CTF/结课心得.md
+              
+  - 🚀 友情链接: friends.md
  
